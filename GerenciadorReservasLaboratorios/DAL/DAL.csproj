@@ -41,7 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlunoDAL.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="CursoDAL.cs" />
+    <Compile Include="DisciplinaDAL.cs" />
+    <Compile Include="GrupoUsuarioDAL.cs" />
+    <Compile Include="PermissaoDAL.cs" />
+    <Compile Include="PredioDAL.cs" />
+    <Compile Include="ReservaDAL.cs" />
+    <Compile Include="SaidasAntecipadasDAL.cs" />
+    <Compile Include="SalaDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
