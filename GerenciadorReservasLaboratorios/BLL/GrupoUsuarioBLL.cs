@@ -50,6 +50,16 @@ namespace BLL
                 throw new Exception("Ocorreu um erro ao tentar buscar o grupo de usuário por ID.", ex);
             }
         }
-
+        public void Alterar(GrupoUsuario grupoUsuario)
+        {
+            try
+            {
+                grupoUsuarioDAL.Alterar(grupoUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar alterar o grupo de usuário.", ex);
+            }
+        }
     }
 }
