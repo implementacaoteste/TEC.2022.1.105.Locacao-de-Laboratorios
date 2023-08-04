@@ -61,5 +61,16 @@ namespace BLL
                 throw new Exception("Ocorreu um erro ao tentar alterar o grupo de usuário.", ex);
             }
         }
+        public void Excluir(int id)
+        {
+            try
+            {
+                grupoUsuarioDAL.Excluir(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar excluir o grupo de usuário.", ex);
+            }
+        }
     }
 }
