@@ -52,5 +52,16 @@ namespace BLL
                 throw new Exception("Ocorreu um erro ao tentar buscar o curso por ID.", ex);
             }
         }
+        public void Alterar(Curso curso)
+        {
+            try
+            {
+                cursoDAL.Alterar(curso);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar alterar a reserva.", ex);
+            }
+        }
     }
 }
