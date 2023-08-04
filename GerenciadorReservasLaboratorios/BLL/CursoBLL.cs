@@ -60,7 +60,18 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar alterar a reserva.", ex);
+                throw new Exception("Ocorreu um erro ao tentar alterar o curso.", ex);
+            }
+        }
+        public void Excluir(int id)
+        {
+            try
+            {
+                cursoDAL.Excluir(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar excluir o curso.", ex);
             }
         }
     }
