@@ -27,6 +27,29 @@ namespace BLL
                 throw new Exception("Ocorreu um erro ao tentar inserir o grupo de usuário.", ex);
             }
         }
+        public List<GrupoUsuario> BuscarTodos()
+        {
+            try
+            {
+                return grupoUsuarioDAL.BuscarTodos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os grupos de usuário.", ex);
+            }
+        }
+
+        public List<GrupoUsuario> BuscarPorId(int id)
+        {
+            try
+            {
+                return grupoUsuarioDAL.BuscarPorId(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o grupo de usuário por ID.", ex);
+            }
+        }
 
     }
 }
