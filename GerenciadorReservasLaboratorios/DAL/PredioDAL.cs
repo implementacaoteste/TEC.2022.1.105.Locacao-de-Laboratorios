@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal class PredioDAL
+    public class PredioDAL
     {
         public void Inserir(Predio _predio)
         {
@@ -72,7 +72,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public Predio BuscarPorId(int id)
         {
             Predio predio = new Predio();
