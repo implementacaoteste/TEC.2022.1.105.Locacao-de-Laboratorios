@@ -37,7 +37,7 @@ namespace DAL
         public List<Disciplina> BuscarTodos()
         {
             List<Disciplina> disciplinas = new List<Disciplina>();
-            Disciplina disciplina;
+            Disciplina disciplina = new Disciplina();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -106,9 +106,11 @@ namespace DAL
             }
         }
 
-        public Disciplina BuscarPorNome(string nome)
+        public List<Disciplina> BuscarPorNome(string nome)
         {
+            List<Disciplina> disciplinaList = new List<Disciplina>();
             Disciplina disciplina = new Disciplina();
+
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -127,7 +129,7 @@ namespace DAL
                         disciplina.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                     }
                 }
-                return disciplina;
+                return disciplinaList;
             }
             catch (Exception ex)
             {

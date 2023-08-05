@@ -7,7 +7,7 @@ namespace DAL
 {
     public class SalaDAL
     {
-        public void Inserir(Sala sala)
+        public void Inserir(Sala _sala)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -16,7 +16,7 @@ namespace DAL
                 cmd.CommandText = "INSERT INTO Sala (Nome) VALUES (@Nome)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", sala.Nome);
+                cmd.Parameters.AddWithValue("@Nome", _sala.Nome);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -36,7 +36,7 @@ namespace DAL
         public List<Sala> BuscarTodos()
         {
             List<Sala> salas = new List<Sala>();
-            Sala sala;
+            Sala sala = new Sala();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -69,8 +69,7 @@ namespace DAL
                 cn.Close();
             }
         }
-
-        public Sala BuscarPorId(int id)
+        public Sala BuscarPorId(int _id)
         {
             Sala sala = new Sala();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -80,7 +79,7 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = "SELECT Id, Nome FROM Sala WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@Id", _id);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -101,8 +100,7 @@ namespace DAL
                 cn.Close();
             }
         }
-
-        public void Alterar(Sala sala)
+        public void Alterar(Sala _sala)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -111,8 +109,8 @@ namespace DAL
                 cmd.CommandText = "UPDATE Sala SET Nome = @Nome WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", sala.Nome);
-                cmd.Parameters.AddWithValue("@Id", sala.Id);
+                cmd.Parameters.AddWithValue("@Nome", _sala.Nome);
+                cmd.Parameters.AddWithValue("@Id", _sala.Id);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -129,7 +127,7 @@ namespace DAL
             }
         }
 
-        public void Excluir(int id)
+        public void Excluir(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -137,7 +135,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = "DELETE FROM Sala WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.Parameters.AddWithValue("@Id", _id);
 
                 cmd.Connection = cn;
                 cn.Open();
