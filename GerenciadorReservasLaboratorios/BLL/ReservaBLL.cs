@@ -1,78 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using DAL;
+﻿using DAL;
 using Models;
+using System.Collections.Generic;
 
 namespace BLL
 {
     public class ReservaBLL
     {
-        private ReservaDAL reservaDAL;
-
-        public ReservaBLL()
-        {
-            reservaDAL = new ReservaDAL();
-        }
-
         public void Inserir(Reserva reserva)
         {
-            try
-            {
-                reservaDAL.Inserir(reserva);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar inserir a reserva.", ex);
-            }
+            new ReservaDAL().Inserir(reserva);
         }
 
         public List<Reserva> BuscarTodos()
         {
-            try
-            {
-                return reservaDAL.BuscarTodos();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar todas as reservas.", ex);
-            }
+            return new ReservaDAL().BuscarTodos();
         }
 
         public Reserva BuscarPorId(int id)
         {
-            try
-            {
-                return reservaDAL.BuscarPorId(id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar a reserva por ID.", ex);
-            }
+            return new ReservaDAL().BuscarPorId(id);
         }
 
         public void Alterar(Reserva reserva)
         {
-            try
-            {
-                reservaDAL.Alterar(reserva);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar alterar a reserva.", ex);
-            }
+            new ReservaDAL().Alterar(reserva);
         }
 
         public void Excluir(int id)
         {
-            try
-            {
-                reservaDAL.Excluir(id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar excluir a reserva.", ex);
-            }
+            new ReservaDAL().Excluir(id);
         }
     }
 }
-

@@ -1,89 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using DAL;
+﻿using DAL;
 using Models;
+using System.Collections.Generic;
 
 namespace BLL
 {
     public class AlunoBLL
     {
-        private AlunoDAL alunoDAL;
-
-        public AlunoBLL()
-        {
-            alunoDAL = new AlunoDAL();
-        }
-
         public void Inserir(Aluno aluno)
         {
-            try
-            {
-                alunoDAL.Inserir(aluno);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar inserir o aluno.", ex);
-            }
+            new AlunoDAL().Inserir(aluno);
         }
 
         public List<Aluno> BuscarTodos()
         {
-            try
-            {
-                return alunoDAL.BuscarTodos();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar todos os alunos.", ex);
-            }
+            return new AlunoDAL().BuscarTodos();
         }
 
         public Aluno BuscarPorId(int id)
         {
-            try
-            {
-                return alunoDAL.BuscarPorId(id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar o aluno por ID.", ex);
-            }
-        }
-
-        public List<Aluno> BuscarPorNome(string nome)
-        {
-            try
-            {
-                return alunoDAL.BuscarPorNome(nome);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar o aluno por nome.", ex);
-            }
+            return new AlunoDAL().BuscarPorId(id);
         }
 
         public void Alterar(Aluno aluno)
         {
-            try
-            {
-                alunoDAL.Alterar(aluno);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar alterar o aluno.", ex);
-            }
+            new AlunoDAL().Alterar(aluno);
         }
 
         public void Excluir(int id)
         {
-            try
-            {
-                alunoDAL.Excluir(id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar excluir o aluno.", ex);
-            }
+            new AlunoDAL().Excluir(id);
         }
     }
 }

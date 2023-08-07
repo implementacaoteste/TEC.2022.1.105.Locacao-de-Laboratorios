@@ -1,76 +1,34 @@
 ﻿using DAL;
 using Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
     public class GrupoUsuarioBLL
     {
-        private GrupoUsuarioDAL grupoUsuarioDAL;
-
-        public GrupoUsuarioBLL()
-        {
-            grupoUsuarioDAL = new GrupoUsuarioDAL();
-        }
         public void Inserir(GrupoUsuario grupoUsuario)
         {
-            try
-            {
-                grupoUsuarioDAL.Inserir(grupoUsuario);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar inserir o grupo de usuário.", ex);
-            }
-        }
-        public List<GrupoUsuario> BuscarTodos()
-        {
-            try
-            {
-                return grupoUsuarioDAL.BuscarTodos();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar todos os grupos de usuário.", ex);
-            }
+            new GrupoUsuarioDAL().Inserir(grupoUsuario);
         }
 
-        public List<GrupoUsuario> BuscarPorId(int id)
+        public List<GrupoUsuario> BuscarTodos()
         {
-            try
-            {
-                return grupoUsuarioDAL.BuscarPorId(id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar o grupo de usuário por ID.", ex);
-            }
+            return new GrupoUsuarioDAL().BuscarTodos();
         }
+
+        public GrupoUsuario BuscarPorId(int id)
+        {
+            return new GrupoUsuarioDAL().BuscarPorId(id);
+        }
+
         public void Alterar(GrupoUsuario grupoUsuario)
         {
-            try
-            {
-                grupoUsuarioDAL.Alterar(grupoUsuario);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar alterar o grupo de usuário.", ex);
-            }
+            new GrupoUsuarioDAL().Alterar(grupoUsuario);
         }
+
         public void Excluir(int id)
         {
-            try
-            {
-                grupoUsuarioDAL.Excluir(id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar excluir o grupo de usuário.", ex);
-            }
+            new GrupoUsuarioDAL().Excluir(id);
         }
     }
 }

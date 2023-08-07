@@ -6,25 +6,29 @@ namespace BLL
 {
     public class SalaBLL
     {
-        public void Inserir(Sala _sala)
+        public void Inserir(Sala sala)
         {
-            new SalaDAL().Inserir(_sala);
+            new SalaDAL().Inserir(sala);
         }
+
         public List<Sala> BuscarTodos()
         {
             return new SalaDAL().BuscarTodos();
         }
-        public Sala BuscarPorId(int _id)
+
+        public Sala BuscarPorId(int id)
         {
-            return new SalaDAL().BuscarPorId(_id);
+            return new SalaDAL().BuscarPorId(id);
         }
-        public void Alterar(Sala _sala)
+
+        public void Alterar(Sala sala)
         {
-            new SalaDAL().Alterar(_sala);
+            new SalaDAL().Alterar(sala);
         }
-        public void Excluir(int _id)
+
+        public void Excluir(int id)
         {
-            new SalaDAL().Excluir(_id);
+            new SalaDAL().Excluir(id);
         }
     }
 }

@@ -109,19 +109,20 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<GrupoUsuario> BuscarPorId(int _id)
+        public GrupoUsuario BuscarPorId(int _id)
         {
-            List<GrupoUsuario> grupoUsuarios = new List<GrupoUsuario>();
-            GrupoUsuario grupoUsuario;
+            SqlConnection cn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            GrupoUsuario grupoUsuario = new GrupoUsuario();
 
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
+
             {
-                SqlCommand cmd = new SqlCommand();
+                cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, NomeGrupo FROM GrupoUsuario WHERE Id LIKE @Id";
-                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = @"SELECT Id, NomeGrupo FROM GrupoUsuario WHERE Id = @Id";
                 cmd.Parameters.AddWithValue("@Id", _id);
+                cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -130,15 +131,16 @@ namespace DAL
                     {
                         grupoUsuario = new GrupoUsuario();
                         grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
-                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
-                        grupoUsuarios.Add(grupoUsuario);
+                        grupoUsuario.NomeGrupo = rd["GrupoUsuario"].ToString();
+
                     }
                 }
-                return grupoUsuarios;
+                return grupoUsuario;
+
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar grupos de usuários pr Id no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar um Grupo por id no Banco de dados: " + ex.Message);
             }
             finally
             {

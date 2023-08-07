@@ -1,89 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using DAL;
+﻿using DAL;
 using Models;
+using System.Collections.Generic;
 
 namespace BLL
 {
     public class DisciplinaBLL
     {
-        private DisciplinaDAL disciplinaDAL;
-
-        public DisciplinaBLL()
+        public void Inserir(Disciplina disciplina)
         {
-            disciplinaDAL = new DisciplinaDAL();
-        }
-
-        public void Inserir(Disciplina _disciplina)
-        {
-            try
-            {
-                disciplinaDAL.Inserir(_disciplina);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar inserir a disciplina.", ex);
-            }
+            new DisciplinaDAL().Inserir(disciplina);
         }
 
         public List<Disciplina> BuscarTodos()
         {
-            try
-            {
-                return disciplinaDAL.BuscarTodos();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar todas as disciplinas.", ex);
-            }
+            return new DisciplinaDAL().BuscarTodos();
         }
 
-        public Disciplina BuscarPorId(int _id)
+        public Disciplina BuscarPorId(int id)
         {
-            try
-            {
-                return disciplinaDAL.BuscarPorId(_id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar a disciplina por ID.", ex);
-            }
+            return new DisciplinaDAL().BuscarPorId(id);
         }
 
-        public List<Disciplina> BuscarPorNome(string _nome)
+        public void Alterar(Disciplina disciplina)
         {
-            try
-            {
-                return new DisciplinaDAL().BuscarPorNome(_nome);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar a disciplina por nome.", ex);
-            }
+            new DisciplinaDAL().Alterar(disciplina);
         }
 
-        public void Alterar(Disciplina _disciplina)
+        public void Excluir(int id)
         {
-            try
-            {
-                disciplinaDAL.Alterar(_disciplina);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar alterar a disciplina.", ex);
-            }
-        }
-
-        public void Excluir(int _id)
-        {
-            try
-            {
-                disciplinaDAL.Excluir(_id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar excluir a disciplina.", ex);
-            }
+            new DisciplinaDAL().Excluir(id);
         }
     }
 }

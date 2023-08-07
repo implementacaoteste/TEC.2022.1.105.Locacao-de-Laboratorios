@@ -6,29 +6,29 @@ namespace BLL
 {
     public class PermissaoBLL
     {
-        public void Inserir(Permissao _permissao)
+        public void Inserir(Permissao permissao)
         {
-            new PermissaoDAL().Inserir(_permissao);
+            new PermissaoDAL().Inserir(permissao);
         }
+
         public List<Permissao> BuscarTodos()
         {
             return new PermissaoDAL().BuscarTodos();
         }
-        public List<Permissao> BuscarPorDescricao(string _descricao)
+        public Permissao BuscarPorId(int id)
         {
-            return new PermissaoDAL().BuscarPorDescricao(_descricao);
+            return new PermissaoDAL().BuscarPorId(id);
         }
-        public List<Permissao> BuscarPorId(int _id)
+
+        public void Alterar(Permissao permissao)
         {
-            return new PermissaoDAL().BuscarPorId(_id);
+            new PermissaoDAL().Alterar(permissao);
         }
-        public void Alterar(Permissao _permissao)
+
+        public void Excluir(int id)
         {
-            new PermissaoDAL().Alterar(_permissao);
-        }
-        public void Excluir(int _id)
-        {
-            new PermissaoDAL().Excluir(_id);
+            new PermissaoDAL().Excluir(id);
         }
     }
 }
+

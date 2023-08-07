@@ -105,43 +105,41 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Permissao> BuscarPorId(int _id)
+        public Permissao BuscarPorId(int _id)
         {
-            List<Permissao> permissoes = new List<Permissao>();
-            Permissao permissao;
+            Permissao permissao = new Permissao();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, NomeGrupo FROM GrupoUsuario WHERE Id LIKE @Id";
+                cmd.CommandText = "SELECT Id, Descricao FROM Permissao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
                 cn.Open();
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    while (rd.Read())
+                    if (rd.Read())
                     {
                         permissao = new Permissao();
                         permissao.Id = Convert.ToInt32(rd["Id"]);
                         permissao.Descricao = rd["Descricao"].ToString();
-                        permissoes.Add(permissao);
                     }
                 }
-                return permissoes;
+                return permissao;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar permissoes por Id no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar permissão por Id no banco de dados.", ex);
             }
             finally
             {
                 cn.Close();
             }
         }
-        internal List<Permissao> BuscarPorIdGrupo(int _idGrupoUsuario)
+        public List<Permissao> BuscarPorIdGrupo(int _idGrupoUsuario)
         {
             List<Permissao> permissoes = new List<Permissao>();
             Permissao permissao;

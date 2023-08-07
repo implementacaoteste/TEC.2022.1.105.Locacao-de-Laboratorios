@@ -41,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlunoBLL.cs" />
     <Compile Include="CursoBLL.cs" />
+    <Compile Include="DisciplinaBLL.cs" />
     <Compile Include="GrupoUsuarioBLL.cs" />
+    <Compile Include="PermissaoBLL.cs" />
     <Compile Include="PredioBLL.cs" />
     <Compile Include="ReservaBLL.cs" />
+    <Compile Include="SaidasAntecipadasBLL.cs" />
+    <Compile Include="SalaBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

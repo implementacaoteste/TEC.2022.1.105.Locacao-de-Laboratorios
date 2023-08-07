@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using DAL;
+﻿using DAL;
 using Models;
+using System.Collections.Generic;
 
 namespace BLL
 {
@@ -14,24 +13,22 @@ namespace BLL
 
         public List<SaidasAntecipadas> BuscarTodos()
         {
-           return new SaidasAntecipadasDAL().BuscarTodos();
+            return new SaidasAntecipadasDAL().BuscarTodos();
         }
 
-        public SaidasAntecipadas BuscarPorId(int _id)
+        public SaidasAntecipadas BuscarPorId(int id)
         {
-            return new SaidasAntecipadasDAL().BuscarPorId(_id);
+            return new SaidasAntecipadasDAL().BuscarPorId(id);
         }
 
-        public void Alterar(SaidasAntecipadas _saidasAntecipadas)
+        public void Alterar(SaidasAntecipadas saidasAntecipadas)
         {
-            new SaidasAntecipadasDAL().Alterar(_saidasAntecipadas);
+            new SaidasAntecipadasDAL().Alterar(saidasAntecipadas);
         }
 
-        public void Excluir(int _id)
+        public void Excluir(int id)
         {
-            new SaidasAntecipadasDAL().Excluir(_id);
+            new SaidasAntecipadasDAL().Excluir(id);
         }
     }
 }
-
-
