@@ -14,11 +14,12 @@ namespace UILGerenReservasLab
 {
     public partial class FormCadastroAluno : Form
     {
-        public FormCadastroAluno()
+        private int id;
+        public FormCadastroAluno(int _id = 0)
         {
             InitializeComponent();
+            id = _id;
         }
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
