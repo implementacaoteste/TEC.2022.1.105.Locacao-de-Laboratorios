@@ -13,29 +13,29 @@ namespace BLL
         {
             usuarioDAL = new UsuarioDAL();
         }
-        public void Inserir(Usuario usuario)
+        public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
-            usuarioDAL.Inserir(usuario);
+            usuarioDAL.Inserir(_usuario);
         }
-        public Usuario BuscarPorId(int id)
+        public Usuario BuscarPorId(int _id)
         {
-            return usuarioDAL.BuscarPorId(id);
+            return usuarioDAL.BuscarPorId(_id);
         }
-        public Usuario BuscarPorNomeUsuario(string nomeUsuario)
+        public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
-            return usuarioDAL.BuscarPorNomeUsuario(nomeUsuario);
+            return usuarioDAL.BuscarPorNomeUsuario(_nomeUsuario);
         }
         public List<Usuario> BuscarTodos()
         {
             return usuarioDAL.BuscarTodos();
         }
-        public void Alterar(Usuario usuario)
+        public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
         {
-            usuarioDAL.Alterar(usuario);
+            usuarioDAL.Alterar(_usuario);
         }
-        public void Excluir(int id)
+        public void Excluir(int _id)
         {
-            usuarioDAL.Excluir(id);
+            usuarioDAL.Excluir(_id);
         }
         private void ValidarDados(Usuario _usuario, string _confirmacaoDeSenha)
         {
