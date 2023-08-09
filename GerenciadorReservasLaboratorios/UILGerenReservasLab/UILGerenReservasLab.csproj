@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="FormBuscarAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,18 +59,59 @@
     <Compile Include="FormBuscarPorDiciplina.Designer.cs">
       <DependentUpon>FormBuscarPorDiciplina.cs</DependentUpon>
     </Compile>
+
     <Compile Include="FormCadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCadastroAluno.Designer.cs">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBuscarGrupoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarGrupoUsuario.designer.cs">
+      <DependentUpon>FormBuscarGrupoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarUsuario.designer.cs">
+      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroGrupoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroGrupoUsuario.designer.cs">
+      <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
+    </Compile>
+
     <Compile Include="FormCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCadastroUsuario.Designer.cs">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="FormCadastroPredio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroPredio.Designer.cs">
+      <DependentUpon>FormCadastroPredio.cs</DependentUpon>
+    </Compile>
+
+    <Compile Include="FormConsultaGrupoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaGrupoUsuario.designer.cs">
+      <DependentUpon>FormConsultaGrupoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaPermissao.designer.cs">
+      <DependentUpon>FormConsultaPermissao.cs</DependentUpon>
+    </Compile>
+
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,17 +120,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <EmbeddedResource Include="FormBuscarAluno.resx">
       <DependentUpon>FormBuscarAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarPorDiciplina.resx">
       <DependentUpon>FormBuscarPorDiciplina.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="FormCadastroAluno.resx">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroPredio.resx">
+      <DependentUpon>FormCadastroPredio.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <Compile Include="TratarErro.cs" />
+    <EmbeddedResource Include="FormBuscarGrupoUsuario.resx">
+      <DependentUpon>FormBuscarGrupoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarUsuario.resx">
+      <DependentUpon>FormBuscarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroGrupoUsuario.resx">
+      <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    
     <EmbeddedResource Include="FormCadastroUsuario.resx">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaGrupoUsuario.resx">
+      <DependentUpon>FormConsultaGrupoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaPermissao.resx">
+      <DependentUpon>FormConsultaPermissao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

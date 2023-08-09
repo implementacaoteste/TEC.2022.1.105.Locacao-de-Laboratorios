@@ -10,21 +10,22 @@ namespace BLL
         {
             new PermissaoDAL().Inserir(permissao);
         }
-
         public List<Permissao> BuscarTodos()
         {
             return new PermissaoDAL().BuscarTodos();
+        }
+        public List<Permissao> BuscarPorDescricao(string _descricao)
+        {
+            return new PermissaoDAL().BuscarPorDescricao(_descricao);
         }
         public Permissao BuscarPorId(int id)
         {
             return new PermissaoDAL().BuscarPorId(id);
         }
-
         public void Alterar(Permissao permissao)
         {
             new PermissaoDAL().Alterar(permissao);
         }
-
         public void Excluir(int id)
         {
             new PermissaoDAL().Excluir(id);
