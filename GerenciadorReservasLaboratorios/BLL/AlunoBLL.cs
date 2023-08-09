@@ -20,6 +20,14 @@ namespace BLL
         {
             return new AlunoDAL().BuscarPorId(id);
         }
+        public List<Aluno> BuscarPorNome(string _nome)
+        {
+            return new AlunoDAL().BuscarPorNome( _nome);
+        }
+        public Aluno BuscarPorMatricula(string _matricula )
+        {
+            return new AlunoDAL().BuscarPorMatricula(_matricula);
+        }
 
         public void Alterar(Aluno aluno)
         {
