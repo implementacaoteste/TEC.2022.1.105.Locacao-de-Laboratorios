@@ -75,6 +75,9 @@
     <EmbeddedResource Include="FormCadastroAluno.resx">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroPredio.resx">
+      <DependentUpon>FormCadastroPredio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroUsuario.resx">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
