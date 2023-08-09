@@ -33,6 +33,7 @@ namespace UILGerenReservasLab
             }
             try
             {
+                /*
                 predioBindingSource.EndEdit();
 
                 Predio predio = ((Predio)predioBindingSource.Current, txtNomePredio.Text);
@@ -40,6 +41,7 @@ namespace UILGerenReservasLab
                     new PredioBLL().Inserir(predio);
                 else
                     new PredioBLL().Alterar(predio);
+                */
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
             }
