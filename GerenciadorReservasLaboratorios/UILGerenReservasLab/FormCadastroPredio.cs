@@ -21,38 +21,43 @@ namespace UILGerenReservasLab
             InitializeComponent();
             Id = _id;
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (txtNomePredio.Text.ToString().Trim() == "")
-            {
-                MessageBox.Show("Campo 'Nome Prédio' é obrigatório");
-               
-                txtNomePredio.Focus();
-                return;
-            }
             try
             {
+<<<<<<< Updated upstream
                 /*
+=======
+                Predio predio = (Predio)predioBindingSource.Current;
+
+                // Verificar se o campo "nome do prédio" está preenchido
+                if (string.IsNullOrEmpty(predio.Nome))
+                {
+                    MessageBox.Show("O campo 'Nome do Prédio' é um campo obrigatório.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Abortar a operação de salvar
+                }
+
+>>>>>>> Stashed changes
                 predioBindingSource.EndEdit();
 
-                Predio predio = ((Predio)predioBindingSource.Current, txtNomePredio.Text);
                 if (Id == 0)
-                    new PredioBLL().Inserir(predio);
+                    new PredioBLL().Inserir((Predio)predioBindingSource.Current);
                 else
+<<<<<<< Updated upstream
                     new PredioBLL().Alterar(predio);
                 */
+=======
+                    new PredioBLL().Alterar((Predio)predioBindingSource.Current);
+
+>>>>>>> Stashed changes
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
             }
-
         }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             try
