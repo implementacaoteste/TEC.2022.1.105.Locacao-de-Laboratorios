@@ -58,6 +58,12 @@
     <Compile Include="FormBuscarPorDisciplina.Designer.cs">
       <DependentUpon>FormBuscarPorDisciplina.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBuscarSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarSala.Designer.cs">
+      <DependentUpon>FormBuscarSala.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="FormCadastroGrupoUsuario.designer.cs">
       <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroSala.designer.cs">
+      <DependentUpon>FormCadastroSala.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroUsuario.cs">
       <SubType>Form</SubType>
@@ -120,6 +132,9 @@
     <EmbeddedResource Include="FormBuscarPorDisciplina.resx">
       <DependentUpon>FormBuscarPorDisciplina.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarSala.resx">
+      <DependentUpon>FormBuscarSala.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroAluno.resx">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroGrupoUsuario.resx">
       <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroSala.resx">
+      <DependentUpon>FormCadastroSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroUsuario.resx">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
