@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label lblBuscarPor;
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblBuscarPor = new System.Windows.Forms.Label();
+            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.salaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.salaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscarSala = new System.Windows.Forms.TextBox();
+            lblBuscarPor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salaDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAlterar
             // 
@@ -62,6 +64,7 @@
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnInserir
             // 
@@ -71,6 +74,7 @@
             this.btnInserir.TabIndex = 0;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnExcluir
             // 
@@ -92,31 +96,13 @@
             this.label1.Text = "Buscar Por Sala ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // comboBoxBuscarPor
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(253, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(482, 24);
-            this.textBox1.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(90, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 24);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // lblBuscarPor
-            // 
-            this.lblBuscarPor.AutoSize = true;
-            this.lblBuscarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarPor.Location = new System.Drawing.Point(87, 78);
-            this.lblBuscarPor.Name = "lblBuscarPor";
-            this.lblBuscarPor.Size = new System.Drawing.Size(87, 18);
-            this.lblBuscarPor.TabIndex = 6;
-            this.lblBuscarPor.Text = "Buscar Por:";
+            this.comboBoxBuscarPor.FormattingEnabled = true;
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(90, 102);
+            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 24);
+            this.comboBoxBuscarPor.TabIndex = 5;
             // 
             // salaBindingSource
             // 
@@ -161,15 +147,33 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // lblBuscarPor
+            // 
+            lblBuscarPor.AutoSize = true;
+            lblBuscarPor.Location = new System.Drawing.Point(87, 83);
+            lblBuscarPor.Name = "lblBuscarPor";
+            lblBuscarPor.Size = new System.Drawing.Size(76, 16);
+            lblBuscarPor.TabIndex = 9;
+            lblBuscarPor.Text = "Buscar Por:";
+            // 
+            // txtBuscarSala
+            // 
+            this.txtBuscarSala.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "Nome", true));
+            this.txtBuscarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarSala.Location = new System.Drawing.Point(258, 100);
+            this.txtBuscarSala.Name = "txtBuscarSala";
+            this.txtBuscarSala.Size = new System.Drawing.Size(470, 24);
+            this.txtBuscarSala.TabIndex = 10;
+            // 
             // FormBuscarSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 538);
+            this.Controls.Add(lblBuscarPor);
+            this.Controls.Add(this.txtBuscarSala);
             this.Controls.Add(this.salaDataGridView);
-            this.Controls.Add(this.lblBuscarPor);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnInserir);
@@ -191,12 +195,11 @@
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lblBuscarPor;
+        private System.Windows.Forms.ComboBox comboBoxBuscarPor;
         private System.Windows.Forms.BindingSource salaBindingSource;
         private System.Windows.Forms.DataGridView salaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.TextBox txtBuscarSala;
     }
 }
