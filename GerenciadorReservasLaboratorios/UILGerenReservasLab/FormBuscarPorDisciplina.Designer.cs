@@ -1,6 +1,6 @@
 ﻿namespace UILGerenReservasLab
 {
-    partial class FormBuscarPorDiciplina
+    partial class FormBuscarPorDisciplina
     {
         /// <summary>
         /// Required designer variable.
@@ -47,6 +47,7 @@
             // disciplinaDataGridView
             // 
             this.disciplinaDataGridView.AutoGenerateColumns = false;
+            this.disciplinaDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.disciplinaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.disciplinaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -66,7 +67,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
+            this.dataGridViewTextBoxColumn1.Width = 245;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -74,7 +75,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
+            this.dataGridViewTextBoxColumn2.Width = 245;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -82,7 +83,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "IdCurso";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
+            this.dataGridViewTextBoxColumn3.Width = 245;
             // 
             // disciplinaBindingSource
             // 
@@ -147,7 +148,7 @@
             this.textBox1.Size = new System.Drawing.Size(405, 22);
             this.textBox1.TabIndex = 7;
             // 
-            // FormBuscarPorDiciplina
+            // FormBuscarPorDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,7 +160,8 @@
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.disciplinaDataGridView);
-            this.Name = "FormBuscarPorDiciplina";
+            this.Name = "FormBuscarPorDisciplina";
+            this.ShowIcon = false;
             this.Text = "FormBuscarPorDiciplina";
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).EndInit();

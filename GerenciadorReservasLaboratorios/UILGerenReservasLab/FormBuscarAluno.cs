@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,79 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void buttonBuscar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                alunoBindingSource.DataSource = new AlunoBLL().BuscarTodos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (alunoBindingSource.Count == 0)
+                    throw new Exception("Não existe usuário listado para ser alterado.");
+
+                int id = ((Aluno)alunoBindingSource.Current).Id;
+
+                using (FormCadastroAluno frm = new FormCadastroAluno(id))
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscar_Click(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonInserir_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroAluno frm = new FormCadastroAluno())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
+        }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (alunoBindingSource.Count == 0)
+                    throw new Exception("Não existe usuário listado para ser excluído.");
+
+                if (alunoBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído.");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?",
+                    "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((Aluno)alunoBindingSource.Current).Id;
+                new UsuarioBLL().Excluir(id);
+                alunoBindingSource.RemoveCurrent();
+
+                MessageBox.Show("Registro excluído com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
