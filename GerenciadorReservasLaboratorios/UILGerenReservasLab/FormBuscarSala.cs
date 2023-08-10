@@ -75,7 +75,12 @@ namespace UILGerenReservasLab
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-           
+            using (FormCadastroSala frm = new FormCadastroSala())
+            {
+                frm.ShowDialog();
+            }
+            btnBuscar_Click(null, null);
+
         }
     }
 }
