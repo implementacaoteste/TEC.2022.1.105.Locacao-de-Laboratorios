@@ -54,7 +54,23 @@ namespace UILGerenReservasLab
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
+                if (salaBindingSource.Count == 0)
+                    throw new Exception("Não existe Sala listada para ser alterada.");
+
+                int id = ((Sala)salaBindingSource.Current).Id;
+
+                using (FormCadastroSala frm = new FormCadastroSala(id))
+                {
+                    frm.ShowDialog();
+                }
+                btnBuscar_Click(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
