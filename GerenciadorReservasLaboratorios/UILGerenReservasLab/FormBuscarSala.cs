@@ -82,5 +82,34 @@ namespace UILGerenReservasLab
             btnBuscar_Click(null, null);
 
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (salaBindingSource.Count == 0)
+                    throw new Exception("Não existe Sala listada para ser excluída.");
+
+                if (salaBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído.");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?",
+                    "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((Sala)salaBindingSource.Current).Id;
+                new UsuarioBLL().Excluir(id);
+                salaBindingSource.RemoveCurrent();
+
+                MessageBox.Show("Registro excluído com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
