@@ -46,8 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-
     <Compile Include="FormBuscarAluno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,19 +58,12 @@
     <Compile Include="FormBuscarPorDiciplina.Designer.cs">
       <DependentUpon>FormBuscarPorDiciplina.cs</DependentUpon>
     </Compile>
-
-=======
->>>>>>> Stashed changes
     <Compile Include="FormCadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCadastroAluno.Designer.cs">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
-<<<<<<< Updated upstream
     </Compile>
-=======
-	</Compile>
->>>>>>> Stashed changes
     <Compile Include="FormBuscarGrupoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,21 +89,12 @@
     <Compile Include="FormCadastroUsuario.Designer.cs">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     <Compile Include="FormCadastroPredio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCadastroPredio.Designer.cs">
       <DependentUpon>FormCadastroPredio.cs</DependentUpon>
-<<<<<<< Updated upstream
     </Compile>
-
-=======
-	</Compile>
->>>>>>> Stashed changes
     <Compile Include="FormConsultaGrupoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,28 +116,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< Updated upstream
-
-    <EmbeddedResource Include="FormBuscarAluno.resx">
+<EmbeddedResource Include="FormBuscarAluno.resx">
       <DependentUpon>FormBuscarAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarPorDiciplina.resx">
       <DependentUpon>FormBuscarPorDiciplina.cs</DependentUpon>
     </EmbeddedResource>
-
-=======
->>>>>>> Stashed changes
     <EmbeddedResource Include="FormCadastroAluno.resx">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroPredio.resx">
       <DependentUpon>FormCadastroPredio.cs</DependentUpon>
-<<<<<<< Updated upstream
     </EmbeddedResource>
-
-=======
-	</EmbeddedResource>
->>>>>>> Stashed changes
     <Compile Include="TratarErro.cs" />
     <EmbeddedResource Include="FormBuscarGrupoUsuario.resx">
       <DependentUpon>FormBuscarGrupoUsuario.cs</DependentUpon>
