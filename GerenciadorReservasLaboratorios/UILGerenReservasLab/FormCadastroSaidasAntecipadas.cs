@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace UILGerenReservasLab
 {
-    public partial class FormBuscarPorDisciplina : Form
+    public partial class FormCadastroSaidasAntecipadas : Form
     {
-        public FormBuscarPorDisciplina()
+        public FormCadastroSaidasAntecipadas()
         {
             InitializeComponent();
-        }
-
-        private void buttonBuscar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

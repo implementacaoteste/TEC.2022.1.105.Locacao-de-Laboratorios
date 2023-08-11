@@ -52,11 +52,11 @@
     <Compile Include="FormBuscarAluno.Designer.cs">
       <DependentUpon>FormBuscarAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBuscarPorDisciplina.cs">
+    <Compile Include="FormBuscarDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBuscarPorDisciplina.Designer.cs">
-      <DependentUpon>FormBuscarPorDisciplina.cs</DependentUpon>
+    <Compile Include="FormBuscarDisciplina.Designer.cs">
+      <DependentUpon>FormBuscarDisciplina.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBuscarSala.cs">
       <SubType>Form</SubType>
@@ -87,6 +87,18 @@
     </Compile>
     <Compile Include="FormCadastroGrupoUsuario.designer.cs">
       <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroReservas.Designer.cs">
+      <DependentUpon>FormCadastroReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroSaidasAntecipadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroSaidasAntecipadas.Designer.cs">
+      <DependentUpon>FormCadastroSaidasAntecipadas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroSala.cs">
       <SubType>Form</SubType>
@@ -129,8 +141,8 @@
     <EmbeddedResource Include="FormBuscarAluno.resx">
       <DependentUpon>FormBuscarAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBuscarPorDisciplina.resx">
-      <DependentUpon>FormBuscarPorDisciplina.cs</DependentUpon>
+    <EmbeddedResource Include="FormBuscarDisciplina.resx">
+      <DependentUpon>FormBuscarDisciplina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarSala.resx">
       <DependentUpon>FormBuscarSala.cs</DependentUpon>
@@ -150,6 +162,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroGrupoUsuario.resx">
       <DependentUpon>FormCadastroGrupoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroReservas.resx">
+      <DependentUpon>FormCadastroReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroSaidasAntecipadas.resx">
+      <DependentUpon>FormCadastroSaidasAntecipadas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroSala.resx">
       <DependentUpon>FormCadastroSala.cs</DependentUpon>

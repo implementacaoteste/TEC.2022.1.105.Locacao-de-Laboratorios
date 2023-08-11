@@ -11,7 +11,6 @@ namespace UILGerenReservasLab
         {
             InitializeComponent();
         }
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -23,7 +22,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonExcluirUsuario_Click(object sender, EventArgs e)
         {
             try
@@ -52,7 +50,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonAdicionarUsuario_Click(object sender, EventArgs e)
         {
             using (FormCadastroUsuario frm = new FormCadastroUsuario())
@@ -61,7 +58,6 @@ namespace UILGerenReservasLab
             }
             buttonBuscar_Click(null, null);
         }
-
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
             try
@@ -82,7 +78,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonAdicionarGrupoUsuario_Click(object sender, EventArgs e)
         {
             try
@@ -104,7 +99,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonExcluirGrupoUsuario_Click(object sender, EventArgs e)
         {
             try
