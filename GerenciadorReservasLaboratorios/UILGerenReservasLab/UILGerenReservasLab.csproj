@@ -58,11 +58,17 @@
     <Compile Include="FormBuscarCurso.Designer.cs">
       <DependentUpon>FormBuscarCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBuscarPorDisciplina.cs">
+    <Compile Include="FormBuscarDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBuscarPorDisciplina.Designer.cs">
-      <DependentUpon>FormBuscarPorDisciplina.cs</DependentUpon>
+    <Compile Include="FormBuscarDisciplina.Designer.cs">
+      <DependentUpon>FormBuscarDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarPermissao.designer.cs">
+      <DependentUpon>FormBuscarPermissao.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBuscarSala.cs">
       <SubType>Form</SubType>
@@ -138,8 +144,11 @@
     <EmbeddedResource Include="FormBuscarCurso.resx">
       <DependentUpon>FormBuscarCurso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBuscarPorDisciplina.resx">
-      <DependentUpon>FormBuscarPorDisciplina.cs</DependentUpon>
+    <EmbeddedResource Include="FormBuscarDisciplina.resx">
+      <DependentUpon>FormBuscarDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarPermissao.resx">
+      <DependentUpon>FormBuscarPermissao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarSala.resx">
       <DependentUpon>FormBuscarSala.cs</DependentUpon>

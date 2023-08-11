@@ -1,6 +1,6 @@
 ﻿namespace UILGerenReservasLab
 {
-    partial class FormBuscarPorDisciplina
+    partial class FormBuscarDisciplina
     {
         /// <summary>
         /// Required designer variable.

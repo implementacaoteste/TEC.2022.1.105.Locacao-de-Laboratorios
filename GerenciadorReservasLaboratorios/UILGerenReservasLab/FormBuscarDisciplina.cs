@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UILGerenReservasLab
 {
-    public partial class FormBuscarPorDisciplina : Form
+    public partial class FormBuscarDisciplina : Form
     {
-        public FormBuscarPorDisciplina()
+        public FormBuscarDisciplina()
         {
             InitializeComponent();
         }
