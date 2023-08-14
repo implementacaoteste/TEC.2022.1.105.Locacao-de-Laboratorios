@@ -72,7 +72,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<GrupoUsuario> BuscarPorNomeGrupo(string _nomeGrupo)
+        public List<GrupoUsuario> BuscarGrupoPorNome(string _nomeGrupo)
         {
             List<GrupoUsuario> grupoUsuarios = new List<GrupoUsuario>();
             GrupoUsuario grupoUsuario;
@@ -94,7 +94,7 @@ namespace DAL
                         grupoUsuario = new GrupoUsuario();
                         grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
                         grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
-                        grupoUsuario.Permissoes = new PermissaoDAL().BuscarPorIdGrupo(grupoUsuario.Id);
+                        grupoUsuario.Permissoes = new PermissaoDAL().BuscarPermissoesPorIdGrupo(grupoUsuario.Id);
                         grupoUsuarios.Add(grupoUsuario);
                     }
                 }
@@ -109,7 +109,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public GrupoUsuario BuscarPorId(int _id)
+        public GrupoUsuario BuscarGrupoPorId(int _id)
         {
             SqlConnection cn = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
