@@ -64,24 +64,32 @@
             // 
             // btnSalvarSala
             // 
-            this.btnSalvarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarSala.Location = new System.Drawing.Point(501, 374);
+            this.btnSalvarSala.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalvarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarSala.Image = global::UILGerenReservasLab.Properties.Resources.salve_;
+            this.btnSalvarSala.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvarSala.Location = new System.Drawing.Point(467, 374);
             this.btnSalvarSala.Name = "btnSalvarSala";
-            this.btnSalvarSala.Size = new System.Drawing.Size(86, 33);
+            this.btnSalvarSala.Size = new System.Drawing.Size(114, 42);
             this.btnSalvarSala.TabIndex = 3;
             this.btnSalvarSala.Text = "&Salvar";
-            this.btnSalvarSala.UseVisualStyleBackColor = true;
+            this.btnSalvarSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvarSala.UseVisualStyleBackColor = false;
             this.btnSalvarSala.Click += new System.EventHandler(this.btnSalvarSala_Click);
             // 
             // btnCancelarSala
             // 
-            this.btnCancelarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarSala.Location = new System.Drawing.Point(628, 374);
+            this.btnCancelarSala.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarSala.Image = global::UILGerenReservasLab.Properties.Resources.cancelar;
+            this.btnCancelarSala.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelarSala.Location = new System.Drawing.Point(612, 374);
             this.btnCancelarSala.Name = "btnCancelarSala";
-            this.btnCancelarSala.Size = new System.Drawing.Size(75, 33);
+            this.btnCancelarSala.Size = new System.Drawing.Size(123, 42);
             this.btnCancelarSala.TabIndex = 3;
             this.btnCancelarSala.Text = "&Cancelar";
-            this.btnCancelarSala.UseVisualStyleBackColor = true;
+            this.btnCancelarSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarSala.UseVisualStyleBackColor = false;
             this.btnCancelarSala.Click += new System.EventHandler(this.btnCancelarSala_Click);
             // 
             // label1
@@ -105,6 +113,7 @@
             this.Controls.Add(lblNomeSala);
             this.Controls.Add(this.txtNomeSala);
             this.Name = "FormCadastroSala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroSala";
             ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).EndInit();
             this.ResumeLayout(false);

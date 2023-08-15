@@ -40,6 +40,21 @@ namespace UILGerenReservasLab
                 throw;
             }
 
+
+        }
+
+        private void btnCancelarCurso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -32,22 +32,18 @@
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label matriculaLabel;
             System.Windows.Forms.Label emailLabel;
-            this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.matriculaTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nomeLabel = new System.Windows.Forms.Label();
             matriculaLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // alunoBindingSource
-            // 
-            this.alunoBindingSource.DataSource = typeof(Models.Aluno);
             // 
             // nomeLabel
             // 
@@ -58,14 +54,6 @@
             nomeLabel.TabIndex = 1;
             nomeLabel.Text = "Nome:";
             // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alunoBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(121, 152);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(578, 22);
-            this.nomeTextBox.TabIndex = 2;
-            // 
             // matriculaLabel
             // 
             matriculaLabel.AutoSize = true;
@@ -75,14 +63,6 @@
             matriculaLabel.TabIndex = 3;
             matriculaLabel.Text = "Matricula:";
             // 
-            // matriculaTextBox
-            // 
-            this.matriculaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alunoBindingSource, "Matricula", true));
-            this.matriculaTextBox.Location = new System.Drawing.Point(121, 245);
-            this.matriculaTextBox.Name = "matriculaTextBox";
-            this.matriculaTextBox.Size = new System.Drawing.Size(222, 22);
-            this.matriculaTextBox.TabIndex = 4;
-            // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
@@ -91,6 +71,22 @@
             emailLabel.Size = new System.Drawing.Size(44, 16);
             emailLabel.TabIndex = 5;
             emailLabel.Text = "Email:";
+            // 
+            // nomeTextBox
+            // 
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alunoBindingSource, "Nome", true));
+            this.nomeTextBox.Location = new System.Drawing.Point(121, 152);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(578, 22);
+            this.nomeTextBox.TabIndex = 2;
+            // 
+            // matriculaTextBox
+            // 
+            this.matriculaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alunoBindingSource, "Matricula", true));
+            this.matriculaTextBox.Location = new System.Drawing.Point(121, 245);
+            this.matriculaTextBox.Name = "matriculaTextBox";
+            this.matriculaTextBox.Size = new System.Drawing.Size(222, 22);
+            this.matriculaTextBox.TabIndex = 4;
             // 
             // emailTextBox
             // 
@@ -131,6 +127,10 @@
             this.label1.Text = "Cadastro de Aluno";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // alunoBindingSource
+            // 
+            this.alunoBindingSource.DataSource = typeof(Models.Aluno);
+            // 
             // FormCadastroAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,6 +146,7 @@
             this.Controls.Add(nomeLabel);
             this.Controls.Add(this.nomeTextBox);
             this.Name = "FormCadastroAluno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroAluno";
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
             this.ResumeLayout(false);
