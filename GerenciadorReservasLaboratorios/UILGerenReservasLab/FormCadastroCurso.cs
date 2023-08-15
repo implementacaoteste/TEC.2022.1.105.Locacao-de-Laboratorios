@@ -23,7 +23,22 @@ namespace UILGerenReservasLab
 
         private void btnSalvarCurso_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
+                Curso curso = (Curso)cursoBindingSource.Current;
+                cursoBindingSource.EndEdit();
+                if (Id == 0)
+                    new CursoBLL().Inserir(curso);
+                else
+                    new CursoBLL().Alterar(curso);
+                MessageBox.Show("Registro salvo com sucesso!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
 
         }
     }
