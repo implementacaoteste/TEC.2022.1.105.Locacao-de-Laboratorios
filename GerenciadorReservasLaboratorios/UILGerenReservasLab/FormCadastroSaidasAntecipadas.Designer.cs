@@ -54,10 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // saidasAntecipadasBindingSource
-            // 
-            this.saidasAntecipadasBindingSource.DataSource = typeof(Models.SaidasAntecipadas);
-            // 
             // dataHoraSaidaLabel
             // 
             dataHoraSaidaLabel.AutoSize = true;
@@ -66,14 +62,6 @@
             dataHoraSaidaLabel.Size = new System.Drawing.Size(136, 16);
             dataHoraSaidaLabel.TabIndex = 1;
             dataHoraSaidaLabel.Text = "Data e Hora da saida";
-            // 
-            // dataHoraSaidaDateTimePicker
-            // 
-            this.dataHoraSaidaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.saidasAntecipadasBindingSource, "DataHoraSaida", true));
-            this.dataHoraSaidaDateTimePicker.Location = new System.Drawing.Point(166, 233);
-            this.dataHoraSaidaDateTimePicker.Name = "dataHoraSaidaDateTimePicker";
-            this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(371, 22);
-            this.dataHoraSaidaDateTimePicker.TabIndex = 2;
             // 
             // idAlunoLabel
             // 
@@ -84,14 +72,6 @@
             idAlunoLabel.TabIndex = 3;
             idAlunoLabel.Text = "Aluno ID";
             // 
-            // idAlunoTextBox
-            // 
-            this.idAlunoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdAluno", true));
-            this.idAlunoTextBox.Location = new System.Drawing.Point(12, 117);
-            this.idAlunoTextBox.Name = "idAlunoTextBox";
-            this.idAlunoTextBox.Size = new System.Drawing.Size(107, 22);
-            this.idAlunoTextBox.TabIndex = 4;
-            // 
             // idCoordenacaoLabel
             // 
             idCoordenacaoLabel.AutoSize = true;
@@ -100,14 +80,6 @@
             idCoordenacaoLabel.Size = new System.Drawing.Size(106, 16);
             idCoordenacaoLabel.TabIndex = 5;
             idCoordenacaoLabel.Text = "Coordenacao ID";
-            // 
-            // idCoordenacaoTextBox
-            // 
-            this.idCoordenacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdCoordenacao", true));
-            this.idCoordenacaoTextBox.Location = new System.Drawing.Point(12, 182);
-            this.idCoordenacaoTextBox.Name = "idCoordenacaoTextBox";
-            this.idCoordenacaoTextBox.Size = new System.Drawing.Size(107, 22);
-            this.idCoordenacaoTextBox.TabIndex = 6;
             // 
             // idProfessorLabel
             // 
@@ -118,14 +90,6 @@
             idProfessorLabel.TabIndex = 7;
             idProfessorLabel.Text = "Professor ID";
             // 
-            // idProfessorTextBox
-            // 
-            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdProfessor", true));
-            this.idProfessorTextBox.Location = new System.Drawing.Point(12, 233);
-            this.idProfessorTextBox.Name = "idProfessorTextBox";
-            this.idProfessorTextBox.Size = new System.Drawing.Size(107, 22);
-            this.idProfessorTextBox.TabIndex = 8;
-            // 
             // motivoLabel
             // 
             motivoLabel.AutoSize = true;
@@ -135,14 +99,6 @@
             motivoLabel.TabIndex = 9;
             motivoLabel.Text = "Motivo:";
             // 
-            // motivoTextBox
-            // 
-            this.motivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "Motivo", true));
-            this.motivoTextBox.Location = new System.Drawing.Point(166, 117);
-            this.motivoTextBox.Name = "motivoTextBox";
-            this.motivoTextBox.Size = new System.Drawing.Size(622, 22);
-            this.motivoTextBox.TabIndex = 10;
-            // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
@@ -151,6 +107,50 @@
             statusLabel.Size = new System.Drawing.Size(47, 16);
             statusLabel.TabIndex = 11;
             statusLabel.Text = "Status:";
+            // 
+            // saidasAntecipadasBindingSource
+            // 
+            this.saidasAntecipadasBindingSource.DataSource = typeof(Models.SaidasAntecipadas);
+            // 
+            // dataHoraSaidaDateTimePicker
+            // 
+            this.dataHoraSaidaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.saidasAntecipadasBindingSource, "DataHoraSaida", true));
+            this.dataHoraSaidaDateTimePicker.Location = new System.Drawing.Point(166, 233);
+            this.dataHoraSaidaDateTimePicker.Name = "dataHoraSaidaDateTimePicker";
+            this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(371, 22);
+            this.dataHoraSaidaDateTimePicker.TabIndex = 2;
+            // 
+            // idAlunoTextBox
+            // 
+            this.idAlunoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdAluno", true));
+            this.idAlunoTextBox.Location = new System.Drawing.Point(12, 117);
+            this.idAlunoTextBox.Name = "idAlunoTextBox";
+            this.idAlunoTextBox.Size = new System.Drawing.Size(107, 22);
+            this.idAlunoTextBox.TabIndex = 4;
+            // 
+            // idCoordenacaoTextBox
+            // 
+            this.idCoordenacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdCoordenacao", true));
+            this.idCoordenacaoTextBox.Location = new System.Drawing.Point(12, 182);
+            this.idCoordenacaoTextBox.Name = "idCoordenacaoTextBox";
+            this.idCoordenacaoTextBox.Size = new System.Drawing.Size(107, 22);
+            this.idCoordenacaoTextBox.TabIndex = 6;
+            // 
+            // idProfessorTextBox
+            // 
+            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdProfessor", true));
+            this.idProfessorTextBox.Location = new System.Drawing.Point(12, 233);
+            this.idProfessorTextBox.Name = "idProfessorTextBox";
+            this.idProfessorTextBox.Size = new System.Drawing.Size(107, 22);
+            this.idProfessorTextBox.TabIndex = 8;
+            // 
+            // motivoTextBox
+            // 
+            this.motivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "Motivo", true));
+            this.motivoTextBox.Location = new System.Drawing.Point(166, 117);
+            this.motivoTextBox.Name = "motivoTextBox";
+            this.motivoTextBox.Size = new System.Drawing.Size(622, 22);
+            this.motivoTextBox.TabIndex = 10;
             // 
             // statusTextBox
             // 
@@ -168,7 +168,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(800, 46);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Gestão de Saídas Antecipadas";
+            this.label2.Text = "Cadastro de Saídas Antecipadas";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonSalvar
@@ -212,7 +212,7 @@
             this.Name = "FormCadastroSaidasAntecipadas";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Cadastro de Saidas Antecipadas";
+            this.Text = "Gestão de Saidas Antecipadas";
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

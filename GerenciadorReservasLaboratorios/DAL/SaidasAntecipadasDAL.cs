@@ -38,7 +38,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<SaidasAntecipadas> BuscarTodos()
         {
             List<SaidasAntecipadas> saidasAntecipadas = new List<SaidasAntecipadas>();
@@ -81,7 +80,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public SaidasAntecipadas BuscarPorId(int id)
         {
             SaidasAntecipadas saidaAntecipada = new SaidasAntecipadas();
@@ -118,7 +116,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Alterar(SaidasAntecipadas saidaAntecipada)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -152,7 +149,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Excluir(int id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
