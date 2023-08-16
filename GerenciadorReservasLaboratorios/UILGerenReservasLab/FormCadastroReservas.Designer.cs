@@ -47,8 +47,8 @@
             this.idSalaTextBox = new System.Windows.Forms.TextBox();
             this.idUsuarioTextBox = new System.Windows.Forms.TextBox();
             this.observacoesTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.dataDevolucaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dataRetiradaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.reservaDataDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -226,24 +226,25 @@
             this.observacoesTextBox.Size = new System.Drawing.Size(909, 22);
             this.observacoesTextBox.TabIndex = 9;
             // 
-            // button1
+            // buttonSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(112, 522);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSalvar.Location = new System.Drawing.Point(112, 522);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvar.TabIndex = 10;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // button2
+            // buttonCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(313, 522);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Location = new System.Drawing.Point(313, 522);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.TabIndex = 11;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // dataDevolucaoDateTimePicker
             // 
@@ -340,8 +341,8 @@
             this.Controls.Add(this.reservaHoraDateTimePicker);
             this.Controls.Add(reservaDataLabel);
             this.Controls.Add(this.reservaDataDateTimePicker);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(observacoesLabel);
             this.Controls.Add(this.observacoesTextBox);
             this.Controls.Add(idUsuarioLabel);
@@ -373,8 +374,8 @@
         private System.Windows.Forms.TextBox idSalaTextBox;
         private System.Windows.Forms.TextBox idUsuarioTextBox;
         private System.Windows.Forms.TextBox observacoesTextBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSalvar;
+        private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.DateTimePicker dataDevolucaoDateTimePicker;
         private System.Windows.Forms.DateTimePicker dataRetiradaDateTimePicker;
         private System.Windows.Forms.DateTimePicker reservaDataDateTimePicker;

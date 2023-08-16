@@ -64,6 +64,12 @@
     <Compile Include="FormBuscarCurso.Designer.cs">
       <DependentUpon>FormBuscarCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBuscarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarReserva.Designer.cs">
+      <DependentUpon>FormBuscarReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarSaidasAntecipadas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     <EmbeddedResource Include="FormBuscarCurso.resx">
       <DependentUpon>FormBuscarCurso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarReserva.resx">
+      <DependentUpon>FormBuscarReserva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarSaidasAntecipadas.resx">
       <DependentUpon>FormBuscarSaidasAntecipadas.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +237,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\Models.Aluno.datasource" />
     <None Include="Properties\DataSources\Models.Constantes.datasource" />
@@ -262,6 +272,12 @@
       <Project>{ab504d47-f9a7-4dd1-9d93-2cd75058855b}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salve-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

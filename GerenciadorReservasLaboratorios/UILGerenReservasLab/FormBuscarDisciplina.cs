@@ -21,5 +21,10 @@ namespace UILGerenReservasLab
         {
 
         }
+
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
