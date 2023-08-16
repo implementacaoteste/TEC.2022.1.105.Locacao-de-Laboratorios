@@ -16,5 +16,19 @@ namespace UILGerenReservasLab
         {
             InitializeComponent();
         }
+        private void idAlunoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            // Abra uma janela de busca de alunos e preencha o campo Aluno ID com o valor selecionado.
+            // Exemplo de código para abrir a janela de busca:
+            FormBuscarAluno frm = new FormBuscarAluno();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                IdAlunoTextBox.Text = frm.AlunoSelecionado.Id.ToString();
+            }
+        }
+        private void idProfessorTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
