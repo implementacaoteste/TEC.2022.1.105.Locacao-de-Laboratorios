@@ -127,6 +127,7 @@
             this.buttonAlterar.TabIndex = 9;
             this.buttonAlterar.Text = "Al&terar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonBuscar
             // 
@@ -148,7 +149,7 @@
             this.textBox1.Size = new System.Drawing.Size(405, 22);
             this.textBox1.TabIndex = 7;
             // 
-            // FormBuscarPorDisciplina
+            // FormBuscarDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,9 +161,9 @@
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.disciplinaDataGridView);
-            this.Name = "FormBuscarPorDisciplina";
+            this.Name = "FormBuscarDisciplina";
             this.ShowIcon = false;
-            this.Text = "FormBuscarPorDiciplina";
+            this.Text = "FormBuscarPorDisciplina";
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).EndInit();
             this.ResumeLayout(false);

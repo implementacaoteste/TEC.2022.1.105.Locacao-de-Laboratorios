@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +14,52 @@ namespace UILGerenReservasLab
 {
     public partial class FormCadastroReservas : Form
     {
-        public FormCadastroReservas()
+        private int id;
+        public FormCadastroReservas(int _id= 0)
         {
             InitializeComponent();
+            id = id;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void FormCadastroReservas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Reserva reserva = (Reserva)reservaBindingSource.Current;
+                reservaBindingSource.EndEdit();
+                if (id == 0)
+                    new ReservaBLL().Inserir(reserva);
+                else
+                    new ReservaBLL().Alterar(reserva);
+                MessageBox.Show("Registro salvo com sucesso!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
