@@ -147,6 +147,46 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<GrupoUsuario> BuscarGrupoPor_IdPermissao(int _idPermissao)
+        {
+            List<GrupoUsuario> grupo_usuarios = new List<GrupoUsuario>();
+            GrupoUsuario grupousuario;
+            SqlConnection cn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cn.ConnectionString = Conexao.StringDeConexao;
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT id_GrupoUsuario, NomeGrupo FROM Permissao P INNER JOIN Permissao_com_Grupo PG ON P.id_Permissao = PG.cod_Permissao INNER JOIN GrupoUsuario GU ON PG.cod_GrupoUsuario = GU.id_GrupoUsuario WHERE P.id_Permissao = @id";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", _idPermissao);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        grupousuario = new GrupoUsuario();
+                        grupousuario.Id = Convert.ToInt32(rd["id_GrupoUsuario"]);
+                        grupousuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        PermissaoDAL permissaoDAL = new PermissaoDAL();
+                        grupousuario.Permissoes = permissaoDAL.BuscarPermissoesPorIdGrupo(grupousuario.Id);
+
+
+                        grupo_usuarios.Add(grupousuario);
+                    }
+                }
+                return grupo_usuarios;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu um erro ao tentar buscar Grupo de Usuarios: " + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public void Alterar(GrupoUsuario _grupoUsuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

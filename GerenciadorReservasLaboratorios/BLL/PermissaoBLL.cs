@@ -1,34 +1,38 @@
 ﻿using DAL;
 using Models;
+using System;
 using System.Collections.Generic;
 
 namespace BLL
 {
     public class PermissaoBLL
     {
-        public void Inserir(Permissao permissao)
+        public void Inserir(string _permissao, int _idPermissao)
         {
-            new PermissaoDAL().Inserir(permissao);
+            PermissaoDAL permissaoDAL = new PermissaoDAL();
+            permissaoDAL.Inserir(_permissao, _idPermissao);
         }
         public List<Permissao> BuscarTodos()
         {
-            return new PermissaoDAL().BuscarTodos();
+            return new PermissaoDAL().BuscarTodasPermissoes();
         }
         public List<Permissao> BuscarPorDescricao(string _descricao)
         {
-            return new PermissaoDAL().BuscarPorDescricao(_descricao);
+            return new PermissaoDAL().BuscarPermissaoPorDescricao(_descricao);
         }
-        public Permissao BuscarPorId(int id)
+        public List<Permissao> BuscarTodasPermissoesPorId(int _idPermissao)
         {
-            return new PermissaoDAL().BuscarPorId(id);
+            PermissaoDAL permissaoDAL = new PermissaoDAL();
+            return permissaoDAL.BuscarTodasPermissoesPorId(_idPermissao);
         }
         public void Alterar(Permissao permissao)
         {
             new PermissaoDAL().Alterar(permissao);
         }
-        public void Excluir(int id)
+        public void Excluir(Permissao _id)
         {
-            new PermissaoDAL().Excluir(id);
+            PermissaoDAL permissaoDAL = new PermissaoDAL();
+            permissaoDAL.Excluir(_id);
         }
     }
 }
