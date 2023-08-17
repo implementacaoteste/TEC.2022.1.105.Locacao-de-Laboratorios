@@ -64,5 +64,10 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FormCadastroSala_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

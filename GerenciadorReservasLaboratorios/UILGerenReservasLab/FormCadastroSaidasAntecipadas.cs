@@ -23,10 +23,15 @@ namespace UILGerenReservasLab
             FormBuscarAluno frm = new FormBuscarAluno();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                IdAlunoTextBox.Text = frm.AlunoSelecionado.Id.ToString();
+               idAlunoTextBox.Text = frm.AlunoSelecionado.Id.ToString();
             }
         }
         private void idProfessorTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCadastroSaidasAntecipadas_Load(object sender, EventArgs e)
         {
 
         }

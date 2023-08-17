@@ -16,11 +16,11 @@ namespace BLL
         }
         public List<GrupoUsuario> BuscarPorNomeGrupo(string _nomeGrupo)
         {
-            return new GrupoUsuarioDAL().BuscarPorNomeGrupo(_nomeGrupo);
+            return new GrupoUsuarioDAL().BuscarGrupoPorNome(_nomeGrupo);
         }
         public GrupoUsuario BuscarPorId(int id)
         {
-            return new GrupoUsuarioDAL().BuscarPorId(id);
+            return new GrupoUsuarioDAL().BuscarGrupoPorId(id);
         }
         public void Alterar(GrupoUsuario grupoUsuario)
         {
