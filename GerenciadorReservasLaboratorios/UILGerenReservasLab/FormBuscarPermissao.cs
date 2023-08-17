@@ -30,11 +30,11 @@ namespace UILGerenReservasLab
                 }
                 else if (radioButton_BuscarPorNome.Checked)
                 {
-                    permissaoBindingSource.DataSource = permissaoBLL.BuscarPermissao_PorNome(textBox1.Text);
+                    permissaoBindingSource.DataSource = permissaoBLL.BuscarPorDescricao(textBox1.Text);
                 }
                 else if (radioButton_BuscarPorId.Checked)
                 {
-                   permissaoBindingSource.DataSource = permissaoBLL.BuscarTodasPermissoes_PorId(Convert.ToInt32(textBox1.Text));
+                   permissaoBindingSource.DataSource = permissaoBLL.BuscarTodasPermissoesPorId(Convert.ToInt32(textBox1.Text));
                 }
 
             }
@@ -46,7 +46,7 @@ namespace UILGerenReservasLab
 
         private void buttonAdicionarPermissao_Click(object sender, EventArgs e)
         {
-            using (FormCadastrarPermissao frm = new FormCadastrarPermissao())
+            using (FormCadastroPermissao frm = new FormCadastroPermissao())
             {
                 frm.ShowDialog();
             }
@@ -54,11 +54,10 @@ namespace UILGerenReservasLab
 
         private void buttonAlterarPermissao_Click(object sender, EventArgs e)
         {
-
             try
             {
                 int id = ((Permissao)permissaoBindingSource.Current).Id;
-                using (FormCadastrarPermissao frm = new FormCadastrarPermissao(true, id ))
+                using (FormCadastroPermissao frm = new FormCadastroPermissao(true, id ))
                 {
                     frm.ShowDialog();
 
@@ -97,20 +96,20 @@ namespace UILGerenReservasLab
             }
         }
 
-        private void buttonAdionarPermissaoGrupo_Click(object sender, EventArgs e)
+        private void buttonAdicionarPermissaoGrupo_Click(object sender, EventArgs e)
         {
             try
             {
                 using (FormConsultarGruposPermissao frm = new FormConsultarGruposPermissao())
                 {
                     frm.ShowDialog();
-                    if(frm.id == 0)
+                    if(frm.Id == 0)
                     {
                         return;
                     }
                     GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
                     int idPermissao = ((Permissao)permissaoBindingSource.Current).Id;
-                    int idGrupo = frm.id;
+                    int idGrupo = frm.Id;
                     grupoUsuarioBLL.VincularPermissaoGrupo(idGrupo, idPermissao);
                     MessageBox.Show("Permissão adicionada com sucesso!");
                 }

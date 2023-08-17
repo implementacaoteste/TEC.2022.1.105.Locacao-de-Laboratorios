@@ -14,11 +14,11 @@ namespace UILGerenReservasLab
 {
     public partial class FormCadastroReservas : Form
     {
-        private int id;
+        private int Id;
         public FormCadastroReservas(int _id= 0)
         {
             InitializeComponent();
-            id = id;
+            Id = _id;
         }
 
 
@@ -33,7 +33,7 @@ namespace UILGerenReservasLab
             {
                 Reserva reserva = (Reserva)reservaBindingSource.Current;
                 reservaBindingSource.EndEdit();
-                if (id == 0)
+                if (Id == 0)
                     new ReservaBLL().Inserir(reserva);
                 else
                     new ReservaBLL().Alterar(reserva);

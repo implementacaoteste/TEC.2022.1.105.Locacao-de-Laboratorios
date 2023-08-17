@@ -398,6 +398,39 @@ namespace DAL
                 cn.Close();
             }
         }
+        public void VincularPermissaoGrupo(int _idGrupo, int _idPermissao)
+        {
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+
+                cn.ConnectionString = Conexao.StringDeConexao;
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "INSERT INTO Permissao_com_Grupo(cod_GrupoUsuario,cod_Permissao)" +
+                                  "VALUES (@idGrupo,@idPermissao)";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@idGrupo", _idGrupo);
+                cmd.Parameters.AddWithValue("@idPermissao", _idPermissao);
+
+
+                cn.Open();
+                cmd.ExecuteScalar();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar inserir um usuário no banco " + ex.Message);
+
+
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+        }
     }
 }
 

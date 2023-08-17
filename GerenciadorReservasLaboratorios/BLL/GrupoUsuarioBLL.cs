@@ -16,11 +16,11 @@ namespace BLL
         }
         public List<GrupoUsuario> BuscarPorNomeGrupo(string _nomeGrupo)
         {
-            return new GrupoUsuarioDAL().BuscarPorNomeGrupo(_nomeGrupo);
+            return new GrupoUsuarioDAL().BuscarGrupoPorNome(_nomeGrupo);
         }
         public GrupoUsuario BuscarPorId(int id)
         {
-            return new GrupoUsuarioDAL().BuscarPorId(id);
+            return new GrupoUsuarioDAL().BuscarGrupoPorId(id);
         }
         public void Alterar(GrupoUsuario grupoUsuario)
         {
@@ -38,6 +38,16 @@ namespace BLL
         public void RemoverPermissao(int _idGrupo, int _idPermissao)
         {
             new GrupoUsuarioDAL().RemoverPermissao(_idGrupo, _idPermissao);
+        }
+        public void RemoverVinculoGrupoPermissao(int _idGrupo, int _idPermissao)
+        {
+            GrupoUsuarioDAL grupousuarioDAL = new GrupoUsuarioDAL();
+            grupousuarioDAL.RemoverPermissao(_idGrupo, _idPermissao);
+        }
+        public void VincularPermissaoGrupo(int _idGrupo, int _idPermissao)
+        {
+            GrupoUsuarioDAL grupousuarioDAL = new GrupoUsuarioDAL();
+            grupousuarioDAL.VincularPermissaoGrupo(_idGrupo, _idPermissao);
         }
     }
 }

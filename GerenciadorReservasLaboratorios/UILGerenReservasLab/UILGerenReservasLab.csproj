@@ -64,6 +64,12 @@
     <Compile Include="FormBuscarCurso.Designer.cs">
       <DependentUpon>FormBuscarCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBuscarPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarPermissao.designer.cs">
+      <DependentUpon>FormBuscarPermissao.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     <Compile Include="FormConsultaPermissao.designer.cs">
       <DependentUpon>FormConsultaPermissao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultarGruposPermissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultarGruposPermissao.designer.cs">
+      <DependentUpon>FormConsultarGruposPermissao.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarCurso.resx">
       <DependentUpon>FormBuscarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarPermissao.resx">
+      <DependentUpon>FormBuscarPermissao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarReserva.resx">
       <DependentUpon>FormBuscarReserva.cs</DependentUpon>
@@ -225,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaPermissao.resx">
       <DependentUpon>FormConsultaPermissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultarGruposPermissao.resx">
+      <DependentUpon>FormConsultarGruposPermissao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
