@@ -76,5 +76,14 @@ namespace BLL
             else
                 throw new Exception("Usuario ou senha inválido.");
         }
+        public int ObterIdUsuarioLogado()
+        {
+            return Constantes.IdUsuarioLogado;
+        }
+        public string ObterNomeUsuarioLogado()
+        {
+            int idUsuario = ObterIdUsuarioLogado();
+            return usuarioDAL.ObterNomeUsuarioPorId(idUsuario);
+        }
     }
 }

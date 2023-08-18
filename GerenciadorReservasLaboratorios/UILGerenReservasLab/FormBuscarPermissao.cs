@@ -110,7 +110,7 @@ namespace UILGerenReservasLab
                     GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
                     int idPermissao = ((Permissao)permissaoBindingSource.Current).Id;
                     int idGrupo = frm.Id;
-                    grupoUsuarioBLL.VincularPermissaoGrupo(idGrupo, idPermissao);
+                    grupoUsuarioBLL.AdicionarPermissao(idGrupo, idPermissao);
                     MessageBox.Show("Permissão adicionada com sucesso!");
                 }
             }
@@ -121,7 +121,6 @@ namespace UILGerenReservasLab
             }
            
         }
-
         private void buttonExcluirPermissaoGrupo_Click(object sender, EventArgs e)
         {
             try

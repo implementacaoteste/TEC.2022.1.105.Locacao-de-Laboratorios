@@ -129,7 +129,6 @@
             this.idAlunoTextBox.Name = "idAlunoTextBox";
             this.idAlunoTextBox.Size = new System.Drawing.Size(107, 22);
             this.idAlunoTextBox.TabIndex = 4;
-            this.idAlunoTextBox.TextChanged += new System.EventHandler(this.idAlunoTextBox_TextChanged);
             // 
             // idCoordenacaoTextBox
             // 
@@ -148,7 +147,6 @@
             this.idProfessorTextBox.Name = "idProfessorTextBox";
             this.idProfessorTextBox.Size = new System.Drawing.Size(107, 22);
             this.idProfessorTextBox.TabIndex = 8;
-            this.idProfessorTextBox.TextChanged += new System.EventHandler(this.idProfessorTextBox_TextChanged);
             // 
             // motivoTextBox
             // 

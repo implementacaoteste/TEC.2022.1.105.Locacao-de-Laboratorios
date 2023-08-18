@@ -18,19 +18,42 @@ namespace UILGerenReservasLab
         {
             InitializeComponent();
         }
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-                saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarTodos();
+                switch (comboBoxBuscarPor.SelectedIndex)
+                {
+                    case 0:
+                        if (String.IsNullOrEmpty(textBoxBuscar.Text))
+                            throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 01 } } };
+
+                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
+                        break;
+                    case 1:
+                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorIdAluno(Convert.ToInt32(textBoxBuscar.Text));
+                        break;
+                    case 2:
+                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorIdProfessor(Convert.ToInt32(textBoxBuscar.Text));
+                        break;
+                    case 3:
+                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorIdCoordenacao(Convert.ToInt32(textBoxBuscar.Text));
+                        break;
+                    case 4:
+                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarTodos();
+                        break;
+                    default:
+                        break;
+
+                }
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.Message);
             }
-        }
 
+        }
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
             try
@@ -60,7 +83,6 @@ namespace UILGerenReservasLab
             }
             buttonBuscar_Click(null, null);
         }
-
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             try
@@ -88,6 +110,36 @@ namespace UILGerenReservasLab
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Verifica se há alguma linha selecionada no DataGridView
+                if (saidasAntecipadasDataGridView.SelectedRows.Count > 0)
+                {
+                    // Obtém o ID do registro selecionado
+                    int idSelecionado = Convert.ToInt32(saidasAntecipadasDataGridView.SelectedRows[0].Cells["Id"].Value);
+
+                    // Chama o método BuscarPorId da classe SaidasAntecipadasBLL para obter o registro
+                    SaidasAntecipadas saidaAntecipada = new SaidasAntecipadasBLL().BuscarPorId(idSelecionado);
+
+                    // Use o objeto saidaAntecipada para realizar as ações desejadas, por exemplo, preencher campos em um formulário.
+                    // Exemplo: textBoxId.Text = saidaAntecipada.Id.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um registro para continuar.", "Seleção Inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

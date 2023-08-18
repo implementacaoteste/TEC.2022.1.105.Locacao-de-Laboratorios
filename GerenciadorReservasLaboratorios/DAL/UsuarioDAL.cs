@@ -453,5 +453,31 @@ namespace DAL
                 cn.Close();
             }
         }
+        public string ObterNomeUsuarioPorId(int _idUsuario)
+        {
+            string nomeUsuario = null;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT NomeUsuario FROM Usuario WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _idUsuario);
+                cn.Open();
+
+                nomeUsuario = cmd.ExecuteScalar() as string;
+                return nomeUsuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o nome de usuário pelo ID no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
