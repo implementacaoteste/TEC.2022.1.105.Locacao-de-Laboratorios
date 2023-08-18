@@ -15,26 +15,32 @@ namespace BLL
         }
         public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
+            ValidarPermissao(2);
             usuarioDAL.Inserir(_usuario);
         }
         public Usuario BuscarPorId(int _id)
         {
+            ValidarPermissao(1);
             return usuarioDAL.BuscarPorId(_id);
         }
         public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
+            ValidarPermissao(1);
             return usuarioDAL.BuscarPorNomeUsuario(_nomeUsuario);
         }
         public List<Usuario> BuscarTodos()
         {
+            ValidarPermissao(1);
             return usuarioDAL.BuscarTodos();
         }
         public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
         {
+            ValidarPermissao(3);
             usuarioDAL.Alterar(_usuario);
         }
         public void Excluir(int _id)
         {
+            ValidarPermissao(4);
             usuarioDAL.Excluir(_id);
         }
         private void ValidarDados(Usuario _usuario, string _confirmacaoDeSenha)

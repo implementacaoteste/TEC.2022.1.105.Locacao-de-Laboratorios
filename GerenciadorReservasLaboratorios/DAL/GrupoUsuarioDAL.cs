@@ -147,6 +147,44 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<GrupoUsuario> BuscarGrupoPorIdUsuario(int _idUsuario)
+        {
+            List<GrupoUsuario> grupoUsuarios = new List<GrupoUsuario>();
+            GrupoUsuario grupoUsuario;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT GrupoUsuario.Id, GrupoUsuario.NomeGrupo FROM GrupoUsuario
+                                    INNER JOIN UsuarioGrupoUsuario ON GrupoUsuario.Id = UsuarioGrupoUsuario.IdGrupoUsuario
+                                    WHERE UsuarioGrupoUsuario.IdUsuario = @IdUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        grupoUsuario = new GrupoUsuario();
+                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        grupoUsuarios.Add(grupoUsuario);
+                    }
+                }
+                return grupoUsuarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar grupos de usuários por Id do usuário no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public List<GrupoUsuario> BuscarGrupoPor_IdPermissao(int _idPermissao)
         {
             List<GrupoUsuario> grupo_usuarios = new List<GrupoUsuario>();
@@ -219,7 +257,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("DELETE FROM GrupoUsuarios WHERE id = @id", cn))
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM GrupoUsuario WHERE id = @id", cn))
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@Id", _idGrupoUsuario);
@@ -398,39 +436,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void VincularPermissaoGrupo(int _idGrupo, int _idPermissao)
-        {
-            SqlConnection cn = new SqlConnection();
-            try
-            {
 
-                cn.ConnectionString = Conexao.StringDeConexao;
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "INSERT INTO Permissao_com_Grupo(cod_GrupoUsuario,cod_Permissao)" +
-                                  "VALUES (@idGrupo,@idPermissao)";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@idGrupo", _idGrupo);
-                cmd.Parameters.AddWithValue("@idPermissao", _idPermissao);
-
-
-                cn.Open();
-                cmd.ExecuteScalar();
-
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar inserir um usuário no banco " + ex.Message);
-
-
-            }
-            finally
-            {
-                cn.Close();
-            }
-
-        }
     }
 }
 

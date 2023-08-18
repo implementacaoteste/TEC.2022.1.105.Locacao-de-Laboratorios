@@ -70,22 +70,26 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(236, 256);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 29);
             this.button2.TabIndex = 13;
             this.button2.Text = "&Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // buttonEntrar
             // 
+            this.buttonEntrar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonEntrar.ForeColor = System.Drawing.Color.White;
             this.buttonEntrar.Location = new System.Drawing.Point(103, 256);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(75, 29);
             this.buttonEntrar.TabIndex = 12;
             this.buttonEntrar.Text = "&Entrar";
-            this.buttonEntrar.UseVisualStyleBackColor = true;
+            this.buttonEntrar.UseVisualStyleBackColor = false;
             this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
             // textBoxSenha
@@ -115,7 +119,7 @@
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.textBoxSenha);
             this.Controls.Add(this.textBoxUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

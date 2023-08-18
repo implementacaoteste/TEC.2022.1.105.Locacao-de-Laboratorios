@@ -36,6 +36,7 @@
             System.Windows.Forms.Label motivoLabel;
             System.Windows.Forms.Label statusLabel;
             this.dataHoraSaidaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idAlunoTextBox = new System.Windows.Forms.TextBox();
             this.idCoordenacaoTextBox = new System.Windows.Forms.TextBox();
             this.idProfessorTextBox = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             dataHoraSaidaLabel = new System.Windows.Forms.Label();
             idAlunoLabel = new System.Windows.Forms.Label();
             idCoordenacaoLabel = new System.Windows.Forms.Label();
@@ -117,6 +117,10 @@
             this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(371, 22);
             this.dataHoraSaidaDateTimePicker.TabIndex = 2;
             // 
+            // saidasAntecipadasBindingSource
+            // 
+            this.saidasAntecipadasBindingSource.DataSource = typeof(Models.SaidasAntecipadas);
+            // 
             // idAlunoTextBox
             // 
             this.idAlunoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdAluno", true));
@@ -185,6 +189,7 @@
             this.buttonSalvar.TabIndex = 14;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonCancelar
             // 
@@ -195,10 +200,7 @@
             this.buttonCancelar.TabIndex = 15;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // saidasAntecipadasBindingSource
-            // 
-            this.saidasAntecipadasBindingSource.DataSource = typeof(Models.SaidasAntecipadas);
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // FormCadastroSaidasAntecipadas
             // 

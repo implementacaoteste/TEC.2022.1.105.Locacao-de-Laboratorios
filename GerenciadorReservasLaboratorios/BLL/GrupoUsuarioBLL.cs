@@ -8,6 +8,7 @@ namespace BLL
     {
         public void Inserir(GrupoUsuario grupoUsuario)
         {
+            new UsuarioBLL().ValidarPermissao(6);
             new GrupoUsuarioDAL().Inserir(grupoUsuario);
         }
         public List<GrupoUsuario> BuscarTodos()
@@ -43,11 +44,6 @@ namespace BLL
         {
             GrupoUsuarioDAL grupousuarioDAL = new GrupoUsuarioDAL();
             grupousuarioDAL.RemoverPermissao(_idGrupo, _idPermissao);
-        }
-        public void VincularPermissaoGrupo(int _idGrupo, int _idPermissao)
-        {
-            GrupoUsuarioDAL grupousuarioDAL = new GrupoUsuarioDAL();
-            grupousuarioDAL.VincularPermissaoGrupo(_idGrupo, _idPermissao);
         }
     }
 }
