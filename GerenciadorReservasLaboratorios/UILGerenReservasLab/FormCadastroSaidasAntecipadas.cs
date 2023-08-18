@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,25 +14,14 @@ namespace UILGerenReservasLab
 {
     public partial class FormCadastroSaidasAntecipadas : Form
     {
-        public FormCadastroSaidasAntecipadas()
+        public int Id;
+        private UsuarioBLL usuarioBLL = new UsuarioBLL();
+
+        public FormCadastroSaidasAntecipadas(int _id = 0)
         {
             InitializeComponent();
+            Id = _id;
         }
-        private void idAlunoTextBox_TextChanged(object sender, EventArgs e)
-        {
-            // Abra uma janela de busca de alunos e preencha o campo Aluno ID com o valor selecionado.
-            // Exemplo de código para abrir a janela de busca:
-            FormBuscarAluno frm = new FormBuscarAluno();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-               idAlunoTextBox.Text = frm.AlunoSelecionado.Id.ToString();
-            }
-        }
-        private void idProfessorTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormCadastroSaidasAntecipadas_Load(object sender, EventArgs e)
         {
 
@@ -38,12 +29,40 @@ namespace UILGerenReservasLab
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Realize a validação de permissão antes de inserir a saída antecipada.
+                usuarioBLL.ValidarPermissao(1); // Substitua 1 pelo ID da permissão que você deseja validar.
 
+                SaidasAntecipadas saidaAntecipada = new SaidasAntecipadas();
+                // Preencha os campos do objeto SaidasAntecipadas.
+
+                saidaAntecipada.IdProfessor = usuarioBLL.ObterIdUsuarioLogado();
+                saidaAntecipada.Motivo = motivoTextBox.Text;
+                saidaAntecipada.Status = "em análise";
+                saidaAntecipada.DataHoraSaida = DateTime.Now;
+
+                new SaidasAntecipadasBLL().Inserir(saidaAntecipada);
+
+                MessageBox.Show("Solicitação de saída antecipada registrada com sucesso!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

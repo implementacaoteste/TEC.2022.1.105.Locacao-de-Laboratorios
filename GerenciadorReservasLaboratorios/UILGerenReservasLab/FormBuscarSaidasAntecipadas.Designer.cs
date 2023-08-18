@@ -39,7 +39,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonInserir = new System.Windows.Forms.Button();
@@ -57,8 +57,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(988, 46);
+            this.label2.Size = new System.Drawing.Size(741, 37);
             this.label2.TabIndex = 14;
             this.label2.Text = "Consulta de Saídas Antecipadas";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,11 +83,12 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.saidasAntecipadasDataGridView.DataSource = this.saidasAntecipadasBindingSource;
-            this.saidasAntecipadasDataGridView.Location = new System.Drawing.Point(8, 135);
+            this.saidasAntecipadasDataGridView.Location = new System.Drawing.Point(6, 110);
+            this.saidasAntecipadasDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.saidasAntecipadasDataGridView.Name = "saidasAntecipadasDataGridView";
             this.saidasAntecipadasDataGridView.RowHeadersWidth = 51;
             this.saidasAntecipadasDataGridView.RowTemplate.Height = 24;
-            this.saidasAntecipadasDataGridView.Size = new System.Drawing.Size(980, 311);
+            this.saidasAntecipadasDataGridView.Size = new System.Drawing.Size(735, 253);
             this.saidasAntecipadasDataGridView.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn1
@@ -138,12 +140,13 @@
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // textBox1
+            // textBoxBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(520, 22);
-            this.textBox1.TabIndex = 16;
+            this.textBoxBuscar.Location = new System.Drawing.Point(104, 81);
+            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(391, 20);
+            this.textBoxBuscar.TabIndex = 16;
             // 
             // comboBoxBuscarPor
             // 
@@ -153,20 +156,21 @@
             "Id do Aluno",
             "Id do Professor",
             "Id da Coordenação",
-            "Status",
             "Buscar Todos"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(12, 100);
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(9, 81);
+            this.comboBoxBuscarPor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            this.comboBoxBuscarPor.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxBuscarPor.Size = new System.Drawing.Size(92, 21);
             this.comboBoxBuscarPor.TabIndex = 17;
             // 
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluir.Location = new System.Drawing.Point(905, 102);
+            this.buttonExcluir.Location = new System.Drawing.Point(679, 83);
+            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(74, 27);
+            this.buttonExcluir.Size = new System.Drawing.Size(56, 22);
             this.buttonExcluir.TabIndex = 18;
             this.buttonExcluir.Text = "&Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
@@ -176,9 +180,10 @@
             // 
             this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserir.Location = new System.Drawing.Point(825, 100);
+            this.buttonInserir.Location = new System.Drawing.Point(619, 81);
+            this.buttonInserir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonInserir.Name = "buttonInserir";
-            this.buttonInserir.Size = new System.Drawing.Size(74, 27);
+            this.buttonInserir.Size = new System.Drawing.Size(56, 22);
             this.buttonInserir.TabIndex = 19;
             this.buttonInserir.Text = "&Inserir";
             this.buttonInserir.UseVisualStyleBackColor = true;
@@ -188,9 +193,10 @@
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(745, 100);
+            this.buttonAlterar.Location = new System.Drawing.Point(559, 81);
+            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(74, 27);
+            this.buttonAlterar.Size = new System.Drawing.Size(56, 22);
             this.buttonAlterar.TabIndex = 20;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
@@ -200,9 +206,10 @@
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(665, 100);
+            this.buttonBuscar.Location = new System.Drawing.Point(499, 81);
+            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(74, 27);
+            this.buttonBuscar.Size = new System.Drawing.Size(56, 22);
             this.buttonBuscar.TabIndex = 21;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -215,9 +222,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBusar.AutoSize = true;
             this.labelBusar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusar.Location = new System.Drawing.Point(8, 77);
+            this.labelBusar.Location = new System.Drawing.Point(6, 63);
+            this.labelBusar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBusar.Name = "labelBusar";
-            this.labelBusar.Size = new System.Drawing.Size(92, 20);
+            this.labelBusar.Size = new System.Drawing.Size(77, 17);
             this.labelBusar.TabIndex = 22;
             this.labelBusar.Text = "Buscar por";
             // 
@@ -226,30 +234,34 @@
             this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancelar.Location = new System.Drawing.Point(904, 467);
+            this.buttonCancelar.Location = new System.Drawing.Point(678, 379);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.Size = new System.Drawing.Size(56, 19);
             this.buttonCancelar.TabIndex = 23;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonSelecionar
             // 
             this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(816, 467);
+            this.buttonSelecionar.Location = new System.Drawing.Point(612, 379);
+            this.buttonSelecionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(83, 23);
+            this.buttonSelecionar.Size = new System.Drawing.Size(62, 19);
             this.buttonSelecionar.TabIndex = 24;
             this.buttonSelecionar.Text = "&Selecionar";
             this.buttonSelecionar.UseVisualStyleBackColor = true;
+            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click);
             // 
             // FormBuscarSaidasAntecipadas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 502);
+            this.ClientSize = new System.Drawing.Size(741, 408);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSelecionar);
             this.Controls.Add(this.labelBusar);
@@ -258,9 +270,10 @@
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.comboBoxBuscarPor);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.saidasAntecipadasDataGridView);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBuscarSaidasAntecipadas";
             this.ShowIcon = false;
             this.Text = "Gestão de Saidas Antecipadas";
@@ -283,7 +296,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.ComboBox comboBoxBuscarPor;
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.Button buttonInserir;
