@@ -57,7 +57,7 @@
             this.txtNomeSala.Name = "txtNomeSala";
             this.txtNomeSala.Size = new System.Drawing.Size(562, 27);
             this.txtNomeSala.TabIndex = 2;
-            // 
+             // 
             // salaBindingSource
             // 
             this.salaBindingSource.DataSource = typeof(Models.Sala);
