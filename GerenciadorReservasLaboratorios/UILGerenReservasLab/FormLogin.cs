@@ -39,17 +39,28 @@ namespace UILGerenReservasLab
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
-
         private void textBoxUsuario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 textBoxSenha.Focus();
         }
-
         private void textBoxSenha_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
                 buttonEntrar_Click(null, null);
+        }
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
     
