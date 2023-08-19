@@ -56,8 +56,8 @@
             this.solicitanteTextBox = new System.Windows.Forms.TextBox();
             this.statusTextBox = new System.Windows.Forms.TextBox();
             this.turnoTextBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             idCursoLabel = new System.Windows.Forms.Label();
             idDisciplinaLabel = new System.Windows.Forms.Label();
             idSalaLabel = new System.Windows.Forms.Label();
@@ -71,13 +71,13 @@
             statusLabel = new System.Windows.Forms.Label();
             turnoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // idCursoLabel
             // 
             idCursoLabel.AutoSize = true;
-            idCursoLabel.Location = new System.Drawing.Point(47, 249);
+            idCursoLabel.Location = new System.Drawing.Point(47, 235);
             idCursoLabel.Name = "idCursoLabel";
             idCursoLabel.Size = new System.Drawing.Size(59, 16);
             idCursoLabel.TabIndex = 1;
@@ -122,7 +122,7 @@
             // dataDevolucaoLabel
             // 
             dataDevolucaoLabel.AutoSize = true;
-            dataDevolucaoLabel.Location = new System.Drawing.Point(466, 28);
+            dataDevolucaoLabel.Location = new System.Drawing.Point(651, 41);
             dataDevolucaoLabel.Name = "dataDevolucaoLabel";
             dataDevolucaoLabel.Size = new System.Drawing.Size(108, 16);
             dataDevolucaoLabel.TabIndex = 12;
@@ -131,7 +131,7 @@
             // dataRetiradaLabel
             // 
             dataRetiradaLabel.AutoSize = true;
-            dataRetiradaLabel.Location = new System.Drawing.Point(41, 28);
+            dataRetiradaLabel.Location = new System.Drawing.Point(10, 37);
             dataRetiradaLabel.Name = "dataRetiradaLabel";
             dataRetiradaLabel.Size = new System.Drawing.Size(94, 16);
             dataRetiradaLabel.TabIndex = 14;
@@ -189,7 +189,7 @@
             // idCursoTextBox
             // 
             this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdCurso", true));
-            this.idCursoTextBox.Location = new System.Drawing.Point(112, 246);
+            this.idCursoTextBox.Location = new System.Drawing.Point(112, 232);
             this.idCursoTextBox.Name = "idCursoTextBox";
             this.idCursoTextBox.Size = new System.Drawing.Size(100, 22);
             this.idCursoTextBox.TabIndex = 2;
@@ -249,7 +249,7 @@
             // dataDevolucaoDateTimePicker
             // 
             this.dataDevolucaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "DataDevolucao", true));
-            this.dataDevolucaoDateTimePicker.Location = new System.Drawing.Point(580, 24);
+            this.dataDevolucaoDateTimePicker.Location = new System.Drawing.Point(765, 37);
             this.dataDevolucaoDateTimePicker.Name = "dataDevolucaoDateTimePicker";
             this.dataDevolucaoDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataDevolucaoDateTimePicker.TabIndex = 13;
@@ -257,7 +257,7 @@
             // dataRetiradaDateTimePicker
             // 
             this.dataRetiradaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "DataRetirada", true));
-            this.dataRetiradaDateTimePicker.Location = new System.Drawing.Point(141, 24);
+            this.dataRetiradaDateTimePicker.Location = new System.Drawing.Point(110, 33);
             this.dataRetiradaDateTimePicker.Name = "dataRetiradaDateTimePicker";
             this.dataRetiradaDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataRetiradaDateTimePicker.TabIndex = 15;
@@ -290,28 +290,21 @@
             // 
             this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Status", true));
             this.statusTextBox.Location = new System.Drawing.Point(776, 72);
+            this.statusTextBox.Multiline = true;
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.Size = new System.Drawing.Size(200, 22);
             this.statusTextBox.TabIndex = 23;
+            this.statusTextBox.Text = "Em análise\r\nAprovada\r\nNegada\r\nFinalizada";
             // 
             // turnoTextBox
             // 
             this.turnoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Turno", true));
             this.turnoTextBox.Location = new System.Drawing.Point(776, 121);
+            this.turnoTextBox.Multiline = true;
             this.turnoTextBox.Name = "turnoTextBox";
             this.turnoTextBox.Size = new System.Drawing.Size(200, 22);
             this.turnoTextBox.TabIndex = 25;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataDevolucaoDateTimePicker);
-            this.panel1.Controls.Add(dataDevolucaoLabel);
-            this.panel1.Controls.Add(this.dataRetiradaDateTimePicker);
-            this.panel1.Controls.Add(dataRetiradaLabel);
-            this.panel1.Location = new System.Drawing.Point(112, 392);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(909, 95);
-            this.panel1.TabIndex = 26;
+            this.turnoTextBox.Text = "Matutino\r\nVespertino\r\nNotuno";
             // 
             // label1
             // 
@@ -324,13 +317,26 @@
             this.label1.Text = "Cadastro de reservas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataRetiradaDateTimePicker);
+            this.groupBox1.Controls.Add(this.dataDevolucaoDateTimePicker);
+            this.groupBox1.Controls.Add(dataDevolucaoLabel);
+            this.groupBox1.Controls.Add(dataRetiradaLabel);
+            this.groupBox1.Location = new System.Drawing.Point(50, 395);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(971, 121);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Liberação de Chaves";
+            // 
             // FormCadastroReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 569);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(turnoLabel);
             this.Controls.Add(this.turnoTextBox);
             this.Controls.Add(statusLabel);
@@ -359,8 +365,8 @@
             this.Text = "Sistema de Gerenciamento de Salas";
             this.Load += new System.EventHandler(this.FormCadastroReservas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,7 +389,7 @@
         private System.Windows.Forms.TextBox solicitanteTextBox;
         private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.TextBox turnoTextBox;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

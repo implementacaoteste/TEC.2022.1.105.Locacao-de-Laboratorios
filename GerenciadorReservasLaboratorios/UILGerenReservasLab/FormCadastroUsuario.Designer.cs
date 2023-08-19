@@ -69,9 +69,9 @@
             cPFLabel.AutoSize = true;
             cPFLabel.Location = new System.Drawing.Point(336, 58);
             cPFLabel.Name = "cPFLabel";
-            cPFLabel.Size = new System.Drawing.Size(33, 16);
+            cPFLabel.Size = new System.Drawing.Size(61, 16);
             cPFLabel.TabIndex = 3;
-            cPFLabel.Text = "CPF";
+            cPFLabel.Text = "Matricula";
             // 
             // emailLabel
             // 

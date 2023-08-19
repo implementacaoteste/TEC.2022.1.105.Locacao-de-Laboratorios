@@ -31,7 +31,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
@@ -68,17 +68,17 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Senha";
             // 
-            // button2
+            // buttonCancelar
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(236, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 29);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "&Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonCancelar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancelar.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelar.Location = new System.Drawing.Point(236, 256);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 29);
+            this.buttonCancelar.TabIndex = 13;
+            this.buttonCancelar.Text = "&Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = false;
             // 
             // buttonEntrar
             // 
@@ -115,7 +115,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonEntrar);
             this.Controls.Add(this.textBoxSenha);
             this.Controls.Add(this.textBoxUsuario);
@@ -138,7 +138,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonEntrar;
         private System.Windows.Forms.TextBox textBoxSenha;
         private System.Windows.Forms.TextBox textBoxUsuario;
