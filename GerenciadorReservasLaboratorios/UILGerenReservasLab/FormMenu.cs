@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UILGerenReservasLab
 {
-    public partial class FormPrincipal : Form
+    public partial class FormMenu : Form
     {
-        public FormPrincipal()
+        public FormMenu()
         {
             InitializeComponent();
         }
