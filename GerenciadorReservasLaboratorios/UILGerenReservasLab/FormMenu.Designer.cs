@@ -90,6 +90,7 @@
             this.buttonSaidasAntecipadas.TabIndex = 9;
             this.buttonSaidasAntecipadas.Text = "Saídas Antecipadas";
             this.buttonSaidasAntecipadas.UseVisualStyleBackColor = true;
+            this.buttonSaidasAntecipadas.Click += new System.EventHandler(this.buttonSaidasAntecipadas_Click);
             // 
             // buttonReserva
             // 
@@ -104,6 +105,7 @@
             this.buttonReserva.TabIndex = 8;
             this.buttonReserva.Text = "Reservas";
             this.buttonReserva.UseVisualStyleBackColor = true;
+            this.buttonReserva.Click += new System.EventHandler(this.buttonReserva_Click);
             // 
             // buttonPredio
             // 
@@ -160,6 +162,7 @@
             this.buttonDisciplina.TabIndex = 4;
             this.buttonDisciplina.Text = "Disciplina";
             this.buttonDisciplina.UseVisualStyleBackColor = true;
+            this.buttonDisciplina.Click += new System.EventHandler(this.buttonDisciplina_Click);
             // 
             // buttonCurso
             // 
@@ -174,6 +177,7 @@
             this.buttonCurso.TabIndex = 3;
             this.buttonCurso.Text = "Curso";
             this.buttonCurso.UseVisualStyleBackColor = true;
+            this.buttonCurso.Click += new System.EventHandler(this.buttonCurso_Click);
             // 
             // buttonAluno
             // 
