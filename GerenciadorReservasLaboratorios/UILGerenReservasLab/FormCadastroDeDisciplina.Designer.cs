@@ -39,6 +39,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // NomeDisciplina
+            // 
+            NomeDisciplina.AutoSize = true;
+            NomeDisciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            NomeDisciplina.Location = new System.Drawing.Point(18, 153);
+            NomeDisciplina.Name = "NomeDisciplina";
+            NomeDisciplina.Size = new System.Drawing.Size(177, 20);
+            NomeDisciplina.TabIndex = 10;
+            NomeDisciplina.Text = "Nome Da Disciplina";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -83,16 +93,6 @@
             // 
             this.disciplinaBindingSource.DataSource = typeof(Models.Disciplina);
             // 
-            // NomeDisciplina
-            // 
-            NomeDisciplina.AutoSize = true;
-            NomeDisciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            NomeDisciplina.Location = new System.Drawing.Point(18, 153);
-            NomeDisciplina.Name = "NomeDisciplina";
-            NomeDisciplina.Size = new System.Drawing.Size(177, 20);
-            NomeDisciplina.TabIndex = 10;
-            NomeDisciplina.Text = "Nome Da Disciplina";
-            // 
             // txtNomeDisciplina
             // 
             this.txtNomeDisciplina.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.disciplinaBindingSource, "Nome", true));
@@ -103,6 +103,7 @@
             // 
             // FormCadastroDeDisciplina
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -111,8 +112,10 @@
             this.Controls.Add(this.btnCancelarDisciplina);
             this.Controls.Add(this.btnSalvarDisciplina);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCadastroDeDisciplina";
-            this.Text = "FormCadastroDeDisciplina";
+            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
