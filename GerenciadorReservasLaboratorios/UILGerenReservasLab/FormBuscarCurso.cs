@@ -38,7 +38,7 @@ namespace UILGerenReservasLab
                     "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
 
-                int id = ((Aluno)cursoBindingSource.Current).Id;
+                int id = ((Curso)cursoBindingSource.Current).Id;
                 new UsuarioBLL().Excluir(id);
                 cursoBindingSource.RemoveCurrent();
 
@@ -51,7 +51,7 @@ namespace UILGerenReservasLab
         }
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            using (FormBuscarCurso frm = new FormBuscarCurso())
+            using (FormCadastroCurso frm = new FormCadastroCurso())
             {
                 frm.ShowDialog();
             }
@@ -67,7 +67,7 @@ namespace UILGerenReservasLab
 
                 int id = ((Curso)cursoBindingSource.Current).Id;
 
-                using (FormBuscarCurso frm = new FormBuscarCurso(id))
+                using (FormCadastroCurso frm = new FormCadastroCurso(id))
                 {
                     frm.ShowDialog();
                 }
