@@ -84,7 +84,7 @@ namespace DAL
         }
         public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
         {
-            Usuario usuario = null;
+            Usuario usuario = new Usuario();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -100,7 +100,6 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        usuario = new Usuario();
                         usuario.Id = Convert.ToInt32(rd["Id"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();

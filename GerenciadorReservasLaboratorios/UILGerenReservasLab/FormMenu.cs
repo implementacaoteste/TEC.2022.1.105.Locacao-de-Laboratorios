@@ -16,5 +16,15 @@ namespace UILGerenReservasLab
         {
             InitializeComponent();
         }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+            using (FormLogin frm = new FormLogin())
+            {
+                frm.ShowDialog();
+                if (!frm.Logou)
+                    Application.Exit();
+            }
+        }
     }
 }

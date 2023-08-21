@@ -71,7 +71,8 @@ namespace BLL
         public void Autenticar(string _nomeUsuario, string _senha)
         {
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
-            if (_senha == usuario.Senha && usuario.Ativo)
+            
+            if (usuario.Ativo && !String.IsNullOrEmpty(usuario.Senha) && _senha == usuario.Senha)
                 Constantes.IdUsuarioLogado = usuario.Id;
             else
                 throw new Exception("Usuario ou senha inválido.");
