@@ -57,36 +57,35 @@ namespace UILGerenReservasLab
             }
             buttonBuscar_Click(null, null);
         }
-
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            try
+            if (cursoBindingSource.Count <= 0)
             {
-                if (cursoBindingSource.Count == 0)
-                    throw new Exception("Não existe curso listado para ser alterado.");
-
-                int id = ((Curso)cursoBindingSource.Current).Id;
-
-                using (FormCadastroCurso frm = new FormCadastroCurso(id))
-                {
-                    frm.ShowDialog();
-                }
-                buttonBuscar_Click(null, null);
+                MessageBox.Show("Não existe registro");
             }
-            catch (Exception ex)
+            int id = ((Curso)cursoBindingSource.Current).Id; // Use a propriedade correta para obter o ID do curso
+
+            using (FormCadastroCurso frm = new FormCadastroCurso(true, id))
             {
-                MessageBox.Show(ex.Message);
+                frm.ShowDialog();
             }
+            buttonBuscar_Click(sender, e);
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            try
+            CursoBLL cursoBLL = new CursoBLL();
+            if (buscarTextBox.Text == "")
+                cursoBindingSource.DataSource = cursoBLL.BuscarTodos();
+            else
+                cursoBindingSource.DataSource = cursoBLL.BuscarPorNome(buscarTextBox.Text);
+        }
+        private void cursoDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            // Verifique se a seleção não está vazia
+            if (cursoDataGridView.SelectedRows.Count > 0)
             {
-                cursoBindingSource.DataSource = new CursoBLL().BuscarTodos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                // Limpe o conteúdo do textbox de busca
+                buscarTextBox.Text = "";
             }
         }
     }

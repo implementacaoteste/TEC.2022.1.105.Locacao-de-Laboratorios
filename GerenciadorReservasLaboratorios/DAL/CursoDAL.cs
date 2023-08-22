@@ -43,7 +43,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Curso";
+                cmd.CommandText = @"SELECT Id, Nome FROM Curso";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -79,7 +79,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Curso WHERE Id = @Id";
+                cmd.CommandText = @"SELECT Id, Nome FROM Curso WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", id);
                 cn.Open();
@@ -111,7 +111,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Curso WHERE Nome = @Nome";
+                cmd.CommandText = @"SELECT Id, Nome FROM Curso WHERE Nome = @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", nome);
                 cn.Open();
@@ -135,17 +135,17 @@ namespace DAL
             }
         }
 
-        public void Alterar(Curso curso)
+        public void Alterar(Curso _curso)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Curso SET Nome = @Nome WHERE Id = @Id";
+                cmd.CommandText = @"UPDATE Curso SET Nome = @Nome WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", curso.Nome);
-                cmd.Parameters.AddWithValue("@Id", curso.Id);
+                cmd.Parameters.AddWithValue("@Nome", _curso.Nome);
+                cmd.Parameters.AddWithValue("@Id", _curso.Id);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -161,29 +161,34 @@ namespace DAL
                 cn.Close();
             }
         }
-
-        public void Excluir(int id)
+        public void Excluir(int _id, SqlTransaction _transaction = null)
         {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "DELETE FROM Curso WHERE Id = @Id";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Id", id);
+            SqlTransaction transaction = _transaction;
 
-                cmd.Connection = cn;
-                cn.Open();
-
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                throw new Exception("Ocorreu um erro ao tentar excluir um curso do banco de dados.", ex);
-            }
-            finally
-            {
-                cn.Close();
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Curso WHERE Id = @Id", cn))
+                {
+                    try
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@Id", _id);
+                        if (_transaction == null)
+                        {
+                            cn.Open();
+                            transaction = cn.BeginTransaction();
+                        }
+                        cmd.Transaction = transaction;
+                        cmd.Connection = transaction.Connection;
+                        if (_transaction == null)
+                            transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception("Ocorreu um erro ao tentar excluir usuário no banco de dados.", ex) { Data = { { "Id", -1 } } };
+                    }
+                }
             }
         }
     }

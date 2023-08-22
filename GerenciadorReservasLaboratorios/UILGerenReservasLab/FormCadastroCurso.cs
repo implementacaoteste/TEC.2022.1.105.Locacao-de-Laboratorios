@@ -15,10 +15,14 @@ namespace UILGerenReservasLab
     public partial class FormCadastroCurso : Form
     {
         private int Id;
-        public FormCadastroCurso(int _id = 0)
+        private bool alterar;
+        public FormCadastroCurso(bool _alterar = false, int _id = 0)
         {
             InitializeComponent();
             Id = _id;
+            alterar = _alterar;
+            if (alterar)
+                cursoBindingSource.DataSource = new CursoBLL().BuscarPorId(_id);
         }
         private void btnSalvarCurso_Click(object sender, EventArgs e)
         {
@@ -38,7 +42,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
                 throw;
             }
-
 
         }
         private void btnCancelarCurso_Click(object sender, EventArgs e)

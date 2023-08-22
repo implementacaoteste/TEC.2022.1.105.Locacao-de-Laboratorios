@@ -15,12 +15,14 @@ namespace BLL
         {
             return new CursoDAL().BuscarTodos();
         }
-
-        public Curso BuscarPorId(int id)
+        public Curso BuscarPorId(int _id)
         {
-            return new CursoDAL().BuscarPorId(id);
+            return new CursoDAL().BuscarPorId(_id);
         }
-
+        public Curso BuscarPorNome(string _nome)
+        {
+            return new CursoDAL().BuscarPorNome(_nome);
+        }
         public void Alterar(Curso curso)
         {
             new CursoDAL().Alterar(curso);
