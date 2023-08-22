@@ -126,5 +126,10 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void alunoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

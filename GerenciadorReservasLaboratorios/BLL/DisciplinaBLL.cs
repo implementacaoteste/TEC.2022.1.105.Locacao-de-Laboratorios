@@ -30,5 +30,10 @@ namespace BLL
         {
             new DisciplinaDAL().Excluir(id);
         }
+        public List<Disciplina> BuscarPorNome(string _nome)
+        {
+            return new DisciplinaDAL().BuscarPorNome(_nome);
+        }
+
     }
 }
