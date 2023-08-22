@@ -20,17 +20,16 @@ namespace UILGerenReservasLab
             InitializeComponent();
             Id = _id;
         }
-
         private void btnSalvarCurso_Click(object sender, EventArgs e)
         {
             try
             {
-                Curso curso = (Curso)cursoBindingSource.Current;
+                Curso _curso = (Curso)cursoBindingSource.Current;
                 cursoBindingSource.EndEdit();
                 if (Id == 0)
-                    new CursoBLL().Inserir(curso);
+                    new CursoBLL().Inserir(_curso);
                 else
-                    new CursoBLL().Alterar(curso);
+                    new CursoBLL().Alterar(_curso);
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
             }
@@ -42,7 +41,6 @@ namespace UILGerenReservasLab
 
 
         }
-
         private void btnCancelarCurso_Click(object sender, EventArgs e)
         {
             try

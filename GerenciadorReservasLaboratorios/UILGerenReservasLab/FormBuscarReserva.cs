@@ -11,13 +11,12 @@ namespace UILGerenReservasLab
         {
             InitializeComponent();
         }
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
 
             try
             {
-                reservaBindingSource.DataSource = new CursoBLL().BuscarTodos();
+                reservaBindingSource.DataSource = new ReservaBLL().BuscarTodos();
             }
             catch (Exception ex)
             {
@@ -45,21 +44,8 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void buttonAdicionarUsuario_Click(object sender, EventArgs e)
+        private void buttonExcluirReserva_Click(object sender, EventArgs e)
         {
-
-            using (FormBuscarReserva frm = new FormBuscarReserva())
-            {
-                frm.ShowDialog();
-            }
-            buttonBuscar_Click(null, null);
-        }
-
-        private void buttonExcluirUsuario_Click(object sender, EventArgs e)
-        {
-
-
             try
             {
                 if (reservaBindingSource.Count == 0)
@@ -86,10 +72,13 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void buttonInserirReserva_Click(object sender, EventArgs e)
         {
-
+            using (FormBuscarReserva frm = new FormBuscarReserva())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
         }
     }
 }

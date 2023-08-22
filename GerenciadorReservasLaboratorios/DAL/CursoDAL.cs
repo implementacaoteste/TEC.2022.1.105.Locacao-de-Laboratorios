@@ -7,7 +7,7 @@ namespace DAL
 {
     public class CursoDAL
     {
-        public void Inserir(Curso curso)
+        public void Inserir(Curso _curso)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -16,7 +16,7 @@ namespace DAL
                 cmd.CommandText = @"INSERT INTO Curso (Nome) VALUES (@Nome)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", curso.Nome);
+                cmd.Parameters.AddWithValue("@Nome", _curso.Nome);
 
                 cmd.Connection = cn;
                 cn.Open();

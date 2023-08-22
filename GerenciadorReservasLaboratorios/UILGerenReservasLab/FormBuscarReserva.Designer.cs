@@ -45,8 +45,8 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonExcluirUsuario = new System.Windows.Forms.Button();
-            this.buttonAdicionarUsuario = new System.Windows.Forms.Button();
+            this.buttonExcluirReserva = new System.Windows.Forms.Button();
+            this.buttonInserirReserva = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -198,27 +198,26 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "O &que deseja buscar?";
             // 
-            // buttonExcluirUsuario
+            // buttonExcluirReserva
             // 
-            this.buttonExcluirUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirUsuario.Location = new System.Drawing.Point(666, 102);
-            this.buttonExcluirUsuario.Name = "buttonExcluirUsuario";
-            this.buttonExcluirUsuario.Size = new System.Drawing.Size(75, 32);
-            this.buttonExcluirUsuario.TabIndex = 17;
-            this.buttonExcluirUsuario.Text = "&Excluir";
-            this.buttonExcluirUsuario.UseVisualStyleBackColor = true;
-            this.buttonExcluirUsuario.Click += new System.EventHandler(this.buttonExcluirUsuario_Click);
+            this.buttonExcluirReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExcluirReserva.Location = new System.Drawing.Point(666, 102);
+            this.buttonExcluirReserva.Name = "buttonExcluirReserva";
+            this.buttonExcluirReserva.Size = new System.Drawing.Size(75, 32);
+            this.buttonExcluirReserva.TabIndex = 17;
+            this.buttonExcluirReserva.Text = "&Excluir";
+            this.buttonExcluirReserva.UseVisualStyleBackColor = true;
             // 
-            // buttonAdicionarUsuario
+            // buttonInserirReserva
             // 
-            this.buttonAdicionarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdicionarUsuario.Location = new System.Drawing.Point(585, 102);
-            this.buttonAdicionarUsuario.Name = "buttonAdicionarUsuario";
-            this.buttonAdicionarUsuario.Size = new System.Drawing.Size(75, 32);
-            this.buttonAdicionarUsuario.TabIndex = 16;
-            this.buttonAdicionarUsuario.Text = "&Adicionar";
-            this.buttonAdicionarUsuario.UseVisualStyleBackColor = true;
-            this.buttonAdicionarUsuario.Click += new System.EventHandler(this.buttonAdicionarUsuario_Click);
+            this.buttonInserirReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInserirReserva.Location = new System.Drawing.Point(585, 102);
+            this.buttonInserirReserva.Name = "buttonInserirReserva";
+            this.buttonInserirReserva.Size = new System.Drawing.Size(75, 32);
+            this.buttonInserirReserva.TabIndex = 16;
+            this.buttonInserirReserva.Text = "&Inserir";
+            this.buttonInserirReserva.UseVisualStyleBackColor = true;
+            this.buttonInserirReserva.Click += new System.EventHandler(this.buttonInserirReserva_Click);
             // 
             // buttonAlterar
             // 
@@ -270,8 +269,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonExcluirUsuario);
-            this.Controls.Add(this.buttonAdicionarUsuario);
+            this.Controls.Add(this.buttonExcluirReserva);
+            this.Controls.Add(this.buttonInserirReserva);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBox1);
@@ -303,8 +302,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonExcluirUsuario;
-        private System.Windows.Forms.Button buttonAdicionarUsuario;
+        private System.Windows.Forms.Button buttonExcluirReserva;
+        private System.Windows.Forms.Button buttonInserirReserva;
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.TextBox textBox1;

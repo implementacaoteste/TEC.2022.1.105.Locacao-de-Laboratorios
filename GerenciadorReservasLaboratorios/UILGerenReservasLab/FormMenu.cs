@@ -26,5 +26,37 @@ namespace UILGerenReservasLab
                     Application.Exit();
             }
         }
+
+        private void buttonCurso_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarCurso frm = new FormBuscarCurso())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonReserva_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarReserva frm = new FormBuscarReserva())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonSaidasAntecipadas_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarSaidasAntecipadas frm = new FormBuscarSaidasAntecipadas())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonDisciplina_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarDisciplina frm = new FormBuscarDisciplina())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
