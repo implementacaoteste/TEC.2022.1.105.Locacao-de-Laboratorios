@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace DAL
 {
@@ -103,7 +104,7 @@ namespace DAL
             }
         }
 
-        public Curso BuscarPorNome(string nome)
+        public Curso BuscarPorNome(string _nome)
         {
             Curso curso = new Curso();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -111,9 +112,9 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome FROM Curso WHERE Nome = @Nome";
+                cmd.CommandText = @"SELECT Id, Nome FROM Curso WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {

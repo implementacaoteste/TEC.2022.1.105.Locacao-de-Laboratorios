@@ -6,9 +6,9 @@ namespace BLL
 {
     public class CursoBLL
     {
-        public void Inserir(Curso curso)
+        public void Inserir(Curso _curso)
         {
-            new CursoDAL().Inserir(curso);
+            new CursoDAL().Inserir(_curso);
         }
 
         public List<Curso> BuscarTodos()
@@ -23,14 +23,14 @@ namespace BLL
         {
             return new CursoDAL().BuscarPorNome(_nome);
         }
-        public void Alterar(Curso curso)
+        public void Alterar(Curso _curso)
         {
-            new CursoDAL().Alterar(curso);
+            new CursoDAL().Alterar(_curso);
         }
 
-        public void Excluir(int id)
+        public void Excluir(int _id)
         {
-            new CursoDAL().Excluir(id);
+            new CursoDAL().Excluir(_id);
         }
     }
 }
