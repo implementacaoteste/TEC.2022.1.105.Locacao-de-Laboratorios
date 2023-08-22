@@ -39,7 +39,7 @@ namespace UILGerenReservasLab
                     return;
 
                 int id = ((Curso)cursoBindingSource.Current).Id;
-                new UsuarioBLL().Excluir(id);
+                new CursoBLL().Excluir(id);
                 cursoBindingSource.RemoveCurrent();
 
                 MessageBox.Show("Registro excluído com sucesso!");

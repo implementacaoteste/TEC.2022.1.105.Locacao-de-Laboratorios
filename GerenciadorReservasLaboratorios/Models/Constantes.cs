@@ -11,6 +11,6 @@ namespace Models
         public static int IdUsuarioLogado;
         public static string StringDeConexao;
         public static string DiretorioStringConexao = "C:\\Configuracao\\";
-        public static string NomeArquivoConexao = "laboratoriosConnection.config";
+        public static string NomeArquivoConexao = "sgreservasConnection.config";
     }
 }
