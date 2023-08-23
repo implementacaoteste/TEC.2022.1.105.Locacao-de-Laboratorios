@@ -337,7 +337,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo-senai1.png" />
     <Content Include="Resources\logo_welcome01.jpg" />
+    <None Include="Resources\Senai_logo_01.png" />
+    <None Include="Resources\senai-logo-3.png" />
     <Content Include="Resources\senai-logo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
