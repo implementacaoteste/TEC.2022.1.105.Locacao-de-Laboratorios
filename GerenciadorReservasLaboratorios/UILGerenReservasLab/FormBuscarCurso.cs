@@ -15,10 +15,10 @@ namespace UILGerenReservasLab
     public partial class FormBuscarCurso : Form
     {
         private int id;
-        public FormBuscarCurso(int _id = 0)
+        public FormBuscarCurso() //int _id = 0
         {
             InitializeComponent();
-            id = _id;
+            //id = _id;
         }
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
@@ -87,6 +87,11 @@ namespace UILGerenReservasLab
                 // Limpe o conteúdo do textbox de busca
                 buscarTextBox.Text = "";
             }
+        }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

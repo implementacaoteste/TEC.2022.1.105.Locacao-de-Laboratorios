@@ -76,6 +76,12 @@
     <Compile Include="FormBuscarPermissao.designer.cs">
       <DependentUpon>FormBuscarPermissao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBuscarPredio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarPredio.Designer.cs">
+      <DependentUpon>FormBuscarPredio.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,12 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.Designer.cs">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBuscarAluno.resx">
@@ -215,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarPermissao.resx">
       <DependentUpon>FormBuscarPermissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarPredio.resx">
+      <DependentUpon>FormBuscarPredio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarReserva.resx">
       <DependentUpon>FormBuscarReserva.cs</DependentUpon>
@@ -279,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPrincipal.resx">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -345,9 +363,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-senai1.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\fechar.png" />
     <Content Include="Resources\logo_welcome01.jpg" />
     <None Include="Resources\Senai_logo_01.png" />
     <None Include="Resources\senai-logo-3.png" />
+    <None Include="Resources\maxi.png" />
+    <None Include="Resources\res.png" />
+    <None Include="Resources\minimizar.png" />
     <Content Include="Resources\senai-logo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

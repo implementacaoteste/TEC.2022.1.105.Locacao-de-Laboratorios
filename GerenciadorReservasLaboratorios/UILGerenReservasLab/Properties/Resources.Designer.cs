@@ -73,6 +73,26 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close {
+            get {
+                object obj = ResourceManager.GetObject("Close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fechar {
+            get {
+                object obj = ResourceManager.GetObject("fechar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_open {
             get {
                 object obj = ResourceManager.GetObject("lock_open", resourceCulture);
@@ -106,6 +126,36 @@ namespace UILGerenReservasLab.Properties {
         internal static System.Drawing.Bitmap logo_senai1 {
             get {
                 object obj = ResourceManager.GetObject("logo-senai1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maxi {
+            get {
+                object obj = ResourceManager.GetObject("maxi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimizar {
+            get {
+                object obj = ResourceManager.GetObject("minimizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap res {
+            get {
+                object obj = ResourceManager.GetObject("res", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
