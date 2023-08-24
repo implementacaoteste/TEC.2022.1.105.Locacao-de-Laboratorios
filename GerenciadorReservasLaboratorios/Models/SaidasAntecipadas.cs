@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Models
 {
@@ -15,5 +11,11 @@ namespace Models
         public string Motivo { get; set; }
         public string Status { get; set; }
         public DateTime DataHoraSaida { get; set; }
+
+        // Propriedades de navegação para Aluno, Professor e Coordenacao
+        public Aluno Aluno { get; set; }
+        public Usuario Professor { get; set; }
+        public Usuario Coordenacao { get; set; }
     }
 }
+

@@ -36,7 +36,7 @@ namespace DAL
             }
         }
 
-        public List<Aluno> BuscarTodos()
+        public List<Aluno> BuscarTodosAlunos()
         {
             List<Aluno> alunos = new List<Aluno>();
             Aluno aluno;
@@ -180,7 +180,32 @@ namespace DAL
                 cn.Close();
             }
         }
+        public string ObterNomePorId(int id)
+        {
+            string nome = null;
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Nome FROM Aluno WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", id);
+                cn.Open();
+
+                nome = cmd.ExecuteScalar() as string;
+                return nome;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o nome do aluno pelo ID no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public void Alterar(Aluno aluno)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -209,7 +234,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Excluir(int id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

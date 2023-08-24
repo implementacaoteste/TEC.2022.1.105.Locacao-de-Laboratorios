@@ -29,16 +29,13 @@ namespace UILGerenReservasLab
                         if (String.IsNullOrEmpty(txtBuscarSala.Text))
                             throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 01 } } };
 
-                        salaBindingSource.DataSource = new AlunoBLL().BuscarPorId(Convert.ToInt32(txtBuscarSala.Text));
+                        salaBindingSource.DataSource = new SalaBLL().BuscarPorId(Convert.ToInt32(txtBuscarSala.Text));
                         break;
                     case 1:
                         salaBindingSource.DataSource = new AlunoBLL().BuscarPorNome(txtBuscarSala.Text);
                         break;
                     case 2:
-                        salaBindingSource.DataSource = new AlunoBLL().BuscarPorMatricula(txtBuscarSala.Text);
-                        break;
-                    case 3:
-                        salaBindingSource.DataSource = new AlunoBLL().BuscarTodos();
+                        salaBindingSource.DataSource = new SalaBLL().BuscarTodos();
                         break;
                     default:
                         break;

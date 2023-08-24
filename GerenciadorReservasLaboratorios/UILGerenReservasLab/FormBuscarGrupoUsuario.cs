@@ -140,5 +140,10 @@ namespace UILGerenReservasLab
             if (e.KeyCode == Keys.Enter)
                 buttonBuscar_Click(null, null);
         }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

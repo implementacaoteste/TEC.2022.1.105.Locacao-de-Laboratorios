@@ -81,10 +81,16 @@ namespace BLL
         {
             return Constantes.IdUsuarioLogado;
         }
+
         public string ObterNomeUsuarioLogado()
         {
             int idUsuario = ObterIdUsuarioLogado();
             return usuarioDAL.ObterNomeUsuarioPorId(idUsuario);
         }
+        public string ObterNomePorId(int id)
+        {
+            return usuarioDAL.ObterNomePorId(id);
+        }
+
     }
 }

@@ -14,45 +14,50 @@ namespace UILGerenReservasLab
 {
     public partial class FormBuscarAluno : Form
     {
+        public int opc;
+        public int id;
+        public Aluno AlunoSelecionado { get; private set; }
+
 
         public FormBuscarAluno()
         {
             InitializeComponent();
         }
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-                switch (comboBoxBuscarPor.SelectedIndex)
+                switch (comboBoxBuscarAlunoPor.SelectedIndex)
                 {
                     case 0:
-                        if (String.IsNullOrEmpty(textBoxBuscar.Text))
+                        opc = 0;
+                        if (String.IsNullOrEmpty(textBoxAlunoBuscar.Text))
                             throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 01 } } };
-
-                       alunoBindingSource.DataSource = new AlunoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
+                        alunoBindingSource.DataSource = new AlunoBLL().BuscarPorId(Convert.ToInt32(textBoxAlunoBuscar.Text));
                         break;
                     case 1:
-                        alunoBindingSource.DataSource = new AlunoBLL().BuscarPorNome(textBoxBuscar.Text);
+                        opc = 1;
+                        alunoBindingSource.DataSource = new AlunoBLL().BuscarPorMatricula(textBoxAlunoBuscar.Text);
                         break;
                     case 2:
-                        alunoBindingSource.DataSource = new AlunoBLL().BuscarPorMatricula(textBoxBuscar.Text);
+                        opc = 2;
+                        alunoBindingSource.DataSource = new AlunoBLL().BuscarPorNome(textBoxAlunoBuscar.Text);
                         break;
                     case 3:
-                        alunoBindingSource.DataSource = new AlunoBLL().BuscarTodos();
+                        opc = 3;
+                        alunoBindingSource.DataSource = new AlunoBLL().BuscarTodosAlunos();
                         break;
                     default:
+                        MessageBox.Show("Escolha uma opção de busca");
                         break;
-
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
+
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
 
@@ -112,15 +117,30 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void alunoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void buttonSelecionarAluno_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                alunoBindingSource.EndEdit();
+
+                if (alunoBindingSource.Count > 0)
+                {
+                    AlunoSelecionado = (Aluno)alunoBindingSource.Current;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum aluno selecionado");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

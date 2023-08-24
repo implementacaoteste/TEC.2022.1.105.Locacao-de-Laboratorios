@@ -130,7 +130,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario 
-                            WHERE Id = @Id";
+                                WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
                 cn.Open();
@@ -149,11 +149,53 @@ namespace DAL
                         usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                 }
+
+                // Carregue os grupos de usuário relacionados a esse usuário
+                usuario.GrupoUsuarios = BuscarGruposUsuarioPorIdUsuario(_id);
+
                 return usuario;
             }
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar buscar o usuário pelo ID no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<GrupoUsuario> BuscarGruposUsuarioPorIdUsuario(int _idUsuario)
+        {
+            List<GrupoUsuario> gruposUsuario = new List<GrupoUsuario>();
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT GrupoUsuario.Id, GrupoUsuario.NomeGrupo FROM GrupoUsuario
+                                INNER JOIN UsuarioGrupoUsuario ON GrupoUsuario.Id = UsuarioGrupoUsuario.IdGrupoUsuario
+                                WHERE UsuarioGrupoUsuario.IdUsuario = @IdUsuario";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        GrupoUsuario grupoUsuario = new GrupoUsuario();
+                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        gruposUsuario.Add(grupoUsuario);
+                    }
+                }
+
+                return gruposUsuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar os grupos de usuário do usuário no banco de dados.", ex);
             }
             finally
             {
@@ -478,5 +520,32 @@ namespace DAL
                 cn.Close();
             }
         }
+        public string ObterNomePorId(int _idUsuario)
+        {
+            string nomedoUsuario = null;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Nome FROM Usuario WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _idUsuario);
+                cn.Open();
+
+                nomedoUsuario = cmd.ExecuteScalar() as string;
+                return nomedoUsuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o nome completo do usuário pelo ID no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
     }
 }

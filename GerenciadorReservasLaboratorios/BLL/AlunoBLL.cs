@@ -10,12 +10,10 @@ namespace BLL
         {
             new AlunoDAL().Inserir(aluno);
         }
-
-        public List<Aluno> BuscarTodos()
+        public List<Aluno> BuscarTodosAlunos()
         {
-            return new AlunoDAL().BuscarTodos();
+            return new AlunoDAL().BuscarTodosAlunos();
         }
-
         public Aluno BuscarPorId(int id)
         {
             return new AlunoDAL().BuscarPorId(id);
@@ -28,7 +26,10 @@ namespace BLL
         {
             return new AlunoDAL().BuscarPorMatricula(_matricula);
         }
-
+        public string ObterNomePorId(int id)
+        {
+            return new AlunoDAL().ObterNomePorId(id);
+        }
         public void Alterar(Aluno aluno)
         {
             new AlunoDAL().Alterar(aluno);
