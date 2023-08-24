@@ -15,10 +15,10 @@ namespace UILGerenReservasLab
     public partial class FormBuscarCurso : Form
     {
         private int id;
-        public FormBuscarCurso() //int _id = 0
+        public FormBuscarCurso(int _id = 0)
         {
             InitializeComponent();
-            //id = _id;
+            id = _id;
         }
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
@@ -73,20 +73,45 @@ namespace UILGerenReservasLab
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            CursoBLL cursoBLL = new CursoBLL();
-            if (buscarTextBox.Text == "")
-                cursoBindingSource.DataSource = cursoBLL.BuscarTodos();
-            else
-                cursoBindingSource.DataSource = cursoBLL.BuscarPorNome(buscarTextBox.Text);
+            //CursoBLL cursoBLL = new CursoBLL();
+            //if (buscarTextBox.Text == "")
+            //    cursoBindingSource.DataSource = cursoBLL.BuscarTodos();
+            //else
+            //    cursoBindingSource.DataSource = cursoBLL.BuscarPorNome(buscarTextBox.Text);
+            try
+            {
+                switch (comboBoxBuscarPor.SelectedIndex)
+                {
+                    case 0:
+                        if (String.IsNullOrEmpty(buscarTextBox.Text))
+                            throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 01 } } };
+
+                        cursoBindingSource.DataSource = new CursoBLL().BuscarPorId(Convert.ToInt32(buscarTextBox.Text));
+                        break;
+                    case 1:
+                        cursoBindingSource.DataSource = new CursoBLL().BuscarPorNome(buscarTextBox.Text);
+                        break;
+                    case 2:
+                        cursoBindingSource.DataSource = new CursoBLL().BuscarTodos();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
         private void cursoDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            // Verifique se a seleção não está vazia
-            if (cursoDataGridView.SelectedRows.Count > 0)
-            {
-                // Limpe o conteúdo do textbox de busca
-                buscarTextBox.Text = "";
-            }
+            //// Verifique se a seleção não está vazia
+            //if (cursoDataGridView.SelectedRows.Count > 0)
+            //{
+            //    // Limpe o conteúdo do textbox de busca
+            //    buscarTextBox.Text = "";
+            //}
         }
 
         private void buttonFechar_Click(object sender, EventArgs e)

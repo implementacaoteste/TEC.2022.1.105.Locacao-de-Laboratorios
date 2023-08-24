@@ -40,8 +40,8 @@
             this.buttonAluno = new System.Windows.Forms.Button();
             this.buttonUsuario = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,8 +63,9 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 561);
+            this.panelMenu.Size = new System.Drawing.Size(293, 690);
             this.panelMenu.TabIndex = 1;
             // 
             // buttonSala
@@ -74,9 +75,10 @@
             this.buttonSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSala.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonSala.Location = new System.Drawing.Point(0, 441);
+            this.buttonSala.Location = new System.Drawing.Point(0, 541);
+            this.buttonSala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSala.Name = "buttonSala";
-            this.buttonSala.Size = new System.Drawing.Size(220, 40);
+            this.buttonSala.Size = new System.Drawing.Size(293, 49);
             this.buttonSala.TabIndex = 10;
             this.buttonSala.Text = "Salas";
             this.buttonSala.UseVisualStyleBackColor = true;
@@ -88,9 +90,10 @@
             this.buttonSaidasAntecipadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaidasAntecipadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSaidasAntecipadas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonSaidasAntecipadas.Location = new System.Drawing.Point(0, 401);
+            this.buttonSaidasAntecipadas.Location = new System.Drawing.Point(0, 492);
+            this.buttonSaidasAntecipadas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSaidasAntecipadas.Name = "buttonSaidasAntecipadas";
-            this.buttonSaidasAntecipadas.Size = new System.Drawing.Size(220, 40);
+            this.buttonSaidasAntecipadas.Size = new System.Drawing.Size(293, 49);
             this.buttonSaidasAntecipadas.TabIndex = 9;
             this.buttonSaidasAntecipadas.Text = "Saídas Antecipadas";
             this.buttonSaidasAntecipadas.UseVisualStyleBackColor = true;
@@ -103,9 +106,10 @@
             this.buttonReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReserva.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonReserva.Location = new System.Drawing.Point(0, 361);
+            this.buttonReserva.Location = new System.Drawing.Point(0, 443);
+            this.buttonReserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReserva.Name = "buttonReserva";
-            this.buttonReserva.Size = new System.Drawing.Size(220, 40);
+            this.buttonReserva.Size = new System.Drawing.Size(293, 49);
             this.buttonReserva.TabIndex = 8;
             this.buttonReserva.Text = "Reservas";
             this.buttonReserva.UseVisualStyleBackColor = true;
@@ -118,9 +122,10 @@
             this.buttonPredio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPredio.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonPredio.Location = new System.Drawing.Point(0, 321);
+            this.buttonPredio.Location = new System.Drawing.Point(0, 394);
+            this.buttonPredio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonPredio.Name = "buttonPredio";
-            this.buttonPredio.Size = new System.Drawing.Size(220, 40);
+            this.buttonPredio.Size = new System.Drawing.Size(293, 49);
             this.buttonPredio.TabIndex = 7;
             this.buttonPredio.Text = "Predios";
             this.buttonPredio.UseVisualStyleBackColor = true;
@@ -132,9 +137,10 @@
             this.buttonPermissao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPermissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPermissao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonPermissao.Location = new System.Drawing.Point(0, 281);
+            this.buttonPermissao.Location = new System.Drawing.Point(0, 345);
+            this.buttonPermissao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonPermissao.Name = "buttonPermissao";
-            this.buttonPermissao.Size = new System.Drawing.Size(220, 40);
+            this.buttonPermissao.Size = new System.Drawing.Size(293, 49);
             this.buttonPermissao.TabIndex = 6;
             this.buttonPermissao.Text = "Permissões";
             this.buttonPermissao.UseVisualStyleBackColor = true;
@@ -146,9 +152,10 @@
             this.buttonGrupoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGrupoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGrupoUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonGrupoUsuario.Location = new System.Drawing.Point(0, 241);
+            this.buttonGrupoUsuario.Location = new System.Drawing.Point(0, 296);
+            this.buttonGrupoUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonGrupoUsuario.Name = "buttonGrupoUsuario";
-            this.buttonGrupoUsuario.Size = new System.Drawing.Size(220, 40);
+            this.buttonGrupoUsuario.Size = new System.Drawing.Size(293, 49);
             this.buttonGrupoUsuario.TabIndex = 5;
             this.buttonGrupoUsuario.Text = "Grupos de Usuário";
             this.buttonGrupoUsuario.UseVisualStyleBackColor = true;
@@ -160,9 +167,10 @@
             this.buttonDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDisciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDisciplina.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonDisciplina.Location = new System.Drawing.Point(0, 201);
+            this.buttonDisciplina.Location = new System.Drawing.Point(0, 247);
+            this.buttonDisciplina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDisciplina.Name = "buttonDisciplina";
-            this.buttonDisciplina.Size = new System.Drawing.Size(220, 40);
+            this.buttonDisciplina.Size = new System.Drawing.Size(293, 49);
             this.buttonDisciplina.TabIndex = 4;
             this.buttonDisciplina.Text = "Disciplina";
             this.buttonDisciplina.UseVisualStyleBackColor = true;
@@ -175,9 +183,10 @@
             this.buttonCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCurso.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonCurso.Location = new System.Drawing.Point(0, 161);
+            this.buttonCurso.Location = new System.Drawing.Point(0, 198);
+            this.buttonCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCurso.Name = "buttonCurso";
-            this.buttonCurso.Size = new System.Drawing.Size(220, 40);
+            this.buttonCurso.Size = new System.Drawing.Size(293, 49);
             this.buttonCurso.TabIndex = 3;
             this.buttonCurso.Text = "Curso";
             this.buttonCurso.UseVisualStyleBackColor = true;
@@ -190,12 +199,14 @@
             this.buttonAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAluno.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonAluno.Location = new System.Drawing.Point(0, 121);
+            this.buttonAluno.Location = new System.Drawing.Point(0, 149);
+            this.buttonAluno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAluno.Name = "buttonAluno";
-            this.buttonAluno.Size = new System.Drawing.Size(220, 40);
+            this.buttonAluno.Size = new System.Drawing.Size(293, 49);
             this.buttonAluno.TabIndex = 2;
             this.buttonAluno.Text = "Aluno";
             this.buttonAluno.UseVisualStyleBackColor = true;
+            this.buttonAluno.Click += new System.EventHandler(this.buttonAluno_Click);
             // 
             // buttonUsuario
             // 
@@ -204,9 +215,10 @@
             this.buttonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonUsuario.Location = new System.Drawing.Point(0, 81);
+            this.buttonUsuario.Location = new System.Drawing.Point(0, 100);
+            this.buttonUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonUsuario.Name = "buttonUsuario";
-            this.buttonUsuario.Size = new System.Drawing.Size(220, 40);
+            this.buttonUsuario.Size = new System.Drawing.Size(293, 49);
             this.buttonUsuario.TabIndex = 1;
             this.buttonUsuario.Text = "Usuario";
             this.buttonUsuario.UseVisualStyleBackColor = true;
@@ -217,19 +229,10 @@
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 81);
+            this.panelLogo.Size = new System.Drawing.Size(293, 100);
             this.panelLogo.TabIndex = 0;
-            // 
-            // panelBarraTitulo
-            // 
-            this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBarraTitulo.Location = new System.Drawing.Point(220, 0);
-            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(808, 81);
-            this.panelBarraTitulo.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -237,20 +240,31 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(293, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panelBarraTitulo
+            // 
+            this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBarraTitulo.Location = new System.Drawing.Point(293, 0);
+            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelBarraTitulo.Name = "panelBarraTitulo";
+            this.panelBarraTitulo.Size = new System.Drawing.Size(1078, 100);
+            this.panelBarraTitulo.TabIndex = 2;
+            // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 561);
+            this.ClientSize = new System.Drawing.Size(1371, 690);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMenu";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

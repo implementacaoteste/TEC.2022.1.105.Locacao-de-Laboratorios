@@ -30,10 +30,18 @@ namespace UILGerenReservasLab
             {
                 Curso _curso = (Curso)cursoBindingSource.Current;
                 cursoBindingSource.EndEdit();
+
                 if (Id == 0)
+                {
+                    _curso = new Curso(); // Crie um novo objeto Curso se for um novo registro.
+                    _curso.Nome = nomeTextBox.Text; // Atribua o nome do TextBox ao novo objeto.
                     new CursoBLL().Inserir(_curso);
+                }
                 else
+                {
                     new CursoBLL().Alterar(_curso);
+                }
+
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
             }
@@ -42,8 +50,8 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
                 throw;
             }
-
         }
+
         private void btnCancelarCurso_Click(object sender, EventArgs e)
         {
             try

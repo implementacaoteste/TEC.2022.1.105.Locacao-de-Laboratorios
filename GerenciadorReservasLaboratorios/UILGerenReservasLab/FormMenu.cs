@@ -58,5 +58,13 @@ namespace UILGerenReservasLab
                 frm.ShowDialog();
             }
         }
+
+        private void buttonAluno_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarAluno frm = new FormBuscarAluno())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

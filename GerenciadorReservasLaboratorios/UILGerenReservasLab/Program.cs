@@ -16,7 +16,7 @@ namespace UILGerenReservasLab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenuPrincipal());
+            Application.Run(new FormMenu());
         }
     }
 }
