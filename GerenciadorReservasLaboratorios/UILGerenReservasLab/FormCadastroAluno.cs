@@ -15,10 +15,18 @@ namespace UILGerenReservasLab
     public partial class FormCadastroAluno : Form
     {
         private int id;
+
         public FormCadastroAluno(int _id = 0)
         {
             InitializeComponent();
             id = _id;
+
+            if (id > 0)
+            {
+                // Busque o aluno com base no id e preencha os campos com os dados.
+                Aluno aluno = new AlunoBLL().BuscarPorId(id);
+                alunoBindingSource.DataSource = aluno;
+            }
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)

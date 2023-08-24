@@ -53,19 +53,6 @@ namespace UILGerenReservasLab
             }
 
         }
-
-        private void buttonBuscar_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                alunoBindingSource.DataSource = new AlunoBLL().BuscarTodos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
 
@@ -87,7 +74,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonInserir_Click(object sender, EventArgs e)
         {
             using (FormCadastroAluno frm = new FormCadastroAluno())
