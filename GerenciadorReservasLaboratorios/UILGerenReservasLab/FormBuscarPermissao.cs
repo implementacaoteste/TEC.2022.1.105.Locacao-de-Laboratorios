@@ -26,15 +26,15 @@ namespace UILGerenReservasLab
                 PermissaoBLL permissaoBLL = new PermissaoBLL();
                 if (radioButton_BuscarTodasPermissoes.Checked)
                 {
-                    permissaoBindingSource.DataSource = permissaoBLL.BuscarTodasPermissoes();
+                    permissoesBindingSource.DataSource = permissaoBLL.BuscarTodasPermissoes();
                 }
                 else if (radioButton_BuscarPorNome.Checked)
                 {
-                    permissaoBindingSource.DataSource = permissaoBLL.BuscarPorDescricao(textBox1.Text);
+                    permissoesBindingSource.DataSource = permissaoBLL.BuscarPorDescricao(textBox1.Text);
                 }
                 else if (radioButton_BuscarPorId.Checked)
                 {
-                   permissaoBindingSource.DataSource = permissaoBLL.BuscarTodasPermissoesPorId(Convert.ToInt32(textBox1.Text));
+                   permissoesBindingSource.DataSource = permissaoBLL.BuscarTodasPermissoesPorId(Convert.ToInt32(textBox1.Text));
                 }
 
             }
@@ -56,7 +56,7 @@ namespace UILGerenReservasLab
         {
             try
             {
-                int id = ((Permissao)permissaoBindingSource.Current).Id;
+                int id = ((Permissao)permissoesBindingSource.Current).Id;
                 using (FormCadastroPermissao frm = new FormCadastroPermissao(true, id ))
                 {
                     frm.ShowDialog();
@@ -75,7 +75,7 @@ namespace UILGerenReservasLab
         {
             try
             {
-                if (permissaoBindingSource.Count == 0)
+                if (permissoesBindingSource.Count == 0)
                 {
                     MessageBox.Show("Não foi selecionado grupo para ser excluído!");
                     return;
@@ -86,7 +86,7 @@ namespace UILGerenReservasLab
                     return;
                 }
 
-                permissaoBLL.Excluir(((Permissao)permissaoBindingSource.Current));
+                permissaoBLL.Excluir(((Permissao)permissoesBindingSource.Current));
                 MessageBox.Show("Permissão excluído com sucesso");
             }
             catch (Exception ex)
@@ -108,7 +108,7 @@ namespace UILGerenReservasLab
                         return;
                     }
                     GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
-                    int idPermissao = ((Permissao)permissaoBindingSource.Current).Id;
+                    int idPermissao = ((Permissao)permissoesBindingSource.Current).Id;
                     int idGrupo = frm.Id;
                     grupoUsuarioBLL.AdicionarPermissao(idGrupo, idPermissao);
                     MessageBox.Show("Permissão adicionada com sucesso!");
@@ -127,10 +127,10 @@ namespace UILGerenReservasLab
             {
                 GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
                PermissaoBLL permissaoBLL = new PermissaoBLL();
-                if (permissaoBindingSource.Count > 0 && grupoUsuariosBindingSource.Count > 0)
+                if (permissoesBindingSource.Count > 0 && grupoUsuarioBindingSource.Count > 0)
                 {
-                    int id_grupo = ((GrupoUsuario)grupoUsuariosBindingSource.Current).Id;
-                    int id_permissao = ((Permissao)permissaoBindingSource.Current).Id;
+                    int id_grupo = ((GrupoUsuario)grupoUsuarioBindingSource.Current).Id;
+                    int id_permissao = ((Permissao)permissoesBindingSource.Current).Id;
                     if (MessageBox.Show("Deseja realmente excluir este registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                     {
                         return;

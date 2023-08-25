@@ -15,61 +15,11 @@ namespace UILGerenReservasLab
     public partial class FormBuscarCurso : Form
     {
         private int id;
+        public Curso CursoSelecionado { get; private set; }
         public FormBuscarCurso(int _id = 0)
         {
             InitializeComponent();
             id = _id;
-        }
-        private void buttonExcluir_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                if (cursoBindingSource.Count == 0)
-                    throw new Exception("Não existe curso listado para ser excluído.");
-
-                if (cursoBindingSource.Count <= 0)
-                {
-                    MessageBox.Show("Não existe registro para ser excluído.");
-                    return;
-                }
-
-                if (MessageBox.Show("Deseja realmente excluir este registro?",
-                    "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return;
-
-                int id = ((Curso)cursoBindingSource.Current).Id;
-                new CursoBLL().Excluir(id);
-                cursoBindingSource.RemoveCurrent();
-
-                MessageBox.Show("Registro excluído com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void buttonInserir_Click(object sender, EventArgs e)
-        {
-            using (FormCadastroCurso frm = new FormCadastroCurso())
-            {
-                frm.ShowDialog();
-            }
-            buttonBuscar_Click(null, null);
-        }
-        private void buttonAlterar_Click(object sender, EventArgs e)
-        {
-            if (cursoBindingSource.Count <= 0)
-            {
-                MessageBox.Show("Não existe registro");
-            }
-            int id = ((Curso)cursoBindingSource.Current).Id; // Use a propriedade correta para obter o ID do curso
-
-            using (FormCadastroCurso frm = new FormCadastroCurso(true, id))
-            {
-                frm.ShowDialog();
-            }
-            buttonBuscar_Click(sender, e);
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
@@ -104,6 +54,57 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+        private void buttonAlterar_Click(object sender, EventArgs e)
+        {
+            if (cursoBindingSource.Count <= 0)
+            {
+                MessageBox.Show("Não existe registro");
+            }
+            int id = ((Curso)cursoBindingSource.Current).Id; // Use a propriedade correta para obter o ID do curso
+
+            using (FormCadastroCurso frm = new FormCadastroCurso(true, id))
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(sender, e);
+        }
+        private void buttonInserir_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroCurso frm = new FormCadastroCurso())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
+        }
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (cursoBindingSource.Count == 0)
+                    throw new Exception("Não existe curso listado para ser excluído.");
+
+                if (cursoBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro para ser excluído.");
+                    return;
+                }
+
+                if (MessageBox.Show("Deseja realmente excluir este registro?",
+                    "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((Curso)cursoBindingSource.Current).Id;
+                new CursoBLL().Excluir(id);
+                cursoBindingSource.RemoveCurrent();
+
+                MessageBox.Show("Registro excluído com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void cursoDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             //// Verifique se a seleção não está vazia
@@ -117,6 +118,28 @@ namespace UILGerenReservasLab
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonSelecionarCurso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cursoBindingSource.EndEdit();
+
+                if (cursoBindingSource.Count > 0)
+                {
+                    CursoSelecionado = (Curso)cursoBindingSource.Current;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum curso selecionado");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

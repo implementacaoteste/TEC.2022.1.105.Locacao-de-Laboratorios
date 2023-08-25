@@ -15,6 +15,7 @@ namespace UILGerenReservasLab
     public partial class FormCadastroDeDisciplina : Form
     {
         public int Id;
+        public Curso CursoSelecionado { get; private set; }
         public FormCadastroDeDisciplina(int _id = 0)
         {
             InitializeComponent();
@@ -26,22 +27,27 @@ namespace UILGerenReservasLab
 
             try
             {
-               disciplinaBindingSource.EndEdit();
+                Disciplina _disciplina = (Disciplina)disciplinaBindingSource.Current;
+                disciplinaBindingSource.EndEdit();
 
                 if (Id == 0)
-                    new DisciplinaBLL().Inserir((Disciplina)disciplinaBindingSource.Current);
+                {
+                    _disciplina = new Disciplina(); // Crie um novo objeto Curso se for um novo registro.
+                    _disciplina.Nome = nomeTextBox.Text; // Atribua o nome do TextBox ao novo objeto.;
+                    _disciplina.IdCurso = Convert.ToInt32(idCursoTextBox.Text);
+                    new DisciplinaBLL().Inserir(_disciplina);
+                }
                 else
-                    new DisciplinaBLL().Alterar((Disciplina)disciplinaBindingSource.Current);
-
+                {
+                    new DisciplinaBLL().Alterar(_disciplina);
+                }
                 MessageBox.Show("Registro salvo com sucesso!");
-                Close();
-
+                this.Close();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-
+                throw;
             }
         }
         private void FormCadastroDisciplina_Load(object sender, EventArgs e)
@@ -61,9 +67,22 @@ namespace UILGerenReservasLab
 
         private void btnCancelarDisciplina_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void buttonBuscarIdCurso_Click(object sender, EventArgs e)
+        {
             try
             {
-                Close();
+                using (FormBuscarCurso frm = new FormBuscarCurso())
+                {
+                    frm.ShowDialog();
+                    if (frm.CursoSelecionado != null)
+                    {
+                        CursoSelecionado = frm.CursoSelecionado;
+                        idCursoTextBox.Text = Convert.ToString(CursoSelecionado.Id);
+                    }
+                }
             }
             catch (Exception ex)
             {

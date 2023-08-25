@@ -14,9 +14,13 @@ namespace UILGerenReservasLab
 {
     public partial class FormBuscarDisciplina : Form
     {
-        public FormBuscarDisciplina()
+        private int id;
+        public Disciplina DisciSelecionado { get; private set; }
+
+        public FormBuscarDisciplina(int _id = 0)
         {
             InitializeComponent();
+            id = _id;
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -74,7 +78,7 @@ namespace UILGerenReservasLab
         }
         private void FormBuscarDisciplina_Load(object sender, EventArgs e)
         {
-            comboBoxBuscarpor.SelectedIndex = 3;
+            comboBoxBuscarpor.SelectedIndex = 2;
         }
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
@@ -120,6 +124,31 @@ namespace UILGerenReservasLab
             }
         }
 
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void buttonSelecionarDisciplina_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                disciplinaBindingSource.EndEdit();
+
+                if (disciplinaBindingSource.Count > 0)
+                {
+                    DisciSelecionado = (Disciplina)disciplinaBindingSource.Current;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma disciplina selecionada");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 
     
