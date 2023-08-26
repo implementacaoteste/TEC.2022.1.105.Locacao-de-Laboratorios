@@ -14,12 +14,10 @@ namespace UILGerenReservasLab
 {
     public partial class FormBuscarCurso : Form
     {
-        private int id;
         public Curso CursoSelecionado { get; private set; }
-        public FormBuscarCurso(int _id = 0)
+        public FormBuscarCurso()
         {
             InitializeComponent();
-            id = _id;
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {

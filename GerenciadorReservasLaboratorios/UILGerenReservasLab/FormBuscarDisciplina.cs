@@ -14,13 +14,15 @@ namespace UILGerenReservasLab
 {
     public partial class FormBuscarDisciplina : Form
     {
-        private int id;
         public Disciplina DisciSelecionado { get; private set; }
 
-        public FormBuscarDisciplina(int _id = 0)
+        public FormBuscarDisciplina()
         {
             InitializeComponent();
-            id = _id;
+        }
+        private void FormBuscarDisciplina_Load(object sender, EventArgs e)
+        {
+            comboBoxBuscarpor.SelectedIndex = 2;
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -65,8 +67,8 @@ namespace UILGerenReservasLab
                 }
                 int id = ((Disciplina)disciplinaBindingSource.Current).Id;
 
-                using (FormCadastroDeDisciplina frm = new FormCadastroDeDisciplina(id)) 
-               {
+                using (FormCadastroDeDisciplina frm = new FormCadastroDeDisciplina(id))
+                {
                     frm.ShowDialog();
                 }
                 buttonBuscar_Click(null, null);
@@ -76,12 +78,8 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-        private void FormBuscarDisciplina_Load(object sender, EventArgs e)
-        {
-            comboBoxBuscarpor.SelectedIndex = 2;
-        }
 
-        private void buttonAdicionar_Click(object sender, EventArgs e)
+        private void buttonInserir_Click(object sender, EventArgs e)
         {
             try
             {
@@ -97,7 +95,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             try
@@ -123,11 +120,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void buttonFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         private void buttonSelecionarDisciplina_Click(object sender, EventArgs e)
         {
             try
@@ -149,7 +141,10 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-    }
 
-    
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }

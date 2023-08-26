@@ -14,12 +14,12 @@ namespace UILGerenReservasLab
 {
     public partial class FormCadastroDeDisciplina : Form
     {
-        public int Id;
+        private int id;
         public Curso CursoSelecionado { get; private set; }
         public FormCadastroDeDisciplina(int _id = 0)
         {
             InitializeComponent();
-            Id = _id;
+            id = _id;
         }
 
         private void btnSalvarDisciplina_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace UILGerenReservasLab
                 Disciplina _disciplina = (Disciplina)disciplinaBindingSource.Current;
                 disciplinaBindingSource.EndEdit();
 
-                if (Id == 0)
+                if (id == 0)
                 {
                     _disciplina = new Disciplina(); // Crie um novo objeto Curso se for um novo registro.
                     _disciplina.Nome = nomeTextBox.Text; // Atribua o nome do TextBox ao novo objeto.;
@@ -54,10 +54,10 @@ namespace UILGerenReservasLab
         {
             try
             {
-                if (Id == 0)
+                if (id == 0)
                     disciplinaBindingSource.AddNew();
                 else
-                    disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarPorId(Id);
+                    disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarPorId(id);
             }
             catch (Exception ex)
             {
@@ -88,6 +88,11 @@ namespace UILGerenReservasLab
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     

@@ -38,6 +38,7 @@
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.idCursoTextBox = new System.Windows.Forms.TextBox();
             this.buttonBuscarIdCurso = new System.Windows.Forms.Button();
+            this.buttonFechar = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
             idCursoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).BeginInit();
@@ -46,7 +47,7 @@
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(132, 150);
+            nomeLabel.Location = new System.Drawing.Point(82, 172);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(47, 16);
             nomeLabel.TabIndex = 9;
@@ -55,7 +56,7 @@
             // idCursoLabel
             // 
             idCursoLabel.AutoSize = true;
-            idCursoLabel.Location = new System.Drawing.Point(120, 220);
+            idCursoLabel.Location = new System.Drawing.Point(70, 242);
             idCursoLabel.Name = "idCursoLabel";
             idCursoLabel.Size = new System.Drawing.Size(59, 16);
             idCursoLabel.TabIndex = 10;
@@ -63,13 +64,14 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(243, 26);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 32);
+            this.label1.Size = new System.Drawing.Size(1000, 77);
             this.label1.TabIndex = 7;
             this.label1.Text = "Cadastro de Disciplina";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCancelarDisciplina
             // 
@@ -108,7 +110,7 @@
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.disciplinaBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(185, 147);
+            this.nomeTextBox.Location = new System.Drawing.Point(135, 169);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(570, 22);
             this.nomeTextBox.TabIndex = 10;
@@ -116,14 +118,14 @@
             // idCursoTextBox
             // 
             this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.disciplinaBindingSource, "IdCurso", true));
-            this.idCursoTextBox.Location = new System.Drawing.Point(185, 217);
+            this.idCursoTextBox.Location = new System.Drawing.Point(135, 239);
             this.idCursoTextBox.Name = "idCursoTextBox";
             this.idCursoTextBox.Size = new System.Drawing.Size(97, 22);
             this.idCursoTextBox.TabIndex = 11;
             // 
             // buttonBuscarIdCurso
             // 
-            this.buttonBuscarIdCurso.Location = new System.Drawing.Point(306, 220);
+            this.buttonBuscarIdCurso.Location = new System.Drawing.Point(256, 242);
             this.buttonBuscarIdCurso.Name = "buttonBuscarIdCurso";
             this.buttonBuscarIdCurso.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarIdCurso.TabIndex = 12;
@@ -131,12 +133,29 @@
             this.buttonBuscarIdCurso.UseVisualStyleBackColor = true;
             this.buttonBuscarIdCurso.Click += new System.EventHandler(this.buttonBuscarIdCurso_Click);
             // 
+            // buttonFechar
+            // 
+            this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFechar.BackColor = System.Drawing.Color.Red;
+            this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFechar.ForeColor = System.Drawing.Color.White;
+            this.buttonFechar.Location = new System.Drawing.Point(438, 81);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFechar.Name = "buttonFechar";
+            this.buttonFechar.Size = new System.Drawing.Size(100, 28);
+            this.buttonFechar.TabIndex = 29;
+            this.buttonFechar.Text = "Fechar";
+            this.buttonFechar.UseVisualStyleBackColor = false;
+            this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
+            // 
             // FormCadastroDeDisciplina
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.buttonBuscarIdCurso);
             this.Controls.Add(idCursoLabel);
             this.Controls.Add(this.idCursoTextBox);
@@ -145,10 +164,12 @@
             this.Controls.Add(this.btnCancelarDisciplina);
             this.Controls.Add(this.btnSalvarDisciplina);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroDeDisciplina";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.FormCadastroDisciplina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,5 +185,6 @@
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.TextBox idCursoTextBox;
         private System.Windows.Forms.Button buttonBuscarIdCurso;
+        private System.Windows.Forms.Button buttonFechar;
     }
 }
