@@ -41,10 +41,10 @@
             this.radioButton_BuscarPorId = new System.Windows.Forms.RadioButton();
             this.grupoUsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grupoUsuarioDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.permissoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.permissoesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuarioDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permissoesBindingSource)).BeginInit();
@@ -53,9 +53,10 @@
             // 
             // buttonBuscarPermissao
             // 
-            this.buttonBuscarPermissao.Location = new System.Drawing.Point(321, 81);
+            this.buttonBuscarPermissao.Location = new System.Drawing.Point(241, 66);
+            this.buttonBuscarPermissao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscarPermissao.Name = "buttonBuscarPermissao";
-            this.buttonBuscarPermissao.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscarPermissao.Size = new System.Drawing.Size(56, 19);
             this.buttonBuscarPermissao.TabIndex = 3;
             this.buttonBuscarPermissao.Text = "Buscar";
             this.buttonBuscarPermissao.UseVisualStyleBackColor = true;
@@ -63,9 +64,10 @@
             // 
             // buttonAlterarPermissao
             // 
-            this.buttonAlterarPermissao.Location = new System.Drawing.Point(402, 82);
+            this.buttonAlterarPermissao.Location = new System.Drawing.Point(302, 67);
+            this.buttonAlterarPermissao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAlterarPermissao.Name = "buttonAlterarPermissao";
-            this.buttonAlterarPermissao.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlterarPermissao.Size = new System.Drawing.Size(56, 19);
             this.buttonAlterarPermissao.TabIndex = 4;
             this.buttonAlterarPermissao.Text = "Alterar";
             this.buttonAlterarPermissao.UseVisualStyleBackColor = true;
@@ -73,9 +75,10 @@
             // 
             // buttonAdicionarPermissao
             // 
-            this.buttonAdicionarPermissao.Location = new System.Drawing.Point(483, 82);
+            this.buttonAdicionarPermissao.Location = new System.Drawing.Point(362, 67);
+            this.buttonAdicionarPermissao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdicionarPermissao.Name = "buttonAdicionarPermissao";
-            this.buttonAdicionarPermissao.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdicionarPermissao.Size = new System.Drawing.Size(56, 19);
             this.buttonAdicionarPermissao.TabIndex = 5;
             this.buttonAdicionarPermissao.Text = "Adicionar";
             this.buttonAdicionarPermissao.UseVisualStyleBackColor = true;
@@ -83,9 +86,10 @@
             // 
             // buttonExcluirPermissao
             // 
-            this.buttonExcluirPermissao.Location = new System.Drawing.Point(564, 82);
+            this.buttonExcluirPermissao.Location = new System.Drawing.Point(423, 67);
+            this.buttonExcluirPermissao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExcluirPermissao.Name = "buttonExcluirPermissao";
-            this.buttonExcluirPermissao.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirPermissao.Size = new System.Drawing.Size(56, 19);
             this.buttonExcluirPermissao.TabIndex = 6;
             this.buttonExcluirPermissao.Text = "Excluir";
             this.buttonExcluirPermissao.UseVisualStyleBackColor = true;
@@ -93,9 +97,10 @@
             // 
             // buttonAdicionarPermissaoGrupo
             // 
-            this.buttonAdicionarPermissaoGrupo.Location = new System.Drawing.Point(973, 90);
+            this.buttonAdicionarPermissaoGrupo.Location = new System.Drawing.Point(730, 73);
+            this.buttonAdicionarPermissaoGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdicionarPermissaoGrupo.Name = "buttonAdicionarPermissaoGrupo";
-            this.buttonAdicionarPermissaoGrupo.Size = new System.Drawing.Size(84, 23);
+            this.buttonAdicionarPermissaoGrupo.Size = new System.Drawing.Size(63, 19);
             this.buttonAdicionarPermissaoGrupo.TabIndex = 7;
             this.buttonAdicionarPermissaoGrupo.Text = "Adicionar";
             this.buttonAdicionarPermissaoGrupo.UseVisualStyleBackColor = true;
@@ -103,9 +108,10 @@
             // 
             // buttonExcluirPermissaoGrupo
             // 
-            this.buttonExcluirPermissaoGrupo.Location = new System.Drawing.Point(1071, 90);
+            this.buttonExcluirPermissaoGrupo.Location = new System.Drawing.Point(803, 73);
+            this.buttonExcluirPermissaoGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExcluirPermissaoGrupo.Name = "buttonExcluirPermissaoGrupo";
-            this.buttonExcluirPermissaoGrupo.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcluirPermissaoGrupo.Size = new System.Drawing.Size(56, 19);
             this.buttonExcluirPermissaoGrupo.TabIndex = 8;
             this.buttonExcluirPermissaoGrupo.Text = "Excluir";
             this.buttonExcluirPermissaoGrupo.UseVisualStyleBackColor = true;
@@ -113,18 +119,20 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 82);
+            this.textBox1.Location = new System.Drawing.Point(9, 67);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 22);
+            this.textBox1.Size = new System.Drawing.Size(228, 20);
             this.textBox1.TabIndex = 9;
             // 
             // radioButton_BuscarTodasPermissoes
             // 
             this.radioButton_BuscarTodasPermissoes.AutoSize = true;
             this.radioButton_BuscarTodasPermissoes.Checked = true;
-            this.radioButton_BuscarTodasPermissoes.Location = new System.Drawing.Point(12, 56);
+            this.radioButton_BuscarTodasPermissoes.Location = new System.Drawing.Point(9, 46);
+            this.radioButton_BuscarTodasPermissoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton_BuscarTodasPermissoes.Name = "radioButton_BuscarTodasPermissoes";
-            this.radioButton_BuscarTodasPermissoes.Size = new System.Drawing.Size(107, 20);
+            this.radioButton_BuscarTodasPermissoes.Size = new System.Drawing.Size(87, 17);
             this.radioButton_BuscarTodasPermissoes.TabIndex = 10;
             this.radioButton_BuscarTodasPermissoes.TabStop = true;
             this.radioButton_BuscarTodasPermissoes.Text = "Buscar todos";
@@ -133,9 +141,10 @@
             // radioButton_BuscarPorNome
             // 
             this.radioButton_BuscarPorNome.AutoSize = true;
-            this.radioButton_BuscarPorNome.Location = new System.Drawing.Point(121, 56);
+            this.radioButton_BuscarPorNome.Location = new System.Drawing.Point(91, 46);
+            this.radioButton_BuscarPorNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton_BuscarPorNome.Name = "radioButton_BuscarPorNome";
-            this.radioButton_BuscarPorNome.Size = new System.Drawing.Size(114, 20);
+            this.radioButton_BuscarPorNome.Size = new System.Drawing.Size(94, 17);
             this.radioButton_BuscarPorNome.TabIndex = 11;
             this.radioButton_BuscarPorNome.TabStop = true;
             this.radioButton_BuscarPorNome.Text = "Buscar/ Nome";
@@ -144,9 +153,10 @@
             // radioButton_BuscarPorId
             // 
             this.radioButton_BuscarPorId.AutoSize = true;
-            this.radioButton_BuscarPorId.Location = new System.Drawing.Point(241, 56);
+            this.radioButton_BuscarPorId.Location = new System.Drawing.Point(181, 46);
+            this.radioButton_BuscarPorId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton_BuscarPorId.Name = "radioButton_BuscarPorId";
-            this.radioButton_BuscarPorId.Size = new System.Drawing.Size(93, 20);
+            this.radioButton_BuscarPorId.Size = new System.Drawing.Size(80, 17);
             this.radioButton_BuscarPorId.TabIndex = 12;
             this.radioButton_BuscarPorId.TabStop = true;
             this.radioButton_BuscarPorId.Text = "Buscar / ID";
@@ -166,14 +176,24 @@
             this.grupoUsuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
             this.grupoUsuarioDataGridView.DataSource = this.grupoUsuarioBindingSource;
-            this.grupoUsuarioDataGridView.Location = new System.Drawing.Point(645, 119);
+            this.grupoUsuarioDataGridView.Location = new System.Drawing.Point(484, 97);
+            this.grupoUsuarioDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grupoUsuarioDataGridView.Name = "grupoUsuarioDataGridView";
             this.grupoUsuarioDataGridView.ReadOnly = true;
             this.grupoUsuarioDataGridView.RowHeadersVisible = false;
             this.grupoUsuarioDataGridView.RowHeadersWidth = 51;
             this.grupoUsuarioDataGridView.RowTemplate.Height = 24;
-            this.grupoUsuarioDataGridView.Size = new System.Drawing.Size(501, 334);
+            this.grupoUsuarioDataGridView.Size = new System.Drawing.Size(376, 271);
             this.grupoUsuarioDataGridView.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomeGrupo";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Grupos";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // permissoesBindingSource
             // 
@@ -190,13 +210,14 @@
             this.permissoesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4});
             this.permissoesDataGridView.DataSource = this.permissoesBindingSource;
-            this.permissoesDataGridView.Location = new System.Drawing.Point(12, 119);
+            this.permissoesDataGridView.Location = new System.Drawing.Point(9, 97);
+            this.permissoesDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.permissoesDataGridView.Name = "permissoesDataGridView";
             this.permissoesDataGridView.ReadOnly = true;
             this.permissoesDataGridView.RowHeadersVisible = false;
             this.permissoesDataGridView.RowHeadersWidth = 51;
             this.permissoesDataGridView.RowTemplate.Height = 24;
-            this.permissoesDataGridView.Size = new System.Drawing.Size(627, 334);
+            this.permissoesDataGridView.Size = new System.Drawing.Size(470, 271);
             this.permissoesDataGridView.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn4
@@ -208,20 +229,11 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomeGrupo";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Grupos";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
             // FormBuscarPermissao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 606);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(868, 492);
             this.Controls.Add(this.permissoesDataGridView);
             this.Controls.Add(this.grupoUsuarioDataGridView);
             this.Controls.Add(this.radioButton_BuscarPorId);
@@ -234,6 +246,7 @@
             this.Controls.Add(this.buttonAdicionarPermissao);
             this.Controls.Add(this.buttonAlterarPermissao);
             this.Controls.Add(this.buttonBuscarPermissao);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBuscarPermissao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão de Permissão";

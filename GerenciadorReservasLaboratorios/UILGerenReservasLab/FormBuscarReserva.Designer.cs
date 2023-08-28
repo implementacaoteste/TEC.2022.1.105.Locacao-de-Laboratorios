@@ -74,11 +74,12 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
             this.reservaDataGridView.DataSource = this.reservaBindingSource;
-            this.reservaDataGridView.Location = new System.Drawing.Point(12, 158);
+            this.reservaDataGridView.Location = new System.Drawing.Point(9, 128);
+            this.reservaDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reservaDataGridView.Name = "reservaDataGridView";
             this.reservaDataGridView.RowHeadersWidth = 51;
             this.reservaDataGridView.RowTemplate.Height = 24;
-            this.reservaDataGridView.Size = new System.Drawing.Size(755, 220);
+            this.reservaDataGridView.Size = new System.Drawing.Size(566, 179);
             this.reservaDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -192,18 +193,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 91);
+            this.label1.Location = new System.Drawing.Point(9, 74);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 16);
+            this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "O &que deseja buscar?";
             // 
             // buttonExcluirReserva
             // 
             this.buttonExcluirReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirReserva.Location = new System.Drawing.Point(666, 102);
+            this.buttonExcluirReserva.Location = new System.Drawing.Point(500, 83);
+            this.buttonExcluirReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExcluirReserva.Name = "buttonExcluirReserva";
-            this.buttonExcluirReserva.Size = new System.Drawing.Size(75, 32);
+            this.buttonExcluirReserva.Size = new System.Drawing.Size(56, 26);
             this.buttonExcluirReserva.TabIndex = 17;
             this.buttonExcluirReserva.Text = "&Excluir";
             this.buttonExcluirReserva.UseVisualStyleBackColor = true;
@@ -211,9 +214,10 @@
             // buttonInserirReserva
             // 
             this.buttonInserirReserva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserirReserva.Location = new System.Drawing.Point(585, 102);
+            this.buttonInserirReserva.Location = new System.Drawing.Point(439, 83);
+            this.buttonInserirReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonInserirReserva.Name = "buttonInserirReserva";
-            this.buttonInserirReserva.Size = new System.Drawing.Size(75, 32);
+            this.buttonInserirReserva.Size = new System.Drawing.Size(56, 26);
             this.buttonInserirReserva.TabIndex = 16;
             this.buttonInserirReserva.Text = "&Inserir";
             this.buttonInserirReserva.UseVisualStyleBackColor = true;
@@ -222,9 +226,10 @@
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(504, 102);
+            this.buttonAlterar.Location = new System.Drawing.Point(378, 83);
+            this.buttonAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(75, 32);
+            this.buttonAlterar.Size = new System.Drawing.Size(56, 26);
             this.buttonAlterar.TabIndex = 15;
             this.buttonAlterar.Text = "Al&terar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
@@ -233,9 +238,10 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(423, 103);
+            this.buttonBuscar.Location = new System.Drawing.Point(317, 84);
+            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 32);
+            this.buttonBuscar.Size = new System.Drawing.Size(56, 26);
             this.buttonBuscar.TabIndex = 14;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -245,9 +251,10 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(12, 110);
+            this.textBox1.Location = new System.Drawing.Point(9, 89);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(405, 22);
+            this.textBox1.Size = new System.Drawing.Size(305, 20);
             this.textBox1.TabIndex = 13;
             // 
             // label2
@@ -255,17 +262,18 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(800, 52);
+            this.label2.Size = new System.Drawing.Size(600, 42);
             this.label2.TabIndex = 18;
             this.label2.Text = "Buscar Reserva";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormBuscarReserva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExcluirReserva);
@@ -274,6 +282,7 @@
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.reservaDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBuscarReserva";
             this.Text = "FormBuscarReserva";
             ((System.ComponentModel.ISupportInitialize)(this.reservaDataGridView)).EndInit();

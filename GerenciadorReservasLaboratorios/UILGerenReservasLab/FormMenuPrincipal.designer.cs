@@ -33,6 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelFormularios = new System.Windows.Forms.Panel();
+            this.labelReservasPendentes = new System.Windows.Forms.Label();
+            this.TablaProductos = new System.Windows.Forms.DataGridView();
+            this.labelData = new System.Windows.Forms.Label();
+            this.labelHora = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.buttonUsuario = new System.Windows.Forms.Button();
@@ -53,12 +57,9 @@
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
             this.buttonFechar = new System.Windows.Forms.PictureBox();
             this.timerHoraData = new System.Windows.Forms.Timer(this.components);
-            this.labelHora = new System.Windows.Forms.Label();
-            this.labelData = new System.Windows.Forms.Label();
-            this.TablaProductos = new System.Windows.Forms.DataGridView();
-            this.labelReservasPendentes = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panelFormularios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -66,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -94,6 +94,77 @@
             this.panelFormularios.Name = "panelFormularios";
             this.panelFormularios.Size = new System.Drawing.Size(1040, 640);
             this.panelFormularios.TabIndex = 2;
+            // 
+            // labelReservasPendentes
+            // 
+            this.labelReservasPendentes.AutoSize = true;
+            this.labelReservasPendentes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReservasPendentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelReservasPendentes.Location = new System.Drawing.Point(6, 56);
+            this.labelReservasPendentes.Name = "labelReservasPendentes";
+            this.labelReservasPendentes.Size = new System.Drawing.Size(289, 21);
+            this.labelReservasPendentes.TabIndex = 41;
+            this.labelReservasPendentes.Text = "Reservas pendentes de aprovação:";
+            // 
+            // TablaProductos
+            // 
+            this.TablaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TablaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.TablaProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.TablaProductos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.TablaProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.TablaProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TablaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.TablaProductos.ColumnHeadersHeight = 30;
+            this.TablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TablaProductos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TablaProductos.EnableHeadersVisualStyles = false;
+            this.TablaProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TablaProductos.Location = new System.Drawing.Point(6, 80);
+            this.TablaProductos.Name = "TablaProductos";
+            this.TablaProductos.RowHeadersVisible = false;
+            this.TablaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.TablaProductos.Size = new System.Drawing.Size(464, 330);
+            this.TablaProductos.TabIndex = 40;
+            // 
+            // labelData
+            // 
+            this.labelData.AutoSize = true;
+            this.labelData.BackColor = System.Drawing.Color.Transparent;
+            this.labelData.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.labelData.Location = new System.Drawing.Point(348, 551);
+            this.labelData.Name = "labelData";
+            this.labelData.Size = new System.Drawing.Size(579, 40);
+            this.labelData.TabIndex = 2;
+            this.labelData.Text = "Segunda-feira, 07 agosto de  2023";
+            // 
+            // labelHora
+            // 
+            this.labelHora.AutoSize = true;
+            this.labelHora.BackColor = System.Drawing.Color.Transparent;
+            this.labelHora.Font = new System.Drawing.Font("Century Gothic", 80F);
+            this.labelHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelHora.Location = new System.Drawing.Point(460, 422);
+            this.labelHora.Name = "labelHora";
+            this.labelHora.Size = new System.Drawing.Size(467, 129);
+            this.labelHora.TabIndex = 1;
+            this.labelHora.Text = "08:59:58";
             // 
             // pictureBox1
             // 
@@ -355,81 +426,10 @@
             // 
             this.timerHoraData.Tick += new System.EventHandler(this.timerHoraData_Tick);
             // 
-            // labelHora
-            // 
-            this.labelHora.AutoSize = true;
-            this.labelHora.BackColor = System.Drawing.Color.Transparent;
-            this.labelHora.Font = new System.Drawing.Font("Century Gothic", 80F);
-            this.labelHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelHora.Location = new System.Drawing.Point(460, 422);
-            this.labelHora.Name = "labelHora";
-            this.labelHora.Size = new System.Drawing.Size(467, 129);
-            this.labelHora.TabIndex = 1;
-            this.labelHora.Text = "08:59:58";
-            // 
-            // labelData
-            // 
-            this.labelData.AutoSize = true;
-            this.labelData.BackColor = System.Drawing.Color.Transparent;
-            this.labelData.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.labelData.Location = new System.Drawing.Point(348, 551);
-            this.labelData.Name = "labelData";
-            this.labelData.Size = new System.Drawing.Size(579, 40);
-            this.labelData.TabIndex = 2;
-            this.labelData.Text = "Segunda-feira, 07 agosto de  2023";
-            // 
-            // TablaProductos
-            // 
-            this.TablaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.TablaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.TablaProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.TablaProductos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.TablaProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.TablaProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TablaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.TablaProductos.ColumnHeadersHeight = 30;
-            this.TablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TablaProductos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TablaProductos.EnableHeadersVisualStyles = false;
-            this.TablaProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TablaProductos.Location = new System.Drawing.Point(6, 80);
-            this.TablaProductos.Name = "TablaProductos";
-            this.TablaProductos.RowHeadersVisible = false;
-            this.TablaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TablaProductos.Size = new System.Drawing.Size(464, 330);
-            this.TablaProductos.TabIndex = 40;
-            // 
-            // labelReservasPendentes
-            // 
-            this.labelReservasPendentes.AutoSize = true;
-            this.labelReservasPendentes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReservasPendentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelReservasPendentes.Location = new System.Drawing.Point(6, 56);
-            this.labelReservasPendentes.Name = "labelReservasPendentes";
-            this.labelReservasPendentes.Size = new System.Drawing.Size(289, 21);
-            this.labelReservasPendentes.TabIndex = 41;
-            this.labelReservasPendentes.Text = "Reservas pendentes de aprovação:";
-            // 
             // FormMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1280, 680);
             this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -440,6 +440,7 @@
             this.panelContainer.ResumeLayout(false);
             this.panelFormularios.ResumeLayout(false);
             this.panelFormularios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelBarraTitulo.ResumeLayout(false);
@@ -448,7 +449,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).EndInit();
             this.ResumeLayout(false);
 
         }

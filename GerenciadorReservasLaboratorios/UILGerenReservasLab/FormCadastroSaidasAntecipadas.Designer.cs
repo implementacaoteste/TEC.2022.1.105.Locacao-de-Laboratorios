@@ -36,6 +36,7 @@
             System.Windows.Forms.Label motivoLabel;
             System.Windows.Forms.Label statusLabel;
             this.dataHoraSaidaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AlunoTextBox = new System.Windows.Forms.TextBox();
             this.idCoordenacaoTextBox = new System.Windows.Forms.TextBox();
             this.idProfessorTextBox = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonBuscarAluno = new System.Windows.Forms.Button();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
-            this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             dataHoraSaidaLabel = new System.Windows.Forms.Label();
             idAlunoLabel = new System.Windows.Forms.Label();
             idCoordenacaoLabel = new System.Windows.Forms.Label();
@@ -123,6 +123,10 @@
             this.dataHoraSaidaDateTimePicker.Name = "dataHoraSaidaDateTimePicker";
             this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(279, 20);
             this.dataHoraSaidaDateTimePicker.TabIndex = 2;
+            // 
+            // saidasAntecipadasBindingSource
+            // 
+            this.saidasAntecipadasBindingSource.DataSource = typeof(Models.SaidasAntecipadas);
             // 
             // AlunoTextBox
             // 
@@ -228,14 +232,10 @@
             this.comboBoxStatus.Size = new System.Drawing.Size(227, 21);
             this.comboBoxStatus.TabIndex = 18;
             // 
-            // saidasAntecipadasBindingSource
-            // 
-            this.saidasAntecipadasBindingSource.DataSource = typeof(Models.SaidasAntecipadas);
-            // 
             // FormCadastroSaidasAntecipadas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1040, 491);
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.buttonBuscarAluno);
