@@ -105,10 +105,26 @@ namespace UILGerenReservasLab
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
+        private void ConfigurarCorBotoes(object sender)
+        {
+            buttonAluno.BackColor = Color.FromArgb(37, 54, 75);
+            buttonCurso.BackColor = Color.FromArgb(37, 54, 75);
+            buttonReserva.BackColor = Color.FromArgb(37, 54, 75);
+            buttonDisciplina.BackColor = Color.FromArgb(37, 54, 75);
+            buttonPredio.BackColor = Color.FromArgb(37, 54, 75);
+            buttonSala.BackColor = Color.FromArgb(37, 54, 75);
+            buttonUsuario.BackColor = Color.FromArgb(37, 54, 75);
+            buttonGrupoUsuario.BackColor = Color.FromArgb(37, 54, 75);
+            buttonPermissao.BackColor = Color.FromArgb(37, 54, 75);
+            buttonSaidasAntecipadas.BackColor = Color.FromArgb(37, 54, 75);			
+            ((Button)sender).BackColor = Color.FromArgb(0, 100, 182);
+        }
+		
         private void buttonReserva_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarReserva>();
-            buttonReserva.BackColor = Color.FromArgb(12, 61, 92);
+            //buttonReserva.BackColor = Color.FromArgb(12, 61, 92);
+            ConfigurarCorBotoes(sender);			
         }
 
         private void buttonCurso_Click(object sender, EventArgs e)
@@ -124,42 +140,39 @@ namespace UILGerenReservasLab
             //buttonDisciplina.BackColor = Color.FromArgb(12, 61, 92);
             ConfigurarCorBotoes(sender);
         }
-
-        private void ConfigurarCorBotoes(object sender)
-        {
-            buttonAluno.BackColor = Color.FromArgb(37, 54, 75);
-            buttonCurso.BackColor = Color.FromArgb(37, 54, 75);
-            ((Button)sender).BackColor = Color.FromArgb(12, 61, 92);
-        }
-
         private void buttonPredio_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarPredio>();
-            buttonPredio.BackColor = Color.FromArgb(12, 61, 92);
+            //buttonPredio.BackColor = Color.FromArgb(12, 61, 92);
+            ConfigurarCorBotoes(sender);			
         }
 
         private void buttonSala_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarSala>();
-            buttonSala.BackColor = Color.FromArgb(12, 61, 92);
+            //buttonSala.BackColor = Color.FromArgb(12, 61, 92);
+            ConfigurarCorBotoes(sender);			
         }
 
         private void buttonUsuario_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarUsuario>();
-            buttonUsuario.BackColor = Color.FromArgb(12, 61, 92);
+            //buttonUsuario.BackColor = Color.FromArgb(12, 61, 92);
+            ConfigurarCorBotoes(sender);			
         }
 
         private void buttonGrupoUsuario_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarGrupoUsuario>();
-            buttonGrupoUsuario.BackColor = Color.FromArgb(12, 61, 92);
+            //buttonGrupoUsuario.BackColor = Color.FromArgb(12, 61, 92);
+            ConfigurarCorBotoes(sender);			
         }
 
         private void buttonPermissao_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarPermissao>();
-            buttonPermissao.BackColor = Color.FromArgb(12, 61, 92);
+            //buttonPermissao.BackColor = Color.FromArgb(12, 61, 92);
+            ConfigurarCorBotoes(sender);			
         }
 
         private void buttonAluno_Click(object sender, EventArgs e)
@@ -172,7 +185,8 @@ namespace UILGerenReservasLab
         private void buttonSaidasAntecipadas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarSaidasAntecipadas>();
-            buttonSaidasAntecipadas.BackColor = Color.FromArgb(12, 61, 92);
+            //buttonSaidasAntecipadas.BackColor = Color.FromArgb(12, 61, 92);
+            ConfigurarCorBotoes(sender);			
         }
         private void timerHoraData_Tick(object sender, EventArgs e)
         {
