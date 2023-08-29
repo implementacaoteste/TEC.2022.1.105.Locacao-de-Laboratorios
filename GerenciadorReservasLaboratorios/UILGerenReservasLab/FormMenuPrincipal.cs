@@ -192,6 +192,9 @@ namespace UILGerenReservasLab
         {
             labelHora.Text = DateTime.Now.ToString("hh:mm:ss ");
             labelData.Text = DateTime.Now.ToLongDateString();
+            labelUserName.Text = string.Empty;
+            labelEmail.Text = string.Empty;
+            labelCargo.Text = string.Empty;
         }
 
         // METHOD TO OPEN FORMS WITHIN THE PANEL

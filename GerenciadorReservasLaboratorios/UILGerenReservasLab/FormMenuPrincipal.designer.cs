@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelFormularios = new System.Windows.Forms.Panel();
             this.labelReservasPendentes = new System.Windows.Forms.Label();
@@ -57,16 +58,22 @@
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
             this.buttonFechar = new System.Windows.Forms.PictureBox();
             this.timerHoraData = new System.Windows.Forms.Timer(this.components);
+            this.ptbProfile = new System.Windows.Forms.PictureBox();
+            this.labelCargo = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelUserName = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -338,6 +345,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ptbProfile);
+            this.panel1.Controls.Add(this.labelCargo);
+            this.panel1.Controls.Add(this.labelEmail);
+            this.panel1.Controls.Add(this.labelUserName);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(240, 100);
@@ -424,7 +435,52 @@
             // 
             // timerHoraData
             // 
+            this.timerHoraData.Enabled = true;
             this.timerHoraData.Tick += new System.EventHandler(this.timerHoraData_Tick);
+            // 
+            // ptbProfile
+            // 
+            this.ptbProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbProfile.Image = ((System.Drawing.Image)(resources.GetObject("ptbProfile.Image")));
+            this.ptbProfile.Location = new System.Drawing.Point(16, 18);
+            this.ptbProfile.Name = "ptbProfile";
+            this.ptbProfile.Size = new System.Drawing.Size(64, 64);
+            this.ptbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.ptbProfile.TabIndex = 11;
+            this.ptbProfile.TabStop = false;
+            // 
+            // labelCargo
+            // 
+            this.labelCargo.AutoSize = true;
+            this.labelCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCargo.ForeColor = System.Drawing.Color.Silver;
+            this.labelCargo.Location = new System.Drawing.Point(82, 62);
+            this.labelCargo.Name = "labelCargo";
+            this.labelCargo.Size = new System.Drawing.Size(46, 17);
+            this.labelCargo.TabIndex = 14;
+            this.labelCargo.Text = "Cargo";
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.ForeColor = System.Drawing.Color.Silver;
+            this.labelEmail.Location = new System.Drawing.Point(82, 40);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(42, 17);
+            this.labelEmail.TabIndex = 13;
+            this.labelEmail.Text = "Email";
+            // 
+            // labelUserName
+            // 
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelUserName.Location = new System.Drawing.Point(82, 18);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(94, 17);
+            this.labelUserName.TabIndex = 12;
+            this.labelUserName.Text = "NomeUsuario";
             // 
             // FormMenuPrincipal
             // 
@@ -443,12 +499,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -481,5 +540,9 @@
         private System.Windows.Forms.Timer timerHoraData;
         private System.Windows.Forms.Label labelReservasPendentes;
         private System.Windows.Forms.DataGridView TablaProductos;
+        internal System.Windows.Forms.PictureBox ptbProfile;
+        internal System.Windows.Forms.Label labelCargo;
+        internal System.Windows.Forms.Label labelEmail;
+        internal System.Windows.Forms.Label labelUserName;
     }
 }
