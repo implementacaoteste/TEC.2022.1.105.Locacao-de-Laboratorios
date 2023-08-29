@@ -58,6 +58,7 @@
             this.turnoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             idCursoLabel = new System.Windows.Forms.Label();
             idDisciplinaLabel = new System.Windows.Forms.Label();
             idSalaLabel = new System.Windows.Forms.Label();
@@ -140,20 +141,20 @@
             // reservaDataLabel
             // 
             reservaDataLabel.AutoSize = true;
-            reservaDataLabel.Location = new System.Drawing.Point(673, 174);
+            reservaDataLabel.Location = new System.Drawing.Point(657, 179);
             reservaDataLabel.Name = "reservaDataLabel";
-            reservaDataLabel.Size = new System.Drawing.Size(94, 16);
+            reservaDataLabel.Size = new System.Drawing.Size(113, 16);
             reservaDataLabel.TabIndex = 16;
-            reservaDataLabel.Text = "Reserva Data:";
+            reservaDataLabel.Text = "Data da Reserva:";
             // 
             // reservaHoraLabel
             // 
             reservaHoraLabel.AutoSize = true;
-            reservaHoraLabel.Location = new System.Drawing.Point(675, 232);
+            reservaHoraLabel.Location = new System.Drawing.Point(655, 232);
             reservaHoraLabel.Name = "reservaHoraLabel";
-            reservaHoraLabel.Size = new System.Drawing.Size(95, 16);
+            reservaHoraLabel.Size = new System.Drawing.Size(114, 16);
             reservaHoraLabel.TabIndex = 18;
-            reservaHoraLabel.Text = "Reserva Hora:";
+            reservaHoraLabel.Text = "Hora da Reserva:";
             // 
             // solicitanteLabel
             // 
@@ -330,11 +331,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Liberação de Chaves";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(232, 189);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormCadastroReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 569);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(turnoLabel);
@@ -391,5 +402,6 @@
         private System.Windows.Forms.TextBox turnoTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
