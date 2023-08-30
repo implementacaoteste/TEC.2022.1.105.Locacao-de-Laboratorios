@@ -14,10 +14,11 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Curso (Nome) VALUES (@Nome)";
+                cmd.CommandText = @"INSERT INTO Curso (Nome, Turno) VALUES (@Nome, @Turno)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", _curso.Nome);
+                cmd.Parameters.AddWithValue("@Turno", _curso.Turno); // Adiciona o turno aqui
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -33,7 +34,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Curso> BuscarTodos()
         {
             List<Curso> cursos = new List<Curso>();
@@ -44,7 +44,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome FROM Curso";
+                cmd.CommandText = @"SELECT Id, Nome, Turno FROM Curso"; // Inclui o campo Turno aqui
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -56,6 +56,7 @@ namespace DAL
                         curso = new Curso();
                         curso.Id = Convert.ToInt32(rd["Id"]);
                         curso.Nome = rd["Nome"].ToString();
+                        curso.Turno = rd["Turno"].ToString(); // Pega o turno do banco de dados
 
                         cursos.Add(curso);
                     }
@@ -71,7 +72,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public Curso BuscarPorId(int id)
         {
             Curso curso = new Curso();
@@ -80,7 +80,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome FROM Curso WHERE Id = @Id";
+                cmd.CommandText = @"SELECT Id, Nome, Turno FROM Curso WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", id);
                 cn.Open();
@@ -90,6 +90,7 @@ namespace DAL
                     {
                         curso.Id = Convert.ToInt32(rd["Id"]);
                         curso.Nome = rd["Nome"].ToString();
+                        curso.Turno = rd["Turno"].ToString();
                     }
                 }
                 return curso;
@@ -103,7 +104,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public Curso BuscarPorNome(string _nome)
         {
             Curso curso = new Curso();
@@ -112,7 +112,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome FROM Curso WHERE Nome LIKE @Nome";
+                cmd.CommandText = @"SELECT Id, Nome, Turno FROM Curso WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
@@ -122,6 +122,7 @@ namespace DAL
                     {
                         curso.Id = Convert.ToInt32(rd["Id"]);
                         curso.Nome = rd["Nome"].ToString();
+                        curso.Turno = rd["Turno"].ToString();
                     }
                 }
                 return curso;
@@ -135,17 +136,17 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Alterar(Curso _curso)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE Curso SET Nome = @Nome WHERE Id = @Id";
+                cmd.CommandText = @"UPDATE Curso SET Nome = @Nome, Turno = @Turno WHERE Id = @Id"; // Inclui o campo Turno aqui
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", _curso.Nome);
+                cmd.Parameters.AddWithValue("@Turno", _curso.Turno); // Adiciona o campo Turno
                 cmd.Parameters.AddWithValue("@Id", _curso.Id);
 
                 cmd.Connection = cn;
