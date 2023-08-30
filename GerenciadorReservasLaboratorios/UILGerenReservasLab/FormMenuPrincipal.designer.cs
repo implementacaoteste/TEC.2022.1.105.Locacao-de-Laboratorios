@@ -38,8 +38,10 @@
             this.TablaProductos = new System.Windows.Forms.DataGridView();
             this.labelData = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.labelLogout = new System.Windows.Forms.Label();
+            this.buttonLogout = new System.Windows.Forms.PictureBox();
             this.buttonUsuario = new System.Windows.Forms.Button();
             this.buttonSala = new System.Windows.Forms.Button();
             this.buttonPermissao = new System.Windows.Forms.Button();
@@ -51,6 +53,10 @@
             this.buttonCurso = new System.Windows.Forms.Button();
             this.buttonAluno = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ptbProfile = new System.Windows.Forms.PictureBox();
+            this.labelCargo = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelUserName = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonMinimizar = new System.Windows.Forms.PictureBox();
@@ -58,22 +64,19 @@
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
             this.buttonFechar = new System.Windows.Forms.PictureBox();
             this.timerHoraData = new System.Windows.Forms.Timer(this.components);
-            this.ptbProfile = new System.Windows.Forms.PictureBox();
-            this.labelCargo = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.labelUserName = new System.Windows.Forms.Label();
             this.panelContainer.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonLogout)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -95,7 +98,7 @@
             this.panelFormularios.Controls.Add(this.TablaProductos);
             this.panelFormularios.Controls.Add(this.labelData);
             this.panelFormularios.Controls.Add(this.labelHora);
-            this.panelFormularios.Controls.Add(this.pictureBox1);
+            this.panelFormularios.Controls.Add(this.pictureBoxLogo);
             this.panelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularios.Location = new System.Drawing.Point(240, 40);
             this.panelFormularios.Name = "panelFormularios";
@@ -173,19 +176,21 @@
             this.labelHora.TabIndex = 1;
             this.labelHora.Text = "08:59:58";
             // 
-            // pictureBox1
+            // pictureBoxLogo
             // 
-            this.pictureBox1.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai1;
-            this.pictureBox1.Location = new System.Drawing.Point(553, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(374, 224);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLogo.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai1;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(553, 28);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(374, 224);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.panelMenu.Controls.Add(this.labelLogout);
+            this.panelMenu.Controls.Add(this.buttonLogout);
             this.panelMenu.Controls.Add(this.buttonUsuario);
             this.panelMenu.Controls.Add(this.buttonSala);
             this.panelMenu.Controls.Add(this.buttonPermissao);
@@ -202,6 +207,29 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(240, 640);
             this.panelMenu.TabIndex = 1;
+            // 
+            // labelLogout
+            // 
+            this.labelLogout.AutoSize = true;
+            this.labelLogout.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogout.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelLogout.Location = new System.Drawing.Point(73, 586);
+            this.labelLogout.Name = "labelLogout";
+            this.labelLogout.Size = new System.Drawing.Size(63, 19);
+            this.labelLogout.TabIndex = 19;
+            this.labelLogout.Text = "Log out";
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogout.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogout.Image")));
+            this.buttonLogout.Location = new System.Drawing.Point(12, 566);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(55, 60);
+            this.buttonLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonLogout.TabIndex = 18;
+            this.buttonLogout.TabStop = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonUsuario
             // 
@@ -354,6 +382,50 @@
             this.panel1.Size = new System.Drawing.Size(240, 100);
             this.panel1.TabIndex = 0;
             // 
+            // ptbProfile
+            // 
+            this.ptbProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbProfile.Image = ((System.Drawing.Image)(resources.GetObject("ptbProfile.Image")));
+            this.ptbProfile.Location = new System.Drawing.Point(16, 18);
+            this.ptbProfile.Name = "ptbProfile";
+            this.ptbProfile.Size = new System.Drawing.Size(64, 64);
+            this.ptbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.ptbProfile.TabIndex = 11;
+            this.ptbProfile.TabStop = false;
+            // 
+            // labelCargo
+            // 
+            this.labelCargo.AutoSize = true;
+            this.labelCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCargo.ForeColor = System.Drawing.Color.Silver;
+            this.labelCargo.Location = new System.Drawing.Point(82, 62);
+            this.labelCargo.Name = "labelCargo";
+            this.labelCargo.Size = new System.Drawing.Size(46, 17);
+            this.labelCargo.TabIndex = 14;
+            this.labelCargo.Text = "Cargo";
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.ForeColor = System.Drawing.Color.Silver;
+            this.labelEmail.Location = new System.Drawing.Point(82, 40);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(42, 17);
+            this.labelEmail.TabIndex = 13;
+            this.labelEmail.Text = "Email";
+            // 
+            // labelUserName
+            // 
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelUserName.Location = new System.Drawing.Point(82, 18);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(94, 17);
+            this.labelUserName.TabIndex = 12;
+            this.labelUserName.Text = "NomeUsuario";
+            // 
             // panelBarraTitulo
             // 
             this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
@@ -438,50 +510,6 @@
             this.timerHoraData.Enabled = true;
             this.timerHoraData.Tick += new System.EventHandler(this.timerHoraData_Tick);
             // 
-            // ptbProfile
-            // 
-            this.ptbProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbProfile.Image = ((System.Drawing.Image)(resources.GetObject("ptbProfile.Image")));
-            this.ptbProfile.Location = new System.Drawing.Point(16, 18);
-            this.ptbProfile.Name = "ptbProfile";
-            this.ptbProfile.Size = new System.Drawing.Size(64, 64);
-            this.ptbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.ptbProfile.TabIndex = 11;
-            this.ptbProfile.TabStop = false;
-            // 
-            // labelCargo
-            // 
-            this.labelCargo.AutoSize = true;
-            this.labelCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCargo.ForeColor = System.Drawing.Color.Silver;
-            this.labelCargo.Location = new System.Drawing.Point(82, 62);
-            this.labelCargo.Name = "labelCargo";
-            this.labelCargo.Size = new System.Drawing.Size(46, 17);
-            this.labelCargo.TabIndex = 14;
-            this.labelCargo.Text = "Cargo";
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.ForeColor = System.Drawing.Color.Silver;
-            this.labelEmail.Location = new System.Drawing.Point(82, 40);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(42, 17);
-            this.labelEmail.TabIndex = 13;
-            this.labelEmail.Text = "Email";
-            // 
-            // labelUserName
-            // 
-            this.labelUserName.AutoSize = true;
-            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelUserName.Location = new System.Drawing.Point(82, 18);
-            this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(94, 17);
-            this.labelUserName.TabIndex = 12;
-            this.labelUserName.Text = "NomeUsuario";
-            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -493,21 +521,24 @@
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrincipal";
+            this.Load += new System.EventHandler(this.FormMenuPrincipal_Load);
             this.panelContainer.ResumeLayout(false);
             this.panelFormularios.ResumeLayout(false);
             this.panelFormularios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonLogout)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,7 +564,7 @@
         private System.Windows.Forms.Button buttonDisciplina;
         private System.Windows.Forms.Button buttonSala;
         private System.Windows.Forms.Button buttonUsuario;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelData;
         private System.Windows.Forms.Label labelHora;
@@ -544,5 +575,7 @@
         internal System.Windows.Forms.Label labelCargo;
         internal System.Windows.Forms.Label labelEmail;
         internal System.Windows.Forms.Label labelUserName;
+        private System.Windows.Forms.Label labelLogout;
+        private System.Windows.Forms.PictureBox buttonLogout;
     }
 }

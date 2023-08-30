@@ -197,6 +197,23 @@ namespace UILGerenReservasLab
             labelCargo.Text = string.Empty;
         }
 
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to log out?", "Warning",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void FormMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            //LoadUserData();
+        }
+        //private void LoadUserData()
+        //{
+        //    lblUsername.Text = UserCache.LoginName;
+        //    lblPosition.Text = UserCache.Position;
+        //    lblEmail.Text = UserCache.Email;
+        //}
         // METHOD TO OPEN FORMS WITHIN THE PANEL
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {

@@ -188,7 +188,7 @@ namespace DAL
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw new Exception("Ocorreu um erro ao tentar excluir usuário no banco de dados.", ex) { Data = { { "Id", -1 } } };
+                        throw new Exception("Ocorreu um erro ao tentar excluir um curso no banco de dados.", ex) { Data = { { "Id", -1 } } };
                     }
                 }
             }

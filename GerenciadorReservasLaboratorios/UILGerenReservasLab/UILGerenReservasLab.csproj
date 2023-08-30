@@ -310,6 +310,9 @@
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormModel.resx">
+      <DependentUpon>FormModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUserProfile.resx">
       <DependentUpon>FormUserProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +389,7 @@
     <None Include="Resources\maxi.png" />
     <None Include="Resources\res.png" />
     <None Include="Resources\minimizar.png" />
+    <None Include="Resources\sair.png" />
     <Content Include="Resources\senai-logo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

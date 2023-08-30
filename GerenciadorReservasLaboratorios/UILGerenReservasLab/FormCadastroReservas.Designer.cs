@@ -59,6 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             idCursoLabel = new System.Windows.Forms.Label();
             idDisciplinaLabel = new System.Windows.Forms.Label();
             idSalaLabel = new System.Windows.Forms.Label();
@@ -203,7 +204,7 @@
             // 
             this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdCurso", true));
             this.idCursoTextBox.Location = new System.Drawing.Point(84, 188);
-            this.idCursoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idCursoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idCursoTextBox.Name = "idCursoTextBox";
             this.idCursoTextBox.Size = new System.Drawing.Size(76, 20);
             this.idCursoTextBox.TabIndex = 2;
@@ -212,7 +213,7 @@
             // 
             this.idDisciplinaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdDisciplina", true));
             this.idDisciplinaTextBox.Location = new System.Drawing.Point(84, 239);
-            this.idDisciplinaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idDisciplinaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idDisciplinaTextBox.Name = "idDisciplinaTextBox";
             this.idDisciplinaTextBox.Size = new System.Drawing.Size(76, 20);
             this.idDisciplinaTextBox.TabIndex = 4;
@@ -221,7 +222,7 @@
             // 
             this.idSalaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdSala", true));
             this.idSalaTextBox.Location = new System.Drawing.Point(84, 151);
-            this.idSalaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idSalaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idSalaTextBox.Name = "idSalaTextBox";
             this.idSalaTextBox.Size = new System.Drawing.Size(76, 20);
             this.idSalaTextBox.TabIndex = 6;
@@ -230,7 +231,7 @@
             // 
             this.idUsuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdUsuario", true));
             this.idUsuarioTextBox.Location = new System.Drawing.Point(84, 56);
-            this.idUsuarioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idUsuarioTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idUsuarioTextBox.Name = "idUsuarioTextBox";
             this.idUsuarioTextBox.Size = new System.Drawing.Size(76, 20);
             this.idUsuarioTextBox.TabIndex = 7;
@@ -239,7 +240,7 @@
             // 
             this.observacoesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Observacoes", true));
             this.observacoesTextBox.Location = new System.Drawing.Point(84, 280);
-            this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.observacoesTextBox.Name = "observacoesTextBox";
             this.observacoesTextBox.Size = new System.Drawing.Size(683, 20);
             this.observacoesTextBox.TabIndex = 9;
@@ -247,7 +248,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Location = new System.Drawing.Point(84, 424);
-            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(56, 19);
             this.buttonSalvar.TabIndex = 10;
@@ -258,7 +259,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Location = new System.Drawing.Point(235, 424);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(56, 19);
             this.buttonCancelar.TabIndex = 11;
@@ -270,7 +271,7 @@
             // 
             this.dataDevolucaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "DataDevolucao", true));
             this.dataDevolucaoDateTimePicker.Location = new System.Drawing.Point(574, 30);
-            this.dataDevolucaoDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataDevolucaoDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dataDevolucaoDateTimePicker.Name = "dataDevolucaoDateTimePicker";
             this.dataDevolucaoDateTimePicker.Size = new System.Drawing.Size(151, 20);
             this.dataDevolucaoDateTimePicker.TabIndex = 13;
@@ -279,7 +280,7 @@
             // 
             this.dataRetiradaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "DataRetirada", true));
             this.dataRetiradaDateTimePicker.Location = new System.Drawing.Point(82, 27);
-            this.dataRetiradaDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataRetiradaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dataRetiradaDateTimePicker.Name = "dataRetiradaDateTimePicker";
             this.dataRetiradaDateTimePicker.Size = new System.Drawing.Size(151, 20);
             this.dataRetiradaDateTimePicker.TabIndex = 15;
@@ -288,7 +289,7 @@
             // 
             this.reservaDataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "ReservaData", true));
             this.reservaDataDateTimePicker.Location = new System.Drawing.Point(582, 141);
-            this.reservaDataDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reservaDataDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.reservaDataDateTimePicker.Name = "reservaDataDateTimePicker";
             this.reservaDataDateTimePicker.Size = new System.Drawing.Size(151, 20);
             this.reservaDataDateTimePicker.TabIndex = 17;
@@ -297,7 +298,7 @@
             // 
             this.reservaHoraDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "ReservaHora", true));
             this.reservaHoraDateTimePicker.Location = new System.Drawing.Point(582, 185);
-            this.reservaHoraDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reservaHoraDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.reservaHoraDateTimePicker.Name = "reservaHoraDateTimePicker";
             this.reservaHoraDateTimePicker.Size = new System.Drawing.Size(151, 20);
             this.reservaHoraDateTimePicker.TabIndex = 19;
@@ -306,7 +307,7 @@
             // 
             this.solicitanteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Solicitante", true));
             this.solicitanteTextBox.Location = new System.Drawing.Point(84, 107);
-            this.solicitanteTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.solicitanteTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.solicitanteTextBox.Name = "solicitanteTextBox";
             this.solicitanteTextBox.Size = new System.Drawing.Size(151, 20);
             this.solicitanteTextBox.TabIndex = 21;
@@ -315,7 +316,7 @@
             // 
             this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Status", true));
             this.statusTextBox.Location = new System.Drawing.Point(582, 58);
-            this.statusTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statusTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.statusTextBox.Multiline = true;
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.Size = new System.Drawing.Size(151, 19);
@@ -326,7 +327,7 @@
             // 
             this.turnoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Turno", true));
             this.turnoTextBox.Location = new System.Drawing.Point(582, 98);
-            this.turnoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.turnoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.turnoTextBox.Multiline = true;
             this.turnoTextBox.Name = "turnoTextBox";
             this.turnoTextBox.Size = new System.Drawing.Size(151, 19);
@@ -352,9 +353,9 @@
             this.groupBox1.Controls.Add(dataDevolucaoLabel);
             this.groupBox1.Controls.Add(dataRetiradaLabel);
             this.groupBox1.Location = new System.Drawing.Point(38, 321);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(728, 98);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
@@ -363,18 +364,27 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(174, 154);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 29;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(340, 185);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 30;
+            // 
             // FormCadastroReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 462);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -400,7 +410,7 @@
             this.Controls.Add(this.idDisciplinaTextBox);
             this.Controls.Add(idCursoLabel);
             this.Controls.Add(this.idCursoTextBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCadastroReservas";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -434,5 +444,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
