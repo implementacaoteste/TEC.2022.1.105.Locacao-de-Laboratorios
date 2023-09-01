@@ -31,12 +31,12 @@ namespace UILGerenReservasLab
         {
             try
             {
-                Reserva reserva = (Reserva)reservaBindingSource.Current;
+                Reserva _reserva = (Reserva)reservaBindingSource.Current;
                 reservaBindingSource.EndEdit();
                 if (Id == 0)
-                    new ReservaBLL().Inserir(reserva);
+                    new ReservaBLL().Inserir(_reserva);
                 else
-                    new ReservaBLL().Alterar(reserva);
+                    new ReservaBLL().Alterar(_reserva);
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
             }

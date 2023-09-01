@@ -206,14 +206,13 @@ namespace UILGerenReservasLab
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
-            //LoadUserData();
+            using (FormLogin frm = new FormLogin())
+            {
+                frm.ShowDialog();
+                if (!frm.Logou)
+                    Application.Exit();
+            }
         }
-        //private void LoadUserData()
-        //{
-        //    lblUsername.Text = UserCache.LoginName;
-        //    lblPosition.Text = UserCache.Position;
-        //    lblEmail.Text = UserCache.Email;
-        //}
         // METHOD TO OPEN FORMS WITHIN THE PANEL
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
