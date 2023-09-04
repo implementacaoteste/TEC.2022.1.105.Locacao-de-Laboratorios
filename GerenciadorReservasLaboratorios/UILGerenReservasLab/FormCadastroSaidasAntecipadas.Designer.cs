@@ -39,13 +39,13 @@
             this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AlunoTextBox = new System.Windows.Forms.TextBox();
             this.idCoordenacaoTextBox = new System.Windows.Forms.TextBox();
-            this.idProfessorTextBox = new System.Windows.Forms.TextBox();
             this.motivoTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonBuscarAluno = new System.Windows.Forms.Button();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.idProfessorTextBox = new System.Windows.Forms.TextBox();
             dataHoraSaidaLabel = new System.Windows.Forms.Label();
             idAlunoLabel = new System.Windows.Forms.Label();
             idCoordenacaoLabel = new System.Windows.Forms.Label();
@@ -58,70 +58,70 @@
             // dataHoraSaidaLabel
             // 
             dataHoraSaidaLabel.AutoSize = true;
-            dataHoraSaidaLabel.Location = new System.Drawing.Point(859, 174);
+            dataHoraSaidaLabel.Location = new System.Drawing.Point(687, 139);
             dataHoraSaidaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             dataHoraSaidaLabel.Name = "dataHoraSaidaLabel";
-            dataHoraSaidaLabel.Size = new System.Drawing.Size(173, 16);
+            dataHoraSaidaLabel.Size = new System.Drawing.Size(139, 13);
             dataHoraSaidaLabel.TabIndex = 1;
             dataHoraSaidaLabel.Text = "Data e Hora da Autorização";
             // 
             // idAlunoLabel
             // 
             idAlunoLabel.AutoSize = true;
-            idAlunoLabel.Location = new System.Drawing.Point(12, 98);
+            idAlunoLabel.Location = new System.Drawing.Point(10, 78);
             idAlunoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idAlunoLabel.Name = "idAlunoLabel";
-            idAlunoLabel.Size = new System.Drawing.Size(41, 16);
+            idAlunoLabel.Size = new System.Drawing.Size(34, 13);
             idAlunoLabel.TabIndex = 3;
             idAlunoLabel.Text = "Aluno";
             // 
             // idCoordenacaoLabel
             // 
             idCoordenacaoLabel.AutoSize = true;
-            idCoordenacaoLabel.Location = new System.Drawing.Point(429, 170);
+            idCoordenacaoLabel.Location = new System.Drawing.Point(343, 136);
             idCoordenacaoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idCoordenacaoLabel.Name = "idCoordenacaoLabel";
-            idCoordenacaoLabel.Size = new System.Drawing.Size(90, 16);
+            idCoordenacaoLabel.Size = new System.Drawing.Size(71, 13);
             idCoordenacaoLabel.TabIndex = 5;
             idCoordenacaoLabel.Text = "Coordenacao";
             // 
             // idProfessorLabel
             // 
             idProfessorLabel.AutoSize = true;
-            idProfessorLabel.Location = new System.Drawing.Point(429, 101);
+            idProfessorLabel.Location = new System.Drawing.Point(343, 81);
             idProfessorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idProfessorLabel.Name = "idProfessorLabel";
-            idProfessorLabel.Size = new System.Drawing.Size(65, 16);
+            idProfessorLabel.Size = new System.Drawing.Size(51, 13);
             idProfessorLabel.TabIndex = 7;
             idProfessorLabel.Text = "Professor";
             // 
             // motivoLabel
             // 
             motivoLabel.AutoSize = true;
-            motivoLabel.Location = new System.Drawing.Point(14, 237);
+            motivoLabel.Location = new System.Drawing.Point(11, 190);
             motivoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             motivoLabel.Name = "motivoLabel";
-            motivoLabel.Size = new System.Drawing.Size(50, 16);
+            motivoLabel.Size = new System.Drawing.Size(42, 13);
             motivoLabel.TabIndex = 9;
             motivoLabel.Text = "Motivo:";
             // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(11, 166);
+            statusLabel.Location = new System.Drawing.Point(9, 133);
             statusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(47, 16);
+            statusLabel.Size = new System.Drawing.Size(40, 13);
             statusLabel.TabIndex = 11;
             statusLabel.Text = "Status:";
             // 
             // dataHoraSaidaDateTimePicker
             // 
             this.dataHoraSaidaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.saidasAntecipadasBindingSource, "DataHoraSaida", true));
-            this.dataHoraSaidaDateTimePicker.Location = new System.Drawing.Point(859, 190);
+            this.dataHoraSaidaDateTimePicker.Location = new System.Drawing.Point(687, 152);
             this.dataHoraSaidaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dataHoraSaidaDateTimePicker.Name = "dataHoraSaidaDateTimePicker";
-            this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(348, 22);
+            this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(279, 20);
             this.dataHoraSaidaDateTimePicker.TabIndex = 2;
             // 
             // saidasAntecipadasBindingSource
@@ -131,37 +131,28 @@
             // AlunoTextBox
             // 
             this.AlunoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdAluno", true));
-            this.AlunoTextBox.Location = new System.Drawing.Point(11, 119);
+            this.AlunoTextBox.Location = new System.Drawing.Point(9, 95);
             this.AlunoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.AlunoTextBox.Name = "AlunoTextBox";
-            this.AlunoTextBox.Size = new System.Drawing.Size(405, 22);
+            this.AlunoTextBox.Size = new System.Drawing.Size(325, 20);
             this.AlunoTextBox.TabIndex = 4;
             // 
             // idCoordenacaoTextBox
             // 
             this.idCoordenacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdCoordenacao", true));
-            this.idCoordenacaoTextBox.Location = new System.Drawing.Point(432, 188);
+            this.idCoordenacaoTextBox.Location = new System.Drawing.Point(346, 150);
             this.idCoordenacaoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idCoordenacaoTextBox.Name = "idCoordenacaoTextBox";
-            this.idCoordenacaoTextBox.Size = new System.Drawing.Size(405, 22);
+            this.idCoordenacaoTextBox.Size = new System.Drawing.Size(325, 20);
             this.idCoordenacaoTextBox.TabIndex = 6;
-            // 
-            // idProfessorTextBox
-            // 
-            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdProfessor", true));
-            this.idProfessorTextBox.Location = new System.Drawing.Point(432, 119);
-            this.idProfessorTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.idProfessorTextBox.Name = "idProfessorTextBox";
-            this.idProfessorTextBox.Size = new System.Drawing.Size(405, 22);
-            this.idProfessorTextBox.TabIndex = 8;
             // 
             // motivoTextBox
             // 
             this.motivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "Motivo", true));
-            this.motivoTextBox.Location = new System.Drawing.Point(11, 256);
+            this.motivoTextBox.Location = new System.Drawing.Point(9, 205);
             this.motivoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.motivoTextBox.Name = "motivoTextBox";
-            this.motivoTextBox.Size = new System.Drawing.Size(1196, 22);
+            this.motivoTextBox.Size = new System.Drawing.Size(958, 20);
             this.motivoTextBox.TabIndex = 10;
             // 
             // label2
@@ -171,7 +162,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1300, 46);
+            this.label2.Size = new System.Drawing.Size(1040, 37);
             this.label2.TabIndex = 13;
             this.label2.Text = "Cadastro de Saídas Antecipadas";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,10 +173,10 @@
             this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonSalvar.Location = new System.Drawing.Point(796, 486);
+            this.buttonSalvar.Location = new System.Drawing.Point(637, 389);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(146, 52);
+            this.buttonSalvar.Size = new System.Drawing.Size(117, 42);
             this.buttonSalvar.TabIndex = 14;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
@@ -197,10 +188,10 @@
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonCancelar.Location = new System.Drawing.Point(980, 486);
+            this.buttonCancelar.Location = new System.Drawing.Point(784, 389);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(146, 52);
+            this.buttonCancelar.Size = new System.Drawing.Size(117, 42);
             this.buttonCancelar.TabIndex = 15;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
@@ -212,10 +203,9 @@
             this.buttonBuscarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarAluno.ForeColor = System.Drawing.Color.White;
-            this.buttonBuscarAluno.Location = new System.Drawing.Point(322, 84);
-            this.buttonBuscarAluno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBuscarAluno.Location = new System.Drawing.Point(258, 67);
             this.buttonBuscarAluno.Name = "buttonBuscarAluno";
-            this.buttonBuscarAluno.Size = new System.Drawing.Size(94, 29);
+            this.buttonBuscarAluno.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarAluno.TabIndex = 16;
             this.buttonBuscarAluno.Text = "&Buscar";
             this.buttonBuscarAluno.UseVisualStyleBackColor = false;
@@ -228,17 +218,25 @@
             "Em Análise",
             "Autorizada",
             "Negada"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(11, 186);
-            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxStatus.Location = new System.Drawing.Point(9, 149);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(283, 24);
+            this.comboBoxStatus.Size = new System.Drawing.Size(227, 21);
             this.comboBoxStatus.TabIndex = 18;
+            // 
+            // idProfessorTextBox
+            // 
+            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "IdProfessor", true));
+            this.idProfessorTextBox.Location = new System.Drawing.Point(346, 95);
+            this.idProfessorTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.idProfessorTextBox.Name = "idProfessorTextBox";
+            this.idProfessorTextBox.Size = new System.Drawing.Size(325, 20);
+            this.idProfessorTextBox.TabIndex = 8;
             // 
             // FormCadastroSaidasAntecipadas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1300, 614);
+            this.ClientSize = new System.Drawing.Size(1040, 491);
             this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.buttonBuscarAluno);
             this.Controls.Add(this.buttonCancelar);
@@ -275,12 +273,12 @@
         private System.Windows.Forms.DateTimePicker dataHoraSaidaDateTimePicker;
         private System.Windows.Forms.TextBox AlunoTextBox;
         private System.Windows.Forms.TextBox idCoordenacaoTextBox;
-        private System.Windows.Forms.TextBox idProfessorTextBox;
         private System.Windows.Forms.TextBox motivoTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonBuscarAluno;
         private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.TextBox idProfessorTextBox;
     }
 }

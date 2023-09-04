@@ -54,11 +54,9 @@ namespace UILGerenReservasLab
             try
             {
                 Close();
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }

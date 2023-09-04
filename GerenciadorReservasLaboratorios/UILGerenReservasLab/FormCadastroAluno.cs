@@ -38,7 +38,7 @@ namespace UILGerenReservasLab
 
                 if (id == 0)
                 {
-                    _aluno = new Aluno(); // Crie um novo objeto Curso se for um novo registro.
+                    _aluno = new Aluno(); // Crie um novo objeto Aluno se for um novo registro.
                     _aluno.Nome = nomeTextBox.Text; // Atribua o nome do TextBox ao novo objeto.;
                     _aluno.Email = emailTextBox.Text;
                     _aluno.Matricula = matriculaTextBox.Text;

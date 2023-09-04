@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +15,24 @@ namespace UILGerenReservasLab
 {
     public partial class FormMenuPrincipal : Form
     {
+        private Usuario UsuarioLogado;
         public FormMenuPrincipal()
         {
             InitializeComponent();
             //These lines eliminate the flickering of the form or controls in the graphical interface (but not 100%).
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            UsuarioLogado = usuarioBLL.ObterUsuarioLogado();
+        }
+        private void FormMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            using (FormLogin frm = new FormLogin())
+            {
+                frm.ShowDialog();
+                if (!frm.Logou)
+                    Application.Exit();
+            }
         }
         // RESIZE METHOD TO RESIZE/CHANGE FORM SIZE AT RUNTIME ----------------------------------------------------------
         private int tolerance = 12;
@@ -174,14 +188,12 @@ namespace UILGerenReservasLab
             //buttonPermissao.BackColor = Color.FromArgb(12, 61, 92);
             ConfigurarCorBotoes(sender);			
         }
-
         private void buttonAluno_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarAluno>();
             //buttonAluno.BackColor = Color.FromArgb(12, 61, 92);
             ConfigurarCorBotoes(sender);
         }
-
         private void buttonSaidasAntecipadas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormBuscarSaidasAntecipadas>();
@@ -192,25 +204,24 @@ namespace UILGerenReservasLab
         {
             labelHora.Text = DateTime.Now.ToString("hh:mm:ss ");
             labelData.Text = DateTime.Now.ToLongDateString();
-            labelUserName.Text = string.Empty;
-            labelEmail.Text = string.Empty;
-            labelCargo.Text = string.Empty;
+            labelUserName.Text = UsuarioLogado.Nome;
+            labelEmail.Text = UsuarioLogado.Email;
+            labelCargo.Text = UsuarioLogado.GrupoUsuarios.ToString();
         }
-
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to log out?", "Warning",
                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                this.Close();
-        }
-
-        private void FormMenuPrincipal_Load(object sender, EventArgs e)
-        {
-            using (FormLogin frm = new FormLogin())
             {
-                frm.ShowDialog();
-                if (!frm.Logou)
-                    Application.Exit();
+                // Limpar o ID do usuário
+                Constantes.IdUsuarioLogado = 0;
+
+                // Fechar a janela atual de logout
+                this.Close();
+
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+
             }
         }
         // METHOD TO OPEN FORMS WITHIN THE PANEL
@@ -229,6 +240,7 @@ namespace UILGerenReservasLab
                 panelFormularios.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
+                formulario.FormClosed += new FormClosedEventHandler(CloseForms);
             }
             // If the form/instance exists
             else

@@ -124,7 +124,7 @@
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nome", true));
             this.nomeTextBox.Location = new System.Drawing.Point(11, 139);
-            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(459, 20);
             this.nomeTextBox.TabIndex = 2;
@@ -133,7 +133,7 @@
             // 
             this.matriculaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CPF", true));
             this.matriculaTextBox.Location = new System.Drawing.Point(474, 139);
-            this.matriculaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.matriculaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.matriculaTextBox.Name = "matriculaTextBox";
             this.matriculaTextBox.Size = new System.Drawing.Size(115, 20);
             this.matriculaTextBox.TabIndex = 4;
@@ -142,7 +142,7 @@
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Email", true));
             this.emailTextBox.Location = new System.Drawing.Point(593, 139);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(308, 20);
             this.emailTextBox.TabIndex = 6;
@@ -151,7 +151,7 @@
             // 
             this.nomeUsuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
             this.nomeUsuarioTextBox.Location = new System.Drawing.Point(11, 201);
-            this.nomeUsuarioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nomeUsuarioTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nomeUsuarioTextBox.Name = "nomeUsuarioTextBox";
             this.nomeUsuarioTextBox.Size = new System.Drawing.Size(277, 20);
             this.nomeUsuarioTextBox.TabIndex = 8;
@@ -160,7 +160,7 @@
             // 
             this.senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
             this.senhaTextBox.Location = new System.Drawing.Point(292, 201);
-            this.senhaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.senhaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.senhaTextBox.Name = "senhaTextBox";
             this.senhaTextBox.Size = new System.Drawing.Size(151, 20);
             this.senhaTextBox.TabIndex = 10;
@@ -170,7 +170,7 @@
             this.ativoCheckBox.AutoSize = true;
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
             this.ativoCheckBox.Location = new System.Drawing.Point(593, 204);
-            this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(50, 17);
             this.ativoCheckBox.TabIndex = 13;
@@ -180,7 +180,7 @@
             // textBoxConfirmarSenha
             // 
             this.textBoxConfirmarSenha.Location = new System.Drawing.Point(447, 201);
-            this.textBoxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
             this.textBoxConfirmarSenha.Size = new System.Drawing.Size(142, 20);
             this.textBoxConfirmarSenha.TabIndex = 12;
@@ -194,7 +194,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1040, 47);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Cadastro de usuário";
+            this.label2.Text = "Cadastro de usuários";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonCancelar
@@ -262,7 +262,7 @@
             this.Controls.Add(this.nomeTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroUsuario";

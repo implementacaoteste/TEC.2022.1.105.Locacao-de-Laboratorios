@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Models;
+using System;
 using System.Collections.Generic;
 
 namespace BLL
@@ -26,6 +27,17 @@ namespace BLL
         public void Alterar(GrupoUsuario grupoUsuario)
         {
             new GrupoUsuarioDAL().Alterar(grupoUsuario);
+        }
+        public List<GrupoUsuario> BuscarGrupoPorIdUsuario(int idUsuario)
+        {
+            try
+            {
+                return new GrupoUsuarioDAL().BuscarGrupoPorIdUsuario(idUsuario);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao buscar grupos de usuário por ID.", ex);
+            }
         }
         public void Excluir(int id)
         {

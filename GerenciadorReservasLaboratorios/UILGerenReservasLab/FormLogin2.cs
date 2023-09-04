@@ -15,11 +15,18 @@ namespace UILGerenReservasLab
     public partial class FormLogin2 : Form
     {
         public bool Logou;
+        public int UserId;
 
         public FormLogin2()
         {
             InitializeComponent();
             Logou = false;
+            UserId = 0;
+            textBoxSenha.Text = "";
+            textBoxSenha.UseSystemPasswordChar = false;
+            textBoxUsuario.Text = "";
+            labelErrorMessage.Visible = false;
+            this.Show();
         }
 
         private void pictureBoxSenha_MouseDown(object sender, MouseEventArgs e)
@@ -31,6 +38,7 @@ namespace UILGerenReservasLab
         {
             textBoxSenha.UseSystemPasswordChar = true;
         }
+
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -40,19 +48,50 @@ namespace UILGerenReservasLab
         {
             try
             {
-                new UsuarioBLL().Autenticar(textBoxUsuario.Text, textBoxSenha.Text);
-                Logou = true;
-                Close();
+                if (textBoxUsuario.Text != "" && textBoxUsuario.TextLength > 3)
+                {
+                    if (textBoxSenha.Text != "")
+                    {
+                        var usuarioBLL = new UsuarioBLL();
+                        usuarioBLL.Autenticar(textBoxUsuario.Text, textBoxSenha.Text);
+                        Logou = true;
+
+                        var usuarioLogado = usuarioBLL.ObterUsuarioLogado();
+                        if (usuarioLogado != null)
+                        {
+                            UserId = usuarioLogado.Id;
+                            MessageBox.Show($"Bem-vindo {usuarioLogado.Nome}!");
+                        }
+
+                        Close();
+                    }
+                    else
+                    {
+                        msgError("Favor digitar a senha.");
+                    }
+                }
+                else
+                {
+                    msgError("Favor digitar a nome de usuário");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                labelErrorMessage.Text = "    " + ex.Message;
+                labelErrorMessage.Visible = true;
             }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void msgError(string msg)
+        {
+            labelErrorMessage.Text = "    " + msg;
+            labelErrorMessage.Visible = true;
+            labelErrorMessage.ForeColor = Color.Red;
         }
     }
 }

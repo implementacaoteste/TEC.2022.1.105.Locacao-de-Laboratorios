@@ -44,14 +44,14 @@ namespace UILGerenReservasLab
             {
                 // Realize a validação de permissão antes de inserir a saída antecipada.
                 usuarioBLL.ValidarPermissao(1); // Substitua 1 pelo ID da permissão que você deseja validar.
+                Usuario usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
 
-                int idUsuarioLogado = usuarioBLL.ObterIdUsuarioLogado(); // Obtenha o ID do usuário logado.
-                string nomeDoUsuario = usuarioBLL.ObterNomePorId(idUsuarioLogado); // Obtenha o nome do usuário pelo ID.
+                string nomeDoUsuario = usuarioLogado.NomeUsuario; // Obtenha o nome do usuário pelo ID.
 
                 SaidasAntecipadas saidaAntecipada = new SaidasAntecipadas();
                 // Preencha os campos do objeto SaidasAntecipadas.
 
-                saidaAntecipada.IdProfessor = usuarioBLL.ObterIdUsuarioLogado();
+                saidaAntecipada.IdProfessor = usuarioLogado.Id;
                 saidaAntecipada.Motivo = motivoTextBox.Text;
 
                 // Preencher Status com base na variável de controle isNewRequest.

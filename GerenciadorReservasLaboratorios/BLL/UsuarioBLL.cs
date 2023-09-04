@@ -16,6 +16,7 @@ namespace BLL
         public void Inserir(Usuario _usuario, string _confirmacaoDeSenha)
         {
             ValidarPermissao(2);
+            ValidarDados(_usuario, _confirmacaoDeSenha);
             usuarioDAL.Inserir(_usuario);
         }
         public Usuario BuscarPorId(int _id)
@@ -48,11 +49,37 @@ namespace BLL
             if (_usuario.Senha != _confirmacaoDeSenha)
                 throw new Exception("A senha e a confirmação da senha devem ser iguais.");
 
-            if (_usuario.Senha.Length <= 3)
-                throw new Exception("A senha deve ter mais de 3 caracteres.") { Data = { { "Id", 123 } } };
+            if (_usuario.Senha.Length <= 5)
+                throw new Exception("A senha deve ter mais de 5 caracteres.") { Data = { { "Id", 123 } } };
 
-            if (_usuario.Nome.Length <= 2)
-                throw new Exception("A nome deve ter mais de 2 caracteres.");
+            if (string.IsNullOrWhiteSpace(_usuario.Nome))
+                throw new Exception("O campo Nome é obrigatório.");
+ 
+            if (!_usuario.Nome.Contains(" "))
+                throw new Exception("O campo Nome deve conter pelo menos um nome e um sobrenome.");
+
+            if (_usuario.NomeUsuario.Length < 4)
+                throw new Exception("O campo Nome de Usuário deve ter pelo menos 4 caracteres.");
+
+            if (_usuario.Matricula.Length < 6)
+                throw new Exception("O campo Matrícula deve ter pelo menos 6 caracteres.");
+
+            if (!IsValidEmail(_usuario.Email))
+                throw new Exception("O campo E-mail não está em um formato válido.");
+
+        }
+        public static bool IsValidEmail(string _email)
+        {
+            try
+            {
+                var enderecoEmail = new System.Net.Mail.MailAddress(_email);
+                return enderecoEmail.Address == _email;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
         public void ValidarPermissao(int _idPermissao)
         {
@@ -77,20 +104,15 @@ namespace BLL
             else
                 throw new Exception("Usuario ou senha inválido.");
         }
-        public int ObterIdUsuarioLogado()
+        public Usuario ObterUsuarioLogado()
         {
-            return Constantes.IdUsuarioLogado;
+            if (Constantes.IdUsuarioLogado == 0)
+            {
+                // Nenhum usuário está logado, retorna null ou um valor padrão
+                return null;
+            }
+            // Se um usuário está logado, busque as informações do usuário no DAL
+            return usuarioDAL.BuscarPorId(Constantes.IdUsuarioLogado);
         }
-
-        public string ObterNomeUsuarioLogado()
-        {
-            int idUsuario = ObterIdUsuarioLogado();
-            return usuarioDAL.ObterNomeUsuarioPorId(idUsuario);
-        }
-        public string ObterNomePorId(int id)
-        {
-            return usuarioDAL.ObterNomePorId(id);
-        }
-
     }
 }

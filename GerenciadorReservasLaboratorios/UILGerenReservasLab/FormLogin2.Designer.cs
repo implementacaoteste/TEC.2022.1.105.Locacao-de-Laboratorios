@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin2));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonFechar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
@@ -42,21 +45,20 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBoxSenha = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSenha = new System.Windows.Forms.PictureBox();
             this.pictureBoxUsuario = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelErrorMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSenha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSenha)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -129,8 +131,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Bem-vindos ao";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UILGerenReservasLab.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(39, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(239, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.panel2.Controls.Add(this.labelErrorMessage);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.buttonFechar);
@@ -144,11 +158,22 @@
             this.panel2.Size = new System.Drawing.Size(450, 530);
             this.panel2.TabIndex = 1;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai;
+            this.pictureBox2.Location = new System.Drawing.Point(54, 26);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(299, 166);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label6.ForeColor = System.Drawing.Color.DarkGray;
             this.label6.Location = new System.Drawing.Point(6, 262);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 25);
@@ -171,7 +196,7 @@
             // 
             // buttonSair
             // 
-            this.buttonSair.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonSair.BackColor = System.Drawing.Color.Red;
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.ForeColor = System.Drawing.SystemColors.Control;
@@ -199,7 +224,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.panel4.Controls.Add(this.textBoxSenha);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.pictureBoxSenha);
@@ -210,6 +235,7 @@
             // 
             // textBoxSenha
             // 
+            this.textBoxSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.textBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSenha.Location = new System.Drawing.Point(47, 18);
             this.textBoxSenha.Margin = new System.Windows.Forms.Padding(2);
@@ -226,9 +252,23 @@
             this.panel5.Size = new System.Drawing.Size(386, 1);
             this.panel5.TabIndex = 2;
             // 
+            // pictureBoxSenha
+            // 
+            this.pictureBoxSenha.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pictureBoxSenha.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxSenha.Image = global::UILGerenReservasLab.Properties.Resources.lock_open;
+            this.pictureBoxSenha.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxSenha.Name = "pictureBoxSenha";
+            this.pictureBoxSenha.Size = new System.Drawing.Size(42, 45);
+            this.pictureBoxSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSenha.TabIndex = 7;
+            this.pictureBoxSenha.TabStop = false;
+            this.pictureBoxSenha.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSenha_MouseDown);
+            this.pictureBoxSenha.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSenha_MouseUp);
+            // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.textBoxUsuario);
             this.panel3.Controls.Add(this.pictureBoxUsuario);
@@ -247,6 +287,7 @@
             // 
             // textBoxUsuario
             // 
+            this.textBoxUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsuario.Location = new System.Drawing.Point(47, 15);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(2);
@@ -254,31 +295,9 @@
             this.textBoxUsuario.Size = new System.Drawing.Size(386, 13);
             this.textBoxUsuario.TabIndex = 10;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai;
-            this.pictureBox2.Location = new System.Drawing.Point(54, 26);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(299, 166);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBoxSenha
-            // 
-            this.pictureBoxSenha.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxSenha.Image = global::UILGerenReservasLab.Properties.Resources.lock_open;
-            this.pictureBoxSenha.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSenha.Name = "pictureBoxSenha";
-            this.pictureBoxSenha.Size = new System.Drawing.Size(42, 45);
-            this.pictureBoxSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSenha.TabIndex = 7;
-            this.pictureBoxSenha.TabStop = false;
-            this.pictureBoxSenha.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSenha_MouseDown);
-            this.pictureBoxSenha.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSenha_MouseUp);
-            // 
             // pictureBoxUsuario
             // 
+            this.pictureBoxUsuario.BackColor = System.Drawing.SystemColors.Highlight;
             this.pictureBoxUsuario.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxUsuario.Image = global::UILGerenReservasLab.Properties.Resources.user_account;
             this.pictureBoxUsuario.Location = new System.Drawing.Point(0, 0);
@@ -288,15 +307,19 @@
             this.pictureBoxUsuario.TabIndex = 6;
             this.pictureBoxUsuario.TabStop = false;
             // 
-            // pictureBox1
+            // labelErrorMessage
             // 
-            this.pictureBox1.Image = global::UILGerenReservasLab.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(239, 233);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.labelErrorMessage.AutoSize = true;
+            this.labelErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErrorMessage.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelErrorMessage.Image = ((System.Drawing.Image)(resources.GetObject("labelErrorMessage.Image")));
+            this.labelErrorMessage.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelErrorMessage.Location = new System.Drawing.Point(8, 400);
+            this.labelErrorMessage.Name = "labelErrorMessage";
+            this.labelErrorMessage.Size = new System.Drawing.Size(101, 17);
+            this.labelErrorMessage.TabIndex = 11;
+            this.labelErrorMessage.Text = "Error Message";
+            this.labelErrorMessage.Visible = false;
             // 
             // FormLogin2
             // 
@@ -311,16 +334,16 @@
             this.Text = "FormLogin2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSenha)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,5 +371,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelErrorMessage;
     }
 }
