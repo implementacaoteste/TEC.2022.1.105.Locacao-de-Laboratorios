@@ -14,17 +14,17 @@ namespace UILGerenReservasLab
 {
     public partial class FormCadastroAluno : Form
     {
-        private int id;
+        private int Id;
 
         public FormCadastroAluno(int _id = 0)
         {
             InitializeComponent();
-            id = _id;
+            Id = _id;
 
-            if (id > 0)
+            if (Id > 0)
             {
                 // Busque o aluno com base no id e preencha os campos com os dados.
-                Aluno aluno = new AlunoBLL().BuscarPorId(id);
+                Aluno aluno = new AlunoBLL().BuscarPorId(Id);
                 alunoBindingSource.DataSource = aluno;
             }
         }
@@ -36,7 +36,7 @@ namespace UILGerenReservasLab
                 Aluno _aluno = (Aluno)alunoBindingSource.Current;
                 alunoBindingSource.EndEdit();
 
-                if (id == 0)
+                if (Id == 0)
                 {
                     _aluno = new Aluno(); // Crie um novo objeto Aluno se for um novo registro.
                     _aluno.Nome = nomeTextBox.Text; // Atribua o nome do TextBox ao novo objeto.;

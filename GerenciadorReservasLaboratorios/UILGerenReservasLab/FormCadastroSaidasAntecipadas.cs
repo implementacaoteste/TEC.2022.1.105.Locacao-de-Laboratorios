@@ -17,6 +17,7 @@ namespace UILGerenReservasLab
         public int Id;
         private UsuarioBLL usuarioBLL = new UsuarioBLL();
         public Aluno AlunoSelecionado { get; private set; }
+        private int idAlunoSelecionado;
 
         public FormCadastroSaidasAntecipadas(int _id = 0)
         {
@@ -42,24 +43,34 @@ namespace UILGerenReservasLab
         {
             try
             {
-                // Realize a validação de permissão antes de inserir a saída antecipada.
-                usuarioBLL.ValidarPermissao(1); // Substitua 1 pelo ID da permissão que você deseja validar.
+                SaidasAntecipadas _saidasAntecipadas = (SaidasAntecipadas)saidasAntecipadasBindingSource.Current;
+                saidasAntecipadasBindingSource.EndEdit();
                 Usuario usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
-
                 string nomeDoUsuario = usuarioLogado.NomeUsuario; // Obtenha o nome do usuário pelo ID.
 
-                SaidasAntecipadas saidaAntecipada = new SaidasAntecipadas();
-                // Preencha os campos do objeto SaidasAntecipadas.
+                if (Id == 0)
+                {
+                    // Realize a validação de permissão antes de inserir a saída antecipada.
+                    usuarioBLL.ValidarPermissao(1); // Substitua 1 pelo ID da permissão que você deseja validar.
 
-                saidaAntecipada.IdProfessor = usuarioLogado.Id;
-                saidaAntecipada.Motivo = motivoTextBox.Text;
+                    SaidasAntecipadas saidaAntecipada = new SaidasAntecipadas();
+                    // Preencha os campos do objeto SaidasAntecipadas.
 
-                // Preencher Status com base na variável de controle isNewRequest.
-                saidaAntecipada.Status = isNewRequest ? comboBoxStatus.Text : "em análise";
+                    _saidasAntecipadas.IdAluno = idAlunoSelecionado;
+                    _saidasAntecipadas.IdProfessor = usuarioLogado.Id;
+                    _saidasAntecipadas.Motivo = motivoTextBox.Text;
 
-                saidaAntecipada.DataHoraSaida = DateTime.Now;
+                    // Preencher Status com base na variável de controle isNewRequest.
+                    _saidasAntecipadas.Status = isNewRequest ? comboBoxStatus.Text : "em análise";
 
-                MessageBox.Show($"Solicitação de saída antecipada registrada com sucesso para {nomeDoUsuario}!");
+                    _saidasAntecipadas.DataHoraSaida = DateTime.Now;
+                    new SaidasAntecipadasBLL().Inserir(_saidasAntecipadas);
+                }
+                else
+                {
+                    new SaidasAntecipadasBLL().Alterar(_saidasAntecipadas);
+                }
+                MessageBox.Show($"Solicitação de saída antecipada registrada com sucesso por {nomeDoUsuario}!");
                 this.Close();
             }
             catch (Exception ex)
@@ -67,7 +78,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
@@ -91,6 +101,9 @@ namespace UILGerenReservasLab
                     {
                         AlunoSelecionado = frm.AlunoSelecionado;
                         AlunoTextBox.Text = AlunoSelecionado.Nome;
+
+                        // Armazene o ID do aluno selecionado.
+                        idAlunoSelecionado = AlunoSelecionado.Id;
                     }
                 }
             }
