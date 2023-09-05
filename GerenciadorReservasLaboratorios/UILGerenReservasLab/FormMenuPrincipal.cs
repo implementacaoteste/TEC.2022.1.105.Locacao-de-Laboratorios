@@ -22,8 +22,6 @@ namespace UILGerenReservasLab
             //These lines eliminate the flickering of the form or controls in the graphical interface (but not 100%).
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-            UsuarioLogado = usuarioBLL.ObterUsuarioLogado();
         }
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
@@ -32,7 +30,24 @@ namespace UILGerenReservasLab
                 frm.ShowDialog();
                 if (!frm.Logou)
                     Application.Exit();
+                else
+                {
+                    // O login foi feito com sucesso, agora podemos obter o usuário logado.
+                    UsuarioBLL usuarioBLL = new UsuarioBLL();
+                    UsuarioLogado = usuarioBLL.ObterUsuarioLogado();
+                    GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
+                    List<GrupoUsuario> gruposDoUsuario = grupoUsuarioBLL.BuscarGrupoPorIdUsuario(UsuarioLogado.Id);
+                    UsuarioLogado.GrupoUsuarios = gruposDoUsuario;
+                    AtualizarDadosUsuario();
+                }
             }
+        }
+        private void AtualizarDadosUsuario()
+        {
+            // Atualize os campos do formulário com os dados do usuário logado.
+            labelUserName.Text = UsuarioLogado.NomeUsuario;
+            labelEmail.Text = UsuarioLogado.Email;
+            labelCargo.Text = UsuarioLogado.GrupoUsuarios.ToString();
         }
         // RESIZE METHOD TO RESIZE/CHANGE FORM SIZE AT RUNTIME ----------------------------------------------------------
         private int tolerance = 12;
@@ -202,11 +217,8 @@ namespace UILGerenReservasLab
         }
         private void timerHoraData_Tick(object sender, EventArgs e)
         {
-            labelHora.Text = DateTime.Now.ToString("hh:mm:ss ");
+            labelHora.Text = DateTime.Now.ToString("HH:mm:ss ");
             labelData.Text = DateTime.Now.ToLongDateString();
-            labelUserName.Text = UsuarioLogado.Nome;
-            labelEmail.Text = UsuarioLogado.Email;
-            labelCargo.Text = UsuarioLogado.GrupoUsuarios.ToString();
         }
         private void buttonLogout_Click(object sender, EventArgs e)
         {

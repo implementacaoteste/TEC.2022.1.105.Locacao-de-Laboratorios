@@ -47,7 +47,7 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT id_Permissao, Descricao FROM Permissao";
+                cmd.CommandText = "SELECT Id, Descricao FROM Permissao";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -55,7 +55,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["id_Permissao"]);
+                        permissao.Id = Convert.ToInt32(rd["Id"]);
                         permissao.Descricao = rd["Descricao"].ToString();
                         GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
                         permissao.Grupos = grupoUsuarioDAL.BuscarGrupoPor_IdPermissao(permissao.Id);
@@ -87,9 +87,9 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = "SELECT P.Id, P.Descricao FROM GrupoUsuario GU " +
                     "INNER JOIN PermissaoGrupoUsuario PGU ON  GU.Id = PGU.IdGrupoUsuario " +
-                    "INNER JOIN Permissao P            ON PGU.IdPermissao =  P.Id WHERE GU.Id = @id";
+                    "INNER JOIN Permissao P            ON PGU.IdPermissao =  P.Id WHERE GU.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", _idGrupo);
+                cmd.Parameters.AddWithValue("@Id", _idGrupo);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
@@ -159,16 +159,16 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM Permissao WHERE Id = @id";
+                cmd.CommandText = "SELECT Id, Descricao FROM Permissao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", _idPermissao);
+                cmd.Parameters.AddWithValue("@Id", _idPermissao);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["id_Permissao"]);
+                        permissao.Id = Convert.ToInt32(rd["Id"]);
                         permissao.Descricao = rd["Descricao"].ToString();
                         GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
                         permissao.Grupos = grupoUsuarioDAL.BuscarGrupoPor_IdPermissao(permissao.Id);
@@ -195,10 +195,10 @@ namespace DAL
                 cn.ConnectionString = Conexao.StringDeConexao;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "UPDATE Permissao SET Descricao = @descricao WHERE Id = @id";
+                cmd.CommandText = "UPDATE Permissao SET Descricao = @descricao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@descricao", _permissao.Descricao);
-                cmd.Parameters.AddWithValue("@id", _permissao.Id);
+                cmd.Parameters.AddWithValue("@Id", _permissao.Id);
 
 
                 cn.Open();
@@ -224,10 +224,10 @@ namespace DAL
                 cn.ConnectionString = Conexao.StringDeConexao;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "DELETE FROM Permissao WHERE Id = @id";
+                cmd.CommandText = "DELETE FROM Permissao WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@id", _idPermissao.Id);
+                cmd.Parameters.AddWithValue("@Id", _idPermissao.Id);
 
 
                 cn.Open();

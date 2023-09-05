@@ -100,7 +100,7 @@ namespace UILGerenReservasLab
                     if (frm.AlunoSelecionado != null)
                     {
                         AlunoSelecionado = frm.AlunoSelecionado;
-                        AlunoTextBox.Text = AlunoSelecionado.Nome;
+                        alunoTextBox.Text = AlunoSelecionado.Nome;
 
                         // Armazene o ID do aluno selecionado.
                         idAlunoSelecionado = AlunoSelecionado.Id;
