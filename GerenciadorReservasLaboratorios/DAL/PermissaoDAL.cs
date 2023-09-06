@@ -16,7 +16,7 @@ namespace DAL
                 cn.ConnectionString = Conexao.StringDeConexao;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "INSERT INTO Permissao(Id, Descricao)" +
+                cmd.CommandText = "INSERT INTO Permissao(IdPerm, Descricao)" +
                                   "VALUES (@idPermissao, @descricao)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@idPermissao", _idPermissao);
@@ -47,7 +47,7 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM Permissao";
+                cmd.CommandText = "SELECT IdPerm, Descricao FROM Permissao";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -55,7 +55,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["Id"]);
+                        permissao.Id = Convert.ToInt32(rd["IdPerm"]);
                         permissao.Descricao = rd["Descricao"].ToString();
                         GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
                         permissao.Grupos = grupoUsuarioDAL.BuscarGrupoPor_IdPermissao(permissao.Id);
@@ -85,9 +85,9 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT P.Id, P.Descricao FROM GrupoUsuario GU " +
-                    "INNER JOIN PermissaoGrupoUsuario PGU ON  GU.Id = PGU.IdGrupoUsuario " +
-                    "INNER JOIN Permissao P            ON PGU.IdPermissao =  P.Id WHERE GU.Id = @Id";
+                cmd.CommandText = "SELECT P.IdPerm, P.Descricao FROM GrupoUsuario GU " +
+                    "INNER JOIN PermissaoGrupoUsuario PGU ON  GU.IdGrupo = PGU.IdGrupoUsuario " +
+                    "INNER JOIN Permissao P            ON PGU.IdPermissao =  P.IdPerm WHERE GU.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _idGrupo);
                 cn.Open();
@@ -96,7 +96,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["Id"]);
+                        permissao.Id = Convert.ToInt32(rd["IdPerm"]);
                         permissao.Descricao = rd["Descricao"].ToString();
                         permissoes.Add(permissao);
                     }
@@ -122,7 +122,7 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM Permissao WHERE  UPPER (Descricao) lIKE UPPER(@nome)";
+                cmd.CommandText = "SELECT IdPerm, Descricao FROM Permissao WHERE  UPPER (Descricao) lIKE UPPER(@nome)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@nome", "%" + _nomePermissao + "%");
                 cn.Open();
@@ -131,7 +131,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["Id"]);
+                        permissao.Id = Convert.ToInt32(rd["IdPerm"]);
                         permissao.Descricao = rd["Descricao"].ToString();
                         GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
                         permissao.Grupos = grupoUsuarioDAL.BuscarGrupoPor_IdPermissao(permissao.Id);
@@ -159,7 +159,7 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Descricao FROM Permissao WHERE Id = @Id";
+                cmd.CommandText = "SELECT IdPerm, Descricao FROM Permissao WHERE IdPerm = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _idPermissao);
                 cn.Open();
@@ -168,7 +168,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["Id"]);
+                        permissao.Id = Convert.ToInt32(rd["IdPerm"]);
                         permissao.Descricao = rd["Descricao"].ToString();
                         GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
                         permissao.Grupos = grupoUsuarioDAL.BuscarGrupoPor_IdPermissao(permissao.Id);
@@ -195,7 +195,7 @@ namespace DAL
                 cn.ConnectionString = Conexao.StringDeConexao;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "UPDATE Permissao SET Descricao = @descricao WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Permissao SET Descricao = @descricao WHERE IdPerm = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@descricao", _permissao.Descricao);
                 cmd.Parameters.AddWithValue("@Id", _permissao.Id);
@@ -224,7 +224,7 @@ namespace DAL
                 cn.ConnectionString = Conexao.StringDeConexao;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "DELETE FROM Permissao WHERE Id = @Id";
+                cmd.CommandText = "DELETE FROM Permissao WHERE IdPerm = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _idPermissao.Id);

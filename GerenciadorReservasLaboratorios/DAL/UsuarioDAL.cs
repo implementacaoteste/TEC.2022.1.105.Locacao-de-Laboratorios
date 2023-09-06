@@ -50,7 +50,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario";
+                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -60,7 +60,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         Usuario usuario = new Usuario();
-                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Email = rd["Email"].ToString();
@@ -91,7 +91,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE NomeUsuario = @NomeUsuario";
+                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE NomeUsuario = @NomeUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@NomeUsuario", _nomeUsuario);
                 cn.Open();
@@ -100,7 +100,7 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Email = rd["Email"].ToString();
@@ -129,8 +129,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario 
-                                WHERE Id = @Id";
+                cmd.CommandText = @"SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario 
+                                WHERE IdUser = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
                 cn.Open();
@@ -140,7 +140,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         usuario = new Usuario();
-                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Email = rd["Email"].ToString();
@@ -173,8 +173,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT GrupoUsuario.Id, GrupoUsuario.NomeGrupo FROM GrupoUsuario
-                                INNER JOIN UsuarioGrupoUsuario ON GrupoUsuario.Id = UsuarioGrupoUsuario.IdGrupoUsuario
+                cmd.CommandText = @"SELECT GrupoUsuario.IdGrupo, GrupoUsuario.NomeGrupo FROM GrupoUsuario
+                                INNER JOIN UsuarioGrupoUsuario ON GrupoUsuario.IdGrupo = UsuarioGrupoUsuario.IdGrupoUsuario
                                 WHERE UsuarioGrupoUsuario.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
@@ -185,7 +185,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         GrupoUsuario grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.Id = Convert.ToInt32(rd["IdGrupo"]);
                         grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
                         gruposUsuario.Add(grupoUsuario);
                     }
@@ -211,7 +211,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE Matricula = @Matricula";
+                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE Matricula = @Matricula";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Matricula", _matricula);
                 cn.Open();
@@ -221,7 +221,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         usuario = new Usuario();
-                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Email = rd["Email"].ToString();
@@ -250,7 +250,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE Nome LIKE @Nome";
+                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
@@ -260,7 +260,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         Usuario usuario = new Usuario();
-                        usuario.Id = Convert.ToInt32(rd["Id"]);
+                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
                         usuario.Email = rd["Email"].ToString();
@@ -322,7 +322,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "DELETE FROM Usuario WHERE Id = @Id";
+                cmd.CommandText = "DELETE FROM Usuario WHERE IdUser = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
 
@@ -503,7 +503,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT NomeUsuario FROM Usuario WHERE Id = @Id";
+                cmd.CommandText = "SELECT NomeUsuario FROM Usuario WHERE IdUser = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _idUsuario);
                 cn.Open();
@@ -529,7 +529,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Nome FROM Usuario WHERE Id = @Id";
+                cmd.CommandText = "SELECT Nome FROM Usuario WHERE IdUser = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _idUsuario);
                 cn.Open();

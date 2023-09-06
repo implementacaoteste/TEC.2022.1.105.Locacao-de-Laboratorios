@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,7 +47,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, NomeGrupo FROM GrupoUsuario";
+                cmd.CommandText = "SELECT IdGrupo, NomeGrupo FROM GrupoUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -56,7 +57,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.Id = Convert.ToInt32(rd["IdGrupo"]);
                         grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
                         grupoUsuarios.Add(grupoUsuario);
                     }
@@ -82,7 +83,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, NomeGrupo FROM GrupoUsuario WHERE NomeGrupo LIKE @NomeGrupo";
+                cmd.CommandText = "SELECT IdGrupo, NomeGrupo FROM GrupoUsuario WHERE NomeGrupo LIKE @NomeGrupo";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@NomeGrupo", "%" + _nomeGrupo + "%");
                 cn.Open();
@@ -92,7 +93,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.Id = Convert.ToInt32(rd["IdGrupo"]);
                         grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
                         grupoUsuario.Permissoes = new PermissaoDAL().BuscarPermissoesPorIdGrupo(grupoUsuario.Id);
                         grupoUsuarios.Add(grupoUsuario);
@@ -120,7 +121,7 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, NomeGrupo FROM GrupoUsuario WHERE Id = @Id";
+                cmd.CommandText = @"SELECT IdGrupo, NomeGrupo FROM GrupoUsuario WHERE IdGrupo = @Id";
                 cmd.Parameters.AddWithValue("@Id", _id);
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
@@ -130,7 +131,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.Id = Convert.ToInt32(rd["IdGrupo"]);
                         grupoUsuario.NomeGrupo = rd["GrupoUsuario"].ToString();
 
                     }
@@ -157,8 +158,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT GrupoUsuario.Id, GrupoUsuario.NomeGrupo FROM GrupoUsuario
-                                    INNER JOIN UsuarioGrupoUsuario ON GrupoUsuario.Id = UsuarioGrupoUsuario.IdGrupoUsuario
+                cmd.CommandText = @"SELECT GrupoUsuario.IdGrupo, GrupoUsuario.NomeGrupo FROM GrupoUsuario
+                                    INNER JOIN UsuarioGrupoUsuario ON GrupoUsuario.IdGrupo = UsuarioGrupoUsuario.IdGrupoUsuario
                                     WHERE UsuarioGrupoUsuario.IdUsuario = @IdUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@IdUsuario", _idUsuario);
@@ -169,7 +170,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+                        grupoUsuario.Id = Convert.ToInt32(rd["IdGrupo"]);
                         grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
                         grupoUsuarios.Add(grupoUsuario);
                     }
@@ -195,16 +196,16 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT id_GrupoUsuario, NomeGrupo FROM Permissao P INNER JOIN Permissao_com_Grupo PG ON P.id_Permissao = PG.cod_Permissao INNER JOIN GrupoUsuario GU ON PG.cod_GrupoUsuario = GU.id_GrupoUsuario WHERE P.id_Permissao = @id";
+                cmd.CommandText = @"SELECT IdGrupo, NomeGrupo FROM Permissao P INNER JOIN PermissaoGrupoUsuario PGU ON P.IdPerm = PGU.IdPermissao INNER JOIN GrupoUsuario GU ON PGU.IdGrupoUsuario = GU.IdGrupo WHERE P.IdPerm = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@id", _idPermissao);
+                cmd.Parameters.AddWithValue("@Id", _idPermissao);
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
                         grupousuario = new GrupoUsuario();
-                        grupousuario.Id = Convert.ToInt32(rd["id_GrupoUsuario"]);
+                        grupousuario.Id = Convert.ToInt32(rd["IdGrupo"]);
                         grupousuario.NomeGrupo = rd["NomeGrupo"].ToString();
                         PermissaoDAL permissaoDAL = new PermissaoDAL();
                         grupousuario.Permissoes = permissaoDAL.BuscarPermissoesPorIdGrupo(grupousuario.Id);
@@ -231,11 +232,11 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE GrupoUsuario SET NomeGrupo = @NomeGrupo WHERE Id = @Id";
+                cmd.CommandText = "UPDATE GrupoUsuario SET NomeGrupo = @NomeGrupo WHERE IdGrupo = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@NomeGrupo", _grupoUsuario.NomeGrupo);
-                cmd.Parameters.AddWithValue("@Id", _grupoUsuario.Id);
+                cmd.Parameters.AddWithValue("@IdGrupo", _grupoUsuario.Id);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -257,7 +258,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("DELETE FROM GrupoUsuario WHERE id = @id", cn))
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM GrupoUsuario WHERE IdGrupo = @Id", cn))
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@Id", _idGrupoUsuario);

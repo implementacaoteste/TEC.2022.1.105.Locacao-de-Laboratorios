@@ -15,6 +15,7 @@ namespace UILGerenReservasLab
     public partial class FormConsultaPermissao : Form
     {
         public int Id;
+        public int opc;
         private string ultimaBusca;
         private bool buscou;
         public FormConsultaPermissao()
@@ -46,7 +47,26 @@ namespace UILGerenReservasLab
         {
             try
             {
-                permissaoBindingSource.DataSource = new PermissaoBLL().BuscarPorDescricao(textBoxBuscar.Text);
+                switch (comboBoxBuscarPermissao.SelectedIndex)
+                {
+                    case 0:
+                        opc = 0;
+                        permissaoBindingSource.DataSource = new PermissaoBLL().BuscarTodasPermissoes();
+                        break;
+                    case 1:
+                        opc = 1;
+                        if (String.IsNullOrEmpty(textBoxBuscar.Text))
+                            throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 01 } } };
+                        permissaoBindingSource.DataSource = new PermissaoBLL().BuscarTodasPermissoesPorId(Convert.ToInt32(textBoxBuscar.Text));
+                        break;
+                    case 2:
+                        opc = 2;
+                        permissaoBindingSource.DataSource = new PermissaoBLL().BuscarPorDescricao(textBoxBuscar.Text);
+                        break;
+                    default:
+                        MessageBox.Show("Escolha uma opção de busca");
+                        break;
+                }
             }
             catch (Exception ex)
             {
