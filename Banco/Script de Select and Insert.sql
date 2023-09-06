@@ -1,7 +1,7 @@
-SELECT DISTINCT P.Id, P.Descricao, GU.Id, GU.NomeGrupo
+SELECT DISTINCT P.IdPerm, P.Descricao, GU.IdGrupo, GU.NomeGrupo
 FROM Permissao P
-INNER JOIN PermissaoGrupoUsuario PGU ON P.Id = PGU.IdPermissao
-INNER JOIN GrupoUsuario GU ON PGU.IdGrupoUsuario = GU.Id ORDER BY GU.NomeGrupo;
+INNER JOIN PermissaoGrupoUsuario PGU ON P.IdPerm = PGU.IdPermissao
+INNER JOIN GrupoUsuario GU ON PGU.IdGrupoUsuario = GU.IdGrupo ORDER BY GU.NomeGrupo;
 
 DECLARE @NomeDoGrupo NVARCHAR(255) = 'Administrador'
 

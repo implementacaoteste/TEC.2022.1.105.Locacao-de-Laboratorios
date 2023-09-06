@@ -15,7 +15,7 @@ namespace UILGerenReservasLab
         {
             try
             {
-                grupoUsuarioBindingSource.DataSource = new GrupoUsuarioBLL().BuscarPorNomeGrupo(textBoxBuscar.Text);
+                grupoUsuarioBindingSource.DataSource = new GrupoUsuarioBLL().BuscarGrupoPorNome(textBoxBuscar.Text);
             }
             catch (Exception ex)
             {

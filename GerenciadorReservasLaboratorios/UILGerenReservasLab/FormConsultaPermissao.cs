@@ -61,7 +61,7 @@ namespace UILGerenReservasLab
                         break;
                     case 2:
                         opc = 2;
-                        permissaoBindingSource.DataSource = new PermissaoBLL().BuscarPorDescricao(textBoxBuscar.Text);
+                        permissaoBindingSource.DataSource = new PermissaoBLL().BuscarPermissaoPorDescricao(textBoxBuscar.Text);
                         break;
                     default:
                         MessageBox.Show("Escolha uma opção de busca");

@@ -41,15 +41,18 @@ namespace DAL
         {
             List<Permissao> permissoes = new List<Permissao>();
             Permissao permissao;
-            SqlConnection cn = new SqlConnection();
-            SqlCommand cmd = new SqlCommand();
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
             try
             {
-                cn.ConnectionString = Conexao.StringDeConexao;
+                SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdPerm, Descricao FROM Permissao";
+                cmd.CommandText = @"SELECT IdPerm, Descricao FROM Permissao";
                 cmd.CommandType = System.Data.CommandType.Text;
+
                 cn.Open();
+
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
@@ -57,9 +60,6 @@ namespace DAL
                         permissao = new Permissao();
                         permissao.Id = Convert.ToInt32(rd["IdPerm"]);
                         permissao.Descricao = rd["Descricao"].ToString();
-                        GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
-                        permissao.Grupos = grupoUsuarioDAL.BuscarGrupoPor_IdPermissao(permissao.Id);
-
 
                         permissoes.Add(permissao);
                     }
@@ -68,7 +68,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar Permissões: " + ex.Message);
+                throw new Exception("Ocorreu um erro ao tentar buscar todas as permissoes no banco de dados." + ex.Message);
             }
             finally
             {
@@ -85,9 +85,11 @@ namespace DAL
             {
                 cn.ConnectionString = Conexao.StringDeConexao;
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT P.IdPerm, P.Descricao FROM GrupoUsuario GU " +
-                    "INNER JOIN PermissaoGrupoUsuario PGU ON  GU.IdGrupo = PGU.IdGrupoUsuario " +
-                    "INNER JOIN Permissao P            ON PGU.IdPermissao =  P.IdPerm WHERE GU.Id = @Id";
+                cmd.CommandText = @"SELECT P.IdPerm, P.Descricao FROM Permissao P
+                    INNER JOIN PermissaoGrupoUsuario PGU ON P.IdPerm = PGU.IdPermissao
+                    INNER JOIN GrupoUsuario GU ON PGU.IdGrupoUsuario = GU.IdGrupo
+                    WHERE GU.IdGrupo = @Id";
+
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _idGrupo);
                 cn.Open();

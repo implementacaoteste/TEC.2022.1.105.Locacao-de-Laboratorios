@@ -19,19 +19,26 @@ namespace UILGerenReservasLab
         {
             InitializeComponent();
         }
-
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
             {
                 GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
-                grupoUsuarioBindingSource.DataSource = grupoUsuarioBLL.BuscarTodos();
+                if (!string.IsNullOrEmpty(textBoxBuscarGrupo.Text))
+                {
+                    grupoUsuarioBindingSource.DataSource = grupoUsuarioBLL.BuscarGrupoPorNome(textBoxBuscarGrupo.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, digite um nome de grupo para buscar.");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void buttonSelecionar_Click(object sender, EventArgs e)
         {

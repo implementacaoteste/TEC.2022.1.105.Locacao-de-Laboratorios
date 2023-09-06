@@ -17,6 +17,22 @@ namespace UILGerenReservasLab
         public FormBuscarPermissao()
         {
             InitializeComponent();
+            permissoesDataGridView.CellClick += new DataGridViewCellEventHandler(permissoesDataGridView_CellClick);
+        }
+        private void CarregarGruposDeUsuario(int idPermissao)
+        {
+            try
+            {
+                GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
+                List<GrupoUsuario> grupos = grupoUsuarioBLL.BuscarGrupoPor_IdPermissao(idPermissao);
+
+                grupoUsuarioBindingSource.DataSource = grupos;
+                grupoUsuarioDataGridView.DataSource = grupoUsuarioBindingSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonBuscarPermissao_Click(object sender, EventArgs e)
@@ -30,7 +46,7 @@ namespace UILGerenReservasLab
                 }
                 else if (radioButton_BuscarPorNome.Checked)
                 {
-                    permissoesBindingSource.DataSource = permissaoBLL.BuscarPorDescricao(textBox1.Text);
+                    permissoesBindingSource.DataSource = permissaoBLL.BuscarPermissaoPorDescricao(textBox1.Text);
                 }
                 else if (radioButton_BuscarPorId.Checked)
                 {
@@ -111,7 +127,7 @@ namespace UILGerenReservasLab
                     int idPermissao = ((Permissao)permissoesBindingSource.Current).Id;
                     int idGrupo = frm.Id;
                     grupoUsuarioBLL.AdicionarPermissao(idGrupo, idPermissao);
-                    MessageBox.Show("Permissão adicionada com sucesso!");
+                    MessageBox.Show("Permissão adicionada ao Grupo com sucesso!");
                 }
             }
             catch (Exception ex)
@@ -135,8 +151,8 @@ namespace UILGerenReservasLab
                     {
                         return;
                     }
-                    grupoUsuarioBLL.RemoverVinculoGrupoPermissao(id_grupo, id_permissao);
-                    MessageBox.Show("Grupo removida com sucesso.");
+                    grupoUsuarioBLL.RemoverPermissao(id_grupo, id_permissao);
+                    MessageBox.Show("Permissão removida deste Grupo com sucesso.");
                 }
                 else
                 {
@@ -148,6 +164,18 @@ namespace UILGerenReservasLab
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void permissoesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = permissoesDataGridView.Rows[e.RowIndex];
+                int idPermissao = Convert.ToInt32(row.Cells["Id"].Value); // Suponha que o nome da coluna do ID seja "Id"
+
+                // Chame um método para carregar os grupos de usuário associados a essa permissão
+                CarregarGruposDeUsuario(idPermissao);
             }
         }
     }

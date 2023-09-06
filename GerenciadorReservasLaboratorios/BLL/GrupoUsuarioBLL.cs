@@ -7,55 +7,70 @@ namespace BLL
 {
     public class GrupoUsuarioBLL
     {
-        public void Inserir(GrupoUsuario grupoUsuario)
+        public void Inserir(GrupoUsuario _grupoUsuario)
         {
-            new UsuarioBLL().ValidarPermissao(6);
-            new GrupoUsuarioDAL().Inserir(grupoUsuario);
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            dal.Inserir(_grupoUsuario);
         }
+
         public List<GrupoUsuario> BuscarTodos()
         {
-            return new GrupoUsuarioDAL().BuscarTodos();
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            return dal.BuscarTodos();
         }
-        public List<GrupoUsuario> BuscarPorNomeGrupo(string _nomeGrupo)
+
+        public List<GrupoUsuario> BuscarGrupoPorNome(string _nomeGrupo)
         {
-            return new GrupoUsuarioDAL().BuscarGrupoPorNome(_nomeGrupo);
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            return dal.BuscarGrupoPorNome(_nomeGrupo);
         }
-        public GrupoUsuario BuscarPorId(int id)
+
+        public GrupoUsuario BuscarGrupoPorId(int _id)
         {
-            return new GrupoUsuarioDAL().BuscarGrupoPorId(id);
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            return dal.BuscarGrupoPorId(_id);
         }
-        public void Alterar(GrupoUsuario grupoUsuario)
+
+        public List<GrupoUsuario> BuscarGrupoPorIdUsuario(int _idUsuario)
         {
-            new GrupoUsuarioDAL().Alterar(grupoUsuario);
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            return dal.BuscarGrupoPorIdUsuario(_idUsuario);
         }
-        public List<GrupoUsuario> BuscarGrupoPorIdUsuario(int idUsuario)
+
+        public List<GrupoUsuario> BuscarGrupoPor_IdPermissao(int _idPermissao)
         {
-            try
-            {
-                return new GrupoUsuarioDAL().BuscarGrupoPorIdUsuario(idUsuario);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao buscar grupos de usuário por ID.", ex);
-            }
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            return dal.BuscarGrupoPor_IdPermissao(_idPermissao);
         }
-        public void Excluir(int id)
+
+        public void Alterar(GrupoUsuario _grupoUsuario)
         {
-            new GrupoUsuarioDAL().Excluir(id);
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            dal.Alterar(_grupoUsuario);
         }
+
+        public void Excluir(int _idGrupoUsuario)
+        {
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            dal.Excluir(_idGrupoUsuario);
+        }
+
+        public bool PermissaoVinculada(int _idGrupo, int _idPermissao)
+        {
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            return dal.PermissaoVinculada(_idGrupo, _idPermissao);
+        }
+
         public void AdicionarPermissao(int _idGrupo, int _idPermissao)
         {
-            if (!new GrupoUsuarioDAL().PermissaoVinculada(_idGrupo, _idPermissao))
-                new GrupoUsuarioDAL().AdicionarPermissao(_idGrupo, _idPermissao);
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            dal.AdicionarPermissao(_idGrupo, _idPermissao);
         }
+
         public void RemoverPermissao(int _idGrupo, int _idPermissao)
         {
-            new GrupoUsuarioDAL().RemoverPermissao(_idGrupo, _idPermissao);
-        }
-        public void RemoverVinculoGrupoPermissao(int _idGrupo, int _idPermissao)
-        {
-            GrupoUsuarioDAL grupousuarioDAL = new GrupoUsuarioDAL();
-            grupousuarioDAL.RemoverPermissao(_idGrupo, _idPermissao);
+            GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
+            dal.RemoverPermissao(_idGrupo, _idPermissao);
         }
     }
 }
