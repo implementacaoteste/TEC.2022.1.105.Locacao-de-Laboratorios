@@ -111,7 +111,7 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-        private void buttonSelecionar_Click(object sender, EventArgs e)
+        private void buttonSelecionarAluno_Click(object sender, EventArgs e)
         {
             try
             {
@@ -137,7 +137,7 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void buttonCancelar_Click(object sender, EventArgs e)
+        private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

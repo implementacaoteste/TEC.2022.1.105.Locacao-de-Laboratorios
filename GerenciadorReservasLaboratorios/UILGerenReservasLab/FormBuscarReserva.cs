@@ -24,7 +24,7 @@ namespace UILGerenReservasLab
             }
         }
 
-        private void buttonAlterar_Click(object sender, EventArgs e)
+        private void buttonAlterarReserva_Click(object sender, EventArgs e)
         {
             try
             {
@@ -80,5 +80,11 @@ namespace UILGerenReservasLab
             }
             buttonBuscar_Click(null, null);
         }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

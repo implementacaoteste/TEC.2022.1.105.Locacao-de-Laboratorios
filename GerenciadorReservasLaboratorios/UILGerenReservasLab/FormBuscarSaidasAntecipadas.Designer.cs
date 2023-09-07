@@ -208,6 +208,7 @@
             this.buttonSelecionarAluno.TabIndex = 33;
             this.buttonSelecionarAluno.Text = "&Selecionar";
             this.buttonSelecionarAluno.UseVisualStyleBackColor = false;
+            this.buttonSelecionarAluno.Click += new System.EventHandler(this.buttonSelecionarAluno_Click);
             // 
             // buttonInserir
             // 
@@ -223,6 +224,7 @@
             this.buttonInserir.TabIndex = 34;
             this.buttonInserir.Text = "&Inserir";
             this.buttonInserir.UseVisualStyleBackColor = false;
+            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
             // 
             // buttonExcluir
             // 
@@ -238,6 +240,7 @@
             this.buttonExcluir.TabIndex = 35;
             this.buttonExcluir.Text = "&Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = false;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonAlterar
             // 
@@ -253,6 +256,7 @@
             this.buttonAlterar.TabIndex = 36;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = false;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonBuscar
             // 
@@ -268,6 +272,7 @@
             this.buttonBuscar.TabIndex = 37;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = false;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // buttonFechar
             // 
@@ -282,6 +287,7 @@
             this.buttonFechar.TabIndex = 38;
             this.buttonFechar.Text = "&Fechar";
             this.buttonFechar.UseVisualStyleBackColor = false;
+            this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
             // FormBuscarSaidasAntecipadas
             // 
