@@ -108,5 +108,10 @@ namespace UILGerenReservasLab
                     buttonSelecionar_Click(null, null);
             }
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

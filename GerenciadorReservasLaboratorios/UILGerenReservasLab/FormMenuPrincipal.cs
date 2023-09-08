@@ -16,6 +16,8 @@ namespace UILGerenReservasLab
     public partial class FormMenuPrincipal : Form
     {
         private Usuario UsuarioLogado;
+        private Button botaoSelecionado = null;
+
         public FormMenuPrincipal()
         {
             InitializeComponent();
@@ -136,17 +138,17 @@ namespace UILGerenReservasLab
 
         private void ConfigurarCorBotoes(object sender)
         {
-            buttonAluno.BackColor = Color.FromArgb(37, 54, 75);
-            buttonCurso.BackColor = Color.FromArgb(37, 54, 75);
-            buttonReserva.BackColor = Color.FromArgb(37, 54, 75);
-            buttonDisciplina.BackColor = Color.FromArgb(37, 54, 75);
-            buttonPredio.BackColor = Color.FromArgb(37, 54, 75);
-            buttonSala.BackColor = Color.FromArgb(37, 54, 75);
-            buttonUsuario.BackColor = Color.FromArgb(37, 54, 75);
-            buttonGrupoUsuario.BackColor = Color.FromArgb(37, 54, 75);
-            buttonPermissao.BackColor = Color.FromArgb(37, 54, 75);
-            buttonSaidasAntecipadas.BackColor = Color.FromArgb(37, 54, 75);			
-            ((Button)sender).BackColor = Color.FromArgb(0, 100, 182);
+            if (botaoSelecionado != null)
+            {
+                botaoSelecionado.BackColor = Color.FromArgb(37, 54, 75); // Cor original
+            }
+
+            Button botao = sender as Button;
+            if (botao != null)
+            {
+                botao.BackColor = Color.FromArgb(0, 100, 182); // Cor selecionada
+                botaoSelecionado = botao;
+            }
         }
 		
         private void buttonReserva_Click(object sender, EventArgs e)
@@ -237,7 +239,7 @@ namespace UILGerenReservasLab
             }
         }
         // METHOD TO OPEN FORMS WITHIN THE PANEL
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        public void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
             formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();// Search in the collection for the form
@@ -262,12 +264,11 @@ namespace UILGerenReservasLab
         }
         private void CloseForms(object sender, FormClosedEventArgs e)
         {
-            if (Application.OpenForms["FormBuscarReserva"] == null)
-                buttonReserva.BackColor = Color.FromArgb(4, 41, 68);
-            if (Application.OpenForms["FormBuscarCurso"] == null)
-                buttonCurso.BackColor = Color.FromArgb(4, 41, 68);
-            if (Application.OpenForms["FormBuscarDisciplina"] == null)
-                buttonDisciplina.BackColor = Color.FromArgb(4, 41, 68);
+            if (botaoSelecionado != null)
+            {
+                botaoSelecionado.BackColor = Color.FromArgb(37, 54, 75); // Cor original
+                botaoSelecionado = null;
+            }
         }
 
     }

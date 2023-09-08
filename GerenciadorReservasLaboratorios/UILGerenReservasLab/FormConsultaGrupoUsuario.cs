@@ -15,6 +15,8 @@ namespace UILGerenReservasLab
     public partial class FormConsultaGrupoUsuario : Form
     {
         public int Id;
+        public int IdGrupoUsuarioSelecionado { get; private set; }
+
         private string ultimaBusca;
         private bool buscou;
         public FormConsultaGrupoUsuario()
@@ -45,17 +47,20 @@ namespace UILGerenReservasLab
             {
                 if (grupoUsuarioBindingSource.Count > 0)
                 {
-                    Id = ((GrupoUsuario)grupoUsuarioBindingSource.Current).Id;
+                    IdGrupoUsuarioSelecionado = ((GrupoUsuario)grupoUsuarioBindingSource.Current).Id;
                     Close();
                 }
                 else
+                {
                     MessageBox.Show("Não existe registro para ser selecionado.");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void FormConsultaGrupoUsuario_KeyDown(object sender, KeyEventArgs e)
         {

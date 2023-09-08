@@ -72,7 +72,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonAdicionarPermissao_Click(object sender, EventArgs e)
         {
             try
@@ -83,8 +82,13 @@ namespace UILGerenReservasLab
                 using (FormConsultaPermissao frm = new FormConsultaPermissao())
                 {
                     frm.ShowDialog();
-                    int idGrupo = ((GrupoUsuario)grupoUsuarioBindingSource.Current).Id;
-                    new GrupoUsuarioBLL().AdicionarPermissao(idGrupo, frm.Id);
+
+                    // Verifique se o formulário foi fechado pelo botão Cancelar
+                    if (frm.DialogResult == DialogResult.OK)
+                    {
+                        int idGrupo = ((GrupoUsuario)grupoUsuarioBindingSource.Current).Id;
+                        new GrupoUsuarioBLL().AdicionarPermissao(idGrupo, frm.Id);
+                    }
                 }
                 buttonBuscar_Click(null, null);
             }
@@ -93,6 +97,7 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void buttonExcluirPermissao_Click(object sender, EventArgs e)
         {

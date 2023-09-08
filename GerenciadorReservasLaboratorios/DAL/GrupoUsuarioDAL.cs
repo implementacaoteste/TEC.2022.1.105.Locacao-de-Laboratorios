@@ -403,7 +403,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu erro ao tentar inserir permissão um grupo de usuário no banco de dados.", ex);
+                throw new Exception("Ocorreu erro ao tentar inserir permissão em um grupo de usuário no banco de dados.", ex);
             }
             finally
             {

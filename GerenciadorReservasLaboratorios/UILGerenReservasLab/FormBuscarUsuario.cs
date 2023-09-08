@@ -1,6 +1,8 @@
 ﻿using BLL;
 using Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace UILGerenReservasLab
@@ -86,10 +88,12 @@ namespace UILGerenReservasLab
                 {
                     frm.ShowDialog();
 
-                    if (frm.Id != 0)
+                    int idUsuario = ((Usuario)usuarioBindingSource.Current).Id;
+                    int idGrupoUsuarioSelecionado = frm.IdGrupoUsuarioSelecionado;
+
+                    if (idGrupoUsuarioSelecionado != 0)
                     {
-                        int idUsuario = ((Usuario)usuarioBindingSource.Current).Id;
-                        new UsuarioBLL().AdicionarGrupoUsuario(idUsuario, frm.Id);
+                        new UsuarioBLL().AdicionarGrupoUsuario(idUsuario, idGrupoUsuarioSelecionado);
                     }
                 }
                 buttonBuscar_Click(null, null);
@@ -121,6 +125,29 @@ namespace UILGerenReservasLab
         {
             if (e.KeyCode == Keys.Escape)
                 Close();
+        }
+
+        private void usuarioDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Verifique se a célula clicada é válida e não é o cabeçalho.
+                if (e.RowIndex >= 0)
+                {
+                    // Obtenha o objeto Usuario da linha selecionada.
+                    Usuario usuarioSelecionado = (Usuario)usuarioBindingSource.List[e.RowIndex];
+
+                    // Use o ID do usuário para buscar os grupos de usuário associados.
+                    List<GrupoUsuario> gruposUsuario = new GrupoUsuarioBLL().BuscarGrupoPorIdUsuario(usuarioSelecionado.Id);
+
+                    // Carregue os grupos de usuário na grupoUsuarioDataGridView.
+                    grupoUsuariosDataGridView.DataSource = gruposUsuario;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
