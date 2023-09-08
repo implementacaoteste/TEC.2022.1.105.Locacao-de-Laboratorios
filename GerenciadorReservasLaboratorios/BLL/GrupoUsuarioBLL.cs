@@ -13,7 +13,7 @@ namespace BLL
             dal.Inserir(_grupoUsuario);
         }
 
-        public List<GrupoUsuario> BuscarTodos()
+        public List<GrupoUsuario> BuscarTodosGrupos()
         {
             GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
             return dal.BuscarTodos();
