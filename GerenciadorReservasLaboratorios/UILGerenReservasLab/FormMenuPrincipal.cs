@@ -48,9 +48,14 @@ namespace UILGerenReservasLab
         {
             // Atualize os campos do formulário com os dados do usuário logado.
             labelUserName.Text = UsuarioLogado.NomeUsuario;
-            labelEmail.Text = UsuarioLogado.Email;
-            labelCargo.Text = UsuarioLogado.GrupoUsuarios.ToString();
+            labelMatricula.Text = UsuarioLogado.Matricula;
+
+            // Obtenha os nomes dos grupos do usuário e concatene-os em uma string
+            string grupos = string.Join(", ", UsuarioLogado.GrupoUsuarios.Select(grupo => grupo.NomeGrupo));
+
+            labelCargo.Text = grupos;
         }
+
         // RESIZE METHOD TO RESIZE/CHANGE FORM SIZE AT RUNTIME ----------------------------------------------------------
         private int tolerance = 12;
         private const int WM_NCHITTEST = 132;
