@@ -214,18 +214,6 @@
     <Compile Include="FormMenuPrincipal.designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormModel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormModel.Designer.cs">
-      <DependentUpon>FormModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormUserProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUserProfile.Designer.cs">
-      <DependentUpon>FormUserProfile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBuscarAluno.resx">
@@ -309,12 +297,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormModel.resx">
-      <DependentUpon>FormModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUserProfile.resx">
-      <DependentUpon>FormUserProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
