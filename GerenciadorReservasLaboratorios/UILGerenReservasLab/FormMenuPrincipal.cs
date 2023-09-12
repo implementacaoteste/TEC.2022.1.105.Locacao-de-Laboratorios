@@ -51,8 +51,9 @@ namespace UILGerenReservasLab
             labelMatricula.Text = UsuarioLogado.Matricula;
 
             // Obtenha os nomes dos grupos do usuário e concatene-os em uma string
-            string grupos = string.Join(", ", UsuarioLogado.GrupoUsuarios.Select(grupo => grupo.NomeGrupo));
+            string grupos = string.Join("\n", UsuarioLogado.GrupoUsuarios.Select(grupo => grupo.NomeGrupo));
 
+            // Exiba os grupos no label
             labelCargo.Text = grupos;
         }
 

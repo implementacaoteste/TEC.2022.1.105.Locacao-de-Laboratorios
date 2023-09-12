@@ -23,8 +23,14 @@ namespace UILGerenReservasLab
 
         public FormCadastroSaidasAntecipadas(int _id = 0)
         {
-            InitializeComponent();
             Id = _id;
+
+            if (Id > 0)
+            {
+                // Busque o aluno com base no id e preencha os campos com os dados.
+                SaidasAntecipadas saidasAntecipadas = new SaidasAntecipadasBLL().BuscarPorId(Id);
+                saidasAntecipadasBindingSource.DataSource = saidasAntecipadas;
+            }
         }
 
         private void FormCadastroSaidasAntecipadas_Load(object sender, EventArgs e)
@@ -71,7 +77,7 @@ namespace UILGerenReservasLab
                     _saidaAntecipada.IdAluno = idAlunoSelecionado;
                     _saidaAntecipada.IdProfessor = usuarioLogado.Id;
                     // Se for uma nova solicitação, defina o Coordenador como null.
-                    _saidasAntecipadas.IdCoordenacao = isNewRequest ? null : usuarioLogado.Id;
+
                     _saidaAntecipada.Motivo = motivoTextBox.Text;
 
                     // Preencher Status com base na variável de controle isNewRequest.
@@ -82,6 +88,7 @@ namespace UILGerenReservasLab
                 }
                 else
                 {
+                    isNewRequest = false;
                     new SaidasAntecipadasBLL().Alterar(_saidasAntecipadas);
                 }
                 MessageBox.Show($"Solicitação de saída antecipada registrada com sucesso por {nomeDoUsuario}!");
