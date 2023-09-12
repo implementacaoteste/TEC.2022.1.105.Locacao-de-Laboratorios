@@ -18,19 +18,30 @@ namespace UILGerenReservasLab
         private UsuarioBLL usuarioBLL = new UsuarioBLL();
         public Aluno AlunoSelecionado { get; private set; }
         private int idAlunoSelecionado;
+        // Variável para rastrear se é uma nova solicitação ou edição.
+        private bool isNewRequest = true;
 
         public FormCadastroSaidasAntecipadas(int _id = 0)
         {
             InitializeComponent();
             Id = _id;
         }
-        // Variável para rastrear se é uma nova solicitação ou edição.
-        private bool isNewRequest = true;
 
         private void FormCadastroSaidasAntecipadas_Load(object sender, EventArgs e)
         {
-            // Configurar ComboBox para selecionar o valor no índice 0 por padrão.
-            comboBoxStatus.SelectedIndex = 0;
+            // Carregue o usuário logado.
+            Usuario usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
+
+            // Configure o ComboBox do Professor.
+            comboBoxProfessor.DisplayMember = "Nome"; // Substitua "Nome" pelo nome da propriedade que contém o nome do professor.
+            comboBoxProfessor.ValueMember = "Id";     // Substitua "Id" pelo nome da propriedade que contém o ID do professor.
+            comboBoxProfessor.DataSource = new List<Usuario> { usuarioLogado }; // Mostre apenas o usuário logado.
+
+            // Configure o ComboBox do Status.
+            comboBoxStatus.SelectedIndex = isNewRequest ? 0 : -1; // Se for uma nova solicitação, configure para "em análise".
+
+            // Desabilite o campo do Coordenador para novas solicitações.
+            coordenacaotextBox.Enabled = !isNewRequest;
         }
 
         private void comboBoxStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,21 +61,24 @@ namespace UILGerenReservasLab
 
                 if (Id == 0)
                 {
+                    isNewRequest = true;
                     // Realize a validação de permissão antes de inserir a saída antecipada.
                     usuarioBLL.ValidarPermissao(1); // Substitua 1 pelo ID da permissão que você deseja validar.
 
-                    SaidasAntecipadas saidaAntecipada = new SaidasAntecipadas();
+                    SaidasAntecipadas _saidaAntecipada = new SaidasAntecipadas();
                     // Preencha os campos do objeto SaidasAntecipadas.
 
-                    _saidasAntecipadas.IdAluno = idAlunoSelecionado;
-                    _saidasAntecipadas.IdProfessor = usuarioLogado.Id;
-                    _saidasAntecipadas.Motivo = motivoTextBox.Text;
+                    _saidaAntecipada.IdAluno = idAlunoSelecionado;
+                    _saidaAntecipada.IdProfessor = usuarioLogado.Id;
+                    // Se for uma nova solicitação, defina o Coordenador como null.
+                    _saidasAntecipadas.IdCoordenacao = isNewRequest ? null : usuarioLogado.Id;
+                    _saidaAntecipada.Motivo = motivoTextBox.Text;
 
                     // Preencher Status com base na variável de controle isNewRequest.
-                    _saidasAntecipadas.Status = isNewRequest ? comboBoxStatus.Text : "em análise";
+                    _saidaAntecipada.Status = isNewRequest ? comboBoxStatus.Text : "em análise";
 
-                    _saidasAntecipadas.DataHoraSaida = DateTime.Now;
-                    new SaidasAntecipadasBLL().Inserir(_saidasAntecipadas);
+                    _saidaAntecipada.DataHoraSaida = DateTime.Now;
+                    new SaidasAntecipadasBLL().Inserir(_saidaAntecipada);
                 }
                 else
                 {
