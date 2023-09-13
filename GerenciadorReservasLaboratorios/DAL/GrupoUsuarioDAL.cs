@@ -179,7 +179,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar grupos de usuários por Id do usuário no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar grupos por Id do usuário no banco de dados.", ex);
             }
             finally
             {

@@ -2,6 +2,8 @@
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+
 
 namespace BLL
 {
@@ -40,6 +42,29 @@ namespace BLL
         {
             GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
             return dal.BuscarGrupoPor_IdPermissao(_idPermissao);
+        }
+        public List<Usuario> BuscarUsuariosPorGrupo(string _nomeGrupo)
+        {
+            // Usa o método BuscarTodos() para obter uma lista de objetos Usuario.
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            List<Usuario> usuarios = usuarioDAL.BuscarTodos();
+
+            // Cria uma lista de resultados para armazenar os usuários que pertencem ao grupo especificado.
+            List<Usuario> usuariosFiltrados = new List<Usuario>();
+
+            // Percorre a lista de objetos Usuario.
+            foreach (Usuario usuario in usuarios)
+            {
+                // Verifica se o grupo do usuário é igual ao grupo especificado.
+                if (usuario.GrupoUsuarios.Any(grupoUsuario => grupoUsuario.NomeGrupo == _nomeGrupo))
+                {
+                    // Adiciona o usuário à lista de resultados.
+                    usuariosFiltrados.Add(usuario);
+                }
+            }
+
+            // Retorna a lista de resultados.
+            return usuariosFiltrados;
         }
 
         public void Alterar(GrupoUsuario _grupoUsuario)
