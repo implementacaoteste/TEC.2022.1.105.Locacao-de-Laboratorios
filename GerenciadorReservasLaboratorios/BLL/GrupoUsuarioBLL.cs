@@ -36,7 +36,6 @@ namespace BLL
             GrupoUsuarioDAL dal = new GrupoUsuarioDAL();
             return dal.BuscarGrupoPorIdUsuario(_idUsuario);
         }
-
         public List<GrupoUsuario> BuscarGrupoPor_IdPermissao(int _idPermissao)
         {
             GrupoUsuarioDAL dal = new GrupoUsuarioDAL();

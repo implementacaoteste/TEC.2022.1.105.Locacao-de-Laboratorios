@@ -27,7 +27,7 @@ namespace UILGerenReservasLab
 
             if (Id > 0)
             {
-                // Busque o aluno com base no id e preencha os campos com os dados.
+                // Busque a saída antecipada com base no id e preencha os campos com os dados.
                 SaidasAntecipadas saidasAntecipadas = new SaidasAntecipadasBLL().BuscarPorId(Id);
                 saidasAntecipadasBindingSource.DataSource = saidasAntecipadas;
             }
@@ -38,10 +38,19 @@ namespace UILGerenReservasLab
             // Carregue o usuário logado.
             Usuario usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
 
-            // Configure o ComboBox do Professor.
-            comboBoxProfessor.DisplayMember = "Nome"; // Substitua "Nome" pelo nome da propriedade que contém o nome do professor.
-            comboBoxProfessor.ValueMember = "Id";     // Substitua "Id" pelo nome da propriedade que contém o ID do professor.
-            comboBoxProfessor.DataSource = new List<Usuario> { usuarioLogado }; // Mostre apenas o usuário logado.
+            // Se o usuário logado for um professor, preencha o combobox com seu nome.
+            if (usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Professor"))
+            {
+                // Configure o ComboBox do Professor.
+                comboBoxProfessor.DisplayMember = "Nome"; // Substitua "Nome" pelo nome da propriedade que contém o nome do professor.
+                comboBoxProfessor.ValueMember = "Id";     // Substitua "Id" pelo nome da propriedade que contém o ID do professor.
+                comboBoxProfessor.DataSource = new List<Usuario> { usuarioLogado }; // Mostre apenas o usuário logado.
+            }
+            // Se o usuário logado for um coordenador, preencha o combobox com uma lista de todos os professores.
+            else if (usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Coordenação" || grupo.NomeGrupo == "Administrador"))
+            {
+                comboBoxProfessor.DataSource = new UsuarioBLL().BuscarTodos();
+            }
 
             // Configure o ComboBox do Status.
             comboBoxStatus.SelectedIndex = isNewRequest ? 0 : -1; // Se for uma nova solicitação, configure para "em análise".
