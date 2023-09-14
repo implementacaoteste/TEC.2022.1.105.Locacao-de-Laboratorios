@@ -34,17 +34,13 @@ namespace UILGerenReservasLab
                     Application.Exit();
                 else
                 {
-                    // O login foi feito com sucesso, agora podemos obter o usuário logado.
-                    UsuarioBLL usuarioBLL = new UsuarioBLL();
-                    UsuarioLogado = usuarioBLL.ObterUsuarioLogado();
-                    GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
-                    List<GrupoUsuario> gruposDoUsuario = grupoUsuarioBLL.BuscarGrupoPorIdUsuario(UsuarioLogado.Id);
-                    UsuarioLogado.GrupoUsuarios = gruposDoUsuario;
                     AtualizarDadosUsuario();
+                    AtualizarTelaUsuario();
                 }
             }
         }
-        private void AtualizarDadosUsuario()
+
+        private void AtualizarTelaUsuario()
         {
             // Atualize os campos do formulário com os dados do usuário logado.
             labelUserName.Text = UsuarioLogado.NomeUsuario;
@@ -55,6 +51,15 @@ namespace UILGerenReservasLab
 
             // Exiba os grupos no label
             labelCargo.Text = grupos;
+        }
+        public void AtualizarDadosUsuario()
+        {
+            // O login foi feito com sucesso, agora podemos obter o usuário logado.
+            UsuarioBLL usuarioBLL = new UsuarioBLL();
+            UsuarioLogado = usuarioBLL.ObterUsuarioLogado();
+            GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
+            List<GrupoUsuario> gruposDoUsuario = grupoUsuarioBLL.BuscarGrupoPorIdUsuario(UsuarioLogado.Id);
+            UsuarioLogado.GrupoUsuarios = gruposDoUsuario;
         }
 
         // RESIZE METHOD TO RESIZE/CHANGE FORM SIZE AT RUNTIME ----------------------------------------------------------

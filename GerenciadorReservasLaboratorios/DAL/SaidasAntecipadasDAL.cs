@@ -18,8 +18,23 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@IdAluno", saidaAntecipada.IdAluno);
-                cmd.Parameters.AddWithValue("@IdProfessor", saidaAntecipada.IdProfessor);
-                cmd.Parameters.AddWithValue("@IdCoordenacao", saidaAntecipada.IdCoordenacao);
+
+                if (saidaAntecipada.IdProfessor == 0)
+                {
+                    cmd.CommandText = cmd.CommandText.Replace("@IdProfessor,", "");
+                    cmd.CommandText = cmd.CommandText.Replace("IdProfessor,", "");
+                }
+                else
+                    cmd.Parameters.AddWithValue("@IdProfessor", saidaAntecipada.IdProfessor);
+
+                if (saidaAntecipada.IdCoordenacao == 0)
+                {
+                    cmd.CommandText = cmd.CommandText.Replace("@IdCoordenacao,", "");
+                    cmd.CommandText = cmd.CommandText.Replace("IdCoordenacao,", "");
+                }
+                else
+                    cmd.Parameters.AddWithValue("@IdCoordenacao", saidaAntecipada.IdCoordenacao);
+
                 cmd.Parameters.AddWithValue("@Motivo", saidaAntecipada.Motivo);
                 cmd.Parameters.AddWithValue("@Status", saidaAntecipada.Status);
                 cmd.Parameters.AddWithValue("@DataHoraSaida", saidaAntecipada.DataHoraSaida);
