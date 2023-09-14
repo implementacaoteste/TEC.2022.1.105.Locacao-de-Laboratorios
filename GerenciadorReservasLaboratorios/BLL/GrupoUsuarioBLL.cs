@@ -55,18 +55,17 @@ namespace BLL
             // Percorre a lista de objetos Usuario.
             foreach (Usuario usuario in usuarios)
             {
-                // Verifica se o grupo do usuário é igual ao grupo especificado.
-                if (usuario.GrupoUsuarios.Any(grupoUsuario => grupoUsuario.NomeGrupo == _nomeGrupo))
+                // Verifica se o grupo do usuário é diferente de null e se é igual ao grupo especificado.
+                if (usuario.GrupoUsuarios != null && usuario.GrupoUsuarios.Any(grupoUsuario => grupoUsuario.NomeGrupo == _nomeGrupo))
                 {
                     // Adiciona o usuário à lista de resultados.
                     usuariosFiltrados.Add(usuario);
                 }
             }
 
-            // Retorna a lista de resultados.
+            // Retorna a lista de usuários filtrados.
             return usuariosFiltrados;
         }
-
         public void Alterar(GrupoUsuario _grupoUsuario)
         {
             GrupoUsuarioDAL dal = new GrupoUsuarioDAL();

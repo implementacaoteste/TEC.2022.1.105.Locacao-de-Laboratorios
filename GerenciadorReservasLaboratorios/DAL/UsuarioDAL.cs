@@ -68,6 +68,10 @@ namespace DAL
                         usuario.Matricula = rd["Matricula"].ToString();
                         usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
 
+                        // Carregue os grupos de usuário relacionados a esse usuário
+                        GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
+                        usuario.GrupoUsuarios = grupoUsuarioDAL.BuscarGrupoPorIdUsuario(usuario.Id);
+
                         usuarios.Add(usuario);
                     }
                 }
