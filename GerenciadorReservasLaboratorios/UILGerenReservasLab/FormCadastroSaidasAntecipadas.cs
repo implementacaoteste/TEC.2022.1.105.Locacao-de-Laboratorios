@@ -46,7 +46,7 @@ namespace UILGerenReservasLab
                 else
                 {
                     saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorId(Id);
-                    //alunoTextBox.Text = ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).Aluno.Nome;
+                    alunoTextBox.Text = ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).Aluno.Nome;
                 }
 
                 // Carregue o usuário logado.
@@ -141,7 +141,7 @@ namespace UILGerenReservasLab
                     else if (gruposDoUsuario.Any(grupo => grupo.NomeGrupo == "Coordenação"))
                     {
                         // Valide as permissões para a Coordenação, se necessário.
-                        ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdProfessor = Convert.ToInt32(comboBoxProfessor.SelectedValue); // Define o ID do Professor com base no ComboBox.
+                        ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdProfessor = ((Usuario)comboBoxProfessor.SelectedValue).Id; // Define o ID do Professor com base no ComboBox.
                         ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdCoordenacao = usuarioLogado.Id; // Define o ID da Coordenação como o ID do usuário logado.
                     }
                     else if (gruposDoUsuario.Any(grupo => grupo.NomeGrupo == "Administrador"))

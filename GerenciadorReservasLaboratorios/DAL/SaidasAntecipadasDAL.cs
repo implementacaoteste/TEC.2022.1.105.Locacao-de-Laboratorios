@@ -103,7 +103,12 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, IdAluno, IdProfessor, IdCoordenacao, Motivo, Status, DataHoraSaida FROM SaidasAntecipadas WHERE Id = @Id";
+                cmd.CommandText = @"SELECT SaidasAntecipadas.Id, SaidasAntecipadas.IdAluno, SaidasAntecipadas.IdProfessor, SaidasAntecipadas.IdCoordenacao, 
+                                  SaidasAntecipadas.Motivo, SaidasAntecipadas.Status, SaidasAntecipadas.DataHoraSaida, 
+                                  Aluno.Nome AS NomeAluno
+                           FROM SaidasAntecipadas
+                           LEFT JOIN Aluno ON SaidasAntecipadas.IdAluno = Aluno.Id
+                           WHERE SaidasAntecipadas.Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", id);
                 cn.Open();
@@ -118,6 +123,14 @@ namespace DAL
                         saidaAntecipada.Motivo = rd["Motivo"].ToString();
                         saidaAntecipada.Status = rd["Status"].ToString();
                         saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
+
+                        // Verifique se o campo "NomeAluno" não é nulo antes de atribuir ao objeto Aluno.
+                        if (!rd.IsDBNull(rd.GetOrdinal("NomeAluno")))
+                        {
+                            Aluno aluno = new Aluno();
+                            aluno.Nome = rd["NomeAluno"].ToString();
+                            saidaAntecipada.Aluno = aluno;
+                        }
                     }
                 }
                 return saidaAntecipada;
