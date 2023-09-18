@@ -79,47 +79,47 @@
             // idCursoLabel
             // 
             idCursoLabel.AutoSize = true;
-            idCursoLabel.Location = new System.Drawing.Point(35, 191);
+            idCursoLabel.Location = new System.Drawing.Point(71, 196);
             idCursoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idCursoLabel.Name = "idCursoLabel";
-            idCursoLabel.Size = new System.Drawing.Size(49, 13);
+            idCursoLabel.Size = new System.Drawing.Size(37, 13);
             idCursoLabel.TabIndex = 1;
-            idCursoLabel.Text = "Id Curso:";
+            idCursoLabel.Text = "Curso:";
             // 
             // idDisciplinaLabel
             // 
             idDisciplinaLabel.AutoSize = true;
-            idDisciplinaLabel.Location = new System.Drawing.Point(17, 241);
+            idDisciplinaLabel.Location = new System.Drawing.Point(53, 244);
             idDisciplinaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idDisciplinaLabel.Name = "idDisciplinaLabel";
-            idDisciplinaLabel.Size = new System.Drawing.Size(67, 13);
+            idDisciplinaLabel.Size = new System.Drawing.Size(55, 13);
             idDisciplinaLabel.TabIndex = 3;
-            idDisciplinaLabel.Text = "Id Disciplina:";
+            idDisciplinaLabel.Text = "Disciplina:";
             // 
             // idSalaLabel
             // 
             idSalaLabel.AutoSize = true;
-            idSalaLabel.Location = new System.Drawing.Point(40, 154);
+            idSalaLabel.Location = new System.Drawing.Point(76, 159);
             idSalaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idSalaLabel.Name = "idSalaLabel";
-            idSalaLabel.Size = new System.Drawing.Size(43, 13);
+            idSalaLabel.Size = new System.Drawing.Size(31, 13);
             idSalaLabel.TabIndex = 5;
-            idSalaLabel.Text = "Id Sala:";
+            idSalaLabel.Text = "Sala:";
             // 
             // idUsuarioLabel
             // 
             idUsuarioLabel.AutoSize = true;
-            idUsuarioLabel.Location = new System.Drawing.Point(26, 58);
+            idUsuarioLabel.Location = new System.Drawing.Point(117, 40);
             idUsuarioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idUsuarioLabel.Name = "idUsuarioLabel";
-            idUsuarioLabel.Size = new System.Drawing.Size(58, 13);
+            idUsuarioLabel.Size = new System.Drawing.Size(138, 13);
             idUsuarioLabel.TabIndex = 6;
-            idUsuarioLabel.Text = "Id Usuario:";
+            idUsuarioLabel.Text = "Responsável pela Reserva:";
             // 
             // observacoesLabel
             // 
             observacoesLabel.AutoSize = true;
-            observacoesLabel.Location = new System.Drawing.Point(10, 283);
+            observacoesLabel.Location = new System.Drawing.Point(34, 285);
             observacoesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             observacoesLabel.Name = "observacoesLabel";
             observacoesLabel.Size = new System.Drawing.Size(73, 13);
@@ -149,7 +149,7 @@
             // reservaDataLabel
             // 
             reservaDataLabel.AutoSize = true;
-            reservaDataLabel.Location = new System.Drawing.Point(489, 145);
+            reservaDataLabel.Location = new System.Drawing.Point(769, 145);
             reservaDataLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             reservaDataLabel.Name = "reservaDataLabel";
             reservaDataLabel.Size = new System.Drawing.Size(91, 13);
@@ -159,7 +159,7 @@
             // reservaHoraLabel
             // 
             reservaHoraLabel.AutoSize = true;
-            reservaHoraLabel.Location = new System.Drawing.Point(491, 188);
+            reservaHoraLabel.Location = new System.Drawing.Point(771, 188);
             reservaHoraLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             reservaHoraLabel.Name = "reservaHoraLabel";
             reservaHoraLabel.Size = new System.Drawing.Size(91, 13);
@@ -169,7 +169,7 @@
             // solicitanteLabel
             // 
             solicitanteLabel.AutoSize = true;
-            solicitanteLabel.Location = new System.Drawing.Point(21, 110);
+            solicitanteLabel.Location = new System.Drawing.Point(49, 115);
             solicitanteLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             solicitanteLabel.Name = "solicitanteLabel";
             solicitanteLabel.Size = new System.Drawing.Size(59, 13);
@@ -179,7 +179,7 @@
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(542, 61);
+            statusLabel.Location = new System.Drawing.Point(822, 61);
             statusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new System.Drawing.Size(40, 13);
@@ -189,7 +189,7 @@
             // turnoLabel
             // 
             turnoLabel.AutoSize = true;
-            turnoLabel.Location = new System.Drawing.Point(544, 101);
+            turnoLabel.Location = new System.Drawing.Point(824, 101);
             turnoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             turnoLabel.Name = "turnoLabel";
             turnoLabel.Size = new System.Drawing.Size(38, 13);
@@ -203,46 +203,46 @@
             // idCursoTextBox
             // 
             this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdCurso", true));
-            this.idCursoTextBox.Location = new System.Drawing.Point(84, 188);
+            this.idCursoTextBox.Location = new System.Drawing.Point(120, 193);
             this.idCursoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idCursoTextBox.Name = "idCursoTextBox";
-            this.idCursoTextBox.Size = new System.Drawing.Size(76, 20);
+            this.idCursoTextBox.Size = new System.Drawing.Size(342, 20);
             this.idCursoTextBox.TabIndex = 2;
             // 
             // idDisciplinaTextBox
             // 
             this.idDisciplinaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdDisciplina", true));
-            this.idDisciplinaTextBox.Location = new System.Drawing.Point(84, 239);
+            this.idDisciplinaTextBox.Location = new System.Drawing.Point(120, 244);
             this.idDisciplinaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idDisciplinaTextBox.Name = "idDisciplinaTextBox";
-            this.idDisciplinaTextBox.Size = new System.Drawing.Size(76, 20);
+            this.idDisciplinaTextBox.Size = new System.Drawing.Size(342, 20);
             this.idDisciplinaTextBox.TabIndex = 4;
             // 
             // idSalaTextBox
             // 
             this.idSalaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdSala", true));
-            this.idSalaTextBox.Location = new System.Drawing.Point(84, 151);
+            this.idSalaTextBox.Location = new System.Drawing.Point(120, 156);
             this.idSalaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idSalaTextBox.Name = "idSalaTextBox";
-            this.idSalaTextBox.Size = new System.Drawing.Size(76, 20);
+            this.idSalaTextBox.Size = new System.Drawing.Size(89, 20);
             this.idSalaTextBox.TabIndex = 6;
             // 
             // idUsuarioTextBox
             // 
             this.idUsuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdUsuario", true));
-            this.idUsuarioTextBox.Location = new System.Drawing.Point(84, 56);
+            this.idUsuarioTextBox.Location = new System.Drawing.Point(120, 61);
             this.idUsuarioTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idUsuarioTextBox.Name = "idUsuarioTextBox";
-            this.idUsuarioTextBox.Size = new System.Drawing.Size(76, 20);
+            this.idUsuarioTextBox.Size = new System.Drawing.Size(342, 20);
             this.idUsuarioTextBox.TabIndex = 7;
             // 
             // observacoesTextBox
             // 
             this.observacoesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Observacoes", true));
-            this.observacoesTextBox.Location = new System.Drawing.Point(84, 280);
+            this.observacoesTextBox.Location = new System.Drawing.Point(120, 285);
             this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.observacoesTextBox.Name = "observacoesTextBox";
-            this.observacoesTextBox.Size = new System.Drawing.Size(683, 20);
+            this.observacoesTextBox.Size = new System.Drawing.Size(692, 20);
             this.observacoesTextBox.TabIndex = 9;
             // 
             // buttonSalvar
@@ -288,7 +288,7 @@
             // reservaDataDateTimePicker
             // 
             this.reservaDataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "ReservaData", true));
-            this.reservaDataDateTimePicker.Location = new System.Drawing.Point(582, 141);
+            this.reservaDataDateTimePicker.Location = new System.Drawing.Point(862, 141);
             this.reservaDataDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.reservaDataDateTimePicker.Name = "reservaDataDateTimePicker";
             this.reservaDataDateTimePicker.Size = new System.Drawing.Size(151, 20);
@@ -297,7 +297,7 @@
             // reservaHoraDateTimePicker
             // 
             this.reservaHoraDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "ReservaHora", true));
-            this.reservaHoraDateTimePicker.Location = new System.Drawing.Point(582, 185);
+            this.reservaHoraDateTimePicker.Location = new System.Drawing.Point(862, 185);
             this.reservaHoraDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.reservaHoraDateTimePicker.Name = "reservaHoraDateTimePicker";
             this.reservaHoraDateTimePicker.Size = new System.Drawing.Size(151, 20);
@@ -306,16 +306,16 @@
             // solicitanteTextBox
             // 
             this.solicitanteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Solicitante", true));
-            this.solicitanteTextBox.Location = new System.Drawing.Point(84, 107);
+            this.solicitanteTextBox.Location = new System.Drawing.Point(120, 112);
             this.solicitanteTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.solicitanteTextBox.Name = "solicitanteTextBox";
-            this.solicitanteTextBox.Size = new System.Drawing.Size(151, 20);
+            this.solicitanteTextBox.Size = new System.Drawing.Size(342, 20);
             this.solicitanteTextBox.TabIndex = 21;
             // 
             // statusTextBox
             // 
             this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Status", true));
-            this.statusTextBox.Location = new System.Drawing.Point(582, 58);
+            this.statusTextBox.Location = new System.Drawing.Point(862, 58);
             this.statusTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.statusTextBox.Multiline = true;
             this.statusTextBox.Name = "statusTextBox";
@@ -326,7 +326,7 @@
             // turnoTextBox
             // 
             this.turnoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Turno", true));
-            this.turnoTextBox.Location = new System.Drawing.Point(582, 98);
+            this.turnoTextBox.Location = new System.Drawing.Point(862, 98);
             this.turnoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.turnoTextBox.Multiline = true;
             this.turnoTextBox.Name = "turnoTextBox";
@@ -341,7 +341,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(789, 40);
+            this.label1.Size = new System.Drawing.Size(1024, 40);
             this.label1.TabIndex = 27;
             this.label1.Text = "Cadastro de reservas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -356,14 +356,14 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(728, 98);
+            this.groupBox1.Size = new System.Drawing.Size(738, 98);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Liberação de Chaves";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(174, 154);
+            this.button1.Location = new System.Drawing.Point(550, 124);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 19);
@@ -374,7 +374,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(340, 185);
+            this.comboBox1.Location = new System.Drawing.Point(550, 66);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 30;
@@ -383,7 +383,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 462);
+            this.ClientSize = new System.Drawing.Size(1024, 462);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);

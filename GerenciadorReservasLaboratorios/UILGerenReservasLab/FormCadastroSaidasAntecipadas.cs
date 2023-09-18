@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UILGerenReservasLab
 {
@@ -17,10 +19,9 @@ namespace UILGerenReservasLab
     {
         public int Id;
         private UsuarioBLL usuarioBLL = new UsuarioBLL();
-        // Variável para rastrear se é uma nova solicitação ou edição.
+
         private bool isProfessor = true;
         private bool isCoordenacao = true;
-        private bool isColab = true;
         private bool isAdmin = true;
         Usuario usuarioLogado;
 
@@ -30,93 +31,125 @@ namespace UILGerenReservasLab
 
             Id = _id;
 
-
             if (Id > 0)
             {
-                // Busque a saída antecipada com base no id e preencha os campos com os dados.
-                saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorId(Id);
+                // Busque a saída antecipada com base no Id e preencha os campos com os dados.
+                SaidasAntecipadas saidaAntecipada = new SaidasAntecipadasBLL().BuscarPorId(Id);
+
+                if (saidaAntecipada != null)
+                {
+                    saidasAntecipadasBindingSource.DataSource = saidaAntecipada;
+                }
+                else
+                {
+                    MessageBox.Show("Registro não encontrado.");
+                    this.Close();
+                }
             }
         }
         private void FormCadastroSaidasAntecipadas_Load(object sender, EventArgs e)
         {
             try
             {
+                DeterminarTipoDeUsuario();
+
                 if (Id == 0)
+                {
                     saidasAntecipadasBindingSource.AddNew();
+                    ConfigurarComboBox();
+                }
                 else
                 {
-                    saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorId(Id);
-                    alunoTextBox.Text = ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).Aluno.Nome;
-                }
+                    ConfigurarComboBox();
+                    // Busque todos os dados necessários para preencher os ComboBoxes.
+                    List<Usuario> professores = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Professor");
+                    List<Usuario> coordenadores = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Coordenação");
 
-                // Carregue o usuário logado.
-                usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
+                    // Defina as fontes de dados para os ComboBoxes.
+                    comboBoxProfessor.DataSource = professores;
+                    comboBoxCoordenador.DataSource = coordenadores;
 
-                // Determine se o usuário logado é um Professor.
-                isProfessor = usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Professor");
+                    // Preencha os valores selecionados nos ComboBoxes com base nos dados do registro existente.
+                    SaidasAntecipadas sa = new SaidasAntecipadasBLL().BuscarPorId(Id);
+                    saidasAntecipadasBindingSource.DataSource = sa;
+                    alunoTextBox.Text = sa.Aluno.Nome;
+                    comboBoxStatus.SelectedText = sa.Status;
+                    motivoTextBox.Text = sa.Motivo;
 
-                // Determine se o usuário logado é da Coordenação.
-                isCoordenacao = usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Coordenação");
+                    // Encontre o professor com o Id correspondente e selecione-o.
+                    comboBoxProfessor.SelectedItem = professores.FirstOrDefault(p => p.Id == sa.IdProfessor);
 
-                // Determine se o usuário logado é um Administrador.
-                isAdmin = usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Administrador");
+                    // Encontre o coordenador com o Id correspondente e selecione-o.
+                    comboBoxCoordenador.SelectedItem = coordenadores.FirstOrDefault(c => c.Id == sa.IdCoordenacao);
 
-                // Determine se o usuário logado é da Colaborador.
-                isColab = usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Colaborador");
-
-                // Se o usuário for um Professor e for uma nova solicitação, desabilite o campo comboBoxCoordenador e configure o ComboBox do Status.
-                if (isProfessor && Id == 0)
-                {
-                    comboBoxCoordenador.Enabled = false;
-                    comboBoxStatus.SelectedIndex = 0; // Defina "Em Análise" como a opção selecionada.
-
-                    // Se não for Administrador ou da Coordenação, mostre apenas o usuário logado no ComboBox do Professor.
-
-                    comboBoxProfessor.DisplayMember = "Nome"; // Substitua "Nome" pelo nome da propriedade que contém o nome do professor.
-                    comboBoxProfessor.ValueMember = "IdUser";     // Substitua "Id" pelo nome da propriedade que contém o ID do professor.
-                    comboBoxProfessor.DataSource = new List<Usuario> { usuarioLogado }; // Mostre apenas o usuário logado.
-                }
-                else if (isProfessor)
-                {
-                    // Se for uma edição por um Professor, desabilite os campos que não podem ser editados.
-                    comboBoxCoordenador.Enabled = false;
-                    comboBoxProfessor.Enabled = false;
-                    comboBoxStatus.Enabled = false;
-                }
-                if (isCoordenacao || isAdmin)
-                {
-                    comboBoxProfessor.DisplayMember = "Nome"; // Substitua "Nome" pelo nome da propriedade que contém o nome do professor.
-                    comboBoxProfessor.ValueMember = "IdUser"; // Substitua "Id" pelo nome da propriedade que contém o ID do professor.
-                    comboBoxProfessor.DataSource = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Professor");
-
-                    // Se for um Administrador, configure o ComboBox do Coordenador com todos os usuários do grupo "Coordenação".
-                    if (isAdmin)
+                    // Desabilite os ComboBoxes que não podem ser editados.
+                    if (isProfessor)
                     {
-                        comboBoxCoordenador.DisplayMember = "Nome"; // Substitua "Nome" pelo nome da propriedade que contém o nome do coordenador.
-                        comboBoxCoordenador.ValueMember = "IdUser"; // Substitua "Id" pelo nome da propriedade que contém o ID do coordenador.
-                        comboBoxCoordenador.DataSource = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Coordenação");
+                        comboBoxCoordenador.Enabled = false; // Bloquear a edição do ComboBox de Coordenação para Professores.
+                        comboBoxProfessor.Enabled = false; // Bloquear a edição do ComboBox de Professor para Professores.
+                        comboBoxStatus.Enabled = false; // Bloquear a edição do ComboBox de Status para Professores.
                     }
-                }
-                else if (isColab)
-                {
-                    // Se for um Colaborador, desabilite a edição de todos os campos.
-                    alunoTextBox.Enabled = false;
-                    comboBoxCoordenador.Enabled = false;
-                    comboBoxProfessor.Enabled = false;
-                    comboBoxStatus.Enabled = false;
-                    dataHoraSaidaDateTimePicker.Enabled = false;
-                    motivoTextBox.Enabled = false;
-                }
-
-                // Preencha o campo para Coordenação com o nome do usuário logado se não for um Administrador, Professor ou Colaborador.
-                if (!isAdmin && !isColab && !isProfessor)
-                {
-                    comboBoxCoordenador.Text = usuarioLogado.Nome;
+                    else if (isCoordenacao)
+                    {
+                        comboBoxCoordenador.Enabled = false; // Bloquear a edição do ComboBox de Coordenação para Coordenadores.
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void DeterminarTipoDeUsuario()
+        {
+            // Carregue o usuário logado.
+            usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
+            List<GrupoUsuario> gruposDoUsuario = usuarioLogado.GrupoUsuarios;
+
+            isProfessor = usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Professor");
+            isCoordenacao = usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Coordenação");
+            isAdmin = usuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Administrador");
+        }
+
+        // Faz a configuração dos comboBox de Professor e Coordenador para mostrar o nome na tela ao invés do ID
+        private void ConfigurarComboBox()
+        {
+            // Define o nome como a propriedade a ser exibida e o ID como o valor a ser retornado quando uma linha for selecionada.
+            // Aqui são propriedades; se estivéssemos vinculando a uma tabela de banco de dados ou
+            // consulta, esses poderiam ser nomes de colunas.
+            comboBoxProfessor.DisplayMember = "Nome";
+            comboBoxProfessor.ValueMember = "IdUser";
+
+            comboBoxCoordenador.DisplayMember = "Nome";
+            comboBoxCoordenador.ValueMember = "IdUser";
+
+            DeterminarTipoDeUsuario();
+
+            if (Id == 0)
+            {
+                // Carregue os valores dos ComboBox Professor e Coordenação de acordo com o tipo de usuário.
+                if (isAdmin)
+                {
+                    comboBoxProfessor.DataSource = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Professor");
+                    comboBoxCoordenador.DataSource = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Coordenação");
+                }
+                else if (isCoordenacao)
+                {
+                    comboBoxProfessor.DataSource = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Professor");
+                    comboBoxCoordenador.DataSource = new List<Usuario> { usuarioLogado };
+                }
+                else if (isProfessor)
+                {
+                    comboBoxProfessor.DataSource = new List<Usuario> { usuarioLogado };
+                    comboBoxCoordenador.Enabled = false; // Bloquear a edição do ComboBox de Coordenação para Professores.
+                }
+                // Verifique se os ComboBoxes não estão vazios.
+                if (comboBoxProfessor.DataSource != null && comboBoxCoordenador.DataSource != null)
+                {
+                    // Carregue os dados nos ComboBoxes.
+                    comboBoxProfessor.DataSource = comboBoxProfessor.DataSource;
+                    comboBoxCoordenador.DataSource = comboBoxCoordenador.DataSource;
+                }
             }
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -125,47 +158,55 @@ namespace UILGerenReservasLab
             {
                 saidasAntecipadasBindingSource.EndEdit();
                 SaidasAntecipadas _saidasAntecipadas = (SaidasAntecipadas)saidasAntecipadasBindingSource.Current;
-                Usuario usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
-                List<GrupoUsuario> gruposDoUsuario = usuarioLogado.GrupoUsuarios;
+                DeterminarTipoDeUsuario();
 
                 if (Id == 0)
                 {
                     // Realize a validação de permissão antes de inserir a saída antecipada.
+                    usuarioBLL.ValidarPermissao(13); // Substitua 13 pelo ID da permissão que você deseja validar.
+
                     // Define o Id da Coordenacao como null ou Id do usuarioLogado com base na condição.
-                    if (gruposDoUsuario.Any(grupo => grupo.NomeGrupo == "Professor"))
+                    if (isProfessor)
                     {
-                        usuarioBLL.ValidarPermissao(13); // Substitua 1 pelo ID da permissão que você deseja validar.
-                        ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdProfessor = usuarioLogado.Id; // Define o ID do Professor como o ID do usuário logado.
+                        _saidasAntecipadas.IdProfessor = usuarioLogado.Id; // Define o ID do Professor como o ID do usuário logado.
+                                                                                                                    // Preencher Status com base na variável de controle isNewRequest.
+                        _saidasAntecipadas.Status = Id == 0 ? comboBoxStatus.Text : "Em Análise";
                         //_saidasAntecipadas.IdCoordenacao = null; // Define o ID da Coordenação como null.
                     }
-                    else if (gruposDoUsuario.Any(grupo => grupo.NomeGrupo == "Coordenação"))
+                    else if (isCoordenacao)
                     {
                         // Valide as permissões para a Coordenação, se necessário.
-                        ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdProfessor = ((Usuario)comboBoxProfessor.SelectedValue).Id; // Define o ID do Professor com base no ComboBox.
-                        ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdCoordenacao = usuarioLogado.Id; // Define o ID da Coordenação como o ID do usuário logado.
+                        _saidasAntecipadas.IdProfessor = ((Usuario)comboBoxProfessor.SelectedValue).Id; // Define o ID do Professor com base no ComboBox.
+                        _saidasAntecipadas.IdCoordenacao = usuarioLogado.Id; // Define o ID da Coordenação como o ID do usuário logado.
                     }
-                    else if (gruposDoUsuario.Any(grupo => grupo.NomeGrupo == "Administrador"))
+                    else if (isAdmin)
                     {
-                        // Valide as permissões para a Coordenação, se necessário.
-                        ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdProfessor = ((Usuario)comboBoxProfessor.SelectedValue).Id; // Define o ID do Professor com base no ComboBox.
-                        ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdCoordenacao = ((Usuario)comboBoxCoordenador.SelectedValue).Id; // Define o ID da Coordenação como o ID do usuário logado.
+                        // Valide as permissões para a administração, se necessário.
+                        _saidasAntecipadas.IdProfessor = ((Usuario)comboBoxProfessor.SelectedValue).Id; // Define o ID do Professor com base no ComboBox.
+                        _saidasAntecipadas.IdCoordenacao = ((Usuario)comboBoxCoordenador.SelectedValue).Id; // Define o ID da Coordenação com base no ComboBox.
                     }
                     //((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).IdAluno = AlunoSelecionado.Id;
                     //_saidasAntecipadas.Motivo = motivoTextBox.Text;
 
-                    // Preencher Status com base na variável de controle isNewRequest.
-                    _saidasAntecipadas.Status = Id == 0 ? comboBoxStatus.Text : "Em Análise";
+                    _saidasAntecipadas.Status = comboBoxStatus.Text;
+                    _saidasAntecipadas.Motivo = motivoTextBox.Text;
 
-                    ((SaidasAntecipadas)saidasAntecipadasBindingSource.Current).DataHoraSaida = DateTime.Now;
-                    new SaidasAntecipadasBLL().Inserir(((SaidasAntecipadas)saidasAntecipadasBindingSource.Current));
+                    _saidasAntecipadas.DataHoraSaida = DateTime.Now;
+                    new SaidasAntecipadasBLL().Inserir(_saidasAntecipadas);
+                    MessageBox.Show($"Solicitação de saída antecipada registrada com sucesso por {usuarioLogado.NomeUsuario}!");
+                    this.Close();
                 }
                 else
                 {
                     usuarioBLL.ValidarPermissao(14);
-                    new SaidasAntecipadasBLL().Alterar(((SaidasAntecipadas)saidasAntecipadasBindingSource.Current));
+                    _saidasAntecipadas.IdProfessor = ((Usuario)comboBoxProfessor.SelectedValue).Id;
+                    _saidasAntecipadas.IdCoordenacao = ((Usuario)comboBoxCoordenador.SelectedValue).Id;
+                    _saidasAntecipadas.Status = comboBoxStatus.SelectedItem.ToString(); // Obtenha a string selecionada.
+                    _saidasAntecipadas.Motivo = motivoTextBox.Text;
+                    new SaidasAntecipadasBLL().Alterar(_saidasAntecipadas);
+                    MessageBox.Show($"Solicitação de saída antecipada alterada com sucesso por {usuarioLogado.NomeUsuario}!");
+                    this.Close();
                 }
-                MessageBox.Show($"Solicitação de saída antecipada registrada com sucesso por {usuarioLogado.NomeUsuario}!");
-                this.Close();
             }
             catch (Exception ex)
             {

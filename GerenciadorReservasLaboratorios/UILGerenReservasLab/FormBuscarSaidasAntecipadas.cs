@@ -49,10 +49,8 @@ namespace UILGerenReservasLab
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
-
         }
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
@@ -140,6 +138,13 @@ namespace UILGerenReservasLab
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormBuscarSaidasAntecipadas_Load(object sender, EventArgs e)
+        {
+            // Carregue o usuário logado.
+            Usuario usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
+            List<GrupoUsuario> gruposDoUsuario = usuarioLogado.GrupoUsuarios;
         }
     }
 }
