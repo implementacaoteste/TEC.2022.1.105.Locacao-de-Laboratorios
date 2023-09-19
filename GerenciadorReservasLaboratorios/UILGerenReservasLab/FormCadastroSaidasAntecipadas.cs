@@ -201,7 +201,7 @@ namespace UILGerenReservasLab
                     usuarioBLL.ValidarPermissao(14);
                     _saidasAntecipadas.IdProfessor = ((Usuario)comboBoxProfessor.SelectedValue).Id;
                     _saidasAntecipadas.IdCoordenacao = ((Usuario)comboBoxCoordenador.SelectedValue).Id;
-                    _saidasAntecipadas.Status = comboBoxStatus.SelectedItem.ToString(); // Obtenha a string selecionada.
+                    _saidasAntecipadas.Status = comboBoxStatus.Text; // Obtenha a string selecionada.
                     _saidasAntecipadas.Motivo = motivoTextBox.Text;
                     new SaidasAntecipadasBLL().Alterar(_saidasAntecipadas);
                     MessageBox.Show($"Solicitação de saída antecipada alterada com sucesso por {usuarioLogado.NomeUsuario}!");

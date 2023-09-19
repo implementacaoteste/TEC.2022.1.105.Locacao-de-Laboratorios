@@ -11,7 +11,27 @@ namespace Models
         public string Motivo { get; set; }
         public string Status { get; set; }
         public DateTime DataHoraSaida { get; set; }
-
+        public string NomeAluno
+        {
+            get
+            {
+                return Aluno == null ? "" : Aluno.Nome;
+            }
+        }
+        public string NomeProfessor
+        {
+            get
+            {
+                return Professor == null ? "" : Professor.Nome;
+            }
+        }
+        public string NomeCoordenacao
+        {
+            get
+            {
+                return Coordenacao == null ? "" : Coordenacao.Nome;
+            }
+        }
         // Propriedades de navegação para Aluno, Professor e Coordenacao
         public Aluno Aluno { get; set; }
         public Usuario Professor { get; set; }

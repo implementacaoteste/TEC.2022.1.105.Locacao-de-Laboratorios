@@ -30,15 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
-            this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.saidasAntecipadasDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.labelBusar = new System.Windows.Forms.Label();
@@ -48,8 +40,16 @@
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).BeginInit();
+            this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProfessor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeCoordenacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -59,14 +59,10 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1040, 37);
+            this.label2.Size = new System.Drawing.Size(1300, 46);
             this.label2.TabIndex = 14;
             this.label2.Text = "Formulário de Pesquisa de Saídas Antecipadas";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // saidasAntecipadasBindingSource
-            // 
-            this.saidasAntecipadasBindingSource.DataSource = typeof(Models.SaidasAntecipadas);
             // 
             // saidasAntecipadasDataGridView
             // 
@@ -77,92 +73,32 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.saidasAntecipadasDataGridView.AutoGenerateColumns = false;
-            this.saidasAntecipadasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.saidasAntecipadasDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.saidasAntecipadasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.saidasAntecipadasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
+            this.NomeAluno,
+            this.NomeProfessor,
+            this.NomeCoordenacao,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.saidasAntecipadasDataGridView.DataSource = this.saidasAntecipadasBindingSource;
-            this.saidasAntecipadasDataGridView.Location = new System.Drawing.Point(47, 114);
+            this.saidasAntecipadasDataGridView.Location = new System.Drawing.Point(59, 142);
             this.saidasAntecipadasDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.saidasAntecipadasDataGridView.Name = "saidasAntecipadasDataGridView";
             this.saidasAntecipadasDataGridView.ReadOnly = true;
             this.saidasAntecipadasDataGridView.RowHeadersVisible = false;
             this.saidasAntecipadasDataGridView.RowHeadersWidth = 51;
             this.saidasAntecipadasDataGridView.RowTemplate.Height = 24;
-            this.saidasAntecipadasDataGridView.Size = new System.Drawing.Size(718, 327);
+            this.saidasAntecipadasDataGridView.Size = new System.Drawing.Size(898, 409);
             this.saidasAntecipadasDataGridView.TabIndex = 15;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "IdAluno";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Aluno";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "IdProfessor";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Professor";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "IdCoordenacao";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Coordenação";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Motivo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Motivo";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "DataHoraSaida";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Data & Hora";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // textBoxBuscar
             // 
-            this.textBoxBuscar.Location = new System.Drawing.Point(168, 89);
+            this.textBoxBuscar.Location = new System.Drawing.Point(210, 111);
             this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(597, 20);
+            this.textBoxBuscar.Size = new System.Drawing.Size(745, 22);
             this.textBoxBuscar.TabIndex = 16;
             // 
             // comboBoxBuscarPor
@@ -174,10 +110,10 @@
             "Id do Professor",
             "Id da Coordenação",
             "Buscar Todos"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(49, 89);
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(61, 111);
             this.comboBoxBuscarPor.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            this.comboBoxBuscarPor.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 24);
             this.comboBoxBuscarPor.TabIndex = 17;
             // 
             // labelBusar
@@ -187,10 +123,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBusar.AutoSize = true;
             this.labelBusar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusar.Location = new System.Drawing.Point(44, 71);
+            this.labelBusar.Location = new System.Drawing.Point(55, 89);
             this.labelBusar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBusar.Name = "labelBusar";
-            this.labelBusar.Size = new System.Drawing.Size(66, 15);
+            this.labelBusar.Size = new System.Drawing.Size(81, 18);
             this.labelBusar.TabIndex = 22;
             this.labelBusar.Text = "Buscar por";
             // 
@@ -201,10 +137,10 @@
             this.buttonSelecionarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSelecionarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelecionarAluno.ForeColor = System.Drawing.Color.White;
-            this.buttonSelecionarAluno.Location = new System.Drawing.Point(769, 395);
+            this.buttonSelecionarAluno.Location = new System.Drawing.Point(961, 494);
             this.buttonSelecionarAluno.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSelecionarAluno.Name = "buttonSelecionarAluno";
-            this.buttonSelecionarAluno.Size = new System.Drawing.Size(177, 42);
+            this.buttonSelecionarAluno.Size = new System.Drawing.Size(221, 52);
             this.buttonSelecionarAluno.TabIndex = 33;
             this.buttonSelecionarAluno.Text = "&Selecionar";
             this.buttonSelecionarAluno.UseVisualStyleBackColor = false;
@@ -217,10 +153,10 @@
             this.buttonInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInserir.ForeColor = System.Drawing.Color.White;
-            this.buttonInserir.Location = new System.Drawing.Point(769, 210);
+            this.buttonInserir.Location = new System.Drawing.Point(961, 262);
             this.buttonInserir.Margin = new System.Windows.Forms.Padding(2);
             this.buttonInserir.Name = "buttonInserir";
-            this.buttonInserir.Size = new System.Drawing.Size(177, 42);
+            this.buttonInserir.Size = new System.Drawing.Size(221, 52);
             this.buttonInserir.TabIndex = 34;
             this.buttonInserir.Text = "&Inserir";
             this.buttonInserir.UseVisualStyleBackColor = false;
@@ -233,10 +169,10 @@
             this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluir.ForeColor = System.Drawing.Color.White;
-            this.buttonExcluir.Location = new System.Drawing.Point(769, 325);
+            this.buttonExcluir.Location = new System.Drawing.Point(961, 406);
             this.buttonExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(177, 42);
+            this.buttonExcluir.Size = new System.Drawing.Size(221, 52);
             this.buttonExcluir.TabIndex = 35;
             this.buttonExcluir.Text = "&Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = false;
@@ -249,10 +185,10 @@
             this.buttonAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterar.ForeColor = System.Drawing.Color.White;
-            this.buttonAlterar.Location = new System.Drawing.Point(769, 150);
+            this.buttonAlterar.Location = new System.Drawing.Point(961, 188);
             this.buttonAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(177, 42);
+            this.buttonAlterar.Size = new System.Drawing.Size(221, 52);
             this.buttonAlterar.TabIndex = 36;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = false;
@@ -265,10 +201,10 @@
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonBuscar.Location = new System.Drawing.Point(769, 90);
+            this.buttonBuscar.Location = new System.Drawing.Point(961, 112);
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(177, 42);
+            this.buttonBuscar.Size = new System.Drawing.Size(221, 52);
             this.buttonBuscar.TabIndex = 37;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = false;
@@ -280,19 +216,97 @@
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonFechar.Location = new System.Drawing.Point(469, 59);
+            this.buttonFechar.Location = new System.Drawing.Point(586, 74);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonFechar.Name = "buttonFechar";
-            this.buttonFechar.Size = new System.Drawing.Size(75, 23);
+            this.buttonFechar.Size = new System.Drawing.Size(94, 29);
             this.buttonFechar.TabIndex = 38;
             this.buttonFechar.Text = "&Fechar";
             this.buttonFechar.UseVisualStyleBackColor = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
+            // saidasAntecipadasBindingSource
+            // 
+            this.saidasAntecipadasBindingSource.DataSource = typeof(Models.SaidasAntecipadas);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.FillWeight = 58.23987F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // NomeAluno
+            // 
+            this.NomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NomeAluno.DataPropertyName = "NomeAluno";
+            this.NomeAluno.FillWeight = 62.50068F;
+            this.NomeAluno.HeaderText = "Aluno";
+            this.NomeAluno.MinimumWidth = 6;
+            this.NomeAluno.Name = "NomeAluno";
+            this.NomeAluno.ReadOnly = true;
+            this.NomeAluno.Width = 200;
+            // 
+            // NomeProfessor
+            // 
+            this.NomeProfessor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NomeProfessor.DataPropertyName = "NomeProfessor";
+            this.NomeProfessor.FillWeight = 565.2405F;
+            this.NomeProfessor.HeaderText = "Professor";
+            this.NomeProfessor.MinimumWidth = 6;
+            this.NomeProfessor.Name = "NomeProfessor";
+            this.NomeProfessor.ReadOnly = true;
+            this.NomeProfessor.Width = 200;
+            // 
+            // NomeCoordenacao
+            // 
+            this.NomeCoordenacao.DataPropertyName = "NomeCoordenacao";
+            this.NomeCoordenacao.HeaderText = "Coordenação";
+            this.NomeCoordenacao.MinimumWidth = 6;
+            this.NomeCoordenacao.Name = "NomeCoordenacao";
+            this.NomeCoordenacao.ReadOnly = true;
+            this.NomeCoordenacao.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Motivo";
+            this.dataGridViewTextBoxColumn5.FillWeight = 3.504711F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Motivo";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn6.FillWeight = 3.504711F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "DataHoraSaida";
+            this.dataGridViewTextBoxColumn7.FillWeight = 3.504711F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Data & Hora";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
             // FormBuscarSaidasAntecipadas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1040, 491);
+            this.ClientSize = new System.Drawing.Size(1300, 614);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.buttonSelecionarAluno);
             this.Controls.Add(this.buttonInserir);
@@ -310,8 +324,8 @@
             this.ShowIcon = false;
             this.Text = "Gestão de Saidas Antecipadas";
             this.Load += new System.EventHandler(this.FormBuscarSaidasAntecipadas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,13 +344,13 @@
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeAluno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProfessor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCoordenacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Button buttonFechar;
     }
 }
