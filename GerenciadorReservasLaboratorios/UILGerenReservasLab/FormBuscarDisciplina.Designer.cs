@@ -38,11 +38,11 @@
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.disciplinaDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonSelecionarDisciplina = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disciplinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonSelecionarDisciplina = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             "Id",
             "Nome",
             "Todos"});
-            this.comboBoxBuscarpor.Location = new System.Drawing.Point(61, 111);
+            this.comboBoxBuscarpor.Location = new System.Drawing.Point(63, 101);
             this.comboBoxBuscarpor.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxBuscarpor.Name = "comboBoxBuscarpor";
             this.comboBoxBuscarpor.Size = new System.Drawing.Size(143, 24);
@@ -64,7 +64,7 @@
             // 
             this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBuscar.Location = new System.Drawing.Point(210, 111);
+            this.textBoxBuscar.Location = new System.Drawing.Point(212, 101);
             this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Name = "textBoxBuscar";
             this.textBoxBuscar.Size = new System.Drawing.Size(745, 22);
@@ -73,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 93);
+            this.label2.Location = new System.Drawing.Point(58, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 16);
@@ -86,8 +86,8 @@
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonFechar.Location = new System.Drawing.Point(586, 74);
-            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFechar.Location = new System.Drawing.Point(588, 56);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(94, 29);
             this.buttonFechar.TabIndex = 36;
@@ -118,7 +118,7 @@
             this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluir.ForeColor = System.Drawing.Color.White;
-            this.buttonExcluir.Location = new System.Drawing.Point(961, 406);
+            this.buttonExcluir.Location = new System.Drawing.Point(961, 427);
             this.buttonExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(221, 52);
@@ -174,42 +174,14 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.disciplinaDataGridView.DataSource = this.disciplinaBindingSource;
-            this.disciplinaDataGridView.Location = new System.Drawing.Point(59, 143);
+            this.disciplinaDataGridView.Location = new System.Drawing.Point(59, 129);
             this.disciplinaDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.disciplinaDataGridView.Name = "disciplinaDataGridView";
             this.disciplinaDataGridView.ReadOnly = true;
             this.disciplinaDataGridView.RowHeadersVisible = false;
             this.disciplinaDataGridView.RowHeadersWidth = 51;
-            this.disciplinaDataGridView.Size = new System.Drawing.Size(898, 409);
+            this.disciplinaDataGridView.Size = new System.Drawing.Size(898, 461);
             this.disciplinaDataGridView.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1300, 52);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Formulário de Pesquisa de Disciplinas";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonSelecionarDisciplina
-            // 
-            this.buttonSelecionarDisciplina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.buttonSelecionarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSelecionarDisciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSelecionarDisciplina.ForeColor = System.Drawing.Color.White;
-            this.buttonSelecionarDisciplina.Location = new System.Drawing.Point(961, 500);
-            this.buttonSelecionarDisciplina.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSelecionarDisciplina.Name = "buttonSelecionarDisciplina";
-            this.buttonSelecionarDisciplina.Size = new System.Drawing.Size(221, 52);
-            this.buttonSelecionarDisciplina.TabIndex = 41;
-            this.buttonSelecionarDisciplina.Text = "&Selecionar";
-            this.buttonSelecionarDisciplina.UseVisualStyleBackColor = false;
-            this.buttonSelecionarDisciplina.Click += new System.EventHandler(this.buttonSelecionarDisciplina_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -233,6 +205,34 @@
             // disciplinaBindingSource
             // 
             this.disciplinaBindingSource.DataSource = typeof(Models.Disciplina);
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1300, 52);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Formulário de Pesquisa de Disciplinas";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonSelecionarDisciplina
+            // 
+            this.buttonSelecionarDisciplina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSelecionarDisciplina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonSelecionarDisciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSelecionarDisciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelecionarDisciplina.ForeColor = System.Drawing.Color.White;
+            this.buttonSelecionarDisciplina.Location = new System.Drawing.Point(961, 538);
+            this.buttonSelecionarDisciplina.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSelecionarDisciplina.Name = "buttonSelecionarDisciplina";
+            this.buttonSelecionarDisciplina.Size = new System.Drawing.Size(221, 52);
+            this.buttonSelecionarDisciplina.TabIndex = 41;
+            this.buttonSelecionarDisciplina.Text = "&Selecionar";
+            this.buttonSelecionarDisciplina.UseVisualStyleBackColor = false;
+            this.buttonSelecionarDisciplina.Click += new System.EventHandler(this.buttonSelecionarDisciplina_Click);
             // 
             // FormBuscarDisciplina
             // 
