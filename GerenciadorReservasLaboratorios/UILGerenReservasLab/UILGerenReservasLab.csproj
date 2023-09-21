@@ -352,10 +352,6 @@
     <None Include="Resources\logo-senai.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Winforms-CalendarForks\ManosPapadakis95\WindowsFormsCalendar\WindowsFormsCalendar.csproj">
-      <Project>{25649f08-3046-4891-adb8-7ea787b57063}</Project>
-      <Name>WindowsFormsCalendar</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{fbfa8c90-988c-4a02-a667-1539f33ab2bf}</Project>
       <Name>BLL</Name>
@@ -363,6 +359,10 @@
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{ab504d47-f9a7-4dd1-9d93-2cd75058855b}</Project>
       <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Windows.Forms.Calendar\System.Windows.Forms.Calendar.csproj">
+      <Project>{25649f08-3046-4891-adb8-7ea787b57063}</Project>
+      <Name>System.Windows.Forms.Calendar</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
