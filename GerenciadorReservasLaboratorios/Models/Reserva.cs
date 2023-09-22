@@ -13,7 +13,7 @@ namespace Models
         public int IdUsuario { get; set; }
         public int IdDisciplina { get; set; }
         public int IdCurso { get; set; }
-        public string Solicitante { get; set; }
+        public int IdSolicitante { get; set; }
         public DateTime ReservaData { get; set; }
         public DateTime ReservaHora { get; set; }
         public DateTime DataRetirada { get; set; }

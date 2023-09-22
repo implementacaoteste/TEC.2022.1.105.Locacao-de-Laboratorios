@@ -13,7 +13,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Reserva (IdSala, IdUsuario, IdDisciplina, IdCurso, Solicitante, ReservaData, ReservaHora, DataRetirada, DataDevolucao, Status, Observacoes, Turno)
+                cmd.CommandText = @"INSERT INTO Reserva (IdSala, IdUsuario, IdDisciplina, IdCurso, IdSolicitante, ReservaData, ReservaHora, DataRetirada, DataDevolucao, Status, Observacoes, Turno)
                                     VALUES (@IdSala, @IdUsuario, @IdDisciplina, @IdCurso, @Solicitante, @ReservaData, @ReservaHora, @DataRetirada, @DataDevolucao, @Status, @Observacoes, @Turno)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -21,7 +21,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@IdUsuario", reserva.IdUsuario);
                 cmd.Parameters.AddWithValue("@IdDisciplina", reserva.IdDisciplina);
                 cmd.Parameters.AddWithValue("@IdCurso", reserva.IdCurso);
-                cmd.Parameters.AddWithValue("@Solicitante", reserva.Solicitante);
+                cmd.Parameters.AddWithValue("@IdSolicitante", reserva.IdSolicitante);
                 cmd.Parameters.AddWithValue("@ReservaData", reserva.ReservaData);
                 cmd.Parameters.AddWithValue("@ReservaHora", reserva.ReservaHora);
                 cmd.Parameters.AddWithValue("@DataRetirada", reserva.DataRetirada);
@@ -55,7 +55,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, IdSala, IdUsuario, IdDisciplina, IdCurso, Solicitante, ReservaData, ReservaHora, DataRetirada, DataDevolucao, Status, Observacoes, Turno FROM Reserva";
+                cmd.CommandText = "SELECT Id, IdSala, IdUsuario, IdDisciplina, IdCurso, IdSolicitante, ReservaData, ReservaHora, DataRetirada, DataDevolucao, Status, Observacoes, Turno FROM Reserva";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -70,7 +70,7 @@ namespace DAL
                         reserva.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
                         reserva.IdDisciplina = Convert.ToInt32(rd["IdDisciplina"]);
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
-                        reserva.Solicitante = rd["Solicitante"].ToString();
+                        reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
                         reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
@@ -115,7 +115,7 @@ namespace DAL
                         reserva.IdUsuario = Convert.ToInt32(rd["IdUsuario"]);
                         reserva.IdDisciplina = Convert.ToInt32(rd["IdDisciplina"]);
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
-                        reserva.Solicitante = rd["Solicitante"].ToString();
+                        reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
                         reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
@@ -144,7 +144,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"UPDATE Reserva SET IdSala = @IdSala, IdUsuario = @IdUsuario, IdDisciplina = @IdDisciplina, IdCurso = @IdCurso, 
-                                    Solicitante = @Solicitante, ReservaData = @ReservaData, ReservaHora = @ReservaHora, DataRetirada = @DataRetirada, 
+                                    IdSolicitante = @IdSolicitante, ReservaData = @ReservaData, ReservaHora = @ReservaHora, DataRetirada = @DataRetirada, 
                                     DataDevolucao = @DataDevolucao, Status = @Status, Observacoes = @Observacoes, Turno = @Turno 
                                     WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -153,7 +153,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@IdUsuario", reserva.IdUsuario);
                 cmd.Parameters.AddWithValue("@IdDisciplina", reserva.IdDisciplina);
                 cmd.Parameters.AddWithValue("@IdCurso", reserva.IdCurso);
-                cmd.Parameters.AddWithValue("@Solicitante", reserva.Solicitante);
+                cmd.Parameters.AddWithValue("@IdSolicitante", reserva.IdSolicitante);
                 cmd.Parameters.AddWithValue("@ReservaData", reserva.ReservaData);
                 cmd.Parameters.AddWithValue("@ReservaHora", reserva.ReservaHora);
                 cmd.Parameters.AddWithValue("@DataRetirada", reserva.DataRetirada);
