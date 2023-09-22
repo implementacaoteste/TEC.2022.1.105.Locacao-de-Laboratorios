@@ -210,7 +210,7 @@ namespace UILGerenReservasLab
             this.buttonBuscarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarAluno.ForeColor = System.Drawing.Color.White;
             this.buttonBuscarAluno.Location = new System.Drawing.Point(322, 200);
-            this.buttonBuscarAluno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBuscarAluno.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBuscarAluno.Name = "buttonBuscarAluno";
             this.buttonBuscarAluno.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscarAluno.TabIndex = 16;
@@ -226,7 +226,7 @@ namespace UILGerenReservasLab
             "Autorizada",
             "Negada"});
             this.comboBoxStatus.Location = new System.Drawing.Point(11, 302);
-            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(283, 24);
             this.comboBoxStatus.TabIndex = 18;
@@ -235,7 +235,7 @@ namespace UILGerenReservasLab
             // 
             this.comboBoxProfessor.FormattingEnabled = true;
             this.comboBoxProfessor.Location = new System.Drawing.Point(432, 235);
-            this.comboBoxProfessor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxProfessor.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxProfessor.Name = "comboBoxProfessor";
             this.comboBoxProfessor.Size = new System.Drawing.Size(405, 24);
             this.comboBoxProfessor.TabIndex = 20;
@@ -248,7 +248,7 @@ namespace UILGerenReservasLab
             // 
             this.comboBoxCoordenador.FormattingEnabled = true;
             this.comboBoxCoordenador.Location = new System.Drawing.Point(432, 306);
-            this.comboBoxCoordenador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCoordenador.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCoordenador.Name = "comboBoxCoordenador";
             this.comboBoxCoordenador.Size = new System.Drawing.Size(405, 24);
             this.comboBoxCoordenador.TabIndex = 21;
@@ -277,9 +277,9 @@ namespace UILGerenReservasLab
             this.label1.Location = new System.Drawing.Point(4, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 31);
+            this.label1.Size = new System.Drawing.Size(81, 31);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Menu Cadastro";
+            this.label1.Text = "Menu";
             // 
             // buttonMinimizar
             // 
@@ -368,7 +368,7 @@ namespace UILGerenReservasLab
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestão de Saidas Antecipadas";
+            this.Text = "Cadastro de Saidas Antecipadas";
             this.Load += new System.EventHandler(this.FormCadastroSaidasAntecipadas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();

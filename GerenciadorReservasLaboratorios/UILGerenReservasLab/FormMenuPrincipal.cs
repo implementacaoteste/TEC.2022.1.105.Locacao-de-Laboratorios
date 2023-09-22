@@ -265,6 +265,7 @@ namespace UILGerenReservasLab
                 panelFormularios.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
+                labelTitle.Text = formulario.Text;
                 formulario.FormClosed += new FormClosedEventHandler(CloseForms);
             }
             // If the form/instance exists

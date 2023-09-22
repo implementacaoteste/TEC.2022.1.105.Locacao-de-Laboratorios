@@ -35,7 +35,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxBuscarAlunoPor = new System.Windows.Forms.ComboBox();
             this.textBoxAlunoBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -121,18 +120,6 @@
             // 
             this.alunoBindingSource.DataSource = typeof(Models.Aluno);
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1300, 52);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Formulário de Pesquisa de Alunos";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // comboBoxBuscarAlunoPor
             // 
             this.comboBoxBuscarAlunoPor.FormattingEnabled = true;
@@ -175,8 +162,8 @@
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.Color.White;
-            this.buttonFechar.Location = new System.Drawing.Point(588, 56);
-            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFechar.Location = new System.Drawing.Point(1193, 13);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(94, 29);
             this.buttonFechar.TabIndex = 28;
@@ -278,7 +265,6 @@
             this.Controls.Add(this.comboBoxBuscarAlunoPor);
             this.Controls.Add(this.textBoxAlunoBuscar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.alunoDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -286,7 +272,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormBuscarAluno";
+            this.Text = "Pesquisa de Alunos";
             ((System.ComponentModel.ISupportInitialize)(this.alunoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -298,7 +284,6 @@
 
         private System.Windows.Forms.BindingSource alunoBindingSource;
         private System.Windows.Forms.DataGridView alunoDataGridView;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxBuscarAlunoPor;
         private System.Windows.Forms.TextBox textBoxAlunoBuscar;
         private System.Windows.Forms.Label label2;
