@@ -77,7 +77,7 @@
             this.saidasAntecipadasDataGridView.RowHeadersVisible = false;
             this.saidasAntecipadasDataGridView.RowHeadersWidth = 51;
             this.saidasAntecipadasDataGridView.RowTemplate.Height = 24;
-            this.saidasAntecipadasDataGridView.Size = new System.Drawing.Size(898, 409);
+            this.saidasAntecipadasDataGridView.Size = new System.Drawing.Size(898, 435);
             this.saidasAntecipadasDataGridView.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn1
@@ -159,6 +159,8 @@
             // 
             // textBoxBuscar
             // 
+            this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscar.Location = new System.Drawing.Point(210, 111);
             this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxBuscar.Name = "textBoxBuscar";
@@ -276,6 +278,7 @@
             // 
             // buttonFechar
             // 
+            this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFechar.BackColor = System.Drawing.Color.Red;
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1300, 614);
+            this.ClientSize = new System.Drawing.Size(1300, 640);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.buttonSelecionarAluno);
             this.Controls.Add(this.buttonInserir);
@@ -308,6 +311,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBuscarSaidasAntecipadas";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Pesquisa de Saidas Antecipadas";
             this.Load += new System.EventHandler(this.FormBuscarSaidasAntecipadas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasDataGridView)).EndInit();

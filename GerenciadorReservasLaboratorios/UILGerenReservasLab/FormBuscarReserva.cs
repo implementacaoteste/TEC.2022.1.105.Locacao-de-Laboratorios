@@ -74,7 +74,7 @@ namespace UILGerenReservasLab
         }
         private void buttonInserirReserva_Click(object sender, EventArgs e)
         {
-            using (FormBuscarReserva frm = new FormBuscarReserva())
+            using (FormCadastroReservas frm = new FormCadastroReservas())
             {
                 frm.ShowDialog();
             }

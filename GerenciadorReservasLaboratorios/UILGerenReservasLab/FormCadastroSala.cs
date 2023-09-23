@@ -19,15 +19,22 @@ namespace UILGerenReservasLab
         {
             InitializeComponent();
             Id = _id;
+
+            if (Id > 0)
+            {
+                // Busque a sala com base no id e preencha os campos com os dados.
+                Sala sala = new SalaBLL().BuscarPorId(Id);
+                salaBindingSource.DataSource = sala;
+            }
         }
 
-        private void btnSalvarSala_Click(object sender, EventArgs e)
+        private void buttonSalvarSala_Click(object sender, EventArgs e)
         {
-            if (txtNomeSala.Text.ToString().Trim() == "")
+            if (textBoxNomeSala.Text.ToString().Trim() == "")
             {
                 MessageBox.Show("Campo 'Nome Sala' é obrigatório");
 
-                txtNomeSala.Focus();
+                textBoxNomeSala.Focus();
                 return;
             }
             try
@@ -35,11 +42,15 @@ namespace UILGerenReservasLab
                 
                 salaBindingSource.EndEdit();
 
-                Sala sala = ((Sala)salaBindingSource.Current);
+                Sala _sala = ((Sala)salaBindingSource.Current);
                 if (Id == 0)
-                    new SalaBLL().Inserir(sala);
+                {
+                    _sala = new Sala(); // Crie um novo objeto Sala se for um novo registro.
+                    _sala.Nome = textBoxNomeSala.Text; // Atribua o nome do TextBox ao novo objeto.
+                    new SalaBLL().Inserir(_sala);
+                }
                 else
-                    new SalaBLL().Alterar(sala);
+                    new SalaBLL().Alterar(_sala);
                 
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
@@ -51,7 +62,7 @@ namespace UILGerenReservasLab
             }
         }
 
-        private void btnCancelarSala_Click(object sender, EventArgs e)
+        private void buttonCancelarSala_Click(object sender, EventArgs e)
         {
             try
             {

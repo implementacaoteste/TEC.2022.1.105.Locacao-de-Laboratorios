@@ -65,14 +65,14 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.alunoDataGridView.DataSource = this.alunoBindingSource;
-            this.alunoDataGridView.Location = new System.Drawing.Point(59, 129);
+            this.alunoDataGridView.Location = new System.Drawing.Point(59, 142);
             this.alunoDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.alunoDataGridView.Name = "alunoDataGridView";
             this.alunoDataGridView.ReadOnly = true;
             this.alunoDataGridView.RowHeadersVisible = false;
             this.alunoDataGridView.RowHeadersWidth = 51;
             this.alunoDataGridView.RowTemplate.Height = 24;
-            this.alunoDataGridView.Size = new System.Drawing.Size(898, 464);
+            this.alunoDataGridView.Size = new System.Drawing.Size(898, 435);
             this.alunoDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -128,7 +128,7 @@
             "Nome",
             "Matricula",
             "Todos"});
-            this.comboBoxBuscarAlunoPor.Location = new System.Drawing.Point(63, 101);
+            this.comboBoxBuscarAlunoPor.Location = new System.Drawing.Point(61, 111);
             this.comboBoxBuscarAlunoPor.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxBuscarAlunoPor.Name = "comboBoxBuscarAlunoPor";
             this.comboBoxBuscarAlunoPor.Size = new System.Drawing.Size(143, 24);
@@ -138,7 +138,7 @@
             // 
             this.textBoxAlunoBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAlunoBuscar.Location = new System.Drawing.Point(212, 101);
+            this.textBoxAlunoBuscar.Location = new System.Drawing.Point(210, 111);
             this.textBoxAlunoBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAlunoBuscar.Name = "textBoxAlunoBuscar";
             this.textBoxAlunoBuscar.Size = new System.Drawing.Size(745, 22);
@@ -148,12 +148,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 74);
+            this.label2.Location = new System.Drawing.Point(55, 89);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 18);
+            this.label2.Size = new System.Drawing.Size(81, 18);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Buscar Por";
+            this.label2.Text = "Buscar por";
             // 
             // buttonFechar
             // 
@@ -194,7 +194,7 @@
             this.buttonExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluir.ForeColor = System.Drawing.Color.White;
-            this.buttonExcluir.Location = new System.Drawing.Point(961, 428);
+            this.buttonExcluir.Location = new System.Drawing.Point(961, 406);
             this.buttonExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(221, 52);
@@ -242,7 +242,7 @@
             this.buttonSelecionarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSelecionarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelecionarAluno.ForeColor = System.Drawing.Color.White;
-            this.buttonSelecionarAluno.Location = new System.Drawing.Point(961, 541);
+            this.buttonSelecionarAluno.Location = new System.Drawing.Point(961, 494);
             this.buttonSelecionarAluno.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSelecionarAluno.Name = "buttonSelecionarAluno";
             this.buttonSelecionarAluno.Size = new System.Drawing.Size(221, 52);
@@ -255,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1300, 604);
+            this.ClientSize = new System.Drawing.Size(1300, 640);
             this.Controls.Add(this.buttonSelecionarAluno);
             this.Controls.Add(this.buttonInserir);
             this.Controls.Add(this.buttonExcluir);

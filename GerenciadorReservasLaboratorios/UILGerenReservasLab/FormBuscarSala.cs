@@ -18,8 +18,16 @@ namespace UILGerenReservasLab
         {
             InitializeComponent();
         }
+        private void buttonInserir_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroSala frm = new FormCadastroSala())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
+        }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -49,7 +57,7 @@ namespace UILGerenReservasLab
             }
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
+        private void buttonAlterar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -62,7 +70,7 @@ namespace UILGerenReservasLab
                 {
                     frm.ShowDialog();
                 }
-                btnBuscar_Click(null, null);
+                buttonBuscar_Click(null, null);
             }
             catch (Exception ex)
             {
@@ -70,17 +78,7 @@ namespace UILGerenReservasLab
             }
         }
 
-        private void btnInserir_Click(object sender, EventArgs e)
-        {
-            using (FormCadastroSala frm = new FormCadastroSala())
-            {
-                frm.ShowDialog();
-            }
-            btnBuscar_Click(null, null);
-
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void buttonExcluir_Click(object sender, EventArgs e)
         {
             try
             {

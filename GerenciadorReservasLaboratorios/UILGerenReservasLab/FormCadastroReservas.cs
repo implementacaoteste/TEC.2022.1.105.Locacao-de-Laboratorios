@@ -94,13 +94,8 @@ namespace UILGerenReservasLab
             CarregarComboBoxCurso();
             CarregarComboBoxDisciplina();
 
-            // Defina a fonte de dados para o ComboBox de solicitante (usuários).
-            comboBoxSolicitante.DisplayMember = "Nome";
-            comboBoxSolicitante.ValueMember = "IdUser";
-
             // Desabilite o groupBoxLiberarChave por padrão.
             groupBoxLiberarChave.Enabled = false;
-
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)

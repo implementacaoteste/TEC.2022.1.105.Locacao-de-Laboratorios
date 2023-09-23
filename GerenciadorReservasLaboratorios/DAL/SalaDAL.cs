@@ -13,9 +13,10 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "INSERT INTO Sala (Nome) VALUES (@Nome)";
+                cmd.CommandText = "INSERT INTO Sala (IdPredio, Nome) VALUES (@IdPredio, @Nome)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
+                cmd.Parameters.AddWithValue("@IdPredio", _sala.IdPredio);
                 cmd.Parameters.AddWithValue("@Nome", _sala.Nome);
 
                 cmd.Connection = cn;

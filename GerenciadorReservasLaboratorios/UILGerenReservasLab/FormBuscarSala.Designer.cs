@@ -71,7 +71,6 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAlterar
             // 
@@ -82,7 +81,6 @@
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnInserir
             // 
@@ -93,7 +91,6 @@
             this.btnInserir.TabIndex = 0;
             this.btnInserir.Text = "&Inserir";
             this.btnInserir.UseVisualStyleBackColor = true;
-            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // btnExcluir
             // 
@@ -104,7 +101,6 @@
             this.btnExcluir.TabIndex = 0;
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // label1
             // 
@@ -215,6 +211,7 @@
             this.buttonInserir.TabIndex = 37;
             this.buttonInserir.Text = "&Inserir";
             this.buttonInserir.UseVisualStyleBackColor = false;
+            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
             // 
             // buttonExcluir
             // 
@@ -230,6 +227,7 @@
             this.buttonExcluir.TabIndex = 38;
             this.buttonExcluir.Text = "&Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = false;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonAlterar
             // 
@@ -245,6 +243,7 @@
             this.buttonAlterar.TabIndex = 39;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = false;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonBuscar
             // 
@@ -260,6 +259,7 @@
             this.buttonBuscar.TabIndex = 40;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = false;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // buttonFechar
             // 
