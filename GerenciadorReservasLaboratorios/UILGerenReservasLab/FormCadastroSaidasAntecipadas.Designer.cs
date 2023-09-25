@@ -41,7 +41,6 @@ namespace UILGerenReservasLab
             this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alunoTextBox = new System.Windows.Forms.TextBox();
             this.motivoTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonBuscarAluno = new System.Windows.Forms.Button();
@@ -50,7 +49,7 @@ namespace UILGerenReservasLab
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxCoordenador = new System.Windows.Forms.ComboBox();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelMenu = new System.Windows.Forms.Label();
             this.buttonMinimizar = new System.Windows.Forms.PictureBox();
             this.buttonRestaurar = new System.Windows.Forms.PictureBox();
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
@@ -156,22 +155,10 @@ namespace UILGerenReservasLab
             this.motivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "Motivo", true));
             this.motivoTextBox.Location = new System.Drawing.Point(11, 372);
             this.motivoTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.motivoTextBox.Multiline = true;
             this.motivoTextBox.Name = "motivoTextBox";
-            this.motivoTextBox.Size = new System.Drawing.Size(1196, 22);
+            this.motivoTextBox.Size = new System.Drawing.Size(405, 89);
             this.motivoTextBox.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(2, 47);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1300, 46);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Saídas Antecipadas";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonSalvar
             // 
@@ -256,7 +243,7 @@ namespace UILGerenReservasLab
             // panelBarraTitulo
             // 
             this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.panelBarraTitulo.Controls.Add(this.label1);
+            this.panelBarraTitulo.Controls.Add(this.labelMenu);
             this.panelBarraTitulo.Controls.Add(this.buttonMinimizar);
             this.panelBarraTitulo.Controls.Add(this.buttonRestaurar);
             this.panelBarraTitulo.Controls.Add(this.buttonMaximizar);
@@ -269,17 +256,17 @@ namespace UILGerenReservasLab
             this.panelBarraTitulo.TabIndex = 22;
             this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
-            // label1
+            // labelMenu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(4, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 31);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Menu";
+            this.labelMenu.AutoSize = true;
+            this.labelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMenu.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelMenu.Location = new System.Drawing.Point(4, 10);
+            this.labelMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMenu.Name = "labelMenu";
+            this.labelMenu.Size = new System.Drawing.Size(81, 31);
+            this.labelMenu.TabIndex = 4;
+            this.labelMenu.Text = "Menu";
             // 
             // buttonMinimizar
             // 
@@ -352,7 +339,6 @@ namespace UILGerenReservasLab
             this.Controls.Add(this.buttonBuscarAluno);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.label2);
             this.Controls.Add(statusLabel);
             this.Controls.Add(motivoLabel);
             this.Controls.Add(this.motivoTextBox);
@@ -389,7 +375,6 @@ namespace UILGerenReservasLab
         private System.Windows.Forms.DateTimePicker dataHoraSaidaDateTimePicker;
         private System.Windows.Forms.TextBox alunoTextBox;
         private System.Windows.Forms.TextBox motivoTextBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonBuscarAluno;
@@ -398,7 +383,7 @@ namespace UILGerenReservasLab
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ComboBox comboBoxCoordenador;
         private System.Windows.Forms.Panel panelBarraTitulo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelMenu;
         private System.Windows.Forms.PictureBox buttonMinimizar;
         private System.Windows.Forms.PictureBox buttonRestaurar;
         private System.Windows.Forms.PictureBox buttonMaximizar;

@@ -17,6 +17,8 @@ namespace UILGerenReservasLab
     {
         private Usuario UsuarioLogado;
         private Button botaoSelecionado = null;
+        private string tituloOriginal;
+
 
         public FormMenuPrincipal()
         {
@@ -253,8 +255,8 @@ namespace UILGerenReservasLab
         public void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
-            formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();// Search in the collection for the form
-                                                                                     // If the form/instance doesn't exist
+            formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();
+
             if (formulario == null)
             {
                 formulario = new MiForm();
@@ -265,10 +267,15 @@ namespace UILGerenReservasLab
                 panelFormularios.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
+
+                // Armazena o título atual do formulário pai
+                tituloOriginal = labelTitle.Text;
+
+                // Define o título do formulário filho como o título do formulário pai
                 labelTitle.Text = formulario.Text;
+
                 formulario.FormClosed += new FormClosedEventHandler(CloseForms);
             }
-            // If the form/instance exists
             else
             {
                 formulario.BringToFront();
@@ -278,10 +285,14 @@ namespace UILGerenReservasLab
         {
             if (botaoSelecionado != null)
             {
-                botaoSelecionado.BackColor = Color.FromArgb(37, 54, 75); // Cor original
+                botaoSelecionado.BackColor = Color.FromArgb(37, 54, 75);
                 botaoSelecionado = null;
             }
+
+            // Restaura o título original do formulário pai
+            labelTitle.Text = tituloOriginal;
         }
+
 
     }
 }

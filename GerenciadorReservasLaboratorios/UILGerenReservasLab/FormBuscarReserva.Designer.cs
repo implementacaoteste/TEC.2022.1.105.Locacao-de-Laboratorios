@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.reservaDataGridView = new System.Windows.Forms.DataGridView();
-            this.reservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxBuscarReserva = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxBuscarAlunoPor = new System.Windows.Forms.ComboBox();
+            this.comboBoxBuscarReservaPor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSelecionarAluno = new System.Windows.Forms.Button();
             this.buttonInserirReserva = new System.Windows.Forms.Button();
@@ -41,13 +40,14 @@
             this.buttonAlterarReserva = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
+            this.reservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeResponsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeSolicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeDisciplina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,12 +70,12 @@
             this.reservaDataGridView.ColumnHeadersHeight = 35;
             this.reservaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
+            this.NomeResponsavel,
+            this.NomeSolicitante,
+            this.NomeSala,
+            this.NomeCurso,
+            this.NomeDisciplina,
             this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn11,
@@ -95,19 +95,15 @@
             this.reservaDataGridView.Size = new System.Drawing.Size(898, 409);
             this.reservaDataGridView.TabIndex = 1;
             // 
-            // reservaBindingSource
+            // textBoxBuscarReserva
             // 
-            this.reservaBindingSource.DataSource = typeof(Models.Reserva);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxBuscarReserva.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(210, 111);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(745, 22);
-            this.textBox1.TabIndex = 13;
+            this.textBoxBuscarReserva.Location = new System.Drawing.Point(210, 111);
+            this.textBoxBuscarReserva.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxBuscarReserva.Name = "textBoxBuscarReserva";
+            this.textBoxBuscarReserva.Size = new System.Drawing.Size(745, 22);
+            this.textBoxBuscarReserva.TabIndex = 13;
             // 
             // label2
             // 
@@ -121,19 +117,25 @@
             this.label2.Text = "Buscar Reserva";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBoxBuscarAlunoPor
+            // comboBoxBuscarReservaPor
             // 
-            this.comboBoxBuscarAlunoPor.FormattingEnabled = true;
-            this.comboBoxBuscarAlunoPor.Items.AddRange(new object[] {
+            this.comboBoxBuscarReservaPor.FormattingEnabled = true;
+            this.comboBoxBuscarReservaPor.Items.AddRange(new object[] {
             "Id",
-            "Nome",
-            "Matricula",
+            "Solicitante",
+            "Responsável",
+            "Sala",
+            "Disciplina",
+            "Curso",
+            "Turno",
+            "Data",
+            "Status",
             "Todos"});
-            this.comboBoxBuscarAlunoPor.Location = new System.Drawing.Point(61, 111);
-            this.comboBoxBuscarAlunoPor.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxBuscarAlunoPor.Name = "comboBoxBuscarAlunoPor";
-            this.comboBoxBuscarAlunoPor.Size = new System.Drawing.Size(143, 24);
-            this.comboBoxBuscarAlunoPor.TabIndex = 20;
+            this.comboBoxBuscarReservaPor.Location = new System.Drawing.Point(61, 111);
+            this.comboBoxBuscarReservaPor.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxBuscarReservaPor.Name = "comboBoxBuscarReservaPor";
+            this.comboBoxBuscarReservaPor.Size = new System.Drawing.Size(143, 24);
+            this.comboBoxBuscarReservaPor.TabIndex = 20;
             // 
             // label1
             // 
@@ -160,6 +162,7 @@
             this.buttonSelecionarAluno.TabIndex = 33;
             this.buttonSelecionarAluno.Text = "&Selecionar";
             this.buttonSelecionarAluno.UseVisualStyleBackColor = false;
+            this.buttonSelecionarAluno.Click += new System.EventHandler(this.buttonSelecionarAluno_Click);
             // 
             // buttonInserirReserva
             // 
@@ -232,7 +235,7 @@
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.Color.White;
-            this.buttonFechar.Location = new System.Drawing.Point(1141, 13);
+            this.buttonFechar.Location = new System.Drawing.Point(1141, 12);
             this.buttonFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(94, 29);
@@ -240,6 +243,10 @@
             this.buttonFechar.Text = "Fechar";
             this.buttonFechar.UseVisualStyleBackColor = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
+            // 
+            // reservaBindingSource
+            // 
+            this.reservaBindingSource.DataSource = typeof(Models.Reserva);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -251,41 +258,50 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 50;
             // 
-            // dataGridViewTextBoxColumn3
+            // NomeResponsavel
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "IdUsuario";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Responsável";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 200;
+            this.NomeResponsavel.DataPropertyName = "NomeResponsavel";
+            this.NomeResponsavel.HeaderText = "Responsável";
+            this.NomeResponsavel.MinimumWidth = 6;
+            this.NomeResponsavel.Name = "NomeResponsavel";
+            this.NomeResponsavel.ReadOnly = true;
+            this.NomeResponsavel.Width = 125;
             // 
-            // dataGridViewTextBoxColumn6
+            // NomeSolicitante
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Solicitante";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Solicitante";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 200;
+            this.NomeSolicitante.DataPropertyName = "NomeSolicitante";
+            this.NomeSolicitante.HeaderText = "Solicitante";
+            this.NomeSolicitante.MinimumWidth = 6;
+            this.NomeSolicitante.Name = "NomeSolicitante";
+            this.NomeSolicitante.ReadOnly = true;
+            this.NomeSolicitante.Width = 125;
             // 
-            // dataGridViewTextBoxColumn2
+            // NomeSala
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "IdSala";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Sala";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 200;
+            this.NomeSala.DataPropertyName = "NomeSala";
+            this.NomeSala.HeaderText = "Sala";
+            this.NomeSala.MinimumWidth = 6;
+            this.NomeSala.Name = "NomeSala";
+            this.NomeSala.ReadOnly = true;
+            this.NomeSala.Width = 125;
             // 
-            // dataGridViewTextBoxColumn4
+            // NomeCurso
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "IdDisciplina";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Disciplina";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 200;
+            this.NomeCurso.DataPropertyName = "NomeCurso";
+            this.NomeCurso.HeaderText = "Curso";
+            this.NomeCurso.MinimumWidth = 6;
+            this.NomeCurso.Name = "NomeCurso";
+            this.NomeCurso.ReadOnly = true;
+            this.NomeCurso.Width = 125;
+            // 
+            // NomeDisciplina
+            // 
+            this.NomeDisciplina.DataPropertyName = "NomeDisciplina";
+            this.NomeDisciplina.HeaderText = "Disciplina";
+            this.NomeDisciplina.MinimumWidth = 6;
+            this.NomeDisciplina.Name = "NomeDisciplina";
+            this.NomeDisciplina.ReadOnly = true;
+            this.NomeDisciplina.Width = 125;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -295,15 +311,6 @@
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             this.dataGridViewTextBoxColumn13.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "IdCurso";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Curso";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 150;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -371,10 +378,10 @@
             this.Controls.Add(this.buttonExcluirReserva);
             this.Controls.Add(this.buttonAlterarReserva);
             this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.comboBoxBuscarAlunoPor);
+            this.Controls.Add(this.comboBoxBuscarReservaPor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxBuscarReserva);
             this.Controls.Add(this.reservaDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -392,9 +399,9 @@
 
         private System.Windows.Forms.BindingSource reservaBindingSource;
         private System.Windows.Forms.DataGridView reservaDataGridView;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxBuscarReserva;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxBuscarAlunoPor;
+        private System.Windows.Forms.ComboBox comboBoxBuscarReservaPor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSelecionarAluno;
         private System.Windows.Forms.Button buttonInserirReserva;
@@ -402,13 +409,15 @@
         private System.Windows.Forms.Button buttonAlterarReserva;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button buttonFechar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeResponsavel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeSolicitante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeSala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeDisciplina;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;

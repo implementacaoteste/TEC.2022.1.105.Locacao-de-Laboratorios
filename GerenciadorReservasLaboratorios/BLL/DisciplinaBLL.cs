@@ -20,7 +20,6 @@ namespace BLL
         {
             return new DisciplinaDAL().BuscarPorId(id);
         }
-
         public void Alterar(Disciplina disciplina)
         {
             new DisciplinaDAL().Alterar(disciplina);

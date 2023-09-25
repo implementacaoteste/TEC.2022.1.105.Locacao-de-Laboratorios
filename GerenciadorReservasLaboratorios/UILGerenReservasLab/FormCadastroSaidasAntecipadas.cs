@@ -49,6 +49,8 @@ namespace UILGerenReservasLab
         }
         private void FormCadastroSaidasAntecipadas_Load(object sender, EventArgs e)
         {
+            // Definindo o texto do labelMenu para o valor desejado
+            labelMenu.Text = "Cadastro de Saidas Antecipadas";
             try
             {
                 DeterminarTipoDeUsuario();

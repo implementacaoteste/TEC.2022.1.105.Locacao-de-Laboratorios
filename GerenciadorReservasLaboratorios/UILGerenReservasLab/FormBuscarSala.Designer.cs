@@ -34,14 +34,13 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.salaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtBuscarSala = new System.Windows.Forms.TextBox();
-            this.buttonSelecionarPredio = new System.Windows.Forms.Button();
+            this.buttonSelecionarSala = new System.Windows.Forms.Button();
             this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
@@ -101,18 +100,6 @@
             this.btnExcluir.TabIndex = 0;
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1300, 52);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Buscar Por Sala ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxBuscarPor
             // 
@@ -182,20 +169,21 @@
             this.txtBuscarSala.Size = new System.Drawing.Size(745, 24);
             this.txtBuscarSala.TabIndex = 10;
             // 
-            // buttonSelecionarPredio
+            // buttonSelecionarSala
             // 
-            this.buttonSelecionarPredio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionarPredio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.buttonSelecionarPredio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSelecionarPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSelecionarPredio.ForeColor = System.Drawing.Color.White;
-            this.buttonSelecionarPredio.Location = new System.Drawing.Point(961, 499);
-            this.buttonSelecionarPredio.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSelecionarPredio.Name = "buttonSelecionarPredio";
-            this.buttonSelecionarPredio.Size = new System.Drawing.Size(221, 52);
-            this.buttonSelecionarPredio.TabIndex = 41;
-            this.buttonSelecionarPredio.Text = "&Selecionar";
-            this.buttonSelecionarPredio.UseVisualStyleBackColor = false;
+            this.buttonSelecionarSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSelecionarSala.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonSelecionarSala.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSelecionarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSelecionarSala.ForeColor = System.Drawing.Color.White;
+            this.buttonSelecionarSala.Location = new System.Drawing.Point(961, 499);
+            this.buttonSelecionarSala.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSelecionarSala.Name = "buttonSelecionarSala";
+            this.buttonSelecionarSala.Size = new System.Drawing.Size(221, 52);
+            this.buttonSelecionarSala.TabIndex = 41;
+            this.buttonSelecionarSala.Text = "&Selecionar";
+            this.buttonSelecionarSala.UseVisualStyleBackColor = false;
+            this.buttonSelecionarSala.Click += new System.EventHandler(this.buttonSelecionarSala_Click);
             // 
             // buttonInserir
             // 
@@ -267,13 +255,14 @@
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonFechar.Location = new System.Drawing.Point(586, 74);
+            this.buttonFechar.Location = new System.Drawing.Point(1193, 13);
             this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(94, 29);
             this.buttonFechar.TabIndex = 42;
             this.buttonFechar.Text = "Fechar";
             this.buttonFechar.UseVisualStyleBackColor = false;
+            this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
             // FormBuscarSala
             // 
@@ -281,7 +270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1300, 614);
             this.Controls.Add(this.buttonFechar);
-            this.Controls.Add(this.buttonSelecionarPredio);
+            this.Controls.Add(this.buttonSelecionarSala);
             this.Controls.Add(this.buttonInserir);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonAlterar);
@@ -290,7 +279,6 @@
             this.Controls.Add(this.txtBuscarSala);
             this.Controls.Add(this.salaDataGridView);
             this.Controls.Add(this.comboBoxBuscarPor);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.btnAlterar);
@@ -298,7 +286,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBuscarSala";
-            this.Text = "FormBuscarSala";
+            this.Text = "Pesquisa de Salas";
             ((System.ComponentModel.ISupportInitialize)(this.salaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -312,12 +300,11 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxBuscarPor;
         private System.Windows.Forms.BindingSource salaBindingSource;
         private System.Windows.Forms.DataGridView salaDataGridView;
         private System.Windows.Forms.TextBox txtBuscarSala;
-        private System.Windows.Forms.Button buttonSelecionarPredio;
+        private System.Windows.Forms.Button buttonSelecionarSala;
         private System.Windows.Forms.Button buttonInserir;
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.Button buttonAlterar;

@@ -101,6 +101,38 @@ namespace DAL
                 cn.Close();
             }
         }
+        public Sala BuscarPorNome(string nome)
+        {
+            Sala sala = new Sala();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "SELECT Id, Nome FROM Sala WHERE Nome = @Nome";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Nome", nome);
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        sala.Id = Convert.ToInt32(rd["Id"]);
+                        sala.Nome = rd["Nome"].ToString();
+                    }
+                }
+                return sala;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar uma sala por nome no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public void Alterar(Sala _sala)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

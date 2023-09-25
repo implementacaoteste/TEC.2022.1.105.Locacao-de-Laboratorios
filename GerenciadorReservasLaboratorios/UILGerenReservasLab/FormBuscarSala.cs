@@ -14,6 +14,7 @@ namespace UILGerenReservasLab
 {
     public partial class FormBuscarSala : Form
     {
+        public Sala SalaSelecionada { get; private set; }
         public FormBuscarSala()
         {
             InitializeComponent();
@@ -100,6 +101,33 @@ namespace UILGerenReservasLab
                 salaBindingSource.RemoveCurrent();
 
                 MessageBox.Show("Registro excluído com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonSelecionarSala_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                salaBindingSource.EndEdit();
+
+                if (salaBindingSource.Count > 0)
+                {
+                    SalaSelecionada = (Sala)salaBindingSource.Current;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma sala selecionada");
+                }
             }
             catch (Exception ex)
             {
