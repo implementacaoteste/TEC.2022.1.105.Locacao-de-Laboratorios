@@ -176,7 +176,7 @@
             "Id do Professor",
             "Id da Coordenação",
             "Buscar Todos"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(61, 111);
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(58, 111);
             this.comboBoxBuscarPor.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 24);
@@ -189,7 +189,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBuscar.AutoSize = true;
             this.labelBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuscar.Location = new System.Drawing.Point(55, 89);
+            this.labelBuscar.Location = new System.Drawing.Point(57, 82);
             this.labelBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBuscar.Name = "labelBuscar";
             this.labelBuscar.Size = new System.Drawing.Size(81, 18);

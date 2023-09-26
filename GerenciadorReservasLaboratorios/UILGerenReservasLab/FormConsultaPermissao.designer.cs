@@ -94,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 84);
+            this.label1.Location = new System.Drawing.Point(59, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 1;
@@ -156,7 +156,7 @@
             "Todas Permissões",
             "Id",
             "Descrição"});
-            this.comboBoxBuscarPermissao.Location = new System.Drawing.Point(61, 111);
+            this.comboBoxBuscarPermissao.Location = new System.Drawing.Point(59, 111);
             this.comboBoxBuscarPermissao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxBuscarPermissao.Name = "comboBoxBuscarPermissao";
             this.comboBoxBuscarPermissao.Size = new System.Drawing.Size(143, 24);

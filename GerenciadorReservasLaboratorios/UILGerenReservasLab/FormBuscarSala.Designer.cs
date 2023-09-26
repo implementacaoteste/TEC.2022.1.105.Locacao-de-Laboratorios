@@ -54,12 +54,12 @@
             // lblBuscarPor
             // 
             lblBuscarPor.AutoSize = true;
-            lblBuscarPor.Location = new System.Drawing.Point(56, 93);
+            lblBuscarPor.Location = new System.Drawing.Point(59, 87);
             lblBuscarPor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblBuscarPor.Name = "lblBuscarPor";
-            lblBuscarPor.Size = new System.Drawing.Size(76, 16);
+            lblBuscarPor.Size = new System.Drawing.Size(73, 16);
             lblBuscarPor.TabIndex = 9;
-            lblBuscarPor.Text = "Buscar Por:";
+            lblBuscarPor.Text = "Buscar Por";
             // 
             // btnBuscar
             // 
@@ -104,7 +104,7 @@
             // comboBoxBuscarPor
             // 
             this.comboBoxBuscarPor.FormattingEnabled = true;
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(61, 111);
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(59, 111);
             this.comboBoxBuscarPor.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 24);

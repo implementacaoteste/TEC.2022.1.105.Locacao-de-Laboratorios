@@ -66,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reservaDataGridView.AutoGenerateColumns = false;
-            this.reservaDataGridView.ColumnHeadersHeight = 35;
+            this.reservaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reservaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.NomeResponsavel,
@@ -241,7 +241,7 @@
             "Data",
             "Status",
             "Todos"});
-            this.comboBoxBuscarReservaPor.Location = new System.Drawing.Point(61, 111);
+            this.comboBoxBuscarReservaPor.Location = new System.Drawing.Point(59, 111);
             this.comboBoxBuscarReservaPor.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxBuscarReservaPor.Name = "comboBoxBuscarReservaPor";
             this.comboBoxBuscarReservaPor.Size = new System.Drawing.Size(143, 24);
@@ -251,7 +251,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 84);
+            this.label1.Location = new System.Drawing.Point(56, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 18);

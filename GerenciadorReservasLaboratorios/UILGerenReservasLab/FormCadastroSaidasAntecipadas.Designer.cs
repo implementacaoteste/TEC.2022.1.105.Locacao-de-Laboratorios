@@ -125,9 +125,9 @@ namespace UILGerenReservasLab
             statusLabel.Location = new System.Drawing.Point(11, 282);
             statusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(47, 16);
+            statusLabel.Size = new System.Drawing.Size(44, 16);
             statusLabel.TabIndex = 11;
-            statusLabel.Text = "Status:";
+            statusLabel.Text = "Status";
             // 
             // dataHoraSaidaDateTimePicker
             // 
