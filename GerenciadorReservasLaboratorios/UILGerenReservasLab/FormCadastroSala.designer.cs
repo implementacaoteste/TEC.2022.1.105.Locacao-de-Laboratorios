@@ -30,12 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label lblNomeSala;
+            System.Windows.Forms.Label label2;
             this.textBoxNomeSala = new System.Windows.Forms.TextBox();
             this.salaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelarSala = new System.Windows.Forms.Button();
             this.buttonSalvarSala = new System.Windows.Forms.Button();
+            this.textBoxPredio = new System.Windows.Forms.TextBox();
+            this.buttonBuscarAluno = new System.Windows.Forms.Button();
             lblNomeSala = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,15 +106,52 @@
             this.buttonSalvarSala.UseVisualStyleBackColor = false;
             this.buttonSalvarSala.Click += new System.EventHandler(this.buttonSalvarSala_Click);
             // 
+            // textBoxPredio
+            // 
+            this.textBoxPredio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "IdPredio", true));
+            this.textBoxPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPredio.Location = new System.Drawing.Point(101, 282);
+            this.textBoxPredio.Name = "textBoxPredio";
+            this.textBoxPredio.Size = new System.Drawing.Size(128, 27);
+            this.textBoxPredio.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(97, 249);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(63, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Predio";
+            // 
+            // buttonBuscarAluno
+            // 
+            this.buttonBuscarAluno.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonBuscarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarAluno.ForeColor = System.Drawing.Color.White;
+            this.buttonBuscarAluno.Location = new System.Drawing.Point(236, 280);
+            this.buttonBuscarAluno.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBuscarAluno.Name = "buttonBuscarAluno";
+            this.buttonBuscarAluno.Size = new System.Drawing.Size(94, 29);
+            this.buttonBuscarAluno.TabIndex = 17;
+            this.buttonBuscarAluno.Text = "&Buscar";
+            this.buttonBuscarAluno.UseVisualStyleBackColor = false;
+            this.buttonBuscarAluno.Click += new System.EventHandler(this.buttonBuscarAluno_Click);
+            // 
             // FormCadastroSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 468);
+            this.Controls.Add(this.buttonBuscarAluno);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelarSala);
             this.Controls.Add(this.buttonSalvarSala);
+            this.Controls.Add(label2);
             this.Controls.Add(lblNomeSala);
+            this.Controls.Add(this.textBoxPredio);
             this.Controls.Add(this.textBoxNomeSala);
             this.Name = "FormCadastroSala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -129,5 +170,7 @@
         private System.Windows.Forms.Button buttonSalvarSala;
         private System.Windows.Forms.Button buttonCancelarSala;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxPredio;
+        private System.Windows.Forms.Button buttonBuscarAluno;
     }
 }

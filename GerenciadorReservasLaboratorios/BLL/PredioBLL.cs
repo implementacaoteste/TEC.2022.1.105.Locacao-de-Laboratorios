@@ -18,6 +18,10 @@ namespace BLL
         {
             return new PredioDAL().BuscarPorId(id);
         }
+        public Predio BuscarPorNome(string nome)
+        {
+            return new PredioDAL().BuscarPorNome(nome);
+        }
         public void Alterar(Predio predio)
         {
             new PredioDAL().Alterar(predio);

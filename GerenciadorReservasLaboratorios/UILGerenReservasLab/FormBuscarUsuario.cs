@@ -149,5 +149,10 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

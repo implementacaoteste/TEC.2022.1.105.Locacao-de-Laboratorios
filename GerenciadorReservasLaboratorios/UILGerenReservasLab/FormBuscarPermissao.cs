@@ -178,5 +178,10 @@ namespace UILGerenReservasLab
                 CarregarGruposDeUsuario(idPermissao);
             }
         }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

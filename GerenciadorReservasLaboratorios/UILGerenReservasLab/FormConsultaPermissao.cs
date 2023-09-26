@@ -113,5 +113,10 @@ namespace UILGerenReservasLab
         {
             this.Close();
         }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

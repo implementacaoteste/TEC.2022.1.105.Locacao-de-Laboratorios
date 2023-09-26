@@ -41,7 +41,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disciplinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonSelecionarDisciplina = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).BeginInit();
@@ -82,11 +81,12 @@
             // 
             // buttonFechar
             // 
+            this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFechar.BackColor = System.Drawing.Color.Red;
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonFechar.Location = new System.Drawing.Point(588, 56);
+            this.buttonFechar.Location = new System.Drawing.Point(1193, 13);
             this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(94, 29);
@@ -206,18 +206,6 @@
             // 
             this.disciplinaBindingSource.DataSource = typeof(Models.Disciplina);
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1300, 52);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Formulário de Pesquisa de Disciplinas";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // buttonSelecionarDisciplina
             // 
             this.buttonSelecionarDisciplina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -240,7 +228,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1300, 614);
             this.Controls.Add(this.buttonSelecionarDisciplina);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.disciplinaDataGridView);
             this.Controls.Add(this.comboBoxBuscarpor);
             this.Controls.Add(this.textBoxBuscar);
@@ -254,7 +241,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBuscarDisciplina";
             this.ShowIcon = false;
-            this.Text = "FormBuscarPorDisciplina";
+            this.Text = "Pesquisa de Disciplinas";
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -276,7 +263,6 @@
         private System.Windows.Forms.DataGridView disciplinaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSelecionarDisciplina;
     }
 }

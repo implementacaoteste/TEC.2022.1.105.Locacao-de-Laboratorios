@@ -22,7 +22,7 @@ namespace UILGerenReservasLab
             id = _id;
         }
 
-        private void btnSalvarDisciplina_Click(object sender, EventArgs e)
+        private void buttonSalvar_Click(object sender, EventArgs e)
         {
 
             try
@@ -65,7 +65,7 @@ namespace UILGerenReservasLab
             }
         }
 
-        private void btnCancelarDisciplina_Click(object sender, EventArgs e)
+        private void buttonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

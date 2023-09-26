@@ -47,7 +47,7 @@
             this.buttonAdicionarGrupoUsuario = new System.Windows.Forms.Button();
             this.buttonExcluirGrupoUsuario = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.buttonFechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupoUsuariosBindingSource)).BeginInit();
@@ -75,13 +75,13 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewCheckBoxColumn1});
             this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
-            this.usuarioDataGridView.Location = new System.Drawing.Point(28, 98);
+            this.usuarioDataGridView.Location = new System.Drawing.Point(35, 122);
             this.usuarioDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.usuarioDataGridView.Name = "usuarioDataGridView";
             this.usuarioDataGridView.ReadOnly = true;
             this.usuarioDataGridView.RowHeadersWidth = 51;
             this.usuarioDataGridView.RowTemplate.Height = 24;
-            this.usuarioDataGridView.Size = new System.Drawing.Size(559, 370);
+            this.usuarioDataGridView.Size = new System.Drawing.Size(699, 462);
             this.usuarioDataGridView.TabIndex = 8;
             this.usuarioDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuarioDataGridView_CellClick);
             // 
@@ -148,13 +148,13 @@
             this.grupoUsuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8});
             this.grupoUsuariosDataGridView.DataSource = this.grupoUsuariosBindingSource;
-            this.grupoUsuariosDataGridView.Location = new System.Drawing.Point(591, 98);
+            this.grupoUsuariosDataGridView.Location = new System.Drawing.Point(739, 122);
             this.grupoUsuariosDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.grupoUsuariosDataGridView.Name = "grupoUsuariosDataGridView";
             this.grupoUsuariosDataGridView.ReadOnly = true;
             this.grupoUsuariosDataGridView.RowHeadersWidth = 51;
             this.grupoUsuariosDataGridView.RowTemplate.Height = 24;
-            this.grupoUsuariosDataGridView.Size = new System.Drawing.Size(419, 370);
+            this.grupoUsuariosDataGridView.Size = new System.Drawing.Size(524, 462);
             this.grupoUsuariosDataGridView.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn8
@@ -170,19 +170,19 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(28, 74);
+            this.textBox1.Location = new System.Drawing.Point(35, 92);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 20);
+            this.textBox1.Size = new System.Drawing.Size(378, 22);
             this.textBox1.TabIndex = 1;
             // 
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(347, 76);
+            this.buttonBuscar.Location = new System.Drawing.Point(434, 95);
             this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(56, 18);
+            this.buttonBuscar.Size = new System.Drawing.Size(70, 22);
             this.buttonBuscar.TabIndex = 2;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -191,10 +191,10 @@
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(408, 75);
+            this.buttonAlterar.Location = new System.Drawing.Point(510, 94);
             this.buttonAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(56, 18);
+            this.buttonAlterar.Size = new System.Drawing.Size(70, 22);
             this.buttonAlterar.TabIndex = 3;
             this.buttonAlterar.Text = "Al&terar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
@@ -203,10 +203,10 @@
             // buttonAdicionarUsuario
             // 
             this.buttonAdicionarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdicionarUsuario.Location = new System.Drawing.Point(470, 75);
+            this.buttonAdicionarUsuario.Location = new System.Drawing.Point(588, 94);
             this.buttonAdicionarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdicionarUsuario.Name = "buttonAdicionarUsuario";
-            this.buttonAdicionarUsuario.Size = new System.Drawing.Size(56, 18);
+            this.buttonAdicionarUsuario.Size = new System.Drawing.Size(70, 22);
             this.buttonAdicionarUsuario.TabIndex = 4;
             this.buttonAdicionarUsuario.Text = "&Adicionar";
             this.buttonAdicionarUsuario.UseVisualStyleBackColor = true;
@@ -215,10 +215,10 @@
             // buttonExcluirUsuario
             // 
             this.buttonExcluirUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirUsuario.Location = new System.Drawing.Point(530, 75);
+            this.buttonExcluirUsuario.Location = new System.Drawing.Point(662, 94);
             this.buttonExcluirUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluirUsuario.Name = "buttonExcluirUsuario";
-            this.buttonExcluirUsuario.Size = new System.Drawing.Size(56, 18);
+            this.buttonExcluirUsuario.Size = new System.Drawing.Size(70, 22);
             this.buttonExcluirUsuario.TabIndex = 5;
             this.buttonExcluirUsuario.Text = "&Excluir";
             this.buttonExcluirUsuario.UseVisualStyleBackColor = true;
@@ -227,10 +227,10 @@
             // buttonAdicionarGrupoUsuario
             // 
             this.buttonAdicionarGrupoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdicionarGrupoUsuario.Location = new System.Drawing.Point(894, 75);
+            this.buttonAdicionarGrupoUsuario.Location = new System.Drawing.Point(1118, 94);
             this.buttonAdicionarGrupoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdicionarGrupoUsuario.Name = "buttonAdicionarGrupoUsuario";
-            this.buttonAdicionarGrupoUsuario.Size = new System.Drawing.Size(56, 19);
+            this.buttonAdicionarGrupoUsuario.Size = new System.Drawing.Size(70, 24);
             this.buttonAdicionarGrupoUsuario.TabIndex = 6;
             this.buttonAdicionarGrupoUsuario.Text = "A&dicionar";
             this.buttonAdicionarGrupoUsuario.UseVisualStyleBackColor = true;
@@ -239,10 +239,10 @@
             // buttonExcluirGrupoUsuario
             // 
             this.buttonExcluirGrupoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirGrupoUsuario.Location = new System.Drawing.Point(955, 75);
+            this.buttonExcluirGrupoUsuario.Location = new System.Drawing.Point(1194, 94);
             this.buttonExcluirGrupoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluirGrupoUsuario.Name = "buttonExcluirGrupoUsuario";
-            this.buttonExcluirGrupoUsuario.Size = new System.Drawing.Size(56, 19);
+            this.buttonExcluirGrupoUsuario.Size = new System.Drawing.Size(70, 24);
             this.buttonExcluirGrupoUsuario.TabIndex = 7;
             this.buttonExcluirGrupoUsuario.Text = "E&xcluir";
             this.buttonExcluirGrupoUsuario.UseVisualStyleBackColor = true;
@@ -251,31 +251,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 59);
+            this.label1.Location = new System.Drawing.Point(34, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.Size = new System.Drawing.Size(139, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "O &que deseja buscar?";
             // 
-            // label2
+            // buttonFechar
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1040, 37);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Gestão de usuários";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFechar.BackColor = System.Drawing.Color.Red;
+            this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFechar.ForeColor = System.Drawing.Color.White;
+            this.buttonFechar.Location = new System.Drawing.Point(1193, 13);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFechar.Name = "buttonFechar";
+            this.buttonFechar.Size = new System.Drawing.Size(94, 29);
+            this.buttonFechar.TabIndex = 29;
+            this.buttonFechar.Text = "Fechar";
+            this.buttonFechar.UseVisualStyleBackColor = false;
+            this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
             // FormBuscarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1040, 491);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1300, 614);
+            this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExcluirGrupoUsuario);
             this.Controls.Add(this.buttonAdicionarGrupoUsuario);
@@ -294,7 +298,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestão de usuários";
+            this.Text = "Pesquisa de Usuários";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormBuscarUsuario_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
@@ -321,11 +325,11 @@
         private System.Windows.Forms.Button buttonAdicionarGrupoUsuario;
         private System.Windows.Forms.Button buttonExcluirGrupoUsuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Button buttonFechar;
     }
 }

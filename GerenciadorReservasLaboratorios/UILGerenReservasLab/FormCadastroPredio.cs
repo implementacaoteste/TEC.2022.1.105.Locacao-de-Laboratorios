@@ -26,6 +26,7 @@ namespace UILGerenReservasLab
             try
             {
                 Predio predio = (Predio)predioBindingSource.Current;
+                predioBindingSource.EndEdit();
 
                 // Verificar se o campo "nome do prédio" está preenchido
                 if (string.IsNullOrEmpty(predio.Nome))
@@ -34,10 +35,12 @@ namespace UILGerenReservasLab
                     return; // Abortar a operação de salvar
                 }
 
-                predioBindingSource.EndEdit();
-
                 if (Id == 0)
+                {
+                    predio = new Predio(); 
+                    predio.Nome = nomeTextBox.Text;
                     new PredioBLL().Inserir((Predio)predioBindingSource.Current);
+                }
                 else
                     new PredioBLL().Alterar((Predio)predioBindingSource.Current);
 

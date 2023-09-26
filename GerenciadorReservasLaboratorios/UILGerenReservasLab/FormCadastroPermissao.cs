@@ -50,8 +50,14 @@ namespace UILGerenReservasLab
 
         private void FormCadastroPermissao_Load(object sender, EventArgs e)
         {
+            labelMenu.Text = "Cadastro de Permissões";
             if (!alterar)
                 permissaoBindingSource.AddNew();
+        }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
