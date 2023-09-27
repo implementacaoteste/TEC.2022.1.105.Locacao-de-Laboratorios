@@ -6,10 +6,12 @@ namespace BLL
 {
     public class AlunoBLL
     {
-        public void Inserir(Aluno aluno)
+        public int Inserir(Aluno aluno)
         {
-            new AlunoDAL().Inserir(aluno);
+            int novoId = new AlunoDAL().Inserir(aluno);
+            return novoId;
         }
+
         public List<Aluno> BuscarTodosAlunos()
         {
             return new AlunoDAL().BuscarTodosAlunos();

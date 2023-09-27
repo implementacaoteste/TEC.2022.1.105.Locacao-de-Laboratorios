@@ -72,7 +72,7 @@
             this.alunoDataGridView.RowHeadersVisible = false;
             this.alunoDataGridView.RowHeadersWidth = 51;
             this.alunoDataGridView.RowTemplate.Height = 24;
-            this.alunoDataGridView.Size = new System.Drawing.Size(898, 435);
+            this.alunoDataGridView.Size = new System.Drawing.Size(898, 409);
             this.alunoDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1

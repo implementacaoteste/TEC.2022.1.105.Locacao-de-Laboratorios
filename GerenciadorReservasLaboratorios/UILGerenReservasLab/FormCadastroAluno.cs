@@ -38,25 +38,29 @@ namespace UILGerenReservasLab
 
                 if (Id == 0)
                 {
-                    _aluno = new Aluno(); // Crie um novo objeto Aluno se for um novo registro.
-                    _aluno.Nome = nomeTextBox.Text; // Atribua o nome do TextBox ao novo objeto.;
+                    _aluno = new Aluno();
+                    _aluno.Nome = nomeTextBox.Text;
                     _aluno.Email = emailTextBox.Text;
                     _aluno.Matricula = matriculaTextBox.Text;
-                    new AlunoBLL().Inserir(_aluno);
+
+                    // Insira o aluno no banco de dados
+                    int novoId = new AlunoBLL().Inserir(_aluno);
+
+                    // Atualize o ID do aluno com o ID gerado pelo banco
+                    _aluno.Id = novoId;
                 }
                 else
                 {
                     new AlunoBLL().Alterar(_aluno);
                 }
+
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
             }
-
         }
         private void buttonCancelar_Click(object sender, EventArgs e)
         {

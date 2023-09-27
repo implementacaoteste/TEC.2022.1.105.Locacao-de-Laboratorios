@@ -7,14 +7,16 @@ namespace DAL
 {
     public class AlunoDAL
     {
-        public void Inserir(Aluno aluno)
+        public int Inserir(Aluno aluno)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Aluno (Nome, Matricula, Email)
-                                    VALUES (@Nome, @Matricula, @Email)";
+                            VALUES (@Nome, @Matricula, @Email);
+                            SELECT SCOPE_IDENTITY();"; // Esta parte seleciona o ID gerado
+
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", aluno.Nome);
@@ -24,7 +26,10 @@ namespace DAL
                 cmd.Connection = cn;
                 cn.Open();
 
-                cmd.ExecuteNonQuery();
+                // ExecuteScalar retorna o ID gerado
+                int novoId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return novoId;
             }
             catch (Exception ex)
             {
