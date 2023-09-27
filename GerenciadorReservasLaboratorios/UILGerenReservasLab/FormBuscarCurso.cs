@@ -66,14 +66,6 @@ namespace UILGerenReservasLab
             }
             buttonBuscar_Click(sender, e);
         }
-        private void buttonInserir_Click(object sender, EventArgs e)
-        {
-            using (FormCadastroCurso frm = new FormCadastroCurso())
-            {
-                frm.ShowDialog();
-            }
-            buttonBuscar_Click(null, null);
-        }
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
 
@@ -138,6 +130,14 @@ namespace UILGerenReservasLab
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void buttonInserir_Click(object sender, EventArgs e)
+        {
+            using (FormCadastroCurso frm = new FormCadastroCurso())
+            {
+                frm.ShowDialog();
+            }
+            buttonBuscar_Click(null, null);
         }
     }
 }

@@ -39,9 +39,9 @@
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.buscarTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonSelecionarCurso = new System.Windows.Forms.Button();
+            this.buttonInserir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cursoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -179,22 +179,6 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Buscar Por";
             // 
-            // buttonInserir
-            // 
-            this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.buttonInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInserir.ForeColor = System.Drawing.Color.White;
-            this.buttonInserir.Location = new System.Drawing.Point(961, 262);
-            this.buttonInserir.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonInserir.Name = "buttonInserir";
-            this.buttonInserir.Size = new System.Drawing.Size(221, 52);
-            this.buttonInserir.TabIndex = 20;
-            this.buttonInserir.Text = "&Inserir";
-            this.buttonInserir.UseVisualStyleBackColor = false;
-            this.buttonInserir.Click += new System.EventHandler(this.buttonAlterar_Click);
-            // 
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -227,18 +211,34 @@
             this.buttonSelecionarCurso.UseVisualStyleBackColor = false;
             this.buttonSelecionarCurso.Click += new System.EventHandler(this.buttonSelecionarCurso_Click);
             // 
+            // buttonInserir
+            // 
+            this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInserir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInserir.ForeColor = System.Drawing.Color.White;
+            this.buttonInserir.Location = new System.Drawing.Point(961, 262);
+            this.buttonInserir.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonInserir.Name = "buttonInserir";
+            this.buttonInserir.Size = new System.Drawing.Size(221, 52);
+            this.buttonInserir.TabIndex = 35;
+            this.buttonInserir.Text = "&Inserir";
+            this.buttonInserir.UseVisualStyleBackColor = false;
+            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
+            // 
             // FormBuscarCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1300, 614);
+            this.Controls.Add(this.buttonInserir);
             this.Controls.Add(this.buttonSelecionarCurso);
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.buscarTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.cursoDataGridView);
-            this.Controls.Add(this.buttonInserir);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonBuscar);
@@ -266,10 +266,10 @@
         private System.Windows.Forms.ComboBox comboBoxBuscarPor;
         private System.Windows.Forms.TextBox buscarTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonInserir;
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button buttonSelecionarCurso;
+        private System.Windows.Forms.Button buttonInserir;
     }
 }

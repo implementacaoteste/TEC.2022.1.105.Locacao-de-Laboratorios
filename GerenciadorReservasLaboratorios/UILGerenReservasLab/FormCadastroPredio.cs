@@ -25,24 +25,28 @@ namespace UILGerenReservasLab
         {
             try
             {
-                Predio predio = (Predio)predioBindingSource.Current;
                 predioBindingSource.EndEdit();
+                Predio _predio = new Predio();
 
-                // Verificar se o campo "nome do prédio" está preenchido
-                if (string.IsNullOrEmpty(predio.Nome))
-                {
-                    MessageBox.Show("O campo 'Nome do Prédio' deve ser preenchido antes de salvar.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Abortar a operação de salvar
-                }
 
                 if (Id == 0)
                 {
-                    predio = new Predio(); 
-                    predio.Nome = nomeTextBox.Text;
-                    new PredioBLL().Inserir((Predio)predioBindingSource.Current);
+                    _predio.Nome = nomeTextBox.Text;
+
+                    // Verificar se o campo "nome do prédio" está preenchido
+                    if (string.IsNullOrEmpty(_predio.Nome))
+                    {
+                        MessageBox.Show("O campo 'Nome do Prédio' deve ser preenchido antes de salvar.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        nomeTextBox.Focus(); // Colocar o foco no campo de nome
+                        return; // Abortar a operação de salvar
+                    }
+
+                    new PredioBLL().Inserir(_predio);
                 }
                 else
+                {
                     new PredioBLL().Alterar((Predio)predioBindingSource.Current);
+                }
 
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
@@ -52,7 +56,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void btncancelar_Click(object sender, EventArgs e)
         {
             try
