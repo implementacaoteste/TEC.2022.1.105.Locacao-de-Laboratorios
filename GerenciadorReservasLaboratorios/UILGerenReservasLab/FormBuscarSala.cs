@@ -41,7 +41,7 @@ namespace UILGerenReservasLab
                         salaBindingSource.DataSource = new SalaBLL().BuscarPorId(Convert.ToInt32(txtBuscarSala.Text));
                         break;
                     case 1:
-                        salaBindingSource.DataSource = new AlunoBLL().BuscarPorNome(txtBuscarSala.Text);
+                        salaBindingSource.DataSource = new SalaBLL().BuscarPorNome(txtBuscarSala.Text);
                         break;
                     case 2:
                         salaBindingSource.DataSource = new SalaBLL().BuscarTodos();
