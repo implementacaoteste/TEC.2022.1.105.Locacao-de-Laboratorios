@@ -31,54 +31,57 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelFormularios = new System.Windows.Forms.Panel();
             this.labelReservasPendentes = new System.Windows.Forms.Label();
             this.reservaPanelDataGridView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservaDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelData = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.labelLogout = new System.Windows.Forms.Label();
-            this.buttonLogout = new System.Windows.Forms.PictureBox();
-            this.buttonUsuario = new System.Windows.Forms.Button();
             this.buttonSala = new System.Windows.Forms.Button();
             this.buttonPermissao = new System.Windows.Forms.Button();
             this.buttonSaidasAntecipadas = new System.Windows.Forms.Button();
-            this.buttonReserva = new System.Windows.Forms.Button();
             this.buttonPredio = new System.Windows.Forms.Button();
             this.buttonGrupoUsuario = new System.Windows.Forms.Button();
             this.buttonDisciplina = new System.Windows.Forms.Button();
             this.buttonCurso = new System.Windows.Forms.Button();
             this.buttonAluno = new System.Windows.Forms.Button();
             this.panelProfile = new System.Windows.Forms.Panel();
-            this.ptbProfile = new System.Windows.Forms.PictureBox();
             this.labelCargo = new System.Windows.Forms.Label();
             this.labelMatricula = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.timerHoraData = new System.Windows.Forms.Timer(this.components);
+            this.NomeSolicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservaDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.buttonLogout = new System.Windows.Forms.PictureBox();
+            this.buttonUsuario = new System.Windows.Forms.Button();
+            this.buttonReserva = new System.Windows.Forms.Button();
+            this.ptbProfile = new System.Windows.Forms.PictureBox();
             this.buttonMinimizar = new System.Windows.Forms.PictureBox();
             this.buttonRestaurar = new System.Windows.Forms.PictureBox();
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
             this.buttonFechar = new System.Windows.Forms.PictureBox();
-            this.timerHoraData = new System.Windows.Forms.Timer(this.components);
             this.panelContainer.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservaPanelDataGridView)).BeginInit();
+            this.panelMenu.SuspendLayout();
+            this.panelProfile.SuspendLayout();
+            this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonLogout)).BeginInit();
-            this.panelProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).BeginInit();
-            this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).BeginInit();
@@ -93,9 +96,9 @@
             this.panelContainer.Controls.Add(this.panelBarraTitulo);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1556, 850);
+            this.panelContainer.Size = new System.Drawing.Size(1600, 850);
             this.panelContainer.TabIndex = 0;
             // 
             // panelFormularios
@@ -108,9 +111,9 @@
             this.panelFormularios.Controls.Add(this.pictureBoxLogo);
             this.panelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularios.Location = new System.Drawing.Point(300, 50);
-            this.panelFormularios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFormularios.Margin = new System.Windows.Forms.Padding(4);
             this.panelFormularios.Name = "panelFormularios";
-            this.panelFormularios.Size = new System.Drawing.Size(1256, 800);
+            this.panelFormularios.Size = new System.Drawing.Size(1300, 800);
             this.panelFormularios.TabIndex = 2;
             // 
             // labelReservasPendentes
@@ -121,9 +124,9 @@
             this.labelReservasPendentes.Location = new System.Drawing.Point(8, 70);
             this.labelReservasPendentes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReservasPendentes.Name = "labelReservasPendentes";
-            this.labelReservasPendentes.Size = new System.Drawing.Size(362, 23);
+            this.labelReservasPendentes.Size = new System.Drawing.Size(367, 23);
             this.labelReservasPendentes.TabIndex = 41;
-            this.labelReservasPendentes.Text = "Reservas pendentes de aprovação";
+            this.labelReservasPendentes.Text = "Reservas pendentes de aprovação:";
             // 
             // reservaPanelDataGridView
             // 
@@ -131,8 +134,9 @@
             this.reservaPanelDataGridView.AllowUserToDeleteRows = false;
             this.reservaPanelDataGridView.AllowUserToOrderColumns = true;
             this.reservaPanelDataGridView.AutoGenerateColumns = false;
-            this.reservaPanelDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.reservaPanelDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.reservaPanelDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.reservaPanelDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reservaPanelDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.reservaPanelDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -146,7 +150,9 @@
             this.reservaPanelDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.reservaPanelDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
+            this.NomeSolicitante,
             this.reservaDataDataGridViewTextBoxColumn,
+            this.Sala,
             this.statusDataGridViewTextBoxColumn,
             this.turnoDataGridViewTextBoxColumn});
             this.reservaPanelDataGridView.DataSource = this.reservaBindingSource;
@@ -161,58 +167,20 @@
             this.reservaPanelDataGridView.EnableHeadersVisualStyles = false;
             this.reservaPanelDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.reservaPanelDataGridView.Location = new System.Drawing.Point(8, 100);
-            this.reservaPanelDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reservaPanelDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.reservaPanelDataGridView.Name = "reservaPanelDataGridView";
             this.reservaPanelDataGridView.ReadOnly = true;
             this.reservaPanelDataGridView.RowHeadersVisible = false;
             this.reservaPanelDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.reservaPanelDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.reservaPanelDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.reservaPanelDataGridView.Size = new System.Drawing.Size(766, 370);
+            this.reservaPanelDataGridView.Size = new System.Drawing.Size(900, 370);
             this.reservaPanelDataGridView.TabIndex = 40;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 10.72202F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 45;
-            // 
-            // reservaDataDataGridViewTextBoxColumn
-            // 
-            this.reservaDataDataGridViewTextBoxColumn.DataPropertyName = "ReservaData";
-            this.reservaDataDataGridViewTextBoxColumn.FillWeight = 159.6896F;
-            this.reservaDataDataGridViewTextBoxColumn.HeaderText = "Data da Reserva";
-            this.reservaDataDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reservaDataDataGridViewTextBoxColumn.Name = "reservaDataDataGridViewTextBoxColumn";
-            this.reservaDataDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reservaDataDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.FillWeight = 151.4599F;
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // turnoDataGridViewTextBoxColumn
-            // 
-            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
-            this.turnoDataGridViewTextBoxColumn.FillWeight = 256.6845F;
-            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
-            this.turnoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
-            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // reservaBindingSource
-            // 
-            this.reservaBindingSource.DataSource = typeof(Models.Reserva);
             // 
             // labelData
             // 
@@ -221,7 +189,7 @@
             this.labelData.BackColor = System.Drawing.Color.Transparent;
             this.labelData.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.labelData.Location = new System.Drawing.Point(391, 689);
+            this.labelData.Location = new System.Drawing.Point(435, 689);
             this.labelData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelData.Name = "labelData";
             this.labelData.Size = new System.Drawing.Size(721, 51);
@@ -235,24 +203,12 @@
             this.labelHora.BackColor = System.Drawing.Color.Transparent;
             this.labelHora.Font = new System.Drawing.Font("Century Gothic", 80F);
             this.labelHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelHora.Location = new System.Drawing.Point(531, 528);
+            this.labelHora.Location = new System.Drawing.Point(575, 528);
             this.labelHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(584, 161);
             this.labelHora.TabIndex = 1;
             this.labelHora.Text = "08:59:58";
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogo.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai1;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(951, 100);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(219, 165);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogo.TabIndex = 0;
-            this.pictureBoxLogo.TabStop = false;
             // 
             // panelMenu
             // 
@@ -272,7 +228,7 @@
             this.panelMenu.Controls.Add(this.panelProfile);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 50);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(300, 800);
             this.panelMenu.TabIndex = 1;
@@ -289,34 +245,6 @@
             this.labelLogout.TabIndex = 19;
             this.labelLogout.Text = "Log out";
             // 
-            // buttonLogout
-            // 
-            this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogout.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogout.Image")));
-            this.buttonLogout.Location = new System.Drawing.Point(15, 708);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(69, 75);
-            this.buttonLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonLogout.TabIndex = 18;
-            this.buttonLogout.TabStop = false;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
-            // 
-            // buttonUsuario
-            // 
-            this.buttonUsuario.FlatAppearance.BorderSize = 0;
-            this.buttonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonUsuario.Location = new System.Drawing.Point(0, 420);
-            this.buttonUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonUsuario.Name = "buttonUsuario";
-            this.buttonUsuario.Size = new System.Drawing.Size(300, 50);
-            this.buttonUsuario.TabIndex = 17;
-            this.buttonUsuario.Text = "Usuario";
-            this.buttonUsuario.UseVisualStyleBackColor = true;
-            this.buttonUsuario.Click += new System.EventHandler(this.buttonUsuario_Click);
-            // 
             // buttonSala
             // 
             this.buttonSala.FlatAppearance.BorderSize = 0;
@@ -324,7 +252,7 @@
             this.buttonSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSala.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonSala.Location = new System.Drawing.Point(0, 362);
-            this.buttonSala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSala.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSala.Name = "buttonSala";
             this.buttonSala.Size = new System.Drawing.Size(300, 50);
             this.buttonSala.TabIndex = 16;
@@ -339,7 +267,7 @@
             this.buttonPermissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPermissao.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonPermissao.Location = new System.Drawing.Point(0, 535);
-            this.buttonPermissao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPermissao.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPermissao.Name = "buttonPermissao";
             this.buttonPermissao.Size = new System.Drawing.Size(300, 50);
             this.buttonPermissao.TabIndex = 12;
@@ -354,28 +282,13 @@
             this.buttonSaidasAntecipadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSaidasAntecipadas.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonSaidasAntecipadas.Location = new System.Drawing.Point(0, 650);
-            this.buttonSaidasAntecipadas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSaidasAntecipadas.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSaidasAntecipadas.Name = "buttonSaidasAntecipadas";
             this.buttonSaidasAntecipadas.Size = new System.Drawing.Size(300, 50);
             this.buttonSaidasAntecipadas.TabIndex = 15;
             this.buttonSaidasAntecipadas.Text = "Saídas Antecipadas";
             this.buttonSaidasAntecipadas.UseVisualStyleBackColor = true;
             this.buttonSaidasAntecipadas.Click += new System.EventHandler(this.buttonSaidasAntecipadas_Click);
-            // 
-            // buttonReserva
-            // 
-            this.buttonReserva.FlatAppearance.BorderSize = 0;
-            this.buttonReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReserva.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonReserva.Location = new System.Drawing.Point(0, 132);
-            this.buttonReserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonReserva.Name = "buttonReserva";
-            this.buttonReserva.Size = new System.Drawing.Size(300, 50);
-            this.buttonReserva.TabIndex = 14;
-            this.buttonReserva.Text = "Reservas";
-            this.buttonReserva.UseVisualStyleBackColor = true;
-            this.buttonReserva.Click += new System.EventHandler(this.buttonReserva_Click);
             // 
             // buttonPredio
             // 
@@ -384,7 +297,7 @@
             this.buttonPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPredio.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonPredio.Location = new System.Drawing.Point(-4, 305);
-            this.buttonPredio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPredio.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPredio.Name = "buttonPredio";
             this.buttonPredio.Size = new System.Drawing.Size(300, 50);
             this.buttonPredio.TabIndex = 13;
@@ -399,7 +312,7 @@
             this.buttonGrupoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGrupoUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonGrupoUsuario.Location = new System.Drawing.Point(0, 478);
-            this.buttonGrupoUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonGrupoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGrupoUsuario.Name = "buttonGrupoUsuario";
             this.buttonGrupoUsuario.Size = new System.Drawing.Size(300, 50);
             this.buttonGrupoUsuario.TabIndex = 11;
@@ -414,7 +327,7 @@
             this.buttonDisciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDisciplina.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonDisciplina.Location = new System.Drawing.Point(0, 248);
-            this.buttonDisciplina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDisciplina.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDisciplina.Name = "buttonDisciplina";
             this.buttonDisciplina.Size = new System.Drawing.Size(300, 50);
             this.buttonDisciplina.TabIndex = 10;
@@ -429,7 +342,7 @@
             this.buttonCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCurso.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonCurso.Location = new System.Drawing.Point(0, 190);
-            this.buttonCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCurso.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCurso.Name = "buttonCurso";
             this.buttonCurso.Size = new System.Drawing.Size(300, 50);
             this.buttonCurso.TabIndex = 4;
@@ -444,7 +357,7 @@
             this.buttonAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAluno.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonAluno.Location = new System.Drawing.Point(0, 592);
-            this.buttonAluno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAluno.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAluno.Name = "buttonAluno";
             this.buttonAluno.Size = new System.Drawing.Size(300, 50);
             this.buttonAluno.TabIndex = 3;
@@ -459,22 +372,10 @@
             this.panelProfile.Controls.Add(this.labelMatricula);
             this.panelProfile.Controls.Add(this.labelUserName);
             this.panelProfile.Location = new System.Drawing.Point(0, 0);
-            this.panelProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelProfile.Margin = new System.Windows.Forms.Padding(4);
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(300, 125);
             this.panelProfile.TabIndex = 0;
-            // 
-            // ptbProfile
-            // 
-            this.ptbProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptbProfile.Image = ((System.Drawing.Image)(resources.GetObject("ptbProfile.Image")));
-            this.ptbProfile.Location = new System.Drawing.Point(15, 8);
-            this.ptbProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ptbProfile.Name = "ptbProfile";
-            this.ptbProfile.Size = new System.Drawing.Size(76, 74);
-            this.ptbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbProfile.TabIndex = 11;
-            this.ptbProfile.TabStop = false;
             // 
             // labelCargo
             // 
@@ -522,9 +423,9 @@
             this.panelBarraTitulo.Controls.Add(this.buttonFechar);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(1556, 50);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(1600, 50);
             this.panelBarraTitulo.TabIndex = 0;
             this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
@@ -540,13 +441,153 @@
             this.labelTitle.TabIndex = 4;
             this.labelTitle.Text = "Menu Principal";
             // 
+            // timerHoraData
+            // 
+            this.timerHoraData.Enabled = true;
+            this.timerHoraData.Tick += new System.EventHandler(this.timerHoraData_Tick);
+            // 
+            // NomeSolicitante
+            // 
+            this.NomeSolicitante.DataPropertyName = "NomeSolicitante";
+            this.NomeSolicitante.FillWeight = 76.9962F;
+            this.NomeSolicitante.HeaderText = "Solicitante";
+            this.NomeSolicitante.MinimumWidth = 6;
+            this.NomeSolicitante.Name = "NomeSolicitante";
+            this.NomeSolicitante.ReadOnly = true;
+            this.NomeSolicitante.Width = 250;
+            // 
+            // Sala
+            // 
+            this.Sala.DataPropertyName = "Sala";
+            this.Sala.FillWeight = 76.9962F;
+            this.Sala.HeaderText = "Sala";
+            this.Sala.MinimumWidth = 6;
+            this.Sala.Name = "Sala";
+            this.Sala.ReadOnly = true;
+            this.Sala.Width = 150;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 187.353F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // reservaDataDataGridViewTextBoxColumn
+            // 
+            this.reservaDataDataGridViewTextBoxColumn.DataPropertyName = "ReservaData";
+            this.reservaDataDataGridViewTextBoxColumn.FillWeight = 122.9549F;
+            this.reservaDataDataGridViewTextBoxColumn.HeaderText = "Data reservada";
+            this.reservaDataDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reservaDataDataGridViewTextBoxColumn.Name = "reservaDataDataGridViewTextBoxColumn";
+            this.reservaDataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reservaDataDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.FillWeight = 116.6184F;
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Width = 151;
+            // 
+            // turnoDataGridViewTextBoxColumn
+            // 
+            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
+            this.turnoDataGridViewTextBoxColumn.FillWeight = 197.6373F;
+            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
+            this.turnoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
+            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.turnoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // reservaBindingSource
+            // 
+            this.reservaBindingSource.DataSource = typeof(Models.Reserva);
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxLogo.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai1;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(1025, 35);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(244, 182);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.TabStop = false;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLogout.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogout.Image")));
+            this.buttonLogout.Location = new System.Drawing.Point(15, 708);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(69, 75);
+            this.buttonLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonLogout.TabIndex = 18;
+            this.buttonLogout.TabStop = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            // 
+            // buttonUsuario
+            // 
+            this.buttonUsuario.FlatAppearance.BorderSize = 0;
+            this.buttonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonUsuario.Image = global::UILGerenReservasLab.Properties.Resources.calendar__1_1;
+            this.buttonUsuario.Location = new System.Drawing.Point(0, 420);
+            this.buttonUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonUsuario.Name = "buttonUsuario";
+            this.buttonUsuario.Size = new System.Drawing.Size(300, 50);
+            this.buttonUsuario.TabIndex = 17;
+            this.buttonUsuario.Text = "Usuario";
+            this.buttonUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonUsuario.UseVisualStyleBackColor = true;
+            this.buttonUsuario.Click += new System.EventHandler(this.buttonUsuario_Click);
+            // 
+            // buttonReserva
+            // 
+            this.buttonReserva.FlatAppearance.BorderSize = 0;
+            this.buttonReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReserva.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonReserva.Image = global::UILGerenReservasLab.Properties.Resources.calendar__1_1;
+            this.buttonReserva.Location = new System.Drawing.Point(0, 132);
+            this.buttonReserva.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonReserva.Name = "buttonReserva";
+            this.buttonReserva.Size = new System.Drawing.Size(300, 50);
+            this.buttonReserva.TabIndex = 14;
+            this.buttonReserva.Text = "Reservas";
+            this.buttonReserva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonReserva.UseVisualStyleBackColor = true;
+            this.buttonReserva.Click += new System.EventHandler(this.buttonReserva_Click);
+            // 
+            // ptbProfile
+            // 
+            this.ptbProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptbProfile.Image = ((System.Drawing.Image)(resources.GetObject("ptbProfile.Image")));
+            this.ptbProfile.Location = new System.Drawing.Point(15, 8);
+            this.ptbProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.ptbProfile.Name = "ptbProfile";
+            this.ptbProfile.Size = new System.Drawing.Size(76, 74);
+            this.ptbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbProfile.TabIndex = 11;
+            this.ptbProfile.TabStop = false;
+            // 
             // buttonMinimizar
             // 
             this.buttonMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMinimizar.Image = global::UILGerenReservasLab.Properties.Resources.minimizar;
-            this.buttonMinimizar.Location = new System.Drawing.Point(1401, 8);
-            this.buttonMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMinimizar.Location = new System.Drawing.Point(1445, 8);
+            this.buttonMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMinimizar.Name = "buttonMinimizar";
             this.buttonMinimizar.Size = new System.Drawing.Size(44, 35);
             this.buttonMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -559,8 +600,8 @@
             this.buttonRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRestaurar.Image = global::UILGerenReservasLab.Properties.Resources.res;
-            this.buttonRestaurar.Location = new System.Drawing.Point(1452, 8);
-            this.buttonRestaurar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRestaurar.Location = new System.Drawing.Point(1496, 8);
+            this.buttonRestaurar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRestaurar.Name = "buttonRestaurar";
             this.buttonRestaurar.Size = new System.Drawing.Size(44, 35);
             this.buttonRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -574,8 +615,8 @@
             this.buttonMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMaximizar.Image = global::UILGerenReservasLab.Properties.Resources.maxi;
-            this.buttonMaximizar.Location = new System.Drawing.Point(1452, 8);
-            this.buttonMaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMaximizar.Location = new System.Drawing.Point(1496, 8);
+            this.buttonMaximizar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMaximizar.Name = "buttonMaximizar";
             this.buttonMaximizar.Size = new System.Drawing.Size(44, 35);
             this.buttonMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -588,8 +629,8 @@
             this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFechar.Image = global::UILGerenReservasLab.Properties.Resources.fechar;
-            this.buttonFechar.Location = new System.Drawing.Point(1504, 8);
-            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFechar.Location = new System.Drawing.Point(1548, 8);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(44, 35);
             this.buttonFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -597,20 +638,15 @@
             this.buttonFechar.TabStop = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
-            // timerHoraData
-            // 
-            this.timerHoraData.Enabled = true;
-            this.timerHoraData.Tick += new System.EventHandler(this.timerHoraData_Tick);
-            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1556, 850);
+            this.ClientSize = new System.Drawing.Size(1600, 850);
             this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1534, 822);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1600, 850);
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPrincipal";
@@ -619,16 +655,16 @@
             this.panelFormularios.ResumeLayout(false);
             this.panelFormularios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservaPanelDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonLogout)).EndInit();
             this.panelProfile.ResumeLayout(false);
             this.panelProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonLogout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).EndInit();
@@ -672,8 +708,11 @@
         private System.Windows.Forms.Label labelLogout;
         private System.Windows.Forms.PictureBox buttonLogout;
         private System.Windows.Forms.BindingSource reservaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeSolicitante;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservaDataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sala;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
     }

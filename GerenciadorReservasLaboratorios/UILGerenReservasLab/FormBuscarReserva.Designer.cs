@@ -82,7 +82,7 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.reservaDataGridView.DataSource = this.reservaBindingSource;
-            this.reservaDataGridView.Location = new System.Drawing.Point(59, 142);
+            this.reservaDataGridView.Location = new System.Drawing.Point(59, 143);
             this.reservaDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.reservaDataGridView.MultiSelect = false;
             this.reservaDataGridView.Name = "reservaDataGridView";
@@ -254,9 +254,9 @@
             this.label1.Location = new System.Drawing.Point(56, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 18);
+            this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Buscar Por";
+            this.label1.Text = "Buscar por";
             // 
             // buttonSelecionarAluno
             // 

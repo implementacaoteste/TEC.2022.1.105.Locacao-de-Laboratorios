@@ -152,7 +152,7 @@
             "Id",
             "Nome",
             "Todos"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(61, 111);
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(59, 111);
             this.comboBoxBuscarPor.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 24);
@@ -172,12 +172,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 93);
+            this.label2.Location = new System.Drawing.Point(56, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 18);
+            this.label2.Size = new System.Drawing.Size(81, 18);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Buscar Por";
+            this.label2.Text = "Buscar por";
             // 
             // buttonExcluir
             // 

@@ -44,7 +44,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, IdCurso FROM Disciplina";
+                cmd.CommandText = "SELECT Id, Nome FROM Disciplina";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -56,7 +56,6 @@ namespace DAL
                         disciplina = new Disciplina();
                         disciplina.Id = Convert.ToInt32(rd["Id"]);
                         disciplina.Nome = rd["Nome"].ToString();
-                        disciplina.IdCurso = Convert.ToInt32(rd["IdCurso"]);
 
                         disciplinas.Add(disciplina);
                     }

@@ -375,9 +375,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\usuarios.png" />
     <None Include="Resources\logo-senai1.png" />
     <None Include="Resources\Close.png" />
     <None Include="Resources\fechar.png" />
+    <None Include="Resources\calendar %281%291.png" />
     <Content Include="Resources\logo_welcome01.jpg" />
     <None Include="Resources\Senai_logo_01.png" />
     <None Include="Resources\senai-logo-3.png" />

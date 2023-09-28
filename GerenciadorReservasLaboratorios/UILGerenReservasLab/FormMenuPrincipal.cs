@@ -40,6 +40,20 @@ namespace UILGerenReservasLab
                     AtualizarTelaUsuario();
                 }
             }
+            // Cria uma variável para armazenar os dados
+            List<Reserva> listreservas = new List<Reserva>();
+
+            // Chama o método BuscarTodos() e armazena o resultado em uma lista chamada "listreservas"
+            listreservas = new ReservaBLL().BuscarTodos();
+
+            // Cria uma variável para armazenar os dados filtrados
+            List<Reserva> reservasFiltradas = new List<Reserva>();
+
+            // Use LINQ para filtrar as reservas com o Status "Pendente"
+            var reservasPendentes = listreservas.Where(reserva => reserva.Status == "Pendente").ToList();
+
+            // Defina a lista filtrada como a fonte de dados do seu DataGridView
+            reservaPanelDataGridView.DataSource = reservasPendentes;
         }
 
         private void AtualizarTelaUsuario()

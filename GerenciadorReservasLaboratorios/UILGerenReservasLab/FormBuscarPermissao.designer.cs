@@ -55,93 +55,123 @@
             // 
             // buttonBuscarPermissao
             // 
-            this.buttonBuscarPermissao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscarPermissao.Location = new System.Drawing.Point(435, 82);
+            this.buttonBuscarPermissao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBuscarPermissao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonBuscarPermissao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscarPermissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarPermissao.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonBuscarPermissao.Location = new System.Drawing.Point(458, 77);
             this.buttonBuscarPermissao.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuscarPermissao.Name = "buttonBuscarPermissao";
-            this.buttonBuscarPermissao.Size = new System.Drawing.Size(70, 24);
+            this.buttonBuscarPermissao.Size = new System.Drawing.Size(94, 31);
             this.buttonBuscarPermissao.TabIndex = 3;
-            this.buttonBuscarPermissao.Text = "Buscar";
-            this.buttonBuscarPermissao.UseVisualStyleBackColor = true;
+            this.buttonBuscarPermissao.Text = "&Buscar";
+            this.buttonBuscarPermissao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonBuscarPermissao.UseVisualStyleBackColor = false;
             this.buttonBuscarPermissao.Click += new System.EventHandler(this.buttonBuscarPermissao_Click);
             // 
             // buttonAlterarPermissao
             // 
             this.buttonAlterarPermissao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterarPermissao.Location = new System.Drawing.Point(512, 84);
+            this.buttonAlterarPermissao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonAlterarPermissao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAlterarPermissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlterarPermissao.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonAlterarPermissao.Location = new System.Drawing.Point(556, 77);
             this.buttonAlterarPermissao.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAlterarPermissao.Name = "buttonAlterarPermissao";
-            this.buttonAlterarPermissao.Size = new System.Drawing.Size(70, 24);
+            this.buttonAlterarPermissao.Size = new System.Drawing.Size(94, 31);
             this.buttonAlterarPermissao.TabIndex = 4;
-            this.buttonAlterarPermissao.Text = "Alterar";
-            this.buttonAlterarPermissao.UseVisualStyleBackColor = true;
+            this.buttonAlterarPermissao.Text = "&Alterar";
+            this.buttonAlterarPermissao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonAlterarPermissao.UseVisualStyleBackColor = false;
             this.buttonAlterarPermissao.Click += new System.EventHandler(this.buttonAlterarPermissao_Click);
             // 
             // buttonAdicionarPermissao
             // 
             this.buttonAdicionarPermissao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdicionarPermissao.Location = new System.Drawing.Point(586, 84);
+            this.buttonAdicionarPermissao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonAdicionarPermissao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdicionarPermissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarPermissao.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonAdicionarPermissao.Location = new System.Drawing.Point(654, 78);
             this.buttonAdicionarPermissao.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdicionarPermissao.Name = "buttonAdicionarPermissao";
-            this.buttonAdicionarPermissao.Size = new System.Drawing.Size(70, 24);
+            this.buttonAdicionarPermissao.Size = new System.Drawing.Size(94, 31);
             this.buttonAdicionarPermissao.TabIndex = 5;
-            this.buttonAdicionarPermissao.Text = "Adicionar";
-            this.buttonAdicionarPermissao.UseVisualStyleBackColor = true;
+            this.buttonAdicionarPermissao.Text = "&Inserir";
+            this.buttonAdicionarPermissao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonAdicionarPermissao.UseVisualStyleBackColor = false;
             this.buttonAdicionarPermissao.Click += new System.EventHandler(this.buttonAdicionarPermissao_Click);
             // 
             // buttonExcluirPermissao
             // 
             this.buttonExcluirPermissao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirPermissao.Location = new System.Drawing.Point(662, 84);
+            this.buttonExcluirPermissao.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonExcluirPermissao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExcluirPermissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirPermissao.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonExcluirPermissao.Location = new System.Drawing.Point(752, 78);
             this.buttonExcluirPermissao.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluirPermissao.Name = "buttonExcluirPermissao";
-            this.buttonExcluirPermissao.Size = new System.Drawing.Size(70, 24);
+            this.buttonExcluirPermissao.Size = new System.Drawing.Size(94, 31);
             this.buttonExcluirPermissao.TabIndex = 6;
-            this.buttonExcluirPermissao.Text = "Excluir";
-            this.buttonExcluirPermissao.UseVisualStyleBackColor = true;
+            this.buttonExcluirPermissao.Text = "&Excluir";
+            this.buttonExcluirPermissao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonExcluirPermissao.UseVisualStyleBackColor = false;
             this.buttonExcluirPermissao.Click += new System.EventHandler(this.buttonExcluirPermissao_Click);
             // 
             // buttonAdicionarPermissaoGrupo
             // 
             this.buttonAdicionarPermissaoGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdicionarPermissaoGrupo.Location = new System.Drawing.Point(1100, 92);
+            this.buttonAdicionarPermissaoGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonAdicionarPermissaoGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdicionarPermissaoGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionarPermissaoGrupo.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonAdicionarPermissaoGrupo.Location = new System.Drawing.Point(1070, 76);
             this.buttonAdicionarPermissaoGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdicionarPermissaoGrupo.Name = "buttonAdicionarPermissaoGrupo";
-            this.buttonAdicionarPermissaoGrupo.Size = new System.Drawing.Size(79, 24);
+            this.buttonAdicionarPermissaoGrupo.Size = new System.Drawing.Size(94, 31);
             this.buttonAdicionarPermissaoGrupo.TabIndex = 7;
-            this.buttonAdicionarPermissaoGrupo.Text = "Adicionar";
-            this.buttonAdicionarPermissaoGrupo.UseVisualStyleBackColor = true;
+            this.buttonAdicionarPermissaoGrupo.Text = "A&dicionar";
+            this.buttonAdicionarPermissaoGrupo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonAdicionarPermissaoGrupo.UseVisualStyleBackColor = false;
             this.buttonAdicionarPermissaoGrupo.Click += new System.EventHandler(this.buttonAdicionarPermissaoGrupo_Click);
             // 
             // buttonExcluirPermissaoGrupo
             // 
             this.buttonExcluirPermissaoGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirPermissaoGrupo.Location = new System.Drawing.Point(1192, 92);
+            this.buttonExcluirPermissaoGrupo.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonExcluirPermissaoGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExcluirPermissaoGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluirPermissaoGrupo.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonExcluirPermissaoGrupo.Location = new System.Drawing.Point(1168, 76);
             this.buttonExcluirPermissaoGrupo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluirPermissaoGrupo.Name = "buttonExcluirPermissaoGrupo";
-            this.buttonExcluirPermissaoGrupo.Size = new System.Drawing.Size(70, 24);
+            this.buttonExcluirPermissaoGrupo.Size = new System.Drawing.Size(94, 31);
             this.buttonExcluirPermissaoGrupo.TabIndex = 8;
-            this.buttonExcluirPermissaoGrupo.Text = "Excluir";
-            this.buttonExcluirPermissaoGrupo.UseVisualStyleBackColor = true;
+            this.buttonExcluirPermissaoGrupo.Text = "E&xcluir";
+            this.buttonExcluirPermissaoGrupo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonExcluirPermissaoGrupo.UseVisualStyleBackColor = false;
             this.buttonExcluirPermissaoGrupo.Click += new System.EventHandler(this.buttonExcluirPermissaoGrupo_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 84);
+            this.textBox1.Location = new System.Drawing.Point(35, 80);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 22);
+            this.textBox1.Size = new System.Drawing.Size(353, 24);
             this.textBox1.TabIndex = 9;
             // 
             // radioButton_BuscarTodasPermissoes
             // 
             this.radioButton_BuscarTodasPermissoes.AutoSize = true;
             this.radioButton_BuscarTodasPermissoes.Checked = true;
-            this.radioButton_BuscarTodasPermissoes.Location = new System.Drawing.Point(35, 58);
+            this.radioButton_BuscarTodasPermissoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_BuscarTodasPermissoes.Location = new System.Drawing.Point(33, 49);
             this.radioButton_BuscarTodasPermissoes.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_BuscarTodasPermissoes.Name = "radioButton_BuscarTodasPermissoes";
-            this.radioButton_BuscarTodasPermissoes.Size = new System.Drawing.Size(107, 20);
+            this.radioButton_BuscarTodasPermissoes.Size = new System.Drawing.Size(118, 22);
             this.radioButton_BuscarTodasPermissoes.TabIndex = 10;
             this.radioButton_BuscarTodasPermissoes.TabStop = true;
             this.radioButton_BuscarTodasPermissoes.Text = "Buscar todos";
@@ -150,10 +180,11 @@
             // radioButton_BuscarPorNome
             // 
             this.radioButton_BuscarPorNome.AutoSize = true;
-            this.radioButton_BuscarPorNome.Location = new System.Drawing.Point(138, 58);
+            this.radioButton_BuscarPorNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_BuscarPorNome.Location = new System.Drawing.Point(155, 49);
             this.radioButton_BuscarPorNome.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_BuscarPorNome.Name = "radioButton_BuscarPorNome";
-            this.radioButton_BuscarPorNome.Size = new System.Drawing.Size(114, 20);
+            this.radioButton_BuscarPorNome.Size = new System.Drawing.Size(125, 22);
             this.radioButton_BuscarPorNome.TabIndex = 11;
             this.radioButton_BuscarPorNome.TabStop = true;
             this.radioButton_BuscarPorNome.Text = "Buscar/ Nome";
@@ -162,10 +193,11 @@
             // radioButton_BuscarPorId
             // 
             this.radioButton_BuscarPorId.AutoSize = true;
-            this.radioButton_BuscarPorId.Location = new System.Drawing.Point(250, 58);
+            this.radioButton_BuscarPorId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_BuscarPorId.Location = new System.Drawing.Point(286, 49);
             this.radioButton_BuscarPorId.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_BuscarPorId.Name = "radioButton_BuscarPorId";
-            this.radioButton_BuscarPorId.Size = new System.Drawing.Size(93, 20);
+            this.radioButton_BuscarPorId.Size = new System.Drawing.Size(102, 22);
             this.radioButton_BuscarPorId.TabIndex = 12;
             this.radioButton_BuscarPorId.TabStop = true;
             this.radioButton_BuscarPorId.Text = "Buscar / ID";
@@ -187,14 +219,14 @@
             this.grupoUsuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
             this.grupoUsuarioDataGridView.DataSource = this.grupoUsuarioBindingSource;
-            this.grupoUsuarioDataGridView.Location = new System.Drawing.Point(738, 121);
+            this.grupoUsuarioDataGridView.Location = new System.Drawing.Point(850, 121);
             this.grupoUsuarioDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.grupoUsuarioDataGridView.Name = "grupoUsuarioDataGridView";
             this.grupoUsuarioDataGridView.ReadOnly = true;
             this.grupoUsuarioDataGridView.RowHeadersVisible = false;
             this.grupoUsuarioDataGridView.RowHeadersWidth = 51;
             this.grupoUsuarioDataGridView.RowTemplate.Height = 24;
-            this.grupoUsuarioDataGridView.Size = new System.Drawing.Size(524, 462);
+            this.grupoUsuarioDataGridView.Size = new System.Drawing.Size(412, 462);
             this.grupoUsuarioDataGridView.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn2
@@ -232,7 +264,7 @@
             this.permissoesDataGridView.RowHeadersVisible = false;
             this.permissoesDataGridView.RowHeadersWidth = 51;
             this.permissoesDataGridView.RowTemplate.Height = 24;
-            this.permissoesDataGridView.Size = new System.Drawing.Size(699, 462);
+            this.permissoesDataGridView.Size = new System.Drawing.Size(811, 462);
             this.permissoesDataGridView.TabIndex = 13;
             this.permissoesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.permissoesDataGridView_CellClick);
             // 
@@ -261,7 +293,7 @@
             this.buttonFechar.BackColor = System.Drawing.Color.Red;
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFechar.ForeColor = System.Drawing.Color.White;
+            this.buttonFechar.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonFechar.Location = new System.Drawing.Point(1193, 13);
             this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFechar.Name = "buttonFechar";
@@ -289,6 +321,7 @@
             this.Controls.Add(this.buttonAdicionarPermissao);
             this.Controls.Add(this.buttonAlterarPermissao);
             this.Controls.Add(this.buttonBuscarPermissao);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBuscarPermissao";
