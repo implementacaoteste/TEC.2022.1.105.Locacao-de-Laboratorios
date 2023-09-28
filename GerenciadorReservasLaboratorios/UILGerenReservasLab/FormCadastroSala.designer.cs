@@ -37,7 +37,7 @@
             this.buttonCancelarSala = new System.Windows.Forms.Button();
             this.buttonSalvarSala = new System.Windows.Forms.Button();
             this.textBoxPredio = new System.Windows.Forms.TextBox();
-            this.buttonBuscarAluno = new System.Windows.Forms.Button();
+            this.buttonBuscarPredio = new System.Windows.Forms.Button();
             lblNomeSala = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).BeginInit();
@@ -52,6 +52,16 @@
             lblNomeSala.Size = new System.Drawing.Size(132, 20);
             lblNomeSala.TabIndex = 1;
             lblNomeSala.Text = "Nome do Sala:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(97, 249);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(63, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Predio";
             // 
             // textBoxNomeSala
             // 
@@ -115,37 +125,27 @@
             this.textBoxPredio.Size = new System.Drawing.Size(128, 27);
             this.textBoxPredio.TabIndex = 2;
             // 
-            // label2
+            // buttonBuscarPredio
             // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(97, 249);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(63, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Predio";
-            // 
-            // buttonBuscarAluno
-            // 
-            this.buttonBuscarAluno.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonBuscarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBuscarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuscarAluno.ForeColor = System.Drawing.Color.White;
-            this.buttonBuscarAluno.Location = new System.Drawing.Point(236, 280);
-            this.buttonBuscarAluno.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonBuscarAluno.Name = "buttonBuscarAluno";
-            this.buttonBuscarAluno.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscarAluno.TabIndex = 17;
-            this.buttonBuscarAluno.Text = "&Buscar";
-            this.buttonBuscarAluno.UseVisualStyleBackColor = false;
-            this.buttonBuscarAluno.Click += new System.EventHandler(this.buttonBuscarAluno_Click);
+            this.buttonBuscarPredio.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonBuscarPredio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscarPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarPredio.ForeColor = System.Drawing.Color.White;
+            this.buttonBuscarPredio.Location = new System.Drawing.Point(236, 280);
+            this.buttonBuscarPredio.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBuscarPredio.Name = "buttonBuscarPredio";
+            this.buttonBuscarPredio.Size = new System.Drawing.Size(94, 29);
+            this.buttonBuscarPredio.TabIndex = 17;
+            this.buttonBuscarPredio.Text = "&Buscar";
+            this.buttonBuscarPredio.UseVisualStyleBackColor = false;
+            this.buttonBuscarPredio.Click += new System.EventHandler(this.buttonBuscarPredio_Click);
             // 
             // FormCadastroSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 468);
-            this.Controls.Add(this.buttonBuscarAluno);
+            this.Controls.Add(this.buttonBuscarPredio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelarSala);
             this.Controls.Add(this.buttonSalvarSala);
@@ -171,6 +171,6 @@
         private System.Windows.Forms.Button buttonCancelarSala;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPredio;
-        private System.Windows.Forms.Button buttonBuscarAluno;
+        private System.Windows.Forms.Button buttonBuscarPredio;
     }
 }

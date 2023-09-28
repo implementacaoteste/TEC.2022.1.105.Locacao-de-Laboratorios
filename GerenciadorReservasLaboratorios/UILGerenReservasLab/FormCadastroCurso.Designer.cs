@@ -30,23 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label lblNomeCurso;
+            System.Windows.Forms.Label turnoLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancelarCurso = new System.Windows.Forms.Button();
             this.btnSalvarCurso = new System.Windows.Forms.Button();
+            this.turnoTextBox = new System.Windows.Forms.TextBox();
             lblNomeCurso = new System.Windows.Forms.Label();
+            turnoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNomeCurso
             // 
             lblNomeCurso.AutoSize = true;
-            lblNomeCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblNomeCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblNomeCurso.Location = new System.Drawing.Point(65, 139);
             lblNomeCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblNomeCurso.Name = "lblNomeCurso";
-            lblNomeCurso.Size = new System.Drawing.Size(139, 20);
+            lblNomeCurso.Size = new System.Drawing.Size(115, 18);
             lblNomeCurso.TabIndex = 10;
             lblNomeCurso.Text = "Nome do Curso";
             // 
@@ -108,11 +111,31 @@
             this.btnSalvarCurso.UseVisualStyleBackColor = false;
             this.btnSalvarCurso.Click += new System.EventHandler(this.btnSalvarCurso_Click);
             // 
+            // turnoLabel
+            // 
+            turnoLabel.AutoSize = true;
+            turnoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            turnoLabel.Location = new System.Drawing.Point(66, 221);
+            turnoLabel.Name = "turnoLabel";
+            turnoLabel.Size = new System.Drawing.Size(47, 18);
+            turnoLabel.TabIndex = 13;
+            turnoLabel.Text = "Turno";
+            // 
+            // turnoTextBox
+            // 
+            this.turnoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Turno", true));
+            this.turnoTextBox.Location = new System.Drawing.Point(68, 240);
+            this.turnoTextBox.Name = "turnoTextBox";
+            this.turnoTextBox.Size = new System.Drawing.Size(448, 22);
+            this.turnoTextBox.TabIndex = 14;
+            // 
             // FormCadastroCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(612, 416);
+            this.Controls.Add(turnoLabel);
+            this.Controls.Add(this.turnoTextBox);
             this.Controls.Add(this.btnCancelarCurso);
             this.Controls.Add(this.btnSalvarCurso);
             this.Controls.Add(lblNomeCurso);
@@ -135,5 +158,6 @@
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.Button btnSalvarCurso;
         private System.Windows.Forms.Button btnCancelarCurso;
+        private System.Windows.Forms.TextBox turnoTextBox;
     }
 }

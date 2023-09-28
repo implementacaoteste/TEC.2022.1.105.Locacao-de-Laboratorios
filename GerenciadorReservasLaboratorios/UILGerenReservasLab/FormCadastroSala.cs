@@ -87,7 +87,7 @@ namespace UILGerenReservasLab
 
         }
 
-        private void buttonBuscarAluno_Click(object sender, EventArgs e)
+        private void buttonBuscarPredio_Click(object sender, EventArgs e)
         {
             try
             {
