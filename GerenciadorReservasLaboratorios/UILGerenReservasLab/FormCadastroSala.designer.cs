@@ -46,20 +46,20 @@
             // lblNomeSala
             // 
             lblNomeSala.AutoSize = true;
-            lblNomeSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblNomeSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblNomeSala.Location = new System.Drawing.Point(97, 141);
             lblNomeSala.Name = "lblNomeSala";
-            lblNomeSala.Size = new System.Drawing.Size(132, 20);
+            lblNomeSala.Size = new System.Drawing.Size(103, 18);
             lblNomeSala.TabIndex = 1;
-            lblNomeSala.Text = "Nome do Sala:";
+            lblNomeSala.Text = "Nome do Sala";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(97, 249);
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(97, 257);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(63, 20);
+            label2.Size = new System.Drawing.Size(51, 18);
             label2.TabIndex = 1;
             label2.Text = "Predio";
             // 
@@ -67,7 +67,7 @@
             // 
             this.textBoxNomeSala.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "Nome", true));
             this.textBoxNomeSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNomeSala.Location = new System.Drawing.Point(101, 182);
+            this.textBoxNomeSala.Location = new System.Drawing.Point(101, 164);
             this.textBoxNomeSala.Name = "textBoxNomeSala";
             this.textBoxNomeSala.Size = new System.Drawing.Size(562, 27);
             this.textBoxNomeSala.TabIndex = 2;
@@ -88,31 +88,29 @@
             // 
             // buttonCancelarSala
             // 
-            this.buttonCancelarSala.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCancelarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelarSala.Image = global::UILGerenReservasLab.Properties.Resources.cancelar;
+            this.buttonCancelarSala.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonCancelarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarSala.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCancelarSala.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCancelarSala.Location = new System.Drawing.Point(612, 374);
+            this.buttonCancelarSala.Location = new System.Drawing.Point(754, 374);
             this.buttonCancelarSala.Name = "buttonCancelarSala";
             this.buttonCancelarSala.Size = new System.Drawing.Size(123, 42);
             this.buttonCancelarSala.TabIndex = 3;
             this.buttonCancelarSala.Text = "&Cancelar";
-            this.buttonCancelarSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCancelarSala.UseVisualStyleBackColor = false;
             this.buttonCancelarSala.Click += new System.EventHandler(this.buttonCancelarSala_Click);
             // 
             // buttonSalvarSala
             // 
-            this.buttonSalvarSala.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSalvarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvarSala.Image = global::UILGerenReservasLab.Properties.Resources.salve_;
+            this.buttonSalvarSala.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonSalvarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarSala.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonSalvarSala.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSalvarSala.Location = new System.Drawing.Point(467, 374);
+            this.buttonSalvarSala.Location = new System.Drawing.Point(583, 374);
             this.buttonSalvarSala.Name = "buttonSalvarSala";
-            this.buttonSalvarSala.Size = new System.Drawing.Size(114, 42);
+            this.buttonSalvarSala.Size = new System.Drawing.Size(120, 42);
             this.buttonSalvarSala.TabIndex = 3;
             this.buttonSalvarSala.Text = "&Salvar";
-            this.buttonSalvarSala.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSalvarSala.UseVisualStyleBackColor = false;
             this.buttonSalvarSala.Click += new System.EventHandler(this.buttonSalvarSala_Click);
             // 
@@ -120,7 +118,7 @@
             // 
             this.textBoxPredio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "IdPredio", true));
             this.textBoxPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPredio.Location = new System.Drawing.Point(101, 282);
+            this.textBoxPredio.Location = new System.Drawing.Point(101, 280);
             this.textBoxPredio.Name = "textBoxPredio";
             this.textBoxPredio.Size = new System.Drawing.Size(128, 27);
             this.textBoxPredio.TabIndex = 2;
@@ -144,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 468);
+            this.ClientSize = new System.Drawing.Size(1022, 468);
             this.Controls.Add(this.buttonBuscarPredio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelarSala);

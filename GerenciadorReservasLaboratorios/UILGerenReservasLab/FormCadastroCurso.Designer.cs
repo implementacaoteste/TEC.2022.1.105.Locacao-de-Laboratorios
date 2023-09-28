@@ -46,12 +46,22 @@
             // 
             lblNomeCurso.AutoSize = true;
             lblNomeCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblNomeCurso.Location = new System.Drawing.Point(65, 139);
+            lblNomeCurso.Location = new System.Drawing.Point(66, 125);
             lblNomeCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblNomeCurso.Name = "lblNomeCurso";
             lblNomeCurso.Size = new System.Drawing.Size(115, 18);
             lblNomeCurso.TabIndex = 10;
             lblNomeCurso.Text = "Nome do Curso";
+            // 
+            // turnoLabel
+            // 
+            turnoLabel.AutoSize = true;
+            turnoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            turnoLabel.Location = new System.Drawing.Point(65, 205);
+            turnoLabel.Name = "turnoLabel";
+            turnoLabel.Size = new System.Drawing.Size(47, 18);
+            turnoLabel.TabIndex = 13;
+            turnoLabel.Text = "Turno";
             // 
             // label1
             // 
@@ -60,7 +70,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(612, 46);
+            this.label1.Size = new System.Drawing.Size(961, 46);
             this.label1.TabIndex = 10;
             this.label1.Text = "Cadastro de Curso";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,7 +79,7 @@
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Nome", true));
             this.nomeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTextBox.Location = new System.Drawing.Point(69, 174);
+            this.nomeTextBox.Location = new System.Drawing.Point(69, 145);
             this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(448, 24);
@@ -81,50 +91,37 @@
             // 
             // btnCancelarCurso
             // 
-            this.btnCancelarCurso.BackColor = System.Drawing.SystemColors.Window;
-            this.btnCancelarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCurso.Image = global::UILGerenReservasLab.Properties.Resources.cancelar;
+            this.btnCancelarCurso.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCancelarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelarCurso.Location = new System.Drawing.Point(448, 326);
+            this.btnCancelarCurso.Location = new System.Drawing.Point(789, 337);
             this.btnCancelarCurso.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarCurso.Name = "btnCancelarCurso";
             this.btnCancelarCurso.Size = new System.Drawing.Size(116, 40);
             this.btnCancelarCurso.TabIndex = 13;
             this.btnCancelarCurso.Text = "&Cancelar";
-            this.btnCancelarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarCurso.UseVisualStyleBackColor = false;
             this.btnCancelarCurso.Click += new System.EventHandler(this.btnCancelarCurso_Click);
             // 
             // btnSalvarCurso
             // 
-            this.btnSalvarCurso.BackColor = System.Drawing.SystemColors.Window;
-            this.btnSalvarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarCurso.Image = global::UILGerenReservasLab.Properties.Resources.salve_;
-            this.btnSalvarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvarCurso.Location = new System.Drawing.Point(305, 326);
+            this.btnSalvarCurso.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSalvarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalvarCurso.Location = new System.Drawing.Point(625, 337);
             this.btnSalvarCurso.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvarCurso.Name = "btnSalvarCurso";
             this.btnSalvarCurso.Size = new System.Drawing.Size(109, 40);
             this.btnSalvarCurso.TabIndex = 12;
             this.btnSalvarCurso.Text = "&Salvar";
-            this.btnSalvarCurso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalvarCurso.UseVisualStyleBackColor = false;
             this.btnSalvarCurso.Click += new System.EventHandler(this.btnSalvarCurso_Click);
-            // 
-            // turnoLabel
-            // 
-            turnoLabel.AutoSize = true;
-            turnoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            turnoLabel.Location = new System.Drawing.Point(66, 221);
-            turnoLabel.Name = "turnoLabel";
-            turnoLabel.Size = new System.Drawing.Size(47, 18);
-            turnoLabel.TabIndex = 13;
-            turnoLabel.Text = "Turno";
             // 
             // turnoTextBox
             // 
             this.turnoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Turno", true));
-            this.turnoTextBox.Location = new System.Drawing.Point(68, 240);
+            this.turnoTextBox.Location = new System.Drawing.Point(69, 226);
             this.turnoTextBox.Name = "turnoTextBox";
             this.turnoTextBox.Size = new System.Drawing.Size(448, 22);
             this.turnoTextBox.TabIndex = 14;
@@ -133,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(612, 416);
+            this.ClientSize = new System.Drawing.Size(961, 416);
             this.Controls.Add(turnoLabel);
             this.Controls.Add(this.turnoTextBox);
             this.Controls.Add(this.btnCancelarCurso);
