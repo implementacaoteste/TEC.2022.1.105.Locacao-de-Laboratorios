@@ -56,7 +56,7 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(710, 32);
+            this.label1.Size = new System.Drawing.Size(918, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de Prédio";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,9 +66,9 @@
             this.btncancelar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btncancelar.Location = new System.Drawing.Point(574, 321);
+            this.btncancelar.Location = new System.Drawing.Point(673, 321);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(96, 34);
+            this.btncancelar.Size = new System.Drawing.Size(112, 43);
             this.btncancelar.TabIndex = 3;
             this.btncancelar.Text = "&Cancelar";
             this.btncancelar.UseVisualStyleBackColor = false;
@@ -79,9 +79,9 @@
             this.btnSalvar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalvar.Location = new System.Drawing.Point(458, 321);
+            this.btnSalvar.Location = new System.Drawing.Point(513, 321);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(96, 34);
+            this.btnSalvar.Size = new System.Drawing.Size(112, 43);
             this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 379);
+            this.ClientSize = new System.Drawing.Size(918, 446);
             this.Controls.Add(nomeLabel1);
             this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.btnSalvar);

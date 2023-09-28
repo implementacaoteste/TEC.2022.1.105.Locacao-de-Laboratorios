@@ -92,7 +92,7 @@
             this.buttonCancelarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarSala.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCancelarSala.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCancelarSala.Location = new System.Drawing.Point(626, 374);
+            this.buttonCancelarSala.Location = new System.Drawing.Point(754, 374);
             this.buttonCancelarSala.Name = "buttonCancelarSala";
             this.buttonCancelarSala.Size = new System.Drawing.Size(123, 42);
             this.buttonCancelarSala.TabIndex = 3;
@@ -106,7 +106,7 @@
             this.buttonSalvarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarSala.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonSalvarSala.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSalvarSala.Location = new System.Drawing.Point(467, 374);
+            this.buttonSalvarSala.Location = new System.Drawing.Point(583, 374);
             this.buttonSalvarSala.Name = "buttonSalvarSala";
             this.buttonSalvarSala.Size = new System.Drawing.Size(120, 42);
             this.buttonSalvarSala.TabIndex = 3;
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 468);
+            this.ClientSize = new System.Drawing.Size(1022, 468);
             this.Controls.Add(this.buttonBuscarPredio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelarSala);
