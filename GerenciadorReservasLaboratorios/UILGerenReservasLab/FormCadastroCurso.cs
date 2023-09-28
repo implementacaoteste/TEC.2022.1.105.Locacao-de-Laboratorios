@@ -35,6 +35,7 @@ namespace UILGerenReservasLab
                 {
                     _curso = new Curso(); // Crie um novo objeto Curso se for um novo registro.
                     _curso.Nome = nomeTextBox.Text; // Atribua o nome do TextBox ao novo objeto.
+                    _curso.Turno = turnoTextBox.Text;
                     new CursoBLL().Inserir(_curso);
                 }
                 else

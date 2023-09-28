@@ -47,12 +47,8 @@ namespace UILGerenReservasLab
                 {
                     _sala = new Sala(); // Crie um novo objeto Sala se for um novo registro.
                     _sala.Nome = textBoxNomeSala.Text; // Atribua o nome do TextBox ao novo objeto.
-                    
-                    // Converte o texto do campo de texto para um número inteiro
-                    int idPredio = Convert.ToInt32(textBoxPredio.Text);
+                    _sala.IdPredio = ((Sala)salaBindingSource.Current).IdPredio;
 
-                    // Atribui o valor inteiro ao campo `IdPredio` da classe `Sala`
-                    _sala.IdPredio = idPredio;
                     new SalaBLL().Inserir(_sala);
                 }
                 else
@@ -84,7 +80,10 @@ namespace UILGerenReservasLab
 
         private void FormCadastroSala_Load(object sender, EventArgs e)
         {
-
+            if (Id == 0)
+            {
+                salaBindingSource.AddNew();
+            }
         }
 
         private void buttonBuscarPredio_Click(object sender, EventArgs e)
@@ -106,5 +105,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }
