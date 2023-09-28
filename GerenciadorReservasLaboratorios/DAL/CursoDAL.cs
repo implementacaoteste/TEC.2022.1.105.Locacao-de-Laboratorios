@@ -14,11 +14,12 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Curso (Nome, Turno) VALUES (@Nome, @Turno)";
+                cmd.CommandText = @"INSERT INTO Curso (Nome, Turno)
+                                    VALUES (@Nome, @Turno)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", _curso.Nome);
-                cmd.Parameters.AddWithValue("@Turno", _curso.Turno); // Adiciona o turno aqui
+                cmd.Parameters.AddWithValue("@Turno", _curso.Turno);
 
                 cmd.Connection = cn;
                 cn.Open();

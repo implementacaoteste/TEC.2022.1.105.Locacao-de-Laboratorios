@@ -55,7 +55,8 @@
             // 
             // buttonBuscarPermissao
             // 
-            this.buttonBuscarPermissao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBuscarPermissao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBuscarPermissao.Location = new System.Drawing.Point(435, 82);
             this.buttonBuscarPermissao.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuscarPermissao.Name = "buttonBuscarPermissao";
