@@ -83,6 +83,10 @@ namespace UILGerenReservasLab
         }
         private void FormCadastroReservas_Load(object sender, EventArgs e)
         {
+            if (Id == 0)
+            {
+                reservaBindingSource.AddNew();
+            }
             usuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
 
             // Defina o nome do usuário logado no campo idUsuarioTextBox.
@@ -106,7 +110,18 @@ namespace UILGerenReservasLab
                 Reserva _reserva = (Reserva)reservaBindingSource.Current;
 
                 if (Id == 0)
+                {
+                    _reserva.IdResponsavel = usuarioLogado.Id;
+                    _reserva.IdSolicitante = ((Reserva)comboBoxSolicitante.SelectedValue).Id;
+                    _reserva.IdSala = ((Reserva)comboBoxSala.SelectedValue).Id;
+                    _reserva.IdCurso = ((Reserva)comboBoxCurso.SelectedValue).Id;
+                    _reserva.IdDisciplina = ((Reserva)comboBoxDisciplina.SelectedValue).Id;
+                    _reserva.Status = ((Reserva)comboBoxStatus.SelectedValue).Status;
+                    _reserva.Turno = ((Reserva)comboBoxTurno.SelectedValue).Turno;
+                    _reserva.ReservaData = reservaDataDateTimePicker.Value;
+                    _reserva.ReservaHora = reservaHoraDateTimePicker.Value;
                     new ReservaBLL().Inserir(_reserva);
+                }
                 else
                     new ReservaBLL().Alterar(_reserva);
                 MessageBox.Show("Registro salvo com sucesso!");
