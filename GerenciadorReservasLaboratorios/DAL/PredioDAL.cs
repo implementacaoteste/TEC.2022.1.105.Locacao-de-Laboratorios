@@ -16,10 +16,13 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Predio (Nome) VALUES (@Nome)";
+                cmd.CommandText = @"INSERT INTO Predio (Nome, Andares, Descricao, Estado) VALUES (@Nome, @Andares, @Descricao, @Estado)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", _predio.Nome);
+                cmd.Parameters.AddWithValue("@Andares", _predio.Andares);
+                cmd.Parameters.AddWithValue("@Descricao", _predio.Descricao);
+                cmd.Parameters.AddWithValue("@Estado", _predio.Estado);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -45,7 +48,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Predio";
+                cmd.CommandText = "SELECT Id, Nome, Andares, Descricao, Estado FROM Predio";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -57,6 +60,9 @@ namespace DAL
                         predio = new Predio();
                         predio.Id = Convert.ToInt32(rd["Id"]);
                         predio.Nome = rd["Nome"].ToString();
+                        predio.Andares = rd["Andares"].ToString();
+                        predio.Descricao = rd["Descricao"].ToString();
+                        predio.Estado = rd["Estado"].ToString();
 
                         predios.Add(predio);
                     }
@@ -80,7 +86,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Predio WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Nome, Andares, Descricao, Estado  FROM Predio WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", id);
                 cn.Open();
@@ -112,7 +118,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Predio WHERE Nome = @Nome";
+                cmd.CommandText = "SELECT Id, Nome, Andares, Descricao, Estado FROM Predio WHERE Nome = @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", nome);
                 cn.Open();
@@ -136,17 +142,20 @@ namespace DAL
             }
         }
 
-        public void Alterar(Predio predio)
+        public void Alterar(Predio _predio)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Predio SET Nome = @Nome  WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Predio SET Nome = @Nome, Andares = @Andares, Descricao = @Descricao, Estado = @Estado  WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", predio.Nome);
-                cmd.Parameters.AddWithValue("@Id", predio.Id);
+                cmd.Parameters.AddWithValue("@Nome", _predio.Nome);
+                cmd.Parameters.AddWithValue("@Andares", _predio.Andares);
+                cmd.Parameters.AddWithValue("@Descricao", _predio.Descricao);
+                cmd.Parameters.AddWithValue("@Estado", _predio.Estado);
+                cmd.Parameters.AddWithValue("@Id", _predio.Id);
                 cmd.Connection = cn;
                 cn.Open();
 

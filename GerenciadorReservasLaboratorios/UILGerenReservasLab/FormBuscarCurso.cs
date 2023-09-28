@@ -68,7 +68,6 @@ namespace UILGerenReservasLab
         }
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (cursoBindingSource.Count == 0)

@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Predio
+    public class Recursos
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Andares { get; set; }
-        public string Descricao { get; set; }
-        public string Estado { get; set; }  
+        public string Marca { get; set; }
+        public string Tipo { get; set; }
     }
 }

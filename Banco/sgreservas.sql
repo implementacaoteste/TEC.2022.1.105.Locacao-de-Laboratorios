@@ -1,5 +1,11 @@
 USE [master]
 GO
+IF EXISTS (SELECT name FROM sys.databases WHERE name = 'sgreservas')
+BEGIN
+    ALTER DATABASE [sgreservas] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE [sgreservas];
+END
+GO
 /****** Object:  Database [sgreservas]    Script Date: 28/09/2023 15:18:02 ******/
 CREATE DATABASE [sgreservas]
  CONTAINMENT = NONE

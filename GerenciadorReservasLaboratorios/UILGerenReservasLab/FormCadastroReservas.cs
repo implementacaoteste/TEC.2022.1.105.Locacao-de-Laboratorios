@@ -14,7 +14,8 @@ namespace UILGerenReservasLab
 {
     public partial class FormCadastroReservas : Form
     {
-        private int Id;
+        public int Id;
+        private UsuarioBLL usuarioBLL = new UsuarioBLL();
         Usuario usuarioLogado;
 
         public FormCadastroReservas(int _id= 0)
@@ -111,6 +112,7 @@ namespace UILGerenReservasLab
 
                 if (Id == 0)
                 {
+                    usuarioBLL.ValidarPermissao(13);
                     _reserva.IdResponsavel = usuarioLogado.Id;
                     _reserva.IdSolicitante = ((Reserva)comboBoxSolicitante.SelectedValue).Id;
                     _reserva.IdSala = ((Reserva)comboBoxSala.SelectedValue).Id;

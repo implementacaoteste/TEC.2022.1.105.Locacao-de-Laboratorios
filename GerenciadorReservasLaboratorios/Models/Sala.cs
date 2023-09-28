@@ -9,8 +9,12 @@ namespace Models
     public class Sala
     {
         public int Id { get; set; }
-        public int IdPredio { get; set; }
         public string Nome { get; set; }
+        public int IdPredio { get; set; }
+        public string Tipo { get; set; }
+        public string Descricao { get; set; } 
+        public string Estado { get; set; } 
+        public int Capacidade { get; set; }
 
         public string NomePredio
         {
@@ -19,7 +23,7 @@ namespace Models
                 return Predio == null ? "" : Predio.Nome;
             }
         }
-        // Propriedades de navegação para Sala, Disciplina, Curso, Solicitante e Responsável
+        // Propriedades de navegação para Predio
         public Predio Predio { get; set; }
     }
 }

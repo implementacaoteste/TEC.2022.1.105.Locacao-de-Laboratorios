@@ -13,11 +13,15 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "INSERT INTO Sala (IdPredio, Nome) VALUES (@IdPredio, @Nome)";
+                cmd.CommandText = "INSERT INTO Sala (Nome, IdPredio, Tipo, Descricao, Estado, Capacidade) VALUES (@Nome, @IdPredio, @Tipo, @Descricao, @Estado, @Capacidade)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@IdPredio", _sala.IdPredio);
                 cmd.Parameters.AddWithValue("@Nome", _sala.Nome);
+                cmd.Parameters.AddWithValue("@IdPredio", _sala.IdPredio);
+                cmd.Parameters.AddWithValue("@Tipo", _sala.Tipo);
+                cmd.Parameters.AddWithValue("@Descricao", _sala.Descricao);
+                cmd.Parameters.AddWithValue("@Estado", _sala.Estado);
+                cmd.Parameters.AddWithValue("@Capacidade", _sala.Capacidade);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -44,7 +48,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Sala";
+                cmd.CommandText = "SELECT Id, Nome, IdPredio, Tipo, Descricao, Estado, Capacidade FROM Sala";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -56,6 +60,11 @@ namespace DAL
                         sala = new Sala();
                         sala.Id = Convert.ToInt32(rd["Id"]);
                         sala.Nome = rd["Nome"].ToString();
+                        sala.IdPredio = Convert.ToInt32(rd["IdPredio"]);
+                        sala.Tipo = rd["Tipo"].ToString();
+                        sala.Descricao = rd["Descricao"].ToString();
+                        sala.Estado = rd["Estado"].ToString();
+                        sala.Capacidade = Convert.ToInt32(rd["Capacidade"]);
                         salas.Add(sala);
                     }
                 }
@@ -78,7 +87,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Sala WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Nome, IdPredio, Tipo, Descricao, Estado, Capacidade FROM Sala WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
                 cn.Open();
@@ -88,6 +97,11 @@ namespace DAL
                     {
                         sala.Id = Convert.ToInt32(rd["Id"]);
                         sala.Nome = rd["Nome"].ToString();
+                        sala.IdPredio = Convert.ToInt32(rd["IdPredio"]);
+                        sala.Tipo = rd["Tipo"].ToString();
+                        sala.Descricao = rd["Descrição"].ToString();
+                        sala.Estado = rd["Estado"].ToString();
+                        sala.Capacidade = Convert.ToInt32(rd["Capacidade"]);
                     }
                 }
                 return sala;
@@ -119,6 +133,11 @@ namespace DAL
                     {
                         sala.Id = Convert.ToInt32(rd["Id"]);
                         sala.Nome = rd["Nome"].ToString();
+                        sala.IdPredio = Convert.ToInt32(rd["IdPredio"]);
+                        sala.Tipo = rd["Tipo"].ToString();
+                        sala.Descricao = rd["Descrição"].ToString();
+                        sala.Estado = rd["Estado"].ToString();
+                        sala.Capacidade = Convert.ToInt32(rd["Capacidade"]);
                     }
                 }
                 return sala;
@@ -139,10 +158,15 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Sala SET Nome = @Nome WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Sala SET Nome = @Nome, IdPredio = @IdPredio, Tipo = @Tipo, Descricao = @Descricao, Estado = @Estado, Capacidade = @Capacidade WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", _sala.Nome);
+                cmd.Parameters.AddWithValue("@IdPredio", _sala.IdPredio);
+                cmd.Parameters.AddWithValue("@Tipo", _sala.Tipo);
+                cmd.Parameters.AddWithValue("@Descricao", _sala.Descricao);
+                cmd.Parameters.AddWithValue("@Estado", _sala.Estado);
+                cmd.Parameters.AddWithValue("@Capacidade", _sala.Capacidade);
                 cmd.Parameters.AddWithValue("@Id", _sala.Id);
 
                 cmd.Connection = cn;

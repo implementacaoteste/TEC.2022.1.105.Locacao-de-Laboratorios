@@ -48,6 +48,7 @@
     <Compile Include="GrupoUsuario.cs" />
     <Compile Include="Permissao.cs" />
     <Compile Include="Predio.cs" />
+    <Compile Include="Recursos.cs" />
     <Compile Include="Reserva.cs" />
     <Compile Include="SaidasAntecipadas.cs" />
     <Compile Include="Sala.cs" />

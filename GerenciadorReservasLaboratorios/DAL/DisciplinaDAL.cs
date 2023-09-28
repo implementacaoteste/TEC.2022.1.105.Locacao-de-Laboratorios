@@ -13,11 +13,10 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Disciplina (Nome, IdCurso) VALUES (@Nome, @IdCurso)";
+                cmd.CommandText = @"INSERT INTO Disciplina (Nome) VALUES (@Nome)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", disciplina.Nome);
-                cmd.Parameters.AddWithValue("@IdCurso", disciplina.IdCurso);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -80,7 +79,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, IdCurso FROM Disciplina WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Nome FROM Disciplina WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", id);
                 cn.Open();
@@ -90,7 +89,6 @@ namespace DAL
                     {
                         disciplina.Id = Convert.ToInt32(rd["Id"]);
                         disciplina.Nome = rd["Nome"].ToString();
-                        disciplina.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                     }
                 }
                 return disciplina;
@@ -115,7 +113,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, IdCurso FROM Disciplina WHERE Nome = @Nome";
+                cmd.CommandText = "SELECT Id, Nome FROM Disciplina WHERE Nome = @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", nome);
                 cn.Open();
@@ -125,7 +123,6 @@ namespace DAL
                     {
                         disciplina.Id = Convert.ToInt32(rd["Id"]);
                         disciplina.Nome = rd["Nome"].ToString();
-                        disciplina.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                     }
                 }
                 return disciplinaList;
@@ -146,11 +143,10 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Disciplina SET Nome = @Nome, IdCurso = @IdCurso WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Disciplina SET Nome = @Nome WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", disciplina.Nome);
-                cmd.Parameters.AddWithValue("@IdCurso", disciplina.IdCurso);
                 cmd.Parameters.AddWithValue("@Id", disciplina.Id);
 
                 cmd.Connection = cn;

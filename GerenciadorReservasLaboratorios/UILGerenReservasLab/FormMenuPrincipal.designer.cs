@@ -708,7 +708,6 @@
         private System.Windows.Forms.Label labelLogout;
         private System.Windows.Forms.PictureBox buttonLogout;
         private System.Windows.Forms.BindingSource reservaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeSolicitante;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservaDataDataGridViewTextBoxColumn;

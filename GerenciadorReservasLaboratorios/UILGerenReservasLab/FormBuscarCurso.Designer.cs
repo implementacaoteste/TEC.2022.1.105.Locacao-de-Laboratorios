@@ -193,7 +193,7 @@
             this.buttonExcluir.TabIndex = 20;
             this.buttonExcluir.Text = "&Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = false;
-            this.buttonExcluir.Click += new System.EventHandler(this.buttonAlterar_Click);
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonSelecionarCurso
             // 

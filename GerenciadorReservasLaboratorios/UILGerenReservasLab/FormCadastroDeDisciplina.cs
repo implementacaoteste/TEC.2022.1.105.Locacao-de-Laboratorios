@@ -34,7 +34,6 @@ namespace UILGerenReservasLab
                 {
                     _disciplina = new Disciplina(); // Crie um novo objeto Curso se for um novo registro.
                     _disciplina.Nome = nomeTextBox.Text; // Atribua o nome do TextBox ao novo objeto.;
-                    _disciplina.IdCurso = Convert.ToInt32(idCursoTextBox.Text);
                     new DisciplinaBLL().Inserir(_disciplina);
                 }
                 else
