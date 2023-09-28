@@ -43,7 +43,7 @@
             // 
             nomeLabel1.AutoSize = true;
             nomeLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeLabel1.Location = new System.Drawing.Point(146, 127);
+            nomeLabel1.Location = new System.Drawing.Point(107, 118);
             nomeLabel1.Name = "nomeLabel1";
             nomeLabel1.Size = new System.Drawing.Size(49, 18);
             nomeLabel1.TabIndex = 6;
@@ -63,24 +63,28 @@
             // 
             // btncancelar
             // 
+            this.btncancelar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btncancelar.Location = new System.Drawing.Point(574, 321);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(96, 28);
+            this.btncancelar.Size = new System.Drawing.Size(96, 34);
             this.btncancelar.TabIndex = 3;
             this.btncancelar.Text = "&Cancelar";
-            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.UseVisualStyleBackColor = false;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnSalvar
             // 
+            this.btnSalvar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSalvar.Location = new System.Drawing.Point(458, 321);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(96, 28);
+            this.btnSalvar.Size = new System.Drawing.Size(96, 34);
             this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "&Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // predioBindingSource
@@ -90,7 +94,7 @@
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.predioBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(149, 159);
+            this.nomeTextBox.Location = new System.Drawing.Point(110, 139);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(521, 22);
             this.nomeTextBox.TabIndex = 7;
