@@ -32,7 +32,7 @@ namespace UILGerenReservasLab
         {
             try
             {
-                switch (comboBoxBuscarPor.SelectedIndex)
+                switch (comboBoxBuscarSalaPor.SelectedIndex)
                 {
                     case 0:
                         if (String.IsNullOrEmpty(txtBuscarSala.Text))

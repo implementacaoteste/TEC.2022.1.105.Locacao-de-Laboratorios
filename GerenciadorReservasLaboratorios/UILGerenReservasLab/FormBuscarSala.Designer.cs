@@ -34,19 +34,19 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
+            this.comboBoxBuscarSalaPor = new System.Windows.Forms.ComboBox();
             this.salaDataGridView = new System.Windows.Forms.DataGridView();
-            this.txtBuscarSala = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomePredio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonSelecionarSala = new System.Windows.Forms.Button();
             this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
-            this.salaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomePredio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscarSala = new System.Windows.Forms.TextBox();
             lblBuscarPor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).BeginInit();
@@ -103,18 +103,18 @@
             this.btnExcluir.Text = "&Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // comboBoxBuscarPor
+            // comboBoxBuscarSalaPor
             // 
-            this.comboBoxBuscarPor.FormattingEnabled = true;
-            this.comboBoxBuscarPor.Items.AddRange(new object[] {
+            this.comboBoxBuscarSalaPor.FormattingEnabled = true;
+            this.comboBoxBuscarSalaPor.Items.AddRange(new object[] {
             "Id",
             "Nome",
             "Todos"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(59, 111);
-            this.comboBoxBuscarPor.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 24);
-            this.comboBoxBuscarPor.TabIndex = 5;
+            this.comboBoxBuscarSalaPor.Location = new System.Drawing.Point(59, 111);
+            this.comboBoxBuscarSalaPor.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxBuscarSalaPor.Name = "comboBoxBuscarSalaPor";
+            this.comboBoxBuscarSalaPor.Size = new System.Drawing.Size(143, 24);
+            this.comboBoxBuscarSalaPor.TabIndex = 5;
             // 
             // salaDataGridView
             // 
@@ -141,15 +141,39 @@
             this.salaDataGridView.Size = new System.Drawing.Size(898, 409);
             this.salaDataGridView.TabIndex = 9;
             // 
-            // txtBuscarSala
+            // dataGridViewTextBoxColumn1
             // 
-            this.txtBuscarSala.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "Nome", true));
-            this.txtBuscarSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarSala.Location = new System.Drawing.Point(210, 111);
-            this.txtBuscarSala.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBuscarSala.Name = "txtBuscarSala";
-            this.txtBuscarSala.Size = new System.Drawing.Size(745, 24);
-            this.txtBuscarSala.TabIndex = 10;
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.FillWeight = 53.47594F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.FillWeight = 146.5241F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // NomePredio
+            // 
+            this.NomePredio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomePredio.DataPropertyName = "NomePredio";
+            this.NomePredio.HeaderText = "Predio";
+            this.NomePredio.MinimumWidth = 6;
+            this.NomePredio.Name = "NomePredio";
+            this.NomePredio.ReadOnly = true;
+            // 
+            // salaBindingSource
+            // 
+            this.salaBindingSource.DataSource = typeof(Models.Sala);
             // 
             // buttonSelecionarSala
             // 
@@ -247,45 +271,21 @@
             this.buttonFechar.UseVisualStyleBackColor = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
-            // salaBindingSource
+            // txtBuscarSala
             // 
-            this.salaBindingSource.DataSource = typeof(Models.Sala);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.FillWeight = 53.47594F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn2.FillWeight = 146.5241F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // NomePredio
-            // 
-            this.NomePredio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomePredio.DataPropertyName = "NomePredio";
-            this.NomePredio.HeaderText = "Predio";
-            this.NomePredio.MinimumWidth = 6;
-            this.NomePredio.Name = "NomePredio";
-            this.NomePredio.ReadOnly = true;
+            this.txtBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscarSala.Location = new System.Drawing.Point(210, 111);
+            this.txtBuscarSala.Name = "txtBuscarSala";
+            this.txtBuscarSala.Size = new System.Drawing.Size(745, 22);
+            this.txtBuscarSala.TabIndex = 43;
             // 
             // FormBuscarSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1300, 614);
+            this.Controls.Add(this.txtBuscarSala);
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.buttonSelecionarSala);
             this.Controls.Add(this.buttonInserir);
@@ -293,9 +293,8 @@
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(lblBuscarPor);
-            this.Controls.Add(this.txtBuscarSala);
             this.Controls.Add(this.salaDataGridView);
-            this.Controls.Add(this.comboBoxBuscarPor);
+            this.Controls.Add(this.comboBoxBuscarSalaPor);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.btnAlterar);
@@ -317,10 +316,9 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.ComboBox comboBoxBuscarPor;
+        private System.Windows.Forms.ComboBox comboBoxBuscarSalaPor;
         private System.Windows.Forms.BindingSource salaBindingSource;
         private System.Windows.Forms.DataGridView salaDataGridView;
-        private System.Windows.Forms.TextBox txtBuscarSala;
         private System.Windows.Forms.Button buttonSelecionarSala;
         private System.Windows.Forms.Button buttonInserir;
         private System.Windows.Forms.Button buttonExcluir;
@@ -330,5 +328,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomePredio;
+        private System.Windows.Forms.TextBox txtBuscarSala;
     }
 }
