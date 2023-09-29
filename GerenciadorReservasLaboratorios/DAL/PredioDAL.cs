@@ -110,9 +110,10 @@ namespace DAL
             }
         }
 
-        public Predio BuscarPorNome(string nome)
+        public List<Predio>  BuscarPorNome(string nome)
         {
-            Predio predio = new Predio();
+            List<Predio> predios = new List<Predio>();
+            Predio predio;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -120,17 +121,19 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = "SELECT Id, Nome, Andares, Descricao, Estado FROM Predio WHERE Nome = @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Nome","%"+ nome +"%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     if (rd.Read())
                     {
+                        predio = new Predio();
                         predio.Id = Convert.ToInt32(rd["Id"]);
                         predio.Nome = rd["Nome"].ToString();
+                        predios.Add(predio);
                     }
                 }
-                return predio;
+                return predios;
             }
             catch (Exception ex)
             {
