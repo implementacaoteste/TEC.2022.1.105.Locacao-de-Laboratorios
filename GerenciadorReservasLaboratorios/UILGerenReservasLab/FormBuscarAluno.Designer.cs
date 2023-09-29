@@ -125,8 +125,8 @@
             this.comboBoxBuscarAlunoPor.FormattingEnabled = true;
             this.comboBoxBuscarAlunoPor.Items.AddRange(new object[] {
             "Id",
-            "Nome",
             "Matricula",
+            "Nome",
             "Todos"});
             this.comboBoxBuscarAlunoPor.Location = new System.Drawing.Point(61, 111);
             this.comboBoxBuscarAlunoPor.Margin = new System.Windows.Forms.Padding(2);
