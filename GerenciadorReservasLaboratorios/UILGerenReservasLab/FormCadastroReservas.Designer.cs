@@ -107,9 +107,9 @@
             idUsuarioLabel.AutoSize = true;
             idUsuarioLabel.Location = new System.Drawing.Point(63, 52);
             idUsuarioLabel.Name = "idUsuarioLabel";
-            idUsuarioLabel.Size = new System.Drawing.Size(102, 16);
+            idUsuarioLabel.Size = new System.Drawing.Size(95, 16);
             idUsuarioLabel.TabIndex = 6;
-            idUsuarioLabel.Text = "Cadastrado Por";
+            idUsuarioLabel.Text = "Autorizada Por";
             // 
             // observacoesLabel
             // 
@@ -272,6 +272,7 @@
             this.reservaHoraDateTimePicker.Name = "reservaHoraDateTimePicker";
             this.reservaHoraDateTimePicker.Size = new System.Drawing.Size(120, 22);
             this.reservaHoraDateTimePicker.TabIndex = 19;
+            this.reservaHoraDateTimePicker.Value = new System.DateTime(2023, 9, 29, 7, 0, 0, 0);
             // 
             // groupBoxLiberarChave
             // 

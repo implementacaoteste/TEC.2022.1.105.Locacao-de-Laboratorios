@@ -72,12 +72,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
 
                         reservas.Add(reserva);
                     }
@@ -117,12 +122,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                     }
                 }
                 return reserva;
@@ -161,12 +171,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                         reservas.Add(reserva);
                     }
                 }
@@ -205,12 +220,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                         reservas.Add(reserva);
                     }
                 }
@@ -249,12 +269,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                         reservas.Add(reserva);
                     }
                 }
@@ -293,12 +318,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                         reservas.Add(reserva);
                     }
                 }
@@ -337,12 +367,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                         reservas.Add(reserva);
                     }
                 }
@@ -381,12 +416,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                         reservas.Add(reserva);
                     }
                 }
@@ -425,12 +465,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                         reservas.Add(reserva);
                     }
                 }
@@ -469,12 +514,17 @@ namespace DAL
                         reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
                         reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
                         reserva.ReservaData = Convert.ToDateTime(rd["ReservaData"]);
-                        reserva.ReservaHora = Convert.ToDateTime(rd["ReservaHora"]);
+                        reserva.ReservaHora = (TimeSpan)(rd["ReservaHora"]);
                         reserva.DataRetirada = Convert.ToDateTime(rd["DataRetirada"]);
                         reserva.DataDevolucao = Convert.ToDateTime(rd["DataDevolucao"]);
                         reserva.Status = rd["Status"].ToString();
                         reserva.Observacoes = rd["Observacoes"].ToString();
                         reserva.Turno = rd["Turno"].ToString();
+                        reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
+                        reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                        reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                        reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
+                        reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                         reservas.Add(reserva);
                     }
                 }

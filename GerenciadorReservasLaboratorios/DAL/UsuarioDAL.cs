@@ -126,11 +126,12 @@ namespace DAL
         }
         public Usuario BuscarPorId(int _id)
         {
-            Usuario usuario = null;
+            Usuario usuario;
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
+                usuario = new Usuario();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario 
@@ -143,7 +144,6 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        usuario = new Usuario();
                         usuario.Id = Convert.ToInt32(rd["IdUser"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();
@@ -171,7 +171,8 @@ namespace DAL
         }
         public Usuario BuscarPorMatricula(string _matricula)
         {
-            Usuario usuario = null;
+            Usuario usuario;
+            usuario = new Usuario();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -187,7 +188,6 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        usuario = new Usuario();
                         usuario.Id = Convert.ToInt32(rd["IdUser"]);
                         usuario.Nome = rd["Nome"].ToString();
                         usuario.NomeUsuario = rd["NomeUsuario"].ToString();

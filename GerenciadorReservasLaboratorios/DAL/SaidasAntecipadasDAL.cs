@@ -125,6 +125,9 @@ namespace DAL
                         saidaAntecipada.Motivo = rd["Motivo"].ToString();
                         saidaAntecipada.Status = rd["Status"].ToString();
                         saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
+                        saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
+                        saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
+                        saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
 
                         // Verifique se o campo "NomeAluno" não é nulo antes de atribuir ao objeto Aluno.
                         if (!rd.IsDBNull(rd.GetOrdinal("NomeAluno")))
@@ -173,6 +176,9 @@ namespace DAL
                         saidaAntecipada.Motivo = rd["Motivo"].ToString();
                         saidaAntecipada.Status = rd["Status"].ToString();
                         saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
+                        saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
+                        saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
+                        saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
 
                         saidasAntecipadas.Add(saidaAntecipada);
                     }
@@ -215,6 +221,9 @@ namespace DAL
                         saidaAntecipada.Motivo = rd["Motivo"].ToString();
                         saidaAntecipada.Status = rd["Status"].ToString();
                         saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
+                        saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
+                        saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
+                        saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
 
                         saidasAntecipadas.Add(saidaAntecipada);
                     }
@@ -257,6 +266,9 @@ namespace DAL
                         saidaAntecipada.Motivo = rd["Motivo"].ToString();
                         saidaAntecipada.Status = rd["Status"].ToString();
                         saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
+                        saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
+                        saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
+                        saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
 
                         saidasAntecipadas.Add(saidaAntecipada);
                     }

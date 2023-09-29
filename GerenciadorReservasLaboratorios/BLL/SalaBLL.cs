@@ -20,7 +20,7 @@ namespace BLL
         {
             return new SalaDAL().BuscarPorId(id);
         }
-        public Sala BuscarPorNome(string _nome)
+        public List<Sala> BuscarPorNome(string _nome)
         {
             return new SalaDAL().BuscarPorNome(_nome);
         }

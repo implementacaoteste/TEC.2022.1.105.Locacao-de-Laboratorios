@@ -41,7 +41,7 @@ namespace DAL
         public List<Sala> BuscarTodos()
         {
             List<Sala> salas = new List<Sala>();
-            Sala sala = new Sala();
+            Sala sala;
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -65,6 +65,7 @@ namespace DAL
                         sala.Descricao = rd["Descricao"].ToString();
                         sala.Estado = rd["Estado"].ToString();
                         sala.Capacidade = Convert.ToInt32(rd["Capacidade"]);
+                        sala.Predio = new PredioDAL().BuscarPorId(Convert.ToInt32(rd["IdPredio"]));
                         salas.Add(sala);
                     }
                 }
@@ -99,9 +100,10 @@ namespace DAL
                         sala.Nome = rd["Nome"].ToString();
                         sala.IdPredio = Convert.ToInt32(rd["IdPredio"]);
                         sala.Tipo = rd["Tipo"].ToString();
-                        sala.Descricao = rd["Descrição"].ToString();
+                        sala.Descricao = rd["Descricao"].ToString();
                         sala.Estado = rd["Estado"].ToString();
                         sala.Capacidade = Convert.ToInt32(rd["Capacidade"]);
+                        sala.Predio = new PredioDAL().BuscarPorId(Convert.ToInt32(rd["IdPredio"]));
                     }
                 }
                 return sala;
@@ -115,9 +117,9 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Sala BuscarPorNome(string nome)
+        public List<Sala> BuscarPorNome(string nome)
         {
-            Sala sala = new Sala();
+            List<Sala> salas = new List<Sala>(); // Crie uma lista de salas para armazenar os resultados
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
@@ -125,26 +127,29 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = "SELECT Id, Nome, IdPredio, Tipo, Descricao, Estado, Capacidade FROM Sala WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Nome", "%" + nome + "%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read()) // Use um loop para ler todos os resultados
                     {
+                        Sala sala = new Sala();
                         sala.Id = Convert.ToInt32(rd["Id"]);
                         sala.Nome = rd["Nome"].ToString();
                         sala.IdPredio = Convert.ToInt32(rd["IdPredio"]);
                         sala.Tipo = rd["Tipo"].ToString();
-                        sala.Descricao = rd["Descrição"].ToString();
+                        sala.Descricao = rd["Descricao"].ToString();
                         sala.Estado = rd["Estado"].ToString();
                         sala.Capacidade = Convert.ToInt32(rd["Capacidade"]);
+                        sala.Predio = new PredioDAL().BuscarPorId(Convert.ToInt32(rd["IdPredio"]));
+                        salas.Add(sala); // Adicione a sala à lista de salas
                     }
                 }
-                return sala;
+                return salas; // Retorne a lista de salas
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar uma sala por nome no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar salas por nome no banco de dados.", ex);
             }
             finally
             {

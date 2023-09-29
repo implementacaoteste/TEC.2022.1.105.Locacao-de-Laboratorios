@@ -15,7 +15,7 @@ namespace Models
         public int IdCurso { get; set; }
         public int IdSolicitante { get; set; }
         public DateTime ReservaData { get; set; }
-        public DateTime ReservaHora { get; set; }
+        public TimeSpan ReservaHora { get; set; }
         public DateTime DataRetirada { get; set; }
         public DateTime DataDevolucao { get; set; }
         public string Status { get; set; }
