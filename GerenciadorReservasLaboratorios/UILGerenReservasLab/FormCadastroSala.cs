@@ -106,5 +106,14 @@ namespace UILGerenReservasLab
             }
         }
 
+        private void estadoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tipoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
