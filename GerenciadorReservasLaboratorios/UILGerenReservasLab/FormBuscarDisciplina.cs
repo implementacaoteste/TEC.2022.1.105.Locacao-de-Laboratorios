@@ -120,28 +120,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-        private void buttonSelecionarDisciplina_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                disciplinaBindingSource.EndEdit();
-
-                if (disciplinaBindingSource.Count > 0)
-                {
-                    DisciSelecionado = (Disciplina)disciplinaBindingSource.Current;
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Nenhuma disciplina selecionada");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();

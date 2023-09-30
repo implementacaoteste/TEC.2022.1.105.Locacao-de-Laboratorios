@@ -68,27 +68,6 @@ namespace UILGerenReservasLab
         {
             this.Close();
         }
-
-        private void buttonBuscarIdCurso_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (FormBuscarCurso frm = new FormBuscarCurso())
-                {
-                    frm.ShowDialog();
-                    if (frm.CursoSelecionado != null)
-                    {
-                        CursoSelecionado = frm.CursoSelecionado;
-                        idCursoTextBox.Text = Convert.ToString(CursoSelecionado.Id);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
