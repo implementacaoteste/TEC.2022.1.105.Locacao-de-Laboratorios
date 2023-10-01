@@ -221,7 +221,6 @@
             this.buttonSelecionarDisciplina.TabIndex = 41;
             this.buttonSelecionarDisciplina.Text = "&Selecionar";
             this.buttonSelecionarDisciplina.UseVisualStyleBackColor = false;
-            this.buttonSelecionarDisciplina.Click += new System.EventHandler(this.buttonSelecionarDisciplina_Click);
             // 
             // FormBuscarDisciplina
             // 

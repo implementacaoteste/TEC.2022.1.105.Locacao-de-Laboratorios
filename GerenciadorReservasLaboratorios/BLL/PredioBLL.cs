@@ -18,7 +18,7 @@ namespace BLL
         {
             return new PredioDAL().BuscarPorId(id);
         }
-        public Predio BuscarPorNome(string nome)
+        public List<Predio> BuscarPorNome(string nome)
         {
             return new PredioDAL().BuscarPorNome(nome);
         }

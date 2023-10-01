@@ -103,10 +103,10 @@ namespace DAL
             }
         }
 
-        public List<Disciplina> BuscarPorNome(string nome)
+        public List<Disciplina> BuscarPorNome(string _nome)
         {
-            List<Disciplina> disciplinaList = new List<Disciplina>();
-            Disciplina disciplina = new Disciplina();
+            List<Disciplina> disciplinas = new List<Disciplina>();
+            Disciplina disciplina;
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
@@ -115,17 +115,19 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = "SELECT Id, Nome FROM Disciplina WHERE Nome = @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     if (rd.Read())
                     {
+                        disciplina = new Disciplina();
                         disciplina.Id = Convert.ToInt32(rd["Id"]);
                         disciplina.Nome = rd["Nome"].ToString();
+                        disciplinas.Add(disciplina);
                     }
                 }
-                return disciplinaList;
+                return disciplinas;
             }
             catch (Exception ex)
             {

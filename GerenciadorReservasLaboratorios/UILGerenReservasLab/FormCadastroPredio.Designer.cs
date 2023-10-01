@@ -58,7 +58,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(918, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro de Prédio";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btncancelar
@@ -112,7 +111,7 @@
             this.Name = "FormCadastroPredio";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCadastroPredio";
+            this.Text = "Cadastro de Predios";
             ((System.ComponentModel.ISupportInitialize)(this.predioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
