@@ -14,7 +14,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Reserva (IdSala, IdResponsavel, IdDisciplina, IdCurso, IdSolicitante, ReservaData, ReservaHora, DataRetirada, DataDevolucao, Status, Observacoes, Turno)
-                                    VALUES (@IdSala, @IdResponsavel, @IdDisciplina, @IdCurso, @Solicitante, @ReservaData, @ReservaHora, @DataRetirada, @DataDevolucao, @Status, @Observacoes, @Turno)";
+                                    VALUES (@IdSala, @IdResponsavel, @IdDisciplina, @IdCurso, @IdSolicitante, @ReservaData, @ReservaHora, @DataRetirada, @DataDevolucao, @Status, @Observacoes, @Turno)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@IdSala", reserva.IdSala);
@@ -539,7 +539,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Alterar(Reserva reserva)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

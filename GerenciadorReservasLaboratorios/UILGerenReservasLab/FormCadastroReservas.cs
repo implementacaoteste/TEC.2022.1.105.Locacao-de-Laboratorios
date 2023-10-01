@@ -18,6 +18,9 @@ namespace UILGerenReservasLab
         private UsuarioBLL usuarioBLL = new UsuarioBLL();
         Usuario usuarioLogado;
 
+        // Variável de instância para armazenar a hora selecionada
+        private TimeSpan horaSelecionada;
+
         private bool isProfessor = true;
         private bool isCoordenacao = true;
         private bool isAdmin = true;
@@ -103,7 +106,6 @@ namespace UILGerenReservasLab
             }
         }
 
-
         private void DeterminarTipoDeUsuario()
         {
             // Carregue o usuário logado.
@@ -165,12 +167,11 @@ namespace UILGerenReservasLab
                 reservaBindingSource.EndEdit();
                 Reserva _reserva = (Reserva)reservaBindingSource.Current;
 
-                // Obtenha a hora selecionada do DateTimePicker
-                TimeSpan horaSelecionada = reservaHoraDateTimePicker.Value.TimeOfDay;
-
                 if (Id == 0)
                 {
                     usuarioBLL.ValidarPermissao(13);
+                    horaSelecionada = reservaHoraDateTimePicker.Value.TimeOfDay;
+
                     _reserva = new Reserva();
                     _reserva.IdResponsavel = usuarioLogado.Id;
                     _reserva.IdSolicitante = (int)comboBoxSolicitante.SelectedValue;
@@ -202,7 +203,6 @@ namespace UILGerenReservasLab
                 throw;
             }
         }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             try
@@ -214,5 +214,52 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void comboBoxSala_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Habilita o campo reservaDataDateTimePicker
+            reservaDataDateTimePicker.Enabled = true;
+        }
+
+        private void reservaDataDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            // Habilita o campo reservaHoraDateTimePicker
+            reservaHoraDateTimePicker.Enabled = true;
+        }
+
+        private void reservaHoraDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            // Obtenha a sala selecionada
+            Sala salaSelecionada = (Sala)comboBoxSala.SelectedItem;
+
+            if (salaSelecionada != null)
+            {
+                int idSala = salaSelecionada.Id;
+                DateTime dataSelecionada = reservaDataDateTimePicker.Value.Date;
+                horaSelecionada = reservaHoraDateTimePicker.Value.TimeOfDay;
+
+                // Verifique se já existe uma reserva conflitante usando o método ExisteReservasDuplicadas
+                bool reservaConflitante = new ReservaBLL().ExisteReservasDuplicadas(idSala, dataSelecionada, horaSelecionada);
+
+                // Atualize o estado do botão "Salvar" e exiba um aviso
+                if (reservaConflitante)
+                {
+                    // Desabilite o botão "Salvar"
+                    buttonSalvar.Enabled = false;
+
+                    // Exiba um aviso ao usuário (por exemplo, em uma Label ou MessageBox)
+                    labelAviso.Text = "Horário não disponível. Por favor, selecione outra sala, data ou hora.";
+                }
+                else
+                {
+                    // Habilite o botão "Salvar"
+                    buttonSalvar.Enabled = true;
+
+                    // Limpe o aviso
+                    labelAviso.Text = "";
+                }
+            }
+        }
+
     }
 }

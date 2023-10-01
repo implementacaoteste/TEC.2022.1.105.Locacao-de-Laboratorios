@@ -59,6 +59,7 @@
             this.comboBoxCurso = new System.Windows.Forms.ComboBox();
             this.comboBoxDisciplina = new System.Windows.Forms.ComboBox();
             this.comboBoxSolicitante = new System.Windows.Forms.ComboBox();
+            this.labelAviso = new System.Windows.Forms.Label();
             idCursoLabel = new System.Windows.Forms.Label();
             idDisciplinaLabel = new System.Windows.Forms.Label();
             idSalaLabel = new System.Windows.Forms.Label();
@@ -261,6 +262,7 @@
             this.reservaDataDateTimePicker.Name = "reservaDataDateTimePicker";
             this.reservaDataDateTimePicker.Size = new System.Drawing.Size(120, 22);
             this.reservaDataDateTimePicker.TabIndex = 17;
+            this.reservaDataDateTimePicker.ValueChanged += new System.EventHandler(this.reservaDataDateTimePicker_ValueChanged);
             // 
             // reservaHoraDateTimePicker
             // 
@@ -270,9 +272,11 @@
             this.reservaHoraDateTimePicker.Location = new System.Drawing.Point(375, 305);
             this.reservaHoraDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reservaHoraDateTimePicker.Name = "reservaHoraDateTimePicker";
+            this.reservaHoraDateTimePicker.ShowUpDown = true;
             this.reservaHoraDateTimePicker.Size = new System.Drawing.Size(120, 22);
             this.reservaHoraDateTimePicker.TabIndex = 19;
             this.reservaHoraDateTimePicker.Value = new System.DateTime(2023, 9, 29, 7, 0, 0, 0);
+            this.reservaHoraDateTimePicker.ValueChanged += new System.EventHandler(this.reservaHoraDateTimePicker_ValueChanged);
             // 
             // groupBoxLiberarChave
             // 
@@ -320,6 +324,7 @@
             this.comboBoxSala.Name = "comboBoxSala";
             this.comboBoxSala.Size = new System.Drawing.Size(243, 24);
             this.comboBoxSala.TabIndex = 30;
+            this.comboBoxSala.SelectedIndexChanged += new System.EventHandler(this.comboBoxSala_SelectedIndexChanged);
             // 
             // comboBoxStatus
             // 
@@ -386,11 +391,23 @@
             this.comboBoxSolicitante.Size = new System.Drawing.Size(243, 24);
             this.comboBoxSolicitante.TabIndex = 32;
             // 
+            // labelAviso
+            // 
+            this.labelAviso.AutoSize = true;
+            this.labelAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAviso.ForeColor = System.Drawing.Color.Red;
+            this.labelAviso.Location = new System.Drawing.Point(526, 309);
+            this.labelAviso.Name = "labelAviso";
+            this.labelAviso.Size = new System.Drawing.Size(49, 18);
+            this.labelAviso.TabIndex = 33;
+            this.labelAviso.Text = "Aviso";
+            // 
             // FormCadastroReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1365, 569);
+            this.Controls.Add(this.labelAviso);
             this.Controls.Add(this.comboBoxSolicitante);
             this.Controls.Add(this.comboBoxTurno);
             this.Controls.Add(this.comboBoxStatus);
@@ -448,5 +465,6 @@
         private System.Windows.Forms.ComboBox comboBoxSolicitante;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelAviso;
     }
 }
