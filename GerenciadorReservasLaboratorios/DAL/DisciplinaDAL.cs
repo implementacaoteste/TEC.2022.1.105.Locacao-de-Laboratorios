@@ -106,32 +106,30 @@ namespace DAL
         public List<Disciplina> BuscarPorNome(string _nome)
         {
             List<Disciplina> disciplinas = new List<Disciplina>();
-            Disciplina disciplina;
-
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Disciplina WHERE Nome = @Nome";
+                cmd.CommandText = "SELECT Id, Nome FROM Disciplina WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read()) // Use um loop para ler todos os resultados
                     {
-                        disciplina = new Disciplina();
+                        Disciplina disciplina = new Disciplina();
                         disciplina.Id = Convert.ToInt32(rd["Id"]);
                         disciplina.Nome = rd["Nome"].ToString();
-                        disciplinas.Add(disciplina);
+                        disciplinas.Add(disciplina); // Adicione a disciplina à lista de disciplinas
                     }
                 }
-                return disciplinas;
+                return disciplinas; // Retorne a lista de disciplinas
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar uma disciplina por nome no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar disciplinas por nome no banco de dados.", ex);
             }
             finally
             {

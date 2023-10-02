@@ -15,6 +15,7 @@ namespace UILGerenReservasLab
     public partial class FormBuscarCurso : Form
     {
         public Curso CursoSelecionado { get; private set; }
+
         public FormBuscarCurso()
         {
             InitializeComponent();
@@ -94,16 +95,6 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-        private void cursoDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            //// Verifique se a seleção não está vazia
-            //if (cursoDataGridView.SelectedRows.Count > 0)
-            //{
-            //    // Limpe o conteúdo do textbox de busca
-            //    buscarTextBox.Text = "";
-            //}
-        }
-
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -136,7 +127,8 @@ namespace UILGerenReservasLab
             {
                 frm.ShowDialog();
             }
-            buttonBuscar_Click(null, null);
+            buttonBuscar_Click(sender, e);
         }
+
     }
 }

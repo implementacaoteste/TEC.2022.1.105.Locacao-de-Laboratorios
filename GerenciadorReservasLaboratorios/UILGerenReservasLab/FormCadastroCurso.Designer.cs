@@ -34,8 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCancelarCurso = new System.Windows.Forms.Button();
-            this.btnSalvarCurso = new System.Windows.Forms.Button();
+            this.buttonCancelarCurso = new System.Windows.Forms.Button();
+            this.buttonSalvarCurso = new System.Windows.Forms.Button();
             this.turnoTextBox = new System.Windows.Forms.TextBox();
             lblNomeCurso = new System.Windows.Forms.Label();
             turnoLabel = new System.Windows.Forms.Label();
@@ -89,34 +89,34 @@
             // 
             this.cursoBindingSource.DataSource = typeof(Models.Curso);
             // 
-            // btnCancelarCurso
+            // buttonCancelarCurso
             // 
-            this.btnCancelarCurso.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCancelarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelarCurso.Location = new System.Drawing.Point(789, 337);
-            this.btnCancelarCurso.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelarCurso.Name = "btnCancelarCurso";
-            this.btnCancelarCurso.Size = new System.Drawing.Size(116, 40);
-            this.btnCancelarCurso.TabIndex = 13;
-            this.btnCancelarCurso.Text = "&Cancelar";
-            this.btnCancelarCurso.UseVisualStyleBackColor = false;
-            this.btnCancelarCurso.Click += new System.EventHandler(this.btnCancelarCurso_Click);
+            this.buttonCancelarCurso.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonCancelarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCancelarCurso.Location = new System.Drawing.Point(789, 337);
+            this.buttonCancelarCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCancelarCurso.Name = "buttonCancelarCurso";
+            this.buttonCancelarCurso.Size = new System.Drawing.Size(116, 40);
+            this.buttonCancelarCurso.TabIndex = 13;
+            this.buttonCancelarCurso.Text = "&Cancelar";
+            this.buttonCancelarCurso.UseVisualStyleBackColor = false;
+            this.buttonCancelarCurso.Click += new System.EventHandler(this.buttonCancelarCurso_Click);
             // 
-            // btnSalvarCurso
+            // buttonSalvarCurso
             // 
-            this.btnSalvarCurso.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSalvarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalvarCurso.Location = new System.Drawing.Point(625, 337);
-            this.btnSalvarCurso.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalvarCurso.Name = "btnSalvarCurso";
-            this.btnSalvarCurso.Size = new System.Drawing.Size(109, 40);
-            this.btnSalvarCurso.TabIndex = 12;
-            this.btnSalvarCurso.Text = "&Salvar";
-            this.btnSalvarCurso.UseVisualStyleBackColor = false;
-            this.btnSalvarCurso.Click += new System.EventHandler(this.btnSalvarCurso_Click);
+            this.buttonSalvarCurso.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonSalvarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonSalvarCurso.Location = new System.Drawing.Point(625, 337);
+            this.buttonSalvarCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSalvarCurso.Name = "buttonSalvarCurso";
+            this.buttonSalvarCurso.Size = new System.Drawing.Size(109, 40);
+            this.buttonSalvarCurso.TabIndex = 12;
+            this.buttonSalvarCurso.Text = "&Salvar";
+            this.buttonSalvarCurso.UseVisualStyleBackColor = false;
+            this.buttonSalvarCurso.Click += new System.EventHandler(this.buttonSalvarCurso_Click);
             // 
             // turnoTextBox
             // 
@@ -133,8 +133,8 @@
             this.ClientSize = new System.Drawing.Size(961, 416);
             this.Controls.Add(turnoLabel);
             this.Controls.Add(this.turnoTextBox);
-            this.Controls.Add(this.btnCancelarCurso);
-            this.Controls.Add(this.btnSalvarCurso);
+            this.Controls.Add(this.buttonCancelarCurso);
+            this.Controls.Add(this.buttonSalvarCurso);
             this.Controls.Add(lblNomeCurso);
             this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.label1);
@@ -155,8 +155,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource cursoBindingSource;
         private System.Windows.Forms.TextBox nomeTextBox;
-        private System.Windows.Forms.Button btnSalvarCurso;
-        private System.Windows.Forms.Button btnCancelarCurso;
+        private System.Windows.Forms.Button buttonSalvarCurso;
+        private System.Windows.Forms.Button buttonCancelarCurso;
         private System.Windows.Forms.TextBox turnoTextBox;
     }
 }

@@ -8,14 +8,15 @@ namespace DAL
 {
     public class CursoDAL
     {
-        public void Inserir(Curso _curso)
+        public int Inserir(Curso _curso)
         {
+            int novaId = 0;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Curso (Nome, Turno)
-                                    VALUES (@Nome, @Turno)";
+                                    VALUES (@Nome, @Turno); SELECT SCOPE_IDENTITY();";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", _curso.Nome);
@@ -24,7 +25,9 @@ namespace DAL
                 cmd.Connection = cn;
                 cn.Open();
 
-                cmd.ExecuteNonQuery();
+                novaId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return novaId;
             }
             catch (Exception ex)
             {
@@ -105,38 +108,41 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Curso BuscarPorNome(string _nome)
+        public List<Curso> BuscarPorNome(string _nome)
         {
-            Curso curso = new Curso();
+            List<Curso> cursos = new List<Curso>();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, Turno FROM Curso WHERE Nome LIKE @Nome";
+                cmd.CommandText = "SELECT Id, Nome, Turno FROM Curso WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read()) // Use um loop para ler todos os resultados
                     {
+                        Curso curso = new Curso();
                         curso.Id = Convert.ToInt32(rd["Id"]);
                         curso.Nome = rd["Nome"].ToString();
                         curso.Turno = rd["Turno"].ToString();
+                        cursos.Add(curso); // Adicione o curso à lista de cursos
                     }
                 }
-                return curso;
+                return cursos; // Retorne a lista de cursos
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar um curso por nome no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar cursos por nome no banco de dados.", ex);
             }
             finally
             {
                 cn.Close();
             }
         }
+
         public void Alterar(Curso _curso)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -183,6 +189,10 @@ namespace DAL
                         }
                         cmd.Transaction = transaction;
                         cmd.Connection = transaction.Connection;
+
+                        // Execute o comando SQL para excluir o registro
+                        cmd.ExecuteNonQuery();
+
                         if (_transaction == null)
                             transaction.Commit();
                     }
