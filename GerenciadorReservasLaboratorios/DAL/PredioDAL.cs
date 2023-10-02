@@ -125,7 +125,7 @@ namespace DAL
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read())
                     {
                         predio = new Predio();
                         predio.Id = Convert.ToInt32(rd["Id"]);

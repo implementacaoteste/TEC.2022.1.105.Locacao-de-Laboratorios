@@ -127,7 +127,7 @@
             // buttonAdicionarGrupoUsuario
             // 
             this.buttonAdicionarGrupoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdicionarGrupoUsuario.Location = new System.Drawing.Point(1132, 94);
+            this.buttonAdicionarGrupoUsuario.Location = new System.Drawing.Point(1119, 93);
             this.buttonAdicionarGrupoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdicionarGrupoUsuario.Name = "buttonAdicionarGrupoUsuario";
             this.buttonAdicionarGrupoUsuario.Size = new System.Drawing.Size(70, 24);
@@ -139,7 +139,7 @@
             // buttonExcluirGrupoUsuario
             // 
             this.buttonExcluirGrupoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirGrupoUsuario.Location = new System.Drawing.Point(1208, 94);
+            this.buttonExcluirGrupoUsuario.Location = new System.Drawing.Point(1193, 92);
             this.buttonExcluirGrupoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluirGrupoUsuario.Name = "buttonExcluirGrupoUsuario";
             this.buttonExcluirGrupoUsuario.Size = new System.Drawing.Size(70, 24);
@@ -205,6 +205,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
@@ -213,6 +214,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
@@ -221,6 +223,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "NomeUsuario";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
@@ -229,6 +232,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Email";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
@@ -237,6 +241,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Senha";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // dataGridViewTextBoxColumn6
@@ -245,6 +250,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Matricula";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // dataGridViewCheckBoxColumn1
@@ -253,6 +259,7 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Ativo";
             this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 125;
             // 
             // grupoUsuariosDataGridView

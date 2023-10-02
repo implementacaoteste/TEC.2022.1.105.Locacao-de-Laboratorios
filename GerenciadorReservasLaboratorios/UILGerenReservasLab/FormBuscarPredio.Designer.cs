@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtBuscarPredio = new System.Windows.Forms.TextBox();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.predioDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,16 +63,16 @@
             lblBuscarPor.TabIndex = 17;
             lblBuscarPor.Text = "Buscar por:";
             // 
-            // txtBuscarPredio
+            // textBoxBuscar
             // 
-            this.txtBuscarPredio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscarPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarPredio.Location = new System.Drawing.Point(210, 111);
-            this.txtBuscarPredio.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBuscarPredio.Name = "txtBuscarPredio";
-            this.txtBuscarPredio.Size = new System.Drawing.Size(745, 24);
-            this.txtBuscarPredio.TabIndex = 18;
+            this.textBoxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBuscar.Location = new System.Drawing.Point(210, 111);
+            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(745, 24);
+            this.textBoxBuscar.TabIndex = 18;
             // 
             // comboBoxBuscarPor
             // 
@@ -86,6 +86,7 @@
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 24);
             this.comboBoxBuscarPor.TabIndex = 16;
+            this.comboBoxBuscarPor.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscarPor_SelectedIndexChanged);
             // 
             // predioDataGridView
             // 
@@ -281,7 +282,7 @@
             this.Controls.Add(this.buttonFechar);
             this.Controls.Add(this.predioDataGridView);
             this.Controls.Add(lblBuscarPor);
-            this.Controls.Add(this.txtBuscarPredio);
+            this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.comboBoxBuscarPor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -299,7 +300,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBuscarPredio;
+        private System.Windows.Forms.TextBox textBoxBuscar;
         private System.Windows.Forms.ComboBox comboBoxBuscarPor;
         private System.Windows.Forms.BindingSource predioBindingSource;
         private System.Windows.Forms.DataGridView predioDataGridView;

@@ -36,7 +36,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelFormularios = new System.Windows.Forms.Panel();
-            this.buttonExport = new System.Windows.Forms.Button();
             this.labelReservasPendentes = new System.Windows.Forms.Label();
             this.reservaPanelDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,7 +105,6 @@
             // panelFormularios
             // 
             this.panelFormularios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
-            this.panelFormularios.Controls.Add(this.buttonExport);
             this.panelFormularios.Controls.Add(this.labelReservasPendentes);
             this.panelFormularios.Controls.Add(this.reservaPanelDataGridView);
             this.panelFormularios.Controls.Add(this.labelData);
@@ -118,16 +116,6 @@
             this.panelFormularios.Name = "panelFormularios";
             this.panelFormularios.Size = new System.Drawing.Size(1300, 800);
             this.panelFormularios.TabIndex = 2;
-            // 
-            // buttonExport
-            // 
-            this.buttonExport.Location = new System.Drawing.Point(188, 35);
-            this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(109, 23);
-            this.buttonExport.TabIndex = 42;
-            this.buttonExport.Text = "ExportConfig";
-            this.buttonExport.UseVisualStyleBackColor = true;
-            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // labelReservasPendentes
             // 
@@ -736,6 +724,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sala;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button buttonExport;
     }
 }
