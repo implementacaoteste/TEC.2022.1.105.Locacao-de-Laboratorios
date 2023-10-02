@@ -265,6 +265,16 @@ namespace UILGerenReservasLab
 
             }
         }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            // Obtém o arquivo XML
+            string arquivoXml = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DataGridViewConfiguracao.xml");
+
+            // Salva as configurações do DataGridView no arquivo XML
+            reservaPanelDataGridView.SaveLayout(arquivoXml);
+        }
+
         // METHOD TO OPEN FORMS WITHIN THE PANEL
         public void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {

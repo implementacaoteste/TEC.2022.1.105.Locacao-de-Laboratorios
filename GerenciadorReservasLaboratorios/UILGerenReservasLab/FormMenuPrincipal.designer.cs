@@ -36,8 +36,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelFormularios = new System.Windows.Forms.Panel();
+            this.buttonExport = new System.Windows.Forms.Button();
             this.labelReservasPendentes = new System.Windows.Forms.Label();
             this.reservaPanelDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeSolicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservaDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelData = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
@@ -67,12 +74,6 @@
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
             this.buttonFechar = new System.Windows.Forms.PictureBox();
             this.timerHoraData = new System.Windows.Forms.Timer(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeSolicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservaDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservaPanelDataGridView)).BeginInit();
@@ -104,7 +105,8 @@
             // 
             // panelFormularios
             // 
-            this.panelFormularios.BackColor = System.Drawing.SystemColors.Control;
+            this.panelFormularios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.panelFormularios.Controls.Add(this.buttonExport);
             this.panelFormularios.Controls.Add(this.labelReservasPendentes);
             this.panelFormularios.Controls.Add(this.reservaPanelDataGridView);
             this.panelFormularios.Controls.Add(this.labelData);
@@ -117,11 +119,21 @@
             this.panelFormularios.Size = new System.Drawing.Size(1300, 800);
             this.panelFormularios.TabIndex = 2;
             // 
+            // buttonExport
+            // 
+            this.buttonExport.Location = new System.Drawing.Point(188, 35);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(109, 23);
+            this.buttonExport.TabIndex = 42;
+            this.buttonExport.Text = "ExportConfig";
+            this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
+            // 
             // labelReservasPendentes
             // 
             this.labelReservasPendentes.AutoSize = true;
             this.labelReservasPendentes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReservasPendentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelReservasPendentes.ForeColor = System.Drawing.Color.LightSlateGray;
             this.labelReservasPendentes.Location = new System.Drawing.Point(8, 70);
             this.labelReservasPendentes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReservasPendentes.Name = "labelReservasPendentes";
@@ -141,7 +153,7 @@
             this.reservaPanelDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
@@ -159,7 +171,7 @@
             this.reservaPanelDataGridView.DataSource = this.reservaBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -173,7 +185,7 @@
             this.reservaPanelDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -191,6 +203,66 @@
             this.reservaPanelDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reservaPanelDataGridView.Size = new System.Drawing.Size(900, 370);
             this.reservaPanelDataGridView.TabIndex = 40;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 187.353F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // NomeSolicitante
+            // 
+            this.NomeSolicitante.DataPropertyName = "NomeSolicitante";
+            this.NomeSolicitante.FillWeight = 76.9962F;
+            this.NomeSolicitante.HeaderText = "Solicitante";
+            this.NomeSolicitante.MinimumWidth = 6;
+            this.NomeSolicitante.Name = "NomeSolicitante";
+            this.NomeSolicitante.ReadOnly = true;
+            this.NomeSolicitante.Width = 200;
+            // 
+            // reservaDataDataGridViewTextBoxColumn
+            // 
+            this.reservaDataDataGridViewTextBoxColumn.DataPropertyName = "ReservaData";
+            this.reservaDataDataGridViewTextBoxColumn.FillWeight = 122.9549F;
+            this.reservaDataDataGridViewTextBoxColumn.HeaderText = "Data reservada";
+            this.reservaDataDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.reservaDataDataGridViewTextBoxColumn.Name = "reservaDataDataGridViewTextBoxColumn";
+            this.reservaDataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reservaDataDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // Sala
+            // 
+            this.Sala.DataPropertyName = "Sala";
+            this.Sala.FillWeight = 76.9962F;
+            this.Sala.HeaderText = "Sala";
+            this.Sala.MinimumWidth = 6;
+            this.Sala.Name = "Sala";
+            this.Sala.ReadOnly = true;
+            this.Sala.Width = 89;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.FillWeight = 116.6184F;
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // turnoDataGridViewTextBoxColumn
+            // 
+            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
+            this.turnoDataGridViewTextBoxColumn.FillWeight = 197.6373F;
+            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
+            this.turnoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
+            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.turnoDataGridViewTextBoxColumn.Width = 200;
             // 
             // reservaBindingSource
             // 
@@ -216,7 +288,7 @@
             this.labelHora.AutoSize = true;
             this.labelHora.BackColor = System.Drawing.Color.Transparent;
             this.labelHora.Font = new System.Drawing.Font("Century Gothic", 80F);
-            this.labelHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelHora.ForeColor = System.Drawing.Color.SteelBlue;
             this.labelHora.Location = new System.Drawing.Point(575, 528);
             this.labelHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelHora.Name = "labelHora";
@@ -588,66 +660,6 @@
             this.timerHoraData.Enabled = true;
             this.timerHoraData.Tick += new System.EventHandler(this.timerHoraData_Tick);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 187.353F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // NomeSolicitante
-            // 
-            this.NomeSolicitante.DataPropertyName = "NomeSolicitante";
-            this.NomeSolicitante.FillWeight = 76.9962F;
-            this.NomeSolicitante.HeaderText = "Solicitante";
-            this.NomeSolicitante.MinimumWidth = 6;
-            this.NomeSolicitante.Name = "NomeSolicitante";
-            this.NomeSolicitante.ReadOnly = true;
-            this.NomeSolicitante.Width = 200;
-            // 
-            // reservaDataDataGridViewTextBoxColumn
-            // 
-            this.reservaDataDataGridViewTextBoxColumn.DataPropertyName = "ReservaData";
-            this.reservaDataDataGridViewTextBoxColumn.FillWeight = 122.9549F;
-            this.reservaDataDataGridViewTextBoxColumn.HeaderText = "Data reservada";
-            this.reservaDataDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reservaDataDataGridViewTextBoxColumn.Name = "reservaDataDataGridViewTextBoxColumn";
-            this.reservaDataDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reservaDataDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // Sala
-            // 
-            this.Sala.DataPropertyName = "Sala";
-            this.Sala.FillWeight = 76.9962F;
-            this.Sala.HeaderText = "Sala";
-            this.Sala.MinimumWidth = 6;
-            this.Sala.Name = "Sala";
-            this.Sala.ReadOnly = true;
-            this.Sala.Width = 89;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.FillWeight = 116.6184F;
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // turnoDataGridViewTextBoxColumn
-            // 
-            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
-            this.turnoDataGridViewTextBoxColumn.FillWeight = 197.6373F;
-            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
-            this.turnoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
-            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoDataGridViewTextBoxColumn.Width = 200;
-            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -724,5 +736,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sala;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button buttonExport;
     }
 }

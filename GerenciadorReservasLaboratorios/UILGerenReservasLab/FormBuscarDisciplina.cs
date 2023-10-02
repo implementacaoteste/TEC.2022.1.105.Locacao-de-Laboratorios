@@ -33,7 +33,6 @@ namespace UILGerenReservasLab
                 {
                     case 0:
                         if (String.IsNullOrEmpty(textBoxBuscar.Text))
-
                             throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 31 } } };
 
                         disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
@@ -123,6 +122,13 @@ namespace UILGerenReservasLab
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBoxBuscarpor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Limpar o DataGridView e o textBoxBuscar antes de carregar novos dados
+            disciplinaBindingSource.DataSource = null; // Limpar o DataGridView
+            textBoxBuscar.Text = ""; // Limpar o campo de busca
         }
     }
 }

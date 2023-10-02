@@ -152,6 +152,8 @@
             this.Controls.Add(this.textBoxPredio);
             this.Controls.Add(this.textBoxNomeSala);
             this.Name = "FormCadastroSala";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroSala";
             this.Load += new System.EventHandler(this.FormCadastroSala_Load);
