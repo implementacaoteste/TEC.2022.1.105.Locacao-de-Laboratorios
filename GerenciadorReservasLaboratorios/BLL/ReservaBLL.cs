@@ -2,6 +2,7 @@
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BLL
 {
@@ -59,6 +60,37 @@ namespace BLL
         public List<Reserva> BuscarPorTurno(string turno)
         {
             return new ReservaDAL().BuscarPorTurno(turno);
+        }
+        public bool ExisteReservasDuplicadas(int iDSala, DateTime data, TimeSpan hora)
+        {
+            // Obtém todas as reservas do banco de dados
+            var reservas = new ReservaDAL().BuscarTodos();
+
+            // Cria uma lista de reservas em duplicidade
+            var reservasDuplicadas = new List<Reserva>();
+
+            // Itera sobre as reservas
+            foreach (var reserva in reservas)
+            {
+                // Verifica se a reserva é em duplicidade
+                if (reserva.IdSala == iDSala &&
+                    reserva.ReservaData == data &&
+                    reserva.ReservaHora == hora)
+                {
+                    // Adiciona a reserva à lista de reservas em duplicidade
+                    reservasDuplicadas.Add(reserva);
+                }
+            }
+
+            // Verifica se existe alguma reserva em duplicidade
+            if (reservasDuplicadas.Any())
+            {
+                // Retorna true
+                return true;
+            }
+
+            // Retorna false
+            return false;
         }
         public void Alterar(Reserva reserva)
         {

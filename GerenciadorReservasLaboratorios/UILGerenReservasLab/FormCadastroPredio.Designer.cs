@@ -110,6 +110,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormCadastroPredio";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Predios";
             ((System.ComponentModel.ISupportInitialize)(this.predioBindingSource)).EndInit();

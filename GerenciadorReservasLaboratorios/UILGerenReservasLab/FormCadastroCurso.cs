@@ -16,6 +16,7 @@ namespace UILGerenReservasLab
     {
         private int Id;
         private bool alterar;
+
         public FormCadastroCurso(bool _alterar = false, int _id = 0)
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace UILGerenReservasLab
             if (alterar)
                 cursoBindingSource.DataSource = new CursoBLL().BuscarPorId(_id);
         }
-        private void btnSalvarCurso_Click(object sender, EventArgs e)
+        private void buttonSalvarCurso_Click(object sender, EventArgs e)
         {
             try
             {
@@ -53,12 +54,11 @@ namespace UILGerenReservasLab
             }
         }
 
-        private void btnCancelarCurso_Click(object sender, EventArgs e)
+        private void buttonCancelarCurso_Click(object sender, EventArgs e)
         {
             try
             {
                 Close();
-
             }
             catch (Exception ex)
             {

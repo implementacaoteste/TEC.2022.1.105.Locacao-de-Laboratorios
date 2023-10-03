@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelErrorMessage = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonFechar = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.pictureBoxUsuario = new System.Windows.Forms.PictureBox();
-            this.labelErrorMessage = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -64,6 +65,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -72,29 +74,32 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 530);
+            this.panel1.Size = new System.Drawing.Size(400, 652);
             this.panel1.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(12, 342);
+            this.label5.Location = new System.Drawing.Point(100, 407);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(266, 25);
+            this.label5.Size = new System.Drawing.Size(225, 31);
             this.label5.TabIndex = 5;
-            this.label5.Text = "de reservas de salas e labs";
+            this.label5.Text = "de reservas de Salas";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(12, 301);
+            this.label4.Location = new System.Drawing.Point(71, 370);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(266, 25);
+            this.label4.Size = new System.Drawing.Size(290, 28);
             this.label4.TabIndex = 4;
             this.label4.Text = "Sistema de Gerenciamento";
             // 
@@ -103,9 +108,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(138, 429);
+            this.label3.Location = new System.Drawing.Point(184, 576);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 14);
+            this.label3.Size = new System.Drawing.Size(174, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "SENAI FiveDEV Students";
             // 
@@ -114,29 +120,32 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(175, 400);
+            this.label2.Location = new System.Drawing.Point(233, 540);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 14);
+            this.label2.Size = new System.Drawing.Size(128, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Desenvolvido por:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(127, 262);
+            this.label1.Location = new System.Drawing.Point(137, 324);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 25);
+            this.label1.Size = new System.Drawing.Size(174, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bem-vindos ao";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::UILGerenReservasLab.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(239, 233);
+            this.pictureBox1.Size = new System.Drawing.Size(319, 287);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -153,17 +162,34 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(300, 0);
+            this.panel2.Location = new System.Drawing.Point(400, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 530);
+            this.panel2.Size = new System.Drawing.Size(600, 652);
             this.panel2.TabIndex = 1;
+            // 
+            // labelErrorMessage
+            // 
+            this.labelErrorMessage.AutoSize = true;
+            this.labelErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErrorMessage.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelErrorMessage.Image = ((System.Drawing.Image)(resources.GetObject("labelErrorMessage.Image")));
+            this.labelErrorMessage.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelErrorMessage.Location = new System.Drawing.Point(11, 492);
+            this.labelErrorMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelErrorMessage.Name = "labelErrorMessage";
+            this.labelErrorMessage.Size = new System.Drawing.Size(127, 22);
+            this.labelErrorMessage.TabIndex = 11;
+            this.labelErrorMessage.Text = "Error Message";
+            this.labelErrorMessage.Visible = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai;
-            this.pictureBox2.Location = new System.Drawing.Point(54, 26);
+            this.pictureBox2.Location = new System.Drawing.Point(72, 32);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(299, 166);
+            this.pictureBox2.Size = new System.Drawing.Size(399, 204);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -174,9 +200,10 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6.Location = new System.Drawing.Point(6, 262);
+            this.label6.Location = new System.Drawing.Point(8, 322);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 25);
+            this.label6.Size = new System.Drawing.Size(197, 33);
             this.label6.TabIndex = 6;
             this.label6.Text = "Faça seu Login";
             // 
@@ -186,9 +213,10 @@
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFechar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonFechar.Location = new System.Drawing.Point(407, 3);
+            this.buttonFechar.Location = new System.Drawing.Point(543, 4);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonFechar.Name = "buttonFechar";
-            this.buttonFechar.Size = new System.Drawing.Size(40, 40);
+            this.buttonFechar.Size = new System.Drawing.Size(53, 49);
             this.buttonFechar.TabIndex = 3;
             this.buttonFechar.Text = "X";
             this.buttonFechar.UseVisualStyleBackColor = true;
@@ -200,9 +228,10 @@
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonSair.Location = new System.Drawing.Point(310, 439);
+            this.buttonSair.Location = new System.Drawing.Point(413, 540);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(117, 42);
+            this.buttonSair.Size = new System.Drawing.Size(156, 52);
             this.buttonSair.TabIndex = 2;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = false;
@@ -214,9 +243,10 @@
             this.buttonAcessar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAcessar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAcessar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonAcessar.Location = new System.Drawing.Point(11, 439);
+            this.buttonAcessar.Location = new System.Drawing.Point(15, 540);
+            this.buttonAcessar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAcessar.Name = "buttonAcessar";
-            this.buttonAcessar.Size = new System.Drawing.Size(117, 42);
+            this.buttonAcessar.Size = new System.Drawing.Size(156, 52);
             this.buttonAcessar.TabIndex = 2;
             this.buttonAcessar.Text = "Acessar";
             this.buttonAcessar.UseVisualStyleBackColor = false;
@@ -228,28 +258,30 @@
             this.panel4.Controls.Add(this.textBoxSenha);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.pictureBoxSenha);
-            this.panel4.Location = new System.Drawing.Point(6, 352);
+            this.panel4.Location = new System.Drawing.Point(8, 433);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(441, 45);
+            this.panel4.Size = new System.Drawing.Size(588, 55);
             this.panel4.TabIndex = 1;
             // 
             // textBoxSenha
             // 
             this.textBoxSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.textBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSenha.Location = new System.Drawing.Point(47, 18);
-            this.textBoxSenha.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSenha.Location = new System.Drawing.Point(63, 22);
+            this.textBoxSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.PasswordChar = '*';
-            this.textBoxSenha.Size = new System.Drawing.Size(386, 13);
+            this.textBoxSenha.Size = new System.Drawing.Size(515, 15);
             this.textBoxSenha.TabIndex = 12;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlText;
-            this.panel5.Location = new System.Drawing.Point(48, 41);
+            this.panel5.Location = new System.Drawing.Point(64, 50);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(386, 1);
+            this.panel5.Size = new System.Drawing.Size(515, 1);
             this.panel5.TabIndex = 2;
             // 
             // pictureBoxSenha
@@ -258,8 +290,9 @@
             this.pictureBoxSenha.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxSenha.Image = global::UILGerenReservasLab.Properties.Resources.lock_open;
             this.pictureBoxSenha.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxSenha.Name = "pictureBoxSenha";
-            this.pictureBoxSenha.Size = new System.Drawing.Size(42, 45);
+            this.pictureBoxSenha.Size = new System.Drawing.Size(56, 55);
             this.pictureBoxSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxSenha.TabIndex = 7;
             this.pictureBoxSenha.TabStop = false;
@@ -272,27 +305,29 @@
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.textBoxUsuario);
             this.panel3.Controls.Add(this.pictureBoxUsuario);
-            this.panel3.Location = new System.Drawing.Point(6, 301);
+            this.panel3.Location = new System.Drawing.Point(8, 370);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(441, 45);
+            this.panel3.Size = new System.Drawing.Size(588, 55);
             this.panel3.TabIndex = 0;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlText;
-            this.panel6.Location = new System.Drawing.Point(48, 41);
+            this.panel6.Location = new System.Drawing.Point(64, 50);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(386, 1);
+            this.panel6.Size = new System.Drawing.Size(515, 1);
             this.panel6.TabIndex = 3;
             // 
             // textBoxUsuario
             // 
             this.textBoxUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsuario.Location = new System.Drawing.Point(47, 15);
-            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxUsuario.Location = new System.Drawing.Point(63, 18);
+            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(386, 13);
+            this.textBoxUsuario.Size = new System.Drawing.Size(515, 15);
             this.textBoxUsuario.TabIndex = 10;
             // 
             // pictureBoxUsuario
@@ -301,34 +336,34 @@
             this.pictureBoxUsuario.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxUsuario.Image = global::UILGerenReservasLab.Properties.Resources.user_account;
             this.pictureBoxUsuario.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxUsuario.Name = "pictureBoxUsuario";
-            this.pictureBoxUsuario.Size = new System.Drawing.Size(42, 45);
+            this.pictureBoxUsuario.Size = new System.Drawing.Size(56, 55);
             this.pictureBoxUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxUsuario.TabIndex = 6;
             this.pictureBoxUsuario.TabStop = false;
             // 
-            // labelErrorMessage
+            // label7
             // 
-            this.labelErrorMessage.AutoSize = true;
-            this.labelErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelErrorMessage.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelErrorMessage.Image = ((System.Drawing.Image)(resources.GetObject("labelErrorMessage.Image")));
-            this.labelErrorMessage.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelErrorMessage.Location = new System.Drawing.Point(8, 400);
-            this.labelErrorMessage.Name = "labelErrorMessage";
-            this.labelErrorMessage.Size = new System.Drawing.Size(101, 17);
-            this.labelErrorMessage.TabIndex = 11;
-            this.labelErrorMessage.Text = "Error Message";
-            this.labelErrorMessage.Visible = false;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(137, 457);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(150, 31);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Laboratórios";
             // 
             // FormLogin2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 530);
+            this.ClientSize = new System.Drawing.Size(1000, 652);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormLogin2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin2";
@@ -372,5 +407,6 @@
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label labelErrorMessage;
+        private System.Windows.Forms.Label label7;
     }
 }

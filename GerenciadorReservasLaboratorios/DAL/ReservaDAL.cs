@@ -539,7 +539,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public void Alterar(Reserva reserva)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);

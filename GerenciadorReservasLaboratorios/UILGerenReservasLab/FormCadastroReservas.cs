@@ -18,6 +18,9 @@ namespace UILGerenReservasLab
         private UsuarioBLL usuarioBLL = new UsuarioBLL();
         Usuario usuarioLogado;
 
+        // Variável de instância para armazenar a hora selecionada
+        private TimeSpan horaSelecionada;
+
         private bool isProfessor = true;
         private bool isCoordenacao = true;
         private bool isAdmin = true;
@@ -50,17 +53,23 @@ namespace UILGerenReservasLab
 
             if (Id == 0)
             {
-                // Defina o nome do usuário logado no campo idUsuarioTextBox.
-                idUsuarioTextBox.Text = usuarioLogado.Nome;
-
                 // Carregue os dados para preencher os ComboBoxes.
                 CarregarComboBoxSolicitante();
                 CarregarComboBoxSala();
                 CarregarComboBoxCurso();
                 CarregarComboBoxDisciplina();
 
+                reservaDataDateTimePicker.Enabled = false;
+                reservaHoraDateTimePicker.Enabled = false;
+
                 // Desabilite o groupBoxLiberarChave por padrão.
                 groupBoxLiberarChave.Enabled = false;
+
+                if (isProfessor)
+                {
+                    // Configurar comboBoxStatus com o valor "Pendente" se o usuário for um professor.
+                    comboBoxStatus.DataSource = new List<string> { "Pendente" };
+                }
             }
             else
             {
@@ -71,29 +80,11 @@ namespace UILGerenReservasLab
                 CarregarComboBoxDisciplina();
 
                 // Obtenha a reserva existente do banco de dados com base no Id.
-                Reserva reservaExistente = new ReservaBLL().BuscarPorId(Id);
+                Reserva reserva = new ReservaBLL().BuscarPorId(Id);
 
-                if (reservaExistente != null)
+                if (reserva != null)
                 {
-                    // Defina o valor selecionado nos ComboBoxes com base nos dados da reserva existente.
-                    idUsuarioTextBox.Text = reservaExistente.NomeResponsavel;
-                    comboBoxSolicitante.SelectedValue = reservaExistente.IdSolicitante;
-                    comboBoxSala.SelectedValue = reservaExistente.IdSala;
-                    comboBoxCurso.SelectedValue = reservaExistente.IdCurso;
-                    comboBoxDisciplina.SelectedValue = reservaExistente.IdDisciplina;
-                    comboBoxStatus.SelectedItem = reservaExistente.Status;
-                    comboBoxTurno.SelectedItem = reservaExistente.Turno;
-                    reservaDataDateTimePicker.Value = reservaExistente.ReservaData;
-
-                    // Crie um objeto DateTime com a data atual (ou outra data se necessário)
-                    DateTime dataAtual = DateTime.Now;
-
-                    // Adicione o TimeSpan à hora do DateTime
-                    DateTime dateTimeComHora = dataAtual.Add(reservaExistente.ReservaHora);
-
-                    // Atribua o DateTime resultante ao DateTimePicker
-                    reservaHoraDateTimePicker.Value = dateTimeComHora;
-
+                    reservaBindingSource.DataSource = reserva;
                 }
                 else
                 {
@@ -102,7 +93,6 @@ namespace UILGerenReservasLab
                 }
             }
         }
-
 
         private void DeterminarTipoDeUsuario()
         {
@@ -117,15 +107,45 @@ namespace UILGerenReservasLab
 
         private void CarregarComboBoxSolicitante()
         {
-            // Carregue os usuários do banco de dados.
-            List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
+            if (Id == 0)
+            {
+                if(isCoordenacao || isAdmin)
+                {
+                    // Carregue os usuários do banco de dados.
+                    List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
 
-            // Defina a fonte de dados para o ComboBox de solicitante.
-            comboBoxSolicitante.DisplayMember = "Nome";
-            comboBoxSolicitante.ValueMember = "Id";
-            comboBoxSolicitante.DataSource = usuarios;
+                    // Defina a fonte de dados para o ComboBox de solicitante.
+                    comboBoxSolicitante.DisplayMember = "Nome";
+                    comboBoxSolicitante.ValueMember = "Id";
+                    comboBoxSolicitante.DataSource = usuarios;
+                }
+                else if (isProfessor)
+                {
+                    // Usuário é professor
+                    comboBoxSolicitante.DisplayMember = "Nome";
+                    comboBoxSolicitante.ValueMember = "Id";
+                    comboBoxSolicitante.DataSource = new List<Usuario> { usuarioLogado }; // Definir a fonte dos dados
+                }
+            }
         }
-
+        private void CarregarComboBoxResponsavel()
+        {
+            if (Id == 0)
+            {
+                if(isCoordenacao || isAdmin)
+                {
+                    // Defina a fonte de dados para o ComboBox de solicitante.
+                    comboBoxResponsavel.DisplayMember = "Nome";
+                    comboBoxResponsavel.ValueMember = "Id";
+                    comboBoxResponsavel.DataSource = new List<Usuario> { usuarioLogado };
+                }
+                else if (isProfessor)
+                {
+                    comboBoxResponsavel.DataSource = null; // Limpar fonte de dados
+                    comboBoxResponsavel.Enabled = false; // Desativar o ComboBox
+                }
+            }
+        }
         private void CarregarComboBoxSala()
         {
             // Carregue as salas do banco de dados.
@@ -165,12 +185,11 @@ namespace UILGerenReservasLab
                 reservaBindingSource.EndEdit();
                 Reserva _reserva = (Reserva)reservaBindingSource.Current;
 
-                // Obtenha a hora selecionada do DateTimePicker
-                TimeSpan horaSelecionada = reservaHoraDateTimePicker.Value.TimeOfDay;
-
                 if (Id == 0)
                 {
                     usuarioBLL.ValidarPermissao(13);
+                    horaSelecionada = reservaHoraDateTimePicker.Value.TimeOfDay;
+
                     _reserva = new Reserva();
                     _reserva.IdResponsavel = usuarioLogado.Id;
                     _reserva.IdSolicitante = (int)comboBoxSolicitante.SelectedValue;
@@ -202,7 +221,6 @@ namespace UILGerenReservasLab
                 throw;
             }
         }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             try
@@ -214,5 +232,52 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void comboBoxSala_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Habilita o campo reservaDataDateTimePicker
+            reservaDataDateTimePicker.Enabled = true;
+        }
+
+        private void reservaDataDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            // Habilita o campo reservaHoraDateTimePicker
+            reservaHoraDateTimePicker.Enabled = true;
+        }
+
+        private void reservaHoraDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            // Obtenha a sala selecionada
+            Sala salaSelecionada = (Sala)comboBoxSala.SelectedItem;
+
+            if (salaSelecionada != null)
+            {
+                int idSala = salaSelecionada.Id;
+                DateTime dataSelecionada = reservaDataDateTimePicker.Value.Date;
+                horaSelecionada = reservaHoraDateTimePicker.Value.TimeOfDay;
+
+                // Verifique se já existe uma reserva conflitante usando o método ExisteReservasDuplicadas
+                bool reservaConflitante = new ReservaBLL().ExisteReservasDuplicadas(idSala, dataSelecionada, horaSelecionada);
+
+                // Atualize o estado do botão "Salvar" e exiba um aviso
+                if (reservaConflitante)
+                {
+                    // Desabilite o botão "Salvar"
+                    buttonSalvar.Enabled = false;
+
+                    // Exiba um aviso ao usuário (por exemplo, em uma Label ou MessageBox)
+                    labelAviso.Text = "Horário não disponível. Por favor, selecione outra sala, data ou hora.";
+                }
+                else
+                {
+                    // Habilite o botão "Salvar"
+                    buttonSalvar.Enabled = true;
+
+                    // Limpe o aviso
+                    labelAviso.Text = "";
+                }
+            }
+        }
+
     }
 }

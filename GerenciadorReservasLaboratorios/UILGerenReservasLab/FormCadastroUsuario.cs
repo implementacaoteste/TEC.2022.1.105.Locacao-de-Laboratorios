@@ -69,5 +69,10 @@ namespace UILGerenReservasLab
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
+
+        private void buttonCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

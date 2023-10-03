@@ -119,13 +119,13 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Andares, Descricao, Estado FROM Predio WHERE Nome = @Nome";
+                cmd.CommandText = "SELECT Id, Nome, Andares, Descricao, Estado FROM Predio WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Nome","%"+ nome +"%");
+                cmd.Parameters.AddWithValue("@Nome", "%" + nome + "%");
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    if (rd.Read())
+                    while (rd.Read())
                     {
                         predio = new Predio();
                         predio.Id = Convert.ToInt32(rd["Id"]);

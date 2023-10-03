@@ -15,29 +15,25 @@ namespace UILGerenReservasLab
     public partial class FormBuscarCurso : Form
     {
         public Curso CursoSelecionado { get; private set; }
+
         public FormBuscarCurso()
         {
             InitializeComponent();
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            //CursoBLL cursoBLL = new CursoBLL();
-            //if (buscarTextBox.Text == "")
-            //    cursoBindingSource.DataSource = cursoBLL.BuscarTodos();
-            //else
-            //    cursoBindingSource.DataSource = cursoBLL.BuscarPorNome(buscarTextBox.Text);
             try
             {
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        if (String.IsNullOrEmpty(buscarTextBox.Text))
+                        if (String.IsNullOrEmpty(textBoxBuscar.Text))
                             throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 01 } } };
 
-                        cursoBindingSource.DataSource = new CursoBLL().BuscarPorId(Convert.ToInt32(buscarTextBox.Text));
+                        cursoBindingSource.DataSource = new CursoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
                         break;
                     case 1:
-                        cursoBindingSource.DataSource = new CursoBLL().BuscarPorNome(buscarTextBox.Text);
+                        cursoBindingSource.DataSource = new CursoBLL().BuscarPorNome(textBoxBuscar.Text);
                         break;
                     case 2:
                         cursoBindingSource.DataSource = new CursoBLL().BuscarTodos();
@@ -79,7 +75,7 @@ namespace UILGerenReservasLab
                     return;
                 }
 
-                if (MessageBox.Show("Deseja realmente excluir este registro?",
+                if (MessageBox.Show("Deseja realmente excluir este curso?",
                     "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
 
@@ -87,23 +83,13 @@ namespace UILGerenReservasLab
                 new CursoBLL().Excluir(id);
                 cursoBindingSource.RemoveCurrent();
 
-                MessageBox.Show("Registro excluído com sucesso!");
+                MessageBox.Show("Curso excluído com sucesso!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        private void cursoDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            //// Verifique se a seleção não está vazia
-            //if (cursoDataGridView.SelectedRows.Count > 0)
-            //{
-            //    // Limpe o conteúdo do textbox de busca
-            //    buscarTextBox.Text = "";
-            //}
-        }
-
         private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -136,7 +122,14 @@ namespace UILGerenReservasLab
             {
                 frm.ShowDialog();
             }
-            buttonBuscar_Click(null, null);
+            buttonBuscar_Click(sender, e);
+        }
+
+        private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Limpar o DataGridView e o textBoxBuscar antes de carregar novos dados
+            cursoBindingSource.DataSource = null; // Limpar o DataGridView
+            textBoxBuscar.Text = ""; // Limpar o campo de busca
         }
     }
 }

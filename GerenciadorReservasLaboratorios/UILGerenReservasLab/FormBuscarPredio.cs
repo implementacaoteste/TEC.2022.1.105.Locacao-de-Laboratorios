@@ -64,13 +64,13 @@ namespace UILGerenReservasLab
             {
                 case 0:
                     opc = 0;
-                    if (String.IsNullOrEmpty(txtBuscarPredio.Text))
+                    if (String.IsNullOrEmpty(textBoxBuscar.Text))
                         throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 01 } } };
-                    predioBindingSource.DataSource = new PredioBLL().BuscarPorId(Convert.ToInt32(txtBuscarPredio.Text));
+                    predioBindingSource.DataSource = new PredioBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
                     break;
                 case 1:
                     opc = 1;
-                    predioBindingSource.DataSource = new PredioBLL().BuscarPorNome(txtBuscarPredio.Text);
+                    predioBindingSource.DataSource = new PredioBLL().BuscarPorNome(textBoxBuscar.Text);
                     break;
                 case 2:
                     opc = 3;
@@ -133,6 +133,13 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Limpar o DataGridView e o textBoxBuscar antes de carregar novos dados
+            predioBindingSource.DataSource = null; // Limpar o DataGridView
+            textBoxBuscar.Text = ""; // Limpar o campo de busca
         }
     }
 }

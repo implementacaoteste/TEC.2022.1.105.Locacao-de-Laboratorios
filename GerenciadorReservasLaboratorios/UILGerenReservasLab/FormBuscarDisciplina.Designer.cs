@@ -58,6 +58,7 @@
             this.comboBoxBuscarpor.Name = "comboBoxBuscarpor";
             this.comboBoxBuscarpor.Size = new System.Drawing.Size(143, 24);
             this.comboBoxBuscarpor.TabIndex = 39;
+            this.comboBoxBuscarpor.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscarpor_SelectedIndexChanged);
             // 
             // textBoxBuscar
             // 
@@ -221,7 +222,6 @@
             this.buttonSelecionarDisciplina.TabIndex = 41;
             this.buttonSelecionarDisciplina.Text = "&Selecionar";
             this.buttonSelecionarDisciplina.UseVisualStyleBackColor = false;
-            this.buttonSelecionarDisciplina.Click += new System.EventHandler(this.buttonSelecionarDisciplina_Click);
             // 
             // FormBuscarDisciplina
             // 
@@ -242,6 +242,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBuscarDisciplina";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Pesquisa de Disciplinas";
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disciplinaBindingSource)).EndInit();

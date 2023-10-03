@@ -372,6 +372,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormBuscarReserva";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Pesquisa de Reservas";
             ((System.ComponentModel.ISupportInitialize)(this.reservaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservaBindingSource)).EndInit();

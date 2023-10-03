@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nomeLabel;
-            System.Windows.Forms.Label cPFLabel;
+            System.Windows.Forms.Label matriculaLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label nomeUsuarioLabel;
             System.Windows.Forms.Label senhaLabel;
-            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label confirmarSenhaLabel;
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.matriculaTextBox = new System.Windows.Forms.TextBox();
@@ -47,11 +47,11 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             nomeLabel = new System.Windows.Forms.Label();
-            cPFLabel = new System.Windows.Forms.Label();
+            matriculaLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             nomeUsuarioLabel = new System.Windows.Forms.Label();
             senhaLabel = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
+            confirmarSenhaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,14 +64,14 @@
             nomeLabel.TabIndex = 1;
             nomeLabel.Text = "Nome";
             // 
-            // cPFLabel
+            // matriculaLabel
             // 
-            cPFLabel.AutoSize = true;
-            cPFLabel.Location = new System.Drawing.Point(629, 151);
-            cPFLabel.Name = "cPFLabel";
-            cPFLabel.Size = new System.Drawing.Size(61, 16);
-            cPFLabel.TabIndex = 3;
-            cPFLabel.Text = "Matricula";
+            matriculaLabel.AutoSize = true;
+            matriculaLabel.Location = new System.Drawing.Point(629, 151);
+            matriculaLabel.Name = "matriculaLabel";
+            matriculaLabel.Size = new System.Drawing.Size(61, 16);
+            matriculaLabel.TabIndex = 3;
+            matriculaLabel.Text = "Matricula";
             // 
             // emailLabel
             // 
@@ -100,14 +100,14 @@
             senhaLabel.TabIndex = 9;
             senhaLabel.Text = "Senha";
             // 
-            // label1
+            // confirmarSenhaLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(593, 225);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(104, 16);
-            label1.TabIndex = 11;
-            label1.Text = "Confirmar senha";
+            confirmarSenhaLabel.AutoSize = true;
+            confirmarSenhaLabel.Location = new System.Drawing.Point(593, 225);
+            confirmarSenhaLabel.Name = "confirmarSenhaLabel";
+            confirmarSenhaLabel.Size = new System.Drawing.Size(104, 16);
+            confirmarSenhaLabel.TabIndex = 11;
+            confirmarSenhaLabel.Text = "Confirmar senha";
             // 
             // usuarioBindingSource
             // 
@@ -124,7 +124,7 @@
             // 
             // matriculaTextBox
             // 
-            this.matriculaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CPF", true));
+            this.matriculaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Matricula", true));
             this.matriculaTextBox.Location = new System.Drawing.Point(632, 171);
             this.matriculaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.matriculaTextBox.Name = "matriculaTextBox";
@@ -201,6 +201,7 @@
             this.buttonCancelar.TabIndex = 17;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click_1);
             // 
             // buttonSalvar
             // 
@@ -226,14 +227,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxConfirmarSenha);
             this.Controls.Add(this.ativoCheckBox);
-            this.Controls.Add(label1);
+            this.Controls.Add(confirmarSenhaLabel);
             this.Controls.Add(senhaLabel);
             this.Controls.Add(this.senhaTextBox);
             this.Controls.Add(nomeUsuarioLabel);
             this.Controls.Add(this.nomeUsuarioTextBox);
             this.Controls.Add(emailLabel);
             this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(cPFLabel);
+            this.Controls.Add(matriculaLabel);
             this.Controls.Add(this.matriculaTextBox);
             this.Controls.Add(nomeLabel);
             this.Controls.Add(this.nomeTextBox);
