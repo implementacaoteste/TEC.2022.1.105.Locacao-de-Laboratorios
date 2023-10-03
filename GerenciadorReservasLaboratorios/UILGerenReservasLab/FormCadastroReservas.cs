@@ -53,9 +53,6 @@ namespace UILGerenReservasLab
 
             if (Id == 0)
             {
-                // Defina o nome do usuário logado no campo idUsuarioTextBox.
-                idUsuarioTextBox.Text = usuarioLogado.Nome;
-
                 // Carregue os dados para preencher os ComboBoxes.
                 CarregarComboBoxSolicitante();
                 CarregarComboBoxSala();
@@ -67,6 +64,12 @@ namespace UILGerenReservasLab
 
                 // Desabilite o groupBoxLiberarChave por padrão.
                 groupBoxLiberarChave.Enabled = false;
+
+                if (isProfessor)
+                {
+                    // Configurar comboBoxStatus com o valor "Pendente" se o usuário for um professor.
+                    comboBoxStatus.DataSource = new List<string> { "Pendente" };
+                }
             }
             else
             {
@@ -104,15 +107,45 @@ namespace UILGerenReservasLab
 
         private void CarregarComboBoxSolicitante()
         {
-            // Carregue os usuários do banco de dados.
-            List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
+            if (Id == 0)
+            {
+                if(isCoordenacao || isAdmin)
+                {
+                    // Carregue os usuários do banco de dados.
+                    List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
 
-            // Defina a fonte de dados para o ComboBox de solicitante.
-            comboBoxSolicitante.DisplayMember = "Nome";
-            comboBoxSolicitante.ValueMember = "Id";
-            comboBoxSolicitante.DataSource = usuarios;
+                    // Defina a fonte de dados para o ComboBox de solicitante.
+                    comboBoxSolicitante.DisplayMember = "Nome";
+                    comboBoxSolicitante.ValueMember = "Id";
+                    comboBoxSolicitante.DataSource = usuarios;
+                }
+                else if (isProfessor)
+                {
+                    // Usuário é professor
+                    comboBoxSolicitante.DisplayMember = "Nome";
+                    comboBoxSolicitante.ValueMember = "Id";
+                    comboBoxSolicitante.DataSource = new List<Usuario> { usuarioLogado }; // Definir a fonte dos dados
+                }
+            }
         }
-
+        private void CarregarComboBoxResponsavel()
+        {
+            if (Id == 0)
+            {
+                if(isCoordenacao || isAdmin)
+                {
+                    // Defina a fonte de dados para o ComboBox de solicitante.
+                    comboBoxResponsavel.DisplayMember = "Nome";
+                    comboBoxResponsavel.ValueMember = "Id";
+                    comboBoxResponsavel.DataSource = new List<Usuario> { usuarioLogado };
+                }
+                else if (isProfessor)
+                {
+                    comboBoxResponsavel.DataSource = null; // Limpar fonte de dados
+                    comboBoxResponsavel.Enabled = false; // Desativar o ComboBox
+                }
+            }
+        }
         private void CarregarComboBoxSala()
         {
             // Carregue as salas do banco de dados.
