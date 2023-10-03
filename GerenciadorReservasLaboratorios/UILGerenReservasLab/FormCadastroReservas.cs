@@ -62,6 +62,9 @@ namespace UILGerenReservasLab
                 CarregarComboBoxCurso();
                 CarregarComboBoxDisciplina();
 
+                reservaDataDateTimePicker.Enabled = false;
+                reservaHoraDateTimePicker.Enabled = false;
+
                 // Desabilite o groupBoxLiberarChave por padrão.
                 groupBoxLiberarChave.Enabled = false;
             }
@@ -74,29 +77,11 @@ namespace UILGerenReservasLab
                 CarregarComboBoxDisciplina();
 
                 // Obtenha a reserva existente do banco de dados com base no Id.
-                Reserva reservaExistente = new ReservaBLL().BuscarPorId(Id);
+                Reserva reserva = new ReservaBLL().BuscarPorId(Id);
 
-                if (reservaExistente != null)
+                if (reserva != null)
                 {
-                    // Defina o valor selecionado nos ComboBoxes com base nos dados da reserva existente.
-                    idUsuarioTextBox.Text = reservaExistente.NomeResponsavel;
-                    comboBoxSolicitante.SelectedValue = reservaExistente.IdSolicitante;
-                    comboBoxSala.SelectedValue = reservaExistente.IdSala;
-                    comboBoxCurso.SelectedValue = reservaExistente.IdCurso;
-                    comboBoxDisciplina.SelectedValue = reservaExistente.IdDisciplina;
-                    comboBoxStatus.SelectedItem = reservaExistente.Status;
-                    comboBoxTurno.SelectedItem = reservaExistente.Turno;
-                    reservaDataDateTimePicker.Value = reservaExistente.ReservaData;
-
-                    // Crie um objeto DateTime com a data atual (ou outra data se necessário)
-                    DateTime dataAtual = DateTime.Now;
-
-                    // Adicione o TimeSpan à hora do DateTime
-                    DateTime dateTimeComHora = dataAtual.Add(reservaExistente.ReservaHora);
-
-                    // Atribua o DateTime resultante ao DateTimePicker
-                    reservaHoraDateTimePicker.Value = dateTimeComHora;
-
+                    reservaBindingSource.DataSource = reserva;
                 }
                 else
                 {
