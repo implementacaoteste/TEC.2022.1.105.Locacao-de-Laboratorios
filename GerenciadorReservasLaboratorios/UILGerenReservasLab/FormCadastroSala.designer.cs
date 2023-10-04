@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label lblNomeSala;
             System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label capacidadeLabel;
+            System.Windows.Forms.Label descricaoLabel;
+            System.Windows.Forms.Label estadoLabel;
+            System.Windows.Forms.Label tipoLabel;
             this.textBoxNomeSala = new System.Windows.Forms.TextBox();
             this.salaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -38,8 +42,16 @@
             this.buttonSalvarSala = new System.Windows.Forms.Button();
             this.textBoxPredio = new System.Windows.Forms.TextBox();
             this.buttonBuscarPredio = new System.Windows.Forms.Button();
+            this.capacidadeTextBox = new System.Windows.Forms.TextBox();
+            this.descricaoTextBox = new System.Windows.Forms.TextBox();
+            this.estadoTextBox = new System.Windows.Forms.TextBox();
+            this.tipoTextBox = new System.Windows.Forms.TextBox();
             lblNomeSala = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            capacidadeLabel = new System.Windows.Forms.Label();
+            descricaoLabel = new System.Windows.Forms.Label();
+            estadoLabel = new System.Windows.Forms.Label();
+            tipoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +59,7 @@
             // 
             lblNomeSala.AutoSize = true;
             lblNomeSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblNomeSala.Location = new System.Drawing.Point(97, 141);
+            lblNomeSala.Location = new System.Drawing.Point(97, 84);
             lblNomeSala.Name = "lblNomeSala";
             lblNomeSala.Size = new System.Drawing.Size(103, 18);
             lblNomeSala.TabIndex = 1;
@@ -57,7 +69,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(97, 257);
+            label2.Location = new System.Drawing.Point(97, 194);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(51, 18);
             label2.TabIndex = 1;
@@ -67,7 +79,7 @@
             // 
             this.textBoxNomeSala.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "Nome", true));
             this.textBoxNomeSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNomeSala.Location = new System.Drawing.Point(101, 164);
+            this.textBoxNomeSala.Location = new System.Drawing.Point(101, 107);
             this.textBoxNomeSala.Name = "textBoxNomeSala";
             this.textBoxNomeSala.Size = new System.Drawing.Size(562, 27);
             this.textBoxNomeSala.TabIndex = 2;
@@ -118,9 +130,9 @@
             // 
             this.textBoxPredio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "IdPredio", true));
             this.textBoxPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPredio.Location = new System.Drawing.Point(101, 280);
+            this.textBoxPredio.Location = new System.Drawing.Point(101, 217);
             this.textBoxPredio.Name = "textBoxPredio";
-            this.textBoxPredio.Size = new System.Drawing.Size(128, 27);
+            this.textBoxPredio.Size = new System.Drawing.Size(292, 27);
             this.textBoxPredio.TabIndex = 2;
             // 
             // buttonBuscarPredio
@@ -129,7 +141,7 @@
             this.buttonBuscarPredio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscarPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarPredio.ForeColor = System.Drawing.Color.White;
-            this.buttonBuscarPredio.Location = new System.Drawing.Point(236, 280);
+            this.buttonBuscarPredio.Location = new System.Drawing.Point(400, 214);
             this.buttonBuscarPredio.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBuscarPredio.Name = "buttonBuscarPredio";
             this.buttonBuscarPredio.Size = new System.Drawing.Size(94, 29);
@@ -138,11 +150,89 @@
             this.buttonBuscarPredio.UseVisualStyleBackColor = false;
             this.buttonBuscarPredio.Click += new System.EventHandler(this.buttonBuscarPredio_Click);
             // 
+            // capacidadeLabel
+            // 
+            capacidadeLabel.AutoSize = true;
+            capacidadeLabel.Location = new System.Drawing.Point(540, 304);
+            capacidadeLabel.Name = "capacidadeLabel";
+            capacidadeLabel.Size = new System.Drawing.Size(82, 16);
+            capacidadeLabel.TabIndex = 17;
+            capacidadeLabel.Text = "Capacidade";
+            // 
+            // capacidadeTextBox
+            // 
+            this.capacidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "Capacidade", true));
+            this.capacidadeTextBox.Location = new System.Drawing.Point(543, 323);
+            this.capacidadeTextBox.Name = "capacidadeTextBox";
+            this.capacidadeTextBox.Size = new System.Drawing.Size(120, 22);
+            this.capacidadeTextBox.TabIndex = 18;
+            // 
+            // descricaoLabel
+            // 
+            descricaoLabel.AutoSize = true;
+            descricaoLabel.Location = new System.Drawing.Point(105, 304);
+            descricaoLabel.Name = "descricaoLabel";
+            descricaoLabel.Size = new System.Drawing.Size(69, 16);
+            descricaoLabel.TabIndex = 18;
+            descricaoLabel.Text = "Descricao";
+            // 
+            // descricaoTextBox
+            // 
+            this.descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "Descricao", true));
+            this.descricaoTextBox.Location = new System.Drawing.Point(100, 323);
+            this.descricaoTextBox.Name = "descricaoTextBox";
+            this.descricaoTextBox.Size = new System.Drawing.Size(294, 22);
+            this.descricaoTextBox.TabIndex = 19;
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(400, 304);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(50, 16);
+            estadoLabel.TabIndex = 19;
+            estadoLabel.Text = "Estado";
+            estadoLabel.Click += new System.EventHandler(this.estadoLabel_Click);
+            // 
+            // estadoTextBox
+            // 
+            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "Estado", true));
+            this.estadoTextBox.Location = new System.Drawing.Point(400, 323);
+            this.estadoTextBox.Name = "estadoTextBox";
+            this.estadoTextBox.Size = new System.Drawing.Size(137, 22);
+            this.estadoTextBox.TabIndex = 20;
+            // 
+            // tipoLabel
+            // 
+            tipoLabel.AutoSize = true;
+            tipoLabel.Location = new System.Drawing.Point(498, 198);
+            tipoLabel.Name = "tipoLabel";
+            tipoLabel.Size = new System.Drawing.Size(35, 16);
+            tipoLabel.TabIndex = 20;
+            tipoLabel.Text = "Tipo";
+            tipoLabel.Click += new System.EventHandler(this.tipoLabel_Click);
+            // 
+            // tipoTextBox
+            // 
+            this.tipoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salaBindingSource, "Tipo", true));
+            this.tipoTextBox.Location = new System.Drawing.Point(501, 217);
+            this.tipoTextBox.Name = "tipoTextBox";
+            this.tipoTextBox.Size = new System.Drawing.Size(162, 22);
+            this.tipoTextBox.TabIndex = 21;
+            // 
             // FormCadastroSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 468);
+            this.Controls.Add(tipoLabel);
+            this.Controls.Add(this.tipoTextBox);
+            this.Controls.Add(estadoLabel);
+            this.Controls.Add(this.estadoTextBox);
+            this.Controls.Add(descricaoLabel);
+            this.Controls.Add(this.descricaoTextBox);
+            this.Controls.Add(capacidadeLabel);
+            this.Controls.Add(this.capacidadeTextBox);
             this.Controls.Add(this.buttonBuscarPredio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelarSala);
@@ -155,7 +245,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCadastroSala";
+            this.Text = "Cadastro de Salas";
             this.Load += new System.EventHandler(this.FormCadastroSala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -172,5 +262,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPredio;
         private System.Windows.Forms.Button buttonBuscarPredio;
+        private System.Windows.Forms.TextBox capacidadeTextBox;
+        private System.Windows.Forms.TextBox descricaoTextBox;
+        private System.Windows.Forms.TextBox estadoTextBox;
+        private System.Windows.Forms.TextBox tipoTextBox;
     }
 }
