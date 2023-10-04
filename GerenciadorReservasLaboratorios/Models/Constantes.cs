@@ -12,9 +12,8 @@ namespace Models
         public static int IdUsuarioLogado;
         public static string StringDeConexao;
         public static string DiretorioStringConexao = "C:\\Configuracao\\";
-        public static string CaminhoChavePublica = "C:\Configuracao\\ChavePublica.txt"
-
-        public static string CaminhoChavePrivada = "C:\\Configuracao\\ChavePrivada.txt"
+        public static string CaminhoChavePublica = "C:\\Configuracao\\ChavePublica.txt";
+        public static string CaminhoChavePrivada = "C:\\Configuracao\\ChavePrivada.txt";
         public static string NomeArquivoConexao = "sgreservasConnection.config";
         public static string DiretorioArquivoLog = Environment.CurrentDirectory + "\\Logs\\";
 

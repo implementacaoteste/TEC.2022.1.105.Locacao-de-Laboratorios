@@ -48,6 +48,10 @@ namespace UILGerenReservasLab
                     _sala = new Sala(); // Crie um novo objeto Sala se for um novo registro.
                     _sala.Nome = textBoxNomeSala.Text; // Atribua o nome do TextBox ao novo objeto.
                     _sala.IdPredio = ((Sala)salaBindingSource.Current).IdPredio;
+                    _sala.Tipo = tipoTextBox.Text;
+                    _sala.Descricao = descricaoTextBox.Text;
+                    _sala.Estado = estadoTextBox.Text;
+                    _sala.Capacidade = Convert.ToInt32(capacidadeTextBox.Text);
 
                     new SalaBLL().Inserir(_sala);
                 }
