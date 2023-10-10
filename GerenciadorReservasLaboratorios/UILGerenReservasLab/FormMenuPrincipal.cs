@@ -249,9 +249,10 @@ namespace UILGerenReservasLab
             labelHora.Text = DateTime.Now.ToString("HH:mm:ss ");
             labelData.Text = DateTime.Now.ToLongDateString();
         }
+
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to log out?", "Warning",
+            if (MessageBox.Show("Tem certeza de que deseja encerrar a sessão?", "Confirmar",
                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 // Limpar o ID do usuário
@@ -265,6 +266,7 @@ namespace UILGerenReservasLab
 
             }
         }
+
         // METHOD TO OPEN FORMS WITHIN THE PANEL
         public void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {

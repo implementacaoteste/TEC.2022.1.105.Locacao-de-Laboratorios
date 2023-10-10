@@ -63,26 +63,6 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9022952_student_duotone_icon {
-            get {
-                object obj = ResourceManager.GetObject("9022952_student_duotone_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap books_school_icon {
-            get {
-                object obj = ResourceManager.GetObject("books_school_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap calendar__1_1 {
             get {
                 object obj = ResourceManager.GetObject("calendar (1)1", resourceCulture);
@@ -93,9 +73,19 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap calendar_icon {
+        internal static System.Drawing.Bitmap calendario {
             get {
-                object obj = ResourceManager.GetObject("calendar_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("calendario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendartime {
+            get {
+                object obj = ResourceManager.GetObject("calendartime", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +113,9 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Disciplines_40 {
+        internal static System.Drawing.Bitmap curso {
             get {
-                object obj = ResourceManager.GetObject("Disciplines-40", resourceCulture);
+                object obj = ResourceManager.GetObject("curso", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +123,39 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap education_icon {
+        internal static System.Drawing.Bitmap cursos1 {
             get {
-                object obj = ResourceManager.GetObject("education_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("cursos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disciplina1 {
+            get {
+                object obj = ResourceManager.GetObject("disciplina1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disciplinas {
+            get {
+                object obj = ResourceManager.GetObject("disciplinas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estudante {
+            get {
+                object obj = ResourceManager.GetObject("estudante", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,26 +166,6 @@ namespace UILGerenReservasLab.Properties {
         internal static System.Drawing.Bitmap fechar {
             get {
                 object obj = ResourceManager.GetObject("fechar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap group_user_icon {
-            get {
-                object obj = ResourceManager.GetObject("group_user_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap group_user_icon1 {
-            get {
-                object obj = ResourceManager.GetObject("group_user_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +213,16 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoutx1 {
+            get {
+                object obj = ResourceManager.GetObject("logoutx1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maxi {
             get {
                 object obj = ResourceManager.GetObject("maxi", resourceCulture);
@@ -233,9 +243,9 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap permission_48 {
+        internal static System.Drawing.Bitmap permissao {
             get {
-                object obj = ResourceManager.GetObject("permission-48", resourceCulture);
+                object obj = ResourceManager.GetObject("permissao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +253,9 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap permission_481 {
+        internal static System.Drawing.Bitmap permissao2 {
             get {
-                object obj = ResourceManager.GetObject("permission-481", resourceCulture);
+                object obj = ResourceManager.GetObject("permissao2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +263,9 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap predio_icon {
+        internal static System.Drawing.Bitmap predio {
             get {
-                object obj = ResourceManager.GetObject("predio_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("predio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +273,9 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap predio2_icon {
+        internal static System.Drawing.Bitmap predio2 {
             get {
-                object obj = ResourceManager.GetObject("predio2_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("predio2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,6 +303,16 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap saidaantecipada {
+            get {
+                object obj = ResourceManager.GetObject("saidaantecipada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sair {
             get {
                 object obj = ResourceManager.GetObject("sair", resourceCulture);
@@ -303,9 +323,9 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sala_icon {
+        internal static System.Drawing.Bitmap sala {
             get {
-                object obj = ResourceManager.GetObject("sala_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("sala", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,26 +363,6 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap student_icon {
-            get {
-                object obj = ResourceManager.GetObject("student_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap student_icon1 {
-            get {
-                object obj = ResourceManager.GetObject("student_icon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap user_account {
             get {
                 object obj = ResourceManager.GetObject("user_account", resourceCulture);
@@ -373,9 +373,9 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_check_icon {
+        internal static System.Drawing.Bitmap usuario {
             get {
-                object obj = ResourceManager.GetObject("user_check_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("usuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
