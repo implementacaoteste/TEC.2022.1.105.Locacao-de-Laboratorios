@@ -32,12 +32,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>UILGerenReservasLab.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
+    <Reference Include="CodeeloUI, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CodeeloUI.1.1.1\lib\net472\CodeeloUI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -419,6 +428,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroom2_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_permission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disciplina_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\predio01_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saida_01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

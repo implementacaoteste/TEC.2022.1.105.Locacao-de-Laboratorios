@@ -15,7 +15,7 @@ namespace UILGerenReservasLab
     public partial class FormCadastroReservas : Form
     {
         public int Id;
-        private UsuarioBLL usuarioBLL = new UsuarioBLL();
+        private readonly UsuarioBLL usuarioBLL = new UsuarioBLL();
         Usuario usuarioLogado;
 
         // Variável de instância para armazenar a hora selecionada
@@ -57,7 +57,7 @@ namespace UILGerenReservasLab
                 CarregarComboBoxSolicitante();
                 CarregarComboBoxSala();
                 CarregarComboBoxCurso();
-                CarregarComboBoxDisciplina();
+                //CarregarComboBoxDisciplina();
 
                 reservaDataDateTimePicker.Enabled = false;
                 reservaHoraDateTimePicker.Enabled = false;
@@ -77,7 +77,7 @@ namespace UILGerenReservasLab
                 CarregarComboBoxSolicitante();
                 CarregarComboBoxSala();
                 CarregarComboBoxCurso();
-                CarregarComboBoxDisciplina();
+                //CarregarComboBoxDisciplina();
 
                 // Obtenha a reserva existente do banco de dados com base no Id.
                 Reserva reserva = new ReservaBLL().BuscarPorId(Id);
@@ -168,16 +168,16 @@ namespace UILGerenReservasLab
             comboBoxCurso.DataSource = cursos;
         }
 
-        private void CarregarComboBoxDisciplina()
-        {
-            // Carregue as disciplinas do banco de dados.
-            List<Disciplina> disciplinas = new DisciplinaBLL().BuscarTodos();
+        //private void CarregarComboBoxDisciplina()
+        //{
+        //    // Carregue as disciplinas do banco de dados.
+        //    List<Disciplina> disciplinas = new DisciplinaBLL().BuscarTodos();
 
-            // Defina a fonte de dados para o ComboBox de disciplina.
-            comboBoxDisciplina.DisplayMember = "Nome";
-            comboBoxDisciplina.ValueMember = "Id";
-            comboBoxDisciplina.DataSource = disciplinas;
-        }
+        //    // Defina a fonte de dados para o ComboBox de disciplina.
+        //    comboBoxDisciplina.DisplayMember = "Nome";
+        //    comboBoxDisciplina.ValueMember = "Id";
+        //    comboBoxDisciplina.DataSource = disciplinas;
+        //}
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -195,7 +195,7 @@ namespace UILGerenReservasLab
                     _reserva.IdSolicitante = (int)comboBoxSolicitante.SelectedValue;
                     _reserva.IdSala = (int)comboBoxSala.SelectedValue;
                     _reserva.IdCurso = (int)comboBoxCurso.SelectedValue;
-                    _reserva.IdDisciplina = (int)comboBoxDisciplina.SelectedValue;
+                    //_reserva.IdDisciplina = (int)comboBoxDisciplina.SelectedValue;
                     _reserva.Status = comboBoxStatus.SelectedItem.ToString();
                     _reserva.Turno = comboBoxTurno.SelectedItem.ToString();
                     _reserva.Observacoes = observacoesTextBox.Text;

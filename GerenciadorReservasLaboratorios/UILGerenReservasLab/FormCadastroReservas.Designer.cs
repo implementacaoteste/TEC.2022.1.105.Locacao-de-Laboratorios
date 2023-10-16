@@ -58,12 +58,12 @@
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.comboBoxTurno = new System.Windows.Forms.ComboBox();
             this.comboBoxCurso = new System.Windows.Forms.ComboBox();
-            this.comboBoxDisciplina = new System.Windows.Forms.ComboBox();
             this.comboBoxSolicitante = new System.Windows.Forms.ComboBox();
             this.labelAviso = new System.Windows.Forms.Label();
             this.comboBoxResponsavel = new System.Windows.Forms.ComboBox();
             this.reservaHoraDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.reservaDataDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.codeeloTextBoxDisciplina = new CodeeloUI.Controls.CodeeloTextBox();
             idCursoLabel = new System.Windows.Forms.Label();
             idDisciplinaLabel = new System.Windows.Forms.Label();
             idSalaLabel = new System.Windows.Forms.Label();
@@ -125,7 +125,7 @@
             // observacoesLabel
             // 
             observacoesLabel.AutoSize = true;
-            observacoesLabel.Location = new System.Drawing.Point(48, 277);
+            observacoesLabel.Location = new System.Drawing.Point(48, 285);
             observacoesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             observacoesLabel.Name = "observacoesLabel";
             observacoesLabel.Size = new System.Drawing.Size(73, 13);
@@ -156,7 +156,7 @@
             // 
             reservaDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             reservaDataLabel.AutoSize = true;
-            reservaDataLabel.Location = new System.Drawing.Point(279, 191);
+            reservaDataLabel.Location = new System.Drawing.Point(321, 191);
             reservaDataLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             reservaDataLabel.Name = "reservaDataLabel";
             reservaDataLabel.Size = new System.Drawing.Size(60, 13);
@@ -167,7 +167,7 @@
             // 
             reservaHoraLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             reservaHoraLabel.AutoSize = true;
-            reservaHoraLabel.Location = new System.Drawing.Point(280, 243);
+            reservaHoraLabel.Location = new System.Drawing.Point(323, 232);
             reservaHoraLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             reservaHoraLabel.Name = "reservaHoraLabel";
             reservaHoraLabel.Size = new System.Drawing.Size(71, 13);
@@ -188,7 +188,7 @@
             // 
             statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(279, 96);
+            statusLabel.Location = new System.Drawing.Point(321, 96);
             statusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new System.Drawing.Size(37, 13);
@@ -199,12 +199,34 @@
             // 
             turnoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             turnoLabel.AutoSize = true;
-            turnoLabel.Location = new System.Drawing.Point(280, 140);
+            turnoLabel.Location = new System.Drawing.Point(322, 140);
             turnoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             turnoLabel.Name = "turnoLabel";
             turnoLabel.Size = new System.Drawing.Size(35, 13);
             turnoLabel.TabIndex = 24;
             turnoLabel.Text = "Turno";
+            // 
+            // label1
+            // 
+            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(434, 232);
+            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(63, 13);
+            label1.TabIndex = 18;
+            label1.Text = "Horário final";
+            // 
+            // label2
+            // 
+            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(434, 189);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(55, 13);
+            label2.TabIndex = 16;
+            label2.Text = "Data Final";
             // 
             // reservaBindingSource
             // 
@@ -213,8 +235,8 @@
             // observacoesTextBox
             // 
             this.observacoesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "Observacoes", true));
-            this.observacoesTextBox.Location = new System.Drawing.Point(49, 292);
-            this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.observacoesTextBox.Location = new System.Drawing.Point(49, 300);
+            this.observacoesTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.observacoesTextBox.Multiline = true;
             this.observacoesTextBox.Name = "observacoesTextBox";
             this.observacoesTextBox.Size = new System.Drawing.Size(350, 114);
@@ -223,7 +245,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Location = new System.Drawing.Point(84, 424);
-            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(56, 19);
             this.buttonSalvar.TabIndex = 10;
@@ -234,7 +256,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Location = new System.Drawing.Point(235, 424);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(56, 19);
             this.buttonCancelar.TabIndex = 11;
@@ -246,7 +268,7 @@
             // 
             this.dataDevolucaoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "DataDevolucao", true));
             this.dataDevolucaoDateTimePicker.Location = new System.Drawing.Point(31, 80);
-            this.dataDevolucaoDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataDevolucaoDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dataDevolucaoDateTimePicker.Name = "dataDevolucaoDateTimePicker";
             this.dataDevolucaoDateTimePicker.Size = new System.Drawing.Size(230, 20);
             this.dataDevolucaoDateTimePicker.TabIndex = 13;
@@ -255,7 +277,7 @@
             // 
             this.dataRetiradaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "DataRetirada", true));
             this.dataRetiradaDateTimePicker.Location = new System.Drawing.Point(31, 28);
-            this.dataRetiradaDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataRetiradaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dataRetiradaDateTimePicker.Name = "dataRetiradaDateTimePicker";
             this.dataRetiradaDateTimePicker.Size = new System.Drawing.Size(230, 20);
             this.dataRetiradaDateTimePicker.TabIndex = 15;
@@ -265,8 +287,8 @@
             this.reservaDataDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.reservaDataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "ReservaData", true));
             this.reservaDataDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.reservaDataDateTimePicker.Location = new System.Drawing.Point(281, 206);
-            this.reservaDataDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reservaDataDateTimePicker.Location = new System.Drawing.Point(323, 206);
+            this.reservaDataDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.reservaDataDateTimePicker.Name = "reservaDataDateTimePicker";
             this.reservaDataDateTimePicker.Size = new System.Drawing.Size(91, 20);
             this.reservaDataDateTimePicker.TabIndex = 17;
@@ -277,8 +299,8 @@
             this.reservaHoraDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.reservaHoraDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.reservaBindingSource, "ReservaHora", true));
             this.reservaHoraDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.reservaHoraDateTimePicker.Location = new System.Drawing.Point(282, 258);
-            this.reservaHoraDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reservaHoraDateTimePicker.Location = new System.Drawing.Point(323, 247);
+            this.reservaHoraDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.reservaHoraDateTimePicker.Name = "reservaHoraDateTimePicker";
             this.reservaHoraDateTimePicker.ShowUpDown = true;
             this.reservaHoraDateTimePicker.Size = new System.Drawing.Size(91, 20);
@@ -295,9 +317,9 @@
             this.groupBoxLiberarChave.Controls.Add(dataDevolucaoLabel);
             this.groupBoxLiberarChave.Controls.Add(dataRetiradaLabel);
             this.groupBoxLiberarChave.Location = new System.Drawing.Point(561, 42);
-            this.groupBoxLiberarChave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxLiberarChave.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxLiberarChave.Name = "groupBoxLiberarChave";
-            this.groupBoxLiberarChave.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxLiberarChave.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxLiberarChave.Size = new System.Drawing.Size(443, 162);
             this.groupBoxLiberarChave.TabIndex = 28;
             this.groupBoxLiberarChave.TabStop = false;
@@ -306,7 +328,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(278, 69);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(166, 42);
             this.button2.TabIndex = 16;
@@ -316,7 +338,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(278, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 42);
             this.button1.TabIndex = 16;
@@ -330,7 +352,7 @@
             this.comboBoxSala.FormattingEnabled = true;
             this.comboBoxSala.Location = new System.Drawing.Point(49, 155);
             this.comboBoxSala.Name = "comboBoxSala";
-            this.comboBoxSala.Size = new System.Drawing.Size(183, 21);
+            this.comboBoxSala.Size = new System.Drawing.Size(242, 21);
             this.comboBoxSala.TabIndex = 30;
             this.comboBoxSala.SelectedIndexChanged += new System.EventHandler(this.comboBoxSala_SelectedIndexChanged);
             // 
@@ -349,8 +371,8 @@
             "Cancelada pelo usuário",
             "Em andamento",
             "Concluída"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(281, 111);
-            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxStatus.Location = new System.Drawing.Point(323, 111);
+            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(151, 21);
             this.comboBoxStatus.TabIndex = 31;
@@ -365,8 +387,8 @@
             "Matutino",
             "Vespertino",
             "Notuno"});
-            this.comboBoxTurno.Location = new System.Drawing.Point(281, 155);
-            this.comboBoxTurno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxTurno.Location = new System.Drawing.Point(323, 155);
+            this.comboBoxTurno.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTurno.Name = "comboBoxTurno";
             this.comboBoxTurno.Size = new System.Drawing.Size(151, 21);
             this.comboBoxTurno.TabIndex = 31;
@@ -378,18 +400,8 @@
             this.comboBoxCurso.FormattingEnabled = true;
             this.comboBoxCurso.Location = new System.Drawing.Point(48, 204);
             this.comboBoxCurso.Name = "comboBoxCurso";
-            this.comboBoxCurso.Size = new System.Drawing.Size(184, 21);
+            this.comboBoxCurso.Size = new System.Drawing.Size(243, 21);
             this.comboBoxCurso.TabIndex = 30;
-            // 
-            // comboBoxDisciplina
-            // 
-            this.comboBoxDisciplina.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservaBindingSource, "IdDisciplina", true));
-            this.comboBoxDisciplina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDisciplina.FormattingEnabled = true;
-            this.comboBoxDisciplina.Location = new System.Drawing.Point(48, 246);
-            this.comboBoxDisciplina.Name = "comboBoxDisciplina";
-            this.comboBoxDisciplina.Size = new System.Drawing.Size(184, 21);
-            this.comboBoxDisciplina.TabIndex = 30;
             // 
             // comboBoxSolicitante
             // 
@@ -398,7 +410,7 @@
             this.comboBoxSolicitante.FormattingEnabled = true;
             this.comboBoxSolicitante.Location = new System.Drawing.Point(49, 111);
             this.comboBoxSolicitante.Name = "comboBoxSolicitante";
-            this.comboBoxSolicitante.Size = new System.Drawing.Size(183, 21);
+            this.comboBoxSolicitante.Size = new System.Drawing.Size(242, 21);
             this.comboBoxSolicitante.TabIndex = 32;
             // 
             // labelAviso
@@ -406,7 +418,7 @@
             this.labelAviso.AutoSize = true;
             this.labelAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAviso.ForeColor = System.Drawing.Color.Red;
-            this.labelAviso.Location = new System.Drawing.Point(502, 263);
+            this.labelAviso.Location = new System.Drawing.Point(545, 252);
             this.labelAviso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAviso.Name = "labelAviso";
             this.labelAviso.Size = new System.Drawing.Size(40, 15);
@@ -419,16 +431,16 @@
             this.comboBoxResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxResponsavel.FormattingEnabled = true;
             this.comboBoxResponsavel.Location = new System.Drawing.Point(48, 58);
-            this.comboBoxResponsavel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxResponsavel.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxResponsavel.Name = "comboBoxResponsavel";
-            this.comboBoxResponsavel.Size = new System.Drawing.Size(184, 21);
+            this.comboBoxResponsavel.Size = new System.Drawing.Size(243, 21);
             this.comboBoxResponsavel.TabIndex = 34;
             // 
             // reservaHoraDateTimePicker2
             // 
             this.reservaHoraDateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.reservaHoraDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.reservaHoraDateTimePicker2.Location = new System.Drawing.Point(394, 258);
+            this.reservaHoraDateTimePicker2.Location = new System.Drawing.Point(437, 247);
             this.reservaHoraDateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.reservaHoraDateTimePicker2.Name = "reservaHoraDateTimePicker2";
             this.reservaHoraDateTimePicker2.ShowUpDown = true;
@@ -437,50 +449,47 @@
             this.reservaHoraDateTimePicker2.Value = new System.DateTime(2023, 9, 29, 7, 0, 0, 0);
             this.reservaHoraDateTimePicker2.ValueChanged += new System.EventHandler(this.reservaHoraDateTimePicker_ValueChanged);
             // 
-            // label1
-            // 
-            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(391, 243);
-            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(63, 13);
-            label1.TabIndex = 18;
-            label1.Text = "Horário final";
-            // 
             // reservaDataDateTimePicker2
             // 
             this.reservaDataDateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.reservaDataDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.reservaDataDateTimePicker2.Location = new System.Drawing.Point(394, 204);
+            this.reservaDataDateTimePicker2.Location = new System.Drawing.Point(436, 204);
             this.reservaDataDateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.reservaDataDateTimePicker2.Name = "reservaDataDateTimePicker2";
             this.reservaDataDateTimePicker2.Size = new System.Drawing.Size(91, 20);
             this.reservaDataDateTimePicker2.TabIndex = 17;
             this.reservaDataDateTimePicker2.ValueChanged += new System.EventHandler(this.reservaDataDateTimePicker_ValueChanged);
             // 
-            // label2
+            // codeeloTextBoxDisciplina
             // 
-            label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(392, 189);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(55, 13);
-            label2.TabIndex = 16;
-            label2.Text = "Data Final";
+            this.codeeloTextBoxDisciplina.BackColor = System.Drawing.Color.White;
+            this.codeeloTextBoxDisciplina.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.codeeloTextBoxDisciplina.BorderFocusColor = System.Drawing.Color.BlueViolet;
+            this.codeeloTextBoxDisciplina.BorderSize = 2;
+            this.codeeloTextBoxDisciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.codeeloTextBoxDisciplina.Location = new System.Drawing.Point(48, 247);
+            this.codeeloTextBoxDisciplina.Margin = new System.Windows.Forms.Padding(4);
+            this.codeeloTextBoxDisciplina.Multiline = false;
+            this.codeeloTextBoxDisciplina.Name = "codeeloTextBoxDisciplina";
+            this.codeeloTextBoxDisciplina.Padding = new System.Windows.Forms.Padding(7);
+            this.codeeloTextBoxDisciplina.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.codeeloTextBoxDisciplina.PlaceholderText = "";
+            this.codeeloTextBoxDisciplina.Size = new System.Drawing.Size(243, 32);
+            this.codeeloTextBoxDisciplina.TabIndex = 35;
+            this.codeeloTextBoxDisciplina.UnderlinedStyle = false;
+            this.codeeloTextBoxDisciplina.UsePasswordChar = false;
             // 
             // FormCadastroReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 462);
+            this.Controls.Add(this.codeeloTextBoxDisciplina);
             this.Controls.Add(this.comboBoxResponsavel);
             this.Controls.Add(this.labelAviso);
             this.Controls.Add(this.comboBoxSolicitante);
             this.Controls.Add(this.comboBoxTurno);
             this.Controls.Add(this.comboBoxStatus);
-            this.Controls.Add(this.comboBoxDisciplina);
             this.Controls.Add(this.comboBoxCurso);
             this.Controls.Add(this.comboBoxSala);
             this.Controls.Add(this.groupBoxLiberarChave);
@@ -503,7 +512,7 @@
             this.Controls.Add(idSalaLabel);
             this.Controls.Add(idDisciplinaLabel);
             this.Controls.Add(idCursoLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCadastroReservas";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -532,7 +541,6 @@
         private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.ComboBox comboBoxTurno;
         private System.Windows.Forms.ComboBox comboBoxCurso;
-        private System.Windows.Forms.ComboBox comboBoxDisciplina;
         private System.Windows.Forms.ComboBox comboBoxSolicitante;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -540,5 +548,6 @@
         private System.Windows.Forms.ComboBox comboBoxResponsavel;
         private System.Windows.Forms.DateTimePicker reservaHoraDateTimePicker2;
         private System.Windows.Forms.DateTimePicker reservaDataDateTimePicker2;
+        private CodeeloUI.Controls.CodeeloTextBox codeeloTextBoxDisciplina;
     }
 }

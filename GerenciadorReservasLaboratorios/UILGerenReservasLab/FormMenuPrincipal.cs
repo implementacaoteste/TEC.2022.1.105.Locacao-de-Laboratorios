@@ -17,7 +17,10 @@ namespace UILGerenReservasLab
     {
         private Usuario UsuarioLogado;
         private Button botaoSelecionado = null;
-        private string tituloOriginal;
+
+        private bool isProfessor = true;
+        private bool isCoordenacao = true;
+        private bool isAdmin = true;
 
 
         public FormMenuPrincipal()
@@ -56,6 +59,21 @@ namespace UILGerenReservasLab
             reservaPanelDataGridView.DataSource = reservasPendentes;
         }
 
+        public void AtualizarDadosUsuario()
+        {
+            // O login foi feito com sucesso, agora podemos obter o usuário logado.
+
+            // Carregue o usuário logado.
+            UsuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
+            GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
+            List<GrupoUsuario> gruposDoUsuario = grupoUsuarioBLL.BuscarGrupoPorIdUsuario(UsuarioLogado.Id);
+            UsuarioLogado.GrupoUsuarios = gruposDoUsuario;
+
+            isProfessor = UsuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Professor");
+            isCoordenacao = UsuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Coordenação");
+            isAdmin = UsuarioLogado.GrupoUsuarios.Any(grupo => grupo.NomeGrupo == "Administrador");
+        }
+
         private void AtualizarTelaUsuario()
         {
             // Atualize os campos do formulário com os dados do usuário logado.
@@ -67,15 +85,48 @@ namespace UILGerenReservasLab
 
             // Exiba os grupos no label
             labelCargo.Text = grupos;
-        }
-        public void AtualizarDadosUsuario()
-        {
-            // O login foi feito com sucesso, agora podemos obter o usuário logado.
-            UsuarioBLL usuarioBLL = new UsuarioBLL();
-            UsuarioLogado = usuarioBLL.ObterUsuarioLogado();
-            GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
-            List<GrupoUsuario> gruposDoUsuario = grupoUsuarioBLL.BuscarGrupoPorIdUsuario(UsuarioLogado.Id);
-            UsuarioLogado.GrupoUsuarios = gruposDoUsuario;
+
+            // Desabilite ou habilite os botões com base no grupo do usuário
+
+            if (isProfessor)
+            {
+                buttonReserva.Enabled = true;
+                buttonAluno.Enabled = true;
+                buttonSaidasAntecipadas.Enabled = true;
+                buttonCurso.Enabled = false;
+                buttonDisciplina.Enabled = false;
+                buttonPredio.Enabled = false;
+                buttonSala.Enabled = false;
+                buttonUsuario.Enabled = false;
+                buttonGrupoUsuario.Enabled = false;
+                buttonPermissao.Enabled = false;
+            }
+            else if (isAdmin)
+            {
+                buttonReserva.Enabled = true;
+                buttonAluno.Enabled = true;
+                buttonSaidasAntecipadas.Enabled = true;
+                buttonCurso.Enabled = true;
+                buttonDisciplina.Enabled = true;
+                buttonPredio.Enabled = true;
+                buttonSala.Enabled = true;
+                buttonUsuario.Enabled = true;
+                buttonGrupoUsuario.Enabled = true;
+                buttonPermissao.Enabled = true;
+            }
+            else if (isCoordenacao)
+            {
+                buttonReserva.Enabled = true;
+                buttonAluno.Enabled = true;
+                buttonSaidasAntecipadas.Enabled = true;
+                buttonCurso.Enabled = true;
+                buttonDisciplina.Enabled = true;
+                buttonPredio.Enabled = true;
+                buttonSala.Enabled = true;
+                buttonUsuario.Enabled = true;
+                buttonGrupoUsuario.Enabled = true;
+                buttonPermissao.Enabled = false;
+            }
         }
 
         // RESIZE METHOD TO RESIZE/CHANGE FORM SIZE AT RUNTIME ----------------------------------------------------------
@@ -259,7 +310,7 @@ namespace UILGerenReservasLab
                 Constantes.IdUsuarioLogado = 0;
 
                 // Fechar a janela atual de logout
-                this.Close();
+                this.Hide();
 
                 FormLogin formLogin = new FormLogin();
                 formLogin.Show();
@@ -284,31 +335,29 @@ namespace UILGerenReservasLab
                 formulario.Show();
                 formulario.BringToFront();
 
-                // Armazena o título atual do formulário pai
-                tituloOriginal = labelTitle.Text;
+                // Armazena o título atual do formulário pai em uma variável local
+                string tituloOriginalLocal = labelTitle.Text;
 
                 // Define o título do formulário filho como o título do formulário pai
                 labelTitle.Text = formulario.Text;
 
-                formulario.FormClosed += new FormClosedEventHandler(CloseForms);
+                formulario.FormClosed += new FormClosedEventHandler((sender, e) =>
+                {
+                    if (botaoSelecionado != null)
+                    {
+                        botaoSelecionado.BackColor = Color.FromArgb(37, 54, 75);
+                        botaoSelecionado = null;
+                    }
+
+                    // Restaura o título original do formulário pai usando a variável local
+                    labelTitle.Text = tituloOriginalLocal;
+                });
             }
             else
             {
                 formulario.BringToFront();
             }
         }
-        private void CloseForms(object sender, FormClosedEventArgs e)
-        {
-            if (botaoSelecionado != null)
-            {
-                botaoSelecionado.BackColor = Color.FromArgb(37, 54, 75);
-                botaoSelecionado = null;
-            }
-
-            // Restaura o título original do formulário pai
-            labelTitle.Text = tituloOriginal;
-        }
-
 
     }
 }
