@@ -28,6 +28,15 @@ namespace UILGerenReservasLab
                 alunoBindingSource.DataSource = aluno;
             }
         }
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormCadastroAluno_Load(object sender, EventArgs e)
+        {
+            labelMenu.Text = "Cadastro de Alunos";
+        }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
@@ -62,6 +71,7 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             try
@@ -76,15 +86,17 @@ namespace UILGerenReservasLab
             }
         }
 
-        private void buttonFechar_Click(object sender, EventArgs e)
+        private void buttonAdicionarFoto_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Arquivos de Imagem|*.jpg;*.jpeg;*.png;*.gif|Todos os Arquivos|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string caminhoDaImagem = openFileDialog.FileName;
+                // Aqui você pode carregar a imagem no PictureBox
+                pictureBoxAluno.Image = Image.FromFile(caminhoDaImagem);
+            }
 
-        private void FormCadastroAluno_Load(object sender, EventArgs e)
-        {
-            labelMenu.Text = "Cadastro de Alunos";
         }
-
     }
 }

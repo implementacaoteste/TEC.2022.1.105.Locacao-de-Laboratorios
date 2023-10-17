@@ -92,14 +92,23 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Aluno](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Nome] [varchar](250) NOT NULL,
-	[Matricula] [varchar](50) NOT NULL,
-	[Email] [varchar](200) NOT NULL,
- CONSTRAINT [PK_Aluno] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+    [Id] [int] IDENTITY(1,1) NOT NULL,
+    [Nome] [varchar](250) NOT NULL,
+    [Matricula] [varchar](50) NOT NULL,
+    [Email] [varchar](200) NOT NULL,
+    [CaminhoFoto] [varchar](500), -- Campo para o caminho da foto
+    CONSTRAINT [PK_Aluno] PRIMARY KEY CLUSTERED 
+    (
+        [Id] ASC
+    )
+    WITH (
+        PAD_INDEX = OFF, 
+        STATISTICS_NORECOMPUTE = OFF, 
+        IGNORE_DUP_KEY = OFF, 
+        ALLOW_ROW_LOCKS = ON, 
+        ALLOW_PAGE_LOCKS = ON, 
+        OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF
+    ) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[Curso]    Script Date: 28/09/2023 15:18:02 ******/
@@ -234,11 +243,13 @@ CREATE TABLE [dbo].[Reserva](
 	[IdDisciplina] [int] NOT NULL,
 	[IdCurso] [int] NOT NULL,
 	[IdSolicitante] [int] NOT NULL,
-	[ReservaData] [date] NOT NULL,
-	[ReservaHora] [time] NOT NULL,
+	[ReservaDataInicial] [date] NOT NULL,
+	[ReservaDataFinal] [date],
+	[HoraInicial] [time] NOT NULL,
+	[HoraFinal] [time],
 	[DataRetirada] [datetime] NULL,
 	[DataDevolucao] [datetime] NULL,
-	[Status] [varchar](50) NOT NULL,
+	[StatusReserva] [varchar](50) NOT NULL,
 	[Observacoes] [text] NULL,
 	[Turno] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Reserva] PRIMARY KEY CLUSTERED 

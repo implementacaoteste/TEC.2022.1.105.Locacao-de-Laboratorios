@@ -72,70 +72,70 @@ namespace UILGerenReservasLab
             // dataHoraSaidaLabel
             // 
             dataHoraSaidaLabel.AutoSize = true;
-            dataHoraSaidaLabel.Location = new System.Drawing.Point(859, 290);
+            dataHoraSaidaLabel.Location = new System.Drawing.Point(687, 232);
             dataHoraSaidaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             dataHoraSaidaLabel.Name = "dataHoraSaidaLabel";
-            dataHoraSaidaLabel.Size = new System.Drawing.Size(173, 16);
+            dataHoraSaidaLabel.Size = new System.Drawing.Size(139, 13);
             dataHoraSaidaLabel.TabIndex = 1;
             dataHoraSaidaLabel.Text = "Data e Hora da Autorização";
             // 
             // idAlunoLabel
             // 
             idAlunoLabel.AutoSize = true;
-            idAlunoLabel.Location = new System.Drawing.Point(12, 214);
+            idAlunoLabel.Location = new System.Drawing.Point(10, 171);
             idAlunoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idAlunoLabel.Name = "idAlunoLabel";
-            idAlunoLabel.Size = new System.Drawing.Size(41, 16);
+            idAlunoLabel.Size = new System.Drawing.Size(34, 13);
             idAlunoLabel.TabIndex = 3;
             idAlunoLabel.Text = "Aluno";
             // 
             // idCoordenacaoLabel
             // 
             idCoordenacaoLabel.AutoSize = true;
-            idCoordenacaoLabel.Location = new System.Drawing.Point(429, 286);
+            idCoordenacaoLabel.Location = new System.Drawing.Point(343, 229);
             idCoordenacaoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idCoordenacaoLabel.Name = "idCoordenacaoLabel";
-            idCoordenacaoLabel.Size = new System.Drawing.Size(90, 16);
+            idCoordenacaoLabel.Size = new System.Drawing.Size(71, 13);
             idCoordenacaoLabel.TabIndex = 5;
             idCoordenacaoLabel.Text = "Coordenacao";
             // 
             // idProfessorLabel
             // 
             idProfessorLabel.AutoSize = true;
-            idProfessorLabel.Location = new System.Drawing.Point(429, 217);
+            idProfessorLabel.Location = new System.Drawing.Point(343, 174);
             idProfessorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idProfessorLabel.Name = "idProfessorLabel";
-            idProfessorLabel.Size = new System.Drawing.Size(65, 16);
+            idProfessorLabel.Size = new System.Drawing.Size(51, 13);
             idProfessorLabel.TabIndex = 7;
             idProfessorLabel.Text = "Professor";
             // 
             // motivoLabel
             // 
             motivoLabel.AutoSize = true;
-            motivoLabel.Location = new System.Drawing.Point(14, 354);
+            motivoLabel.Location = new System.Drawing.Point(11, 283);
             motivoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             motivoLabel.Name = "motivoLabel";
-            motivoLabel.Size = new System.Drawing.Size(50, 16);
+            motivoLabel.Size = new System.Drawing.Size(42, 13);
             motivoLabel.TabIndex = 9;
             motivoLabel.Text = "Motivo:";
             // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(11, 282);
+            statusLabel.Location = new System.Drawing.Point(9, 226);
             statusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(44, 16);
+            statusLabel.Size = new System.Drawing.Size(37, 13);
             statusLabel.TabIndex = 11;
             statusLabel.Text = "Status";
             // 
             // dataHoraSaidaDateTimePicker
             // 
             this.dataHoraSaidaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.saidasAntecipadasBindingSource, "DataHoraSaida", true));
-            this.dataHoraSaidaDateTimePicker.Location = new System.Drawing.Point(859, 306);
+            this.dataHoraSaidaDateTimePicker.Location = new System.Drawing.Point(687, 245);
             this.dataHoraSaidaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dataHoraSaidaDateTimePicker.Name = "dataHoraSaidaDateTimePicker";
-            this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(348, 22);
+            this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(279, 20);
             this.dataHoraSaidaDateTimePicker.TabIndex = 2;
             // 
             // saidasAntecipadasBindingSource
@@ -144,20 +144,20 @@ namespace UILGerenReservasLab
             // 
             // alunoTextBox
             // 
-            this.alunoTextBox.Location = new System.Drawing.Point(11, 235);
+            this.alunoTextBox.Location = new System.Drawing.Point(9, 188);
             this.alunoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.alunoTextBox.Name = "alunoTextBox";
-            this.alunoTextBox.Size = new System.Drawing.Size(405, 22);
+            this.alunoTextBox.Size = new System.Drawing.Size(325, 20);
             this.alunoTextBox.TabIndex = 4;
             // 
             // motivoTextBox
             // 
             this.motivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.saidasAntecipadasBindingSource, "Motivo", true));
-            this.motivoTextBox.Location = new System.Drawing.Point(11, 372);
+            this.motivoTextBox.Location = new System.Drawing.Point(9, 298);
             this.motivoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.motivoTextBox.Multiline = true;
             this.motivoTextBox.Name = "motivoTextBox";
-            this.motivoTextBox.Size = new System.Drawing.Size(405, 89);
+            this.motivoTextBox.Size = new System.Drawing.Size(325, 72);
             this.motivoTextBox.TabIndex = 10;
             // 
             // buttonSalvar
@@ -166,10 +166,10 @@ namespace UILGerenReservasLab
             this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonSalvar.Location = new System.Drawing.Point(796, 486);
+            this.buttonSalvar.Location = new System.Drawing.Point(637, 389);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(146, 52);
+            this.buttonSalvar.Size = new System.Drawing.Size(117, 42);
             this.buttonSalvar.TabIndex = 14;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
@@ -181,10 +181,10 @@ namespace UILGerenReservasLab
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonCancelar.Location = new System.Drawing.Point(980, 486);
+            this.buttonCancelar.Location = new System.Drawing.Point(784, 389);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(146, 52);
+            this.buttonCancelar.Size = new System.Drawing.Size(117, 42);
             this.buttonCancelar.TabIndex = 15;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
@@ -196,10 +196,9 @@ namespace UILGerenReservasLab
             this.buttonBuscarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscarAluno.ForeColor = System.Drawing.Color.White;
-            this.buttonBuscarAluno.Location = new System.Drawing.Point(322, 200);
-            this.buttonBuscarAluno.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBuscarAluno.Location = new System.Drawing.Point(258, 160);
             this.buttonBuscarAluno.Name = "buttonBuscarAluno";
-            this.buttonBuscarAluno.Size = new System.Drawing.Size(94, 29);
+            this.buttonBuscarAluno.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscarAluno.TabIndex = 16;
             this.buttonBuscarAluno.Text = "&Buscar";
             this.buttonBuscarAluno.UseVisualStyleBackColor = false;
@@ -212,19 +211,17 @@ namespace UILGerenReservasLab
             "Em Análise",
             "Autorizada",
             "Negada"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(11, 302);
-            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxStatus.Location = new System.Drawing.Point(9, 242);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(283, 24);
+            this.comboBoxStatus.Size = new System.Drawing.Size(227, 21);
             this.comboBoxStatus.TabIndex = 18;
             // 
             // comboBoxProfessor
             // 
             this.comboBoxProfessor.FormattingEnabled = true;
-            this.comboBoxProfessor.Location = new System.Drawing.Point(432, 235);
-            this.comboBoxProfessor.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxProfessor.Location = new System.Drawing.Point(346, 188);
             this.comboBoxProfessor.Name = "comboBoxProfessor";
-            this.comboBoxProfessor.Size = new System.Drawing.Size(405, 24);
+            this.comboBoxProfessor.Size = new System.Drawing.Size(325, 21);
             this.comboBoxProfessor.TabIndex = 20;
             // 
             // bindingSource1
@@ -234,10 +231,9 @@ namespace UILGerenReservasLab
             // comboBoxCoordenador
             // 
             this.comboBoxCoordenador.FormattingEnabled = true;
-            this.comboBoxCoordenador.Location = new System.Drawing.Point(432, 306);
-            this.comboBoxCoordenador.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxCoordenador.Location = new System.Drawing.Point(346, 245);
             this.comboBoxCoordenador.Name = "comboBoxCoordenador";
-            this.comboBoxCoordenador.Size = new System.Drawing.Size(405, 24);
+            this.comboBoxCoordenador.Size = new System.Drawing.Size(325, 21);
             this.comboBoxCoordenador.TabIndex = 21;
             // 
             // panelBarraTitulo
@@ -250,9 +246,8 @@ namespace UILGerenReservasLab
             this.panelBarraTitulo.Controls.Add(this.buttonFechar);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(1300, 50);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(1040, 40);
             this.panelBarraTitulo.TabIndex = 22;
             this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
@@ -261,10 +256,9 @@ namespace UILGerenReservasLab
             this.labelMenu.AutoSize = true;
             this.labelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMenu.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelMenu.Location = new System.Drawing.Point(4, 10);
-            this.labelMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMenu.Location = new System.Drawing.Point(3, 8);
             this.labelMenu.Name = "labelMenu";
-            this.labelMenu.Size = new System.Drawing.Size(81, 31);
+            this.labelMenu.Size = new System.Drawing.Size(66, 25);
             this.labelMenu.TabIndex = 4;
             this.labelMenu.Text = "Menu";
             // 
@@ -274,10 +268,9 @@ namespace UILGerenReservasLab
             this.buttonMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMinimizar.Enabled = false;
             this.buttonMinimizar.Image = global::UILGerenReservasLab.Properties.Resources.minimizar;
-            this.buttonMinimizar.Location = new System.Drawing.Point(1145, 8);
-            this.buttonMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMinimizar.Location = new System.Drawing.Point(916, 6);
             this.buttonMinimizar.Name = "buttonMinimizar";
-            this.buttonMinimizar.Size = new System.Drawing.Size(44, 35);
+            this.buttonMinimizar.Size = new System.Drawing.Size(35, 28);
             this.buttonMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonMinimizar.TabIndex = 3;
             this.buttonMinimizar.TabStop = false;
@@ -289,10 +282,9 @@ namespace UILGerenReservasLab
             this.buttonRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRestaurar.Enabled = false;
             this.buttonRestaurar.Image = global::UILGerenReservasLab.Properties.Resources.res;
-            this.buttonRestaurar.Location = new System.Drawing.Point(1196, 8);
-            this.buttonRestaurar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRestaurar.Location = new System.Drawing.Point(957, 6);
             this.buttonRestaurar.Name = "buttonRestaurar";
-            this.buttonRestaurar.Size = new System.Drawing.Size(44, 35);
+            this.buttonRestaurar.Size = new System.Drawing.Size(35, 28);
             this.buttonRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonRestaurar.TabIndex = 2;
             this.buttonRestaurar.TabStop = false;
@@ -304,10 +296,9 @@ namespace UILGerenReservasLab
             this.buttonMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMaximizar.Enabled = false;
             this.buttonMaximizar.Image = global::UILGerenReservasLab.Properties.Resources.maxi;
-            this.buttonMaximizar.Location = new System.Drawing.Point(1196, 8);
-            this.buttonMaximizar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMaximizar.Location = new System.Drawing.Point(957, 6);
             this.buttonMaximizar.Name = "buttonMaximizar";
-            this.buttonMaximizar.Size = new System.Drawing.Size(44, 35);
+            this.buttonMaximizar.Size = new System.Drawing.Size(35, 28);
             this.buttonMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonMaximizar.TabIndex = 1;
             this.buttonMaximizar.TabStop = false;
@@ -318,10 +309,9 @@ namespace UILGerenReservasLab
             this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFechar.Image = global::UILGerenReservasLab.Properties.Resources.fechar;
-            this.buttonFechar.Location = new System.Drawing.Point(1248, 8);
-            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFechar.Location = new System.Drawing.Point(998, 6);
             this.buttonFechar.Name = "buttonFechar";
-            this.buttonFechar.Size = new System.Drawing.Size(44, 35);
+            this.buttonFechar.Size = new System.Drawing.Size(35, 28);
             this.buttonFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonFechar.TabIndex = 0;
             this.buttonFechar.TabStop = false;
@@ -329,9 +319,10 @@ namespace UILGerenReservasLab
             // 
             // FormCadastroSaidasAntecipadas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1300, 614);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(1040, 491);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.comboBoxCoordenador);
             this.Controls.Add(this.comboBoxProfessor);

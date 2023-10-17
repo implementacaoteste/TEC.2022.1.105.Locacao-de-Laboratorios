@@ -66,5 +66,15 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormCadastroCurso_Load(object sender, EventArgs e)
+        {
+            labelMenu.Text = "Cadastro de Curso (Unidade Curricular)";
+        }
     }
 }
