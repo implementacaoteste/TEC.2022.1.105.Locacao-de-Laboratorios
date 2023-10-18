@@ -42,8 +42,10 @@
             this.buttonRestaurar = new System.Windows.Forms.PictureBox();
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
             this.buttonFechar = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBoxAluno = new CodeeloUI.Controls.CodeeloPictureBox();
+            this.buttonAdicionarFoto = new CodeeloUI.Controls.CodeeloButton();
+            this.buttonSalvar = new CodeeloUI.Controls.CodeeloButton();
+            this.buttonCancelar = new CodeeloUI.Controls.CodeeloButton();
             nomeLabel = new System.Windows.Forms.Label();
             matriculaLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
@@ -53,45 +55,49 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAluno)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(64, 158);
+            nomeLabel.ForeColor = System.Drawing.Color.White;
+            nomeLabel.Location = new System.Drawing.Point(88, 88);
             nomeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(47, 16);
+            nomeLabel.Size = new System.Drawing.Size(35, 13);
             nomeLabel.TabIndex = 1;
-            nomeLabel.Text = "Nome:";
+            nomeLabel.Text = "Nome";
             // 
             // matriculaLabel
             // 
             matriculaLabel.AutoSize = true;
-            matriculaLabel.Location = new System.Drawing.Point(48, 249);
+            matriculaLabel.ForeColor = System.Drawing.Color.White;
+            matriculaLabel.Location = new System.Drawing.Point(91, 210);
             matriculaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             matriculaLabel.Name = "matriculaLabel";
-            matriculaLabel.Size = new System.Drawing.Size(64, 16);
+            matriculaLabel.Size = new System.Drawing.Size(50, 13);
             matriculaLabel.TabIndex = 3;
-            matriculaLabel.Text = "Matricula:";
+            matriculaLabel.Text = "Matricula";
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(63, 208);
+            emailLabel.ForeColor = System.Drawing.Color.White;
+            emailLabel.Location = new System.Drawing.Point(91, 147);
             emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(44, 16);
+            emailLabel.Size = new System.Drawing.Size(32, 13);
             emailLabel.TabIndex = 5;
-            emailLabel.Text = "Email:";
+            emailLabel.Text = "Email";
             // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alunoBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(114, 155);
+            this.nomeTextBox.Location = new System.Drawing.Point(91, 112);
             this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(542, 22);
+            this.nomeTextBox.Size = new System.Drawing.Size(437, 20);
             this.nomeTextBox.TabIndex = 2;
             // 
             // alunoBindingSource
@@ -101,19 +107,19 @@
             // matriculaTextBox
             // 
             this.matriculaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alunoBindingSource, "Matricula", true));
-            this.matriculaTextBox.Location = new System.Drawing.Point(114, 249);
+            this.matriculaTextBox.Location = new System.Drawing.Point(94, 234);
             this.matriculaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.matriculaTextBox.Name = "matriculaTextBox";
-            this.matriculaTextBox.Size = new System.Drawing.Size(209, 22);
+            this.matriculaTextBox.Size = new System.Drawing.Size(168, 20);
             this.matriculaTextBox.TabIndex = 4;
             // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alunoBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(114, 204);
+            this.emailTextBox.Location = new System.Drawing.Point(94, 177);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(542, 22);
+            this.emailTextBox.Size = new System.Drawing.Size(434, 20);
             this.emailTextBox.TabIndex = 6;
             // 
             // panelBarraTitulo
@@ -126,9 +132,8 @@
             this.panelBarraTitulo.Controls.Add(this.buttonFechar);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(1300, 50);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(1040, 40);
             this.panelBarraTitulo.TabIndex = 23;
             // 
             // labelMenu
@@ -136,10 +141,9 @@
             this.labelMenu.AutoSize = true;
             this.labelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMenu.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelMenu.Location = new System.Drawing.Point(4, 10);
-            this.labelMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMenu.Location = new System.Drawing.Point(3, 8);
             this.labelMenu.Name = "labelMenu";
-            this.labelMenu.Size = new System.Drawing.Size(81, 31);
+            this.labelMenu.Size = new System.Drawing.Size(66, 25);
             this.labelMenu.TabIndex = 4;
             this.labelMenu.Text = "Menu";
             // 
@@ -149,10 +153,9 @@
             this.buttonMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMinimizar.Enabled = false;
             this.buttonMinimizar.Image = global::UILGerenReservasLab.Properties.Resources.minimizar;
-            this.buttonMinimizar.Location = new System.Drawing.Point(1145, 8);
-            this.buttonMinimizar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMinimizar.Location = new System.Drawing.Point(916, 6);
             this.buttonMinimizar.Name = "buttonMinimizar";
-            this.buttonMinimizar.Size = new System.Drawing.Size(44, 35);
+            this.buttonMinimizar.Size = new System.Drawing.Size(35, 28);
             this.buttonMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonMinimizar.TabIndex = 3;
             this.buttonMinimizar.TabStop = false;
@@ -164,10 +167,9 @@
             this.buttonRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRestaurar.Enabled = false;
             this.buttonRestaurar.Image = global::UILGerenReservasLab.Properties.Resources.res;
-            this.buttonRestaurar.Location = new System.Drawing.Point(1196, 8);
-            this.buttonRestaurar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRestaurar.Location = new System.Drawing.Point(957, 6);
             this.buttonRestaurar.Name = "buttonRestaurar";
-            this.buttonRestaurar.Size = new System.Drawing.Size(44, 35);
+            this.buttonRestaurar.Size = new System.Drawing.Size(35, 28);
             this.buttonRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonRestaurar.TabIndex = 2;
             this.buttonRestaurar.TabStop = false;
@@ -179,10 +181,9 @@
             this.buttonMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMaximizar.Enabled = false;
             this.buttonMaximizar.Image = global::UILGerenReservasLab.Properties.Resources.maxi;
-            this.buttonMaximizar.Location = new System.Drawing.Point(1196, 8);
-            this.buttonMaximizar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMaximizar.Location = new System.Drawing.Point(957, 6);
             this.buttonMaximizar.Name = "buttonMaximizar";
-            this.buttonMaximizar.Size = new System.Drawing.Size(44, 35);
+            this.buttonMaximizar.Size = new System.Drawing.Size(35, 28);
             this.buttonMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonMaximizar.TabIndex = 1;
             this.buttonMaximizar.TabStop = false;
@@ -193,52 +194,157 @@
             this.buttonFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFechar.Image = global::UILGerenReservasLab.Properties.Resources.fechar;
-            this.buttonFechar.Location = new System.Drawing.Point(1248, 8);
-            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFechar.Location = new System.Drawing.Point(998, 6);
             this.buttonFechar.Name = "buttonFechar";
-            this.buttonFechar.Size = new System.Drawing.Size(44, 35);
+            this.buttonFechar.Size = new System.Drawing.Size(35, 28);
             this.buttonFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonFechar.TabIndex = 0;
             this.buttonFechar.TabStop = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
-            // button1
+            // pictureBoxAluno
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(980, 486);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 52);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "&Cancelar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.buttonCancelar_Click);
+            this.pictureBoxAluno.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureBoxAluno.BorderColorFirst = System.Drawing.Color.RoyalBlue;
+            this.pictureBoxAluno.BorderColorSecond = System.Drawing.Color.HotPink;
+            this.pictureBoxAluno.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureBoxAluno.BorderSize = 2;
+            this.pictureBoxAluno.DrawBorder = false;
+            this.pictureBoxAluno.DrawBorderInside = false;
+            this.pictureBoxAluno.DrawCircle = false;
+            this.pictureBoxAluno.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.pictureBoxAluno.Location = new System.Drawing.Point(779, 112);
+            this.pictureBoxAluno.Name = "pictureBoxAluno";
+            this.pictureBoxAluno.Size = new System.Drawing.Size(147, 142);
+            this.pictureBoxAluno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAluno.TabIndex = 26;
+            this.pictureBoxAluno.TabStop = false;
+            this.pictureBoxAluno.UseGradient = false;
             // 
-            // button2
+            // buttonAdicionarFoto
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(796, 486);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 52);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "&Salvar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.buttonSalvar_Click);
+            this.buttonAdicionarFoto.AccessibleRole = null;
+            this.buttonAdicionarFoto.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAdicionarFoto.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAdicionarFoto.BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonAdicionarFoto.BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonAdicionarFoto.BorderRadius = 20;
+            this.buttonAdicionarFoto.BorderSize = 3;
+            this.buttonAdicionarFoto.CausesValidation = false;
+            this.buttonAdicionarFoto.ColorFill_1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonAdicionarFoto.ColorFill_2 = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(185)))), ((int)(((byte)(189)))));
+            this.buttonAdicionarFoto.DialogResult = false;
+            this.buttonAdicionarFoto.FlatAppearance.BorderSize = 0;
+            this.buttonAdicionarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdicionarFoto.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.buttonAdicionarFoto.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonAdicionarFoto.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.buttonAdicionarFoto.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.buttonAdicionarFoto.Location = new System.Drawing.Point(788, 260);
+            this.buttonAdicionarFoto.Name = "buttonAdicionarFoto";
+            this.buttonAdicionarFoto.OnClick_BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonAdicionarFoto.OnClick_BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonAdicionarFoto.OnClick_FillColor_1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(184)))), ((int)(((byte)(216)))));
+            this.buttonAdicionarFoto.OnClick_FillColor_2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(225)))), ((int)(((byte)(229)))));
+            this.buttonAdicionarFoto.OnOver_BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonAdicionarFoto.OnOver_BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonAdicionarFoto.OnOver_FillColor_1 = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(164)))), ((int)(((byte)(196)))));
+            this.buttonAdicionarFoto.OnOver_FillColor_2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(205)))), ((int)(((byte)(209)))));
+            this.buttonAdicionarFoto.Size = new System.Drawing.Size(128, 33);
+            this.buttonAdicionarFoto.TabIndex = 27;
+            this.buttonAdicionarFoto.TabStop = false;
+            this.buttonAdicionarFoto.Text = "ADD FOTO";
+            this.buttonAdicionarFoto.TextAlign = CodeeloUI.Enums.TextPosition.Center;
+            this.buttonAdicionarFoto.UseMnemonic = false;
+            this.buttonAdicionarFoto.UseVisualStyleBackColor = false;
+            this.buttonAdicionarFoto.Click += new System.EventHandler(this.buttonAdicionarFoto_Click);
+            // 
+            // buttonSalvar
+            // 
+            this.buttonSalvar.AccessibleRole = null;
+            this.buttonSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSalvar.BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonSalvar.BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonSalvar.BorderRadius = 20;
+            this.buttonSalvar.BorderSize = 3;
+            this.buttonSalvar.CausesValidation = false;
+            this.buttonSalvar.ColorFill_1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonSalvar.ColorFill_2 = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(185)))), ((int)(((byte)(189)))));
+            this.buttonSalvar.DialogResult = false;
+            this.buttonSalvar.FlatAppearance.BorderSize = 0;
+            this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSalvar.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.buttonSalvar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonSalvar.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.buttonSalvar.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.buttonSalvar.Location = new System.Drawing.Point(687, 393);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.OnClick_BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonSalvar.OnClick_BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonSalvar.OnClick_FillColor_1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(184)))), ((int)(((byte)(216)))));
+            this.buttonSalvar.OnClick_FillColor_2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(225)))), ((int)(((byte)(229)))));
+            this.buttonSalvar.OnOver_BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonSalvar.OnOver_BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonSalvar.OnOver_FillColor_1 = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(164)))), ((int)(((byte)(196)))));
+            this.buttonSalvar.OnOver_FillColor_2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(205)))), ((int)(((byte)(209)))));
+            this.buttonSalvar.Size = new System.Drawing.Size(130, 40);
+            this.buttonSalvar.TabIndex = 28;
+            this.buttonSalvar.TabStop = false;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.TextAlign = CodeeloUI.Enums.TextPosition.Center;
+            this.buttonSalvar.UseMnemonic = false;
+            this.buttonSalvar.UseVisualStyleBackColor = false;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
+            // buttonCancelar
+            // 
+            this.buttonCancelar.AccessibleRole = null;
+            this.buttonCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCancelar.BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonCancelar.BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonCancelar.BorderRadius = 20;
+            this.buttonCancelar.BorderSize = 3;
+            this.buttonCancelar.CausesValidation = false;
+            this.buttonCancelar.ColorFill_1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonCancelar.ColorFill_2 = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(185)))), ((int)(((byte)(189)))));
+            this.buttonCancelar.DialogResult = false;
+            this.buttonCancelar.FlatAppearance.BorderSize = 0;
+            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelar.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.buttonCancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonCancelar.GradientBorderDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.buttonCancelar.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.buttonCancelar.Location = new System.Drawing.Point(874, 393);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.OnClick_BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonCancelar.OnClick_BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonCancelar.OnClick_FillColor_1 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(184)))), ((int)(((byte)(216)))));
+            this.buttonCancelar.OnClick_FillColor_2 = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(225)))), ((int)(((byte)(229)))));
+            this.buttonCancelar.OnOver_BorderColor_1 = System.Drawing.Color.Transparent;
+            this.buttonCancelar.OnOver_BorderColor_2 = System.Drawing.Color.Transparent;
+            this.buttonCancelar.OnOver_FillColor_1 = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(164)))), ((int)(((byte)(196)))));
+            this.buttonCancelar.OnOver_FillColor_2 = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(205)))), ((int)(((byte)(209)))));
+            this.buttonCancelar.Size = new System.Drawing.Size(130, 40);
+            this.buttonCancelar.TabIndex = 29;
+            this.buttonCancelar.TabStop = false;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.TextAlign = CodeeloUI.Enums.TextPosition.Center;
+            this.buttonCancelar.UseMnemonic = false;
+            this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // FormCadastroAluno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1300, 614);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(1040, 491);
+            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.buttonSalvar);
+            this.Controls.Add(this.buttonAdicionarFoto);
+            this.Controls.Add(this.pictureBoxAluno);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(emailLabel);
             this.Controls.Add(this.emailTextBox);
@@ -261,6 +367,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAluno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,7 +385,9 @@
         private System.Windows.Forms.PictureBox buttonRestaurar;
         private System.Windows.Forms.PictureBox buttonMaximizar;
         private System.Windows.Forms.PictureBox buttonFechar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private CodeeloUI.Controls.CodeeloPictureBox pictureBoxAluno;
+        private CodeeloUI.Controls.CodeeloButton buttonAdicionarFoto;
+        private CodeeloUI.Controls.CodeeloButton buttonSalvar;
+        private CodeeloUI.Controls.CodeeloButton buttonCancelar;
     }
 }

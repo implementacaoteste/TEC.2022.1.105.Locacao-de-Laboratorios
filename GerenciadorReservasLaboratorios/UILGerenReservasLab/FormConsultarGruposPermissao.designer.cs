@@ -55,14 +55,14 @@
             this.grupoUsuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
             this.grupoUsuarioDataGridView.DataSource = this.grupoUsuarioBindingSource;
-            this.grupoUsuarioDataGridView.Location = new System.Drawing.Point(12, 202);
-            this.grupoUsuarioDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grupoUsuarioDataGridView.Location = new System.Drawing.Point(9, 164);
+            this.grupoUsuarioDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grupoUsuarioDataGridView.Name = "grupoUsuarioDataGridView";
             this.grupoUsuarioDataGridView.ReadOnly = true;
             this.grupoUsuarioDataGridView.RowHeadersVisible = false;
             this.grupoUsuarioDataGridView.RowHeadersWidth = 51;
             this.grupoUsuarioDataGridView.RowTemplate.Height = 24;
-            this.grupoUsuarioDataGridView.Size = new System.Drawing.Size(776, 306);
+            this.grupoUsuarioDataGridView.Size = new System.Drawing.Size(582, 249);
             this.grupoUsuarioDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn2
@@ -79,8 +79,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(800, 32);
+            this.label1.Size = new System.Drawing.Size(600, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "Consultar grupos para permissões";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,10 +92,10 @@
             this.buttonBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscar.ForeColor = System.Drawing.Color.White;
-            this.buttonBuscar.Location = new System.Drawing.Point(668, 155);
-            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonBuscar.Location = new System.Drawing.Point(501, 126);
+            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(120, 37);
+            this.buttonBuscar.Size = new System.Drawing.Size(90, 30);
             this.buttonBuscar.TabIndex = 7;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = false;
@@ -104,10 +105,10 @@
             // 
             this.textBoxBuscarGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBuscarGrupo.Location = new System.Drawing.Point(13, 165);
-            this.textBoxBuscarGrupo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxBuscarGrupo.Location = new System.Drawing.Point(10, 134);
+            this.textBoxBuscarGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxBuscarGrupo.Name = "textBoxBuscarGrupo";
-            this.textBoxBuscarGrupo.Size = new System.Drawing.Size(649, 22);
+            this.textBoxBuscarGrupo.Size = new System.Drawing.Size(488, 20);
             this.textBoxBuscarGrupo.TabIndex = 8;
             // 
             // buttonSelecionar
@@ -116,10 +117,10 @@
             this.buttonSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSelecionar.ForeColor = System.Drawing.Color.White;
-            this.buttonSelecionar.Location = new System.Drawing.Point(542, 512);
-            this.buttonSelecionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSelecionar.Location = new System.Drawing.Point(406, 416);
+            this.buttonSelecionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(120, 37);
+            this.buttonSelecionar.Size = new System.Drawing.Size(90, 30);
             this.buttonSelecionar.TabIndex = 7;
             this.buttonSelecionar.Text = "&Selecionar";
             this.buttonSelecionar.UseVisualStyleBackColor = false;
@@ -130,10 +131,10 @@
             this.buttonCancelar.BackColor = System.Drawing.Color.Tomato;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelar.Location = new System.Drawing.Point(668, 512);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCancelar.Location = new System.Drawing.Point(501, 416);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(120, 37);
+            this.buttonCancelar.Size = new System.Drawing.Size(90, 30);
             this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
@@ -141,9 +142,10 @@
             // 
             // FormConsultarGruposPermissao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 614);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(600, 499);
             this.Controls.Add(this.textBoxBuscarGrupo);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSelecionar);
@@ -151,7 +153,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grupoUsuarioDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormConsultarGruposPermissao";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -58,54 +58,60 @@
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(12, 151);
+            nomeLabel.Location = new System.Drawing.Point(9, 123);
+            nomeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(44, 16);
+            nomeLabel.Size = new System.Drawing.Size(35, 13);
             nomeLabel.TabIndex = 1;
             nomeLabel.Text = "Nome";
             // 
             // matriculaLabel
             // 
             matriculaLabel.AutoSize = true;
-            matriculaLabel.Location = new System.Drawing.Point(629, 151);
+            matriculaLabel.Location = new System.Drawing.Point(472, 123);
+            matriculaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             matriculaLabel.Name = "matriculaLabel";
-            matriculaLabel.Size = new System.Drawing.Size(61, 16);
+            matriculaLabel.Size = new System.Drawing.Size(50, 13);
             matriculaLabel.TabIndex = 3;
             matriculaLabel.Text = "Matricula";
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(787, 151);
+            emailLabel.Location = new System.Drawing.Point(590, 123);
+            emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(45, 16);
+            emailLabel.Size = new System.Drawing.Size(35, 13);
             emailLabel.TabIndex = 5;
             emailLabel.Text = "E-mail";
             // 
             // nomeUsuarioLabel
             // 
             nomeUsuarioLabel.AutoSize = true;
-            nomeUsuarioLabel.Location = new System.Drawing.Point(12, 228);
+            nomeUsuarioLabel.Location = new System.Drawing.Point(9, 185);
+            nomeUsuarioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nomeUsuarioLabel.Name = "nomeUsuarioLabel";
-            nomeUsuarioLabel.Size = new System.Drawing.Size(154, 16);
+            nomeUsuarioLabel.Size = new System.Drawing.Size(122, 13);
             nomeUsuarioLabel.TabIndex = 7;
             nomeUsuarioLabel.Text = "Login (Nome de usuário)";
             // 
             // senhaLabel
             // 
             senhaLabel.AutoSize = true;
-            senhaLabel.Location = new System.Drawing.Point(385, 228);
+            senhaLabel.Location = new System.Drawing.Point(289, 185);
+            senhaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             senhaLabel.Name = "senhaLabel";
-            senhaLabel.Size = new System.Drawing.Size(46, 16);
+            senhaLabel.Size = new System.Drawing.Size(38, 13);
             senhaLabel.TabIndex = 9;
             senhaLabel.Text = "Senha";
             // 
             // confirmarSenhaLabel
             // 
             confirmarSenhaLabel.AutoSize = true;
-            confirmarSenhaLabel.Location = new System.Drawing.Point(593, 225);
+            confirmarSenhaLabel.Location = new System.Drawing.Point(445, 183);
+            confirmarSenhaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             confirmarSenhaLabel.Name = "confirmarSenhaLabel";
-            confirmarSenhaLabel.Size = new System.Drawing.Size(104, 16);
+            confirmarSenhaLabel.Size = new System.Drawing.Size(83, 13);
             confirmarSenhaLabel.TabIndex = 11;
             confirmarSenhaLabel.Text = "Confirmar senha";
             // 
@@ -116,74 +122,75 @@
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(15, 171);
-            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nomeTextBox.Location = new System.Drawing.Point(11, 139);
+            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(611, 22);
+            this.nomeTextBox.Size = new System.Drawing.Size(459, 20);
             this.nomeTextBox.TabIndex = 2;
             // 
             // matriculaTextBox
             // 
             this.matriculaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Matricula", true));
-            this.matriculaTextBox.Location = new System.Drawing.Point(632, 171);
-            this.matriculaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.matriculaTextBox.Location = new System.Drawing.Point(474, 139);
+            this.matriculaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.matriculaTextBox.Name = "matriculaTextBox";
-            this.matriculaTextBox.Size = new System.Drawing.Size(152, 22);
+            this.matriculaTextBox.Size = new System.Drawing.Size(115, 20);
             this.matriculaTextBox.TabIndex = 4;
             // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(791, 171);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emailTextBox.Location = new System.Drawing.Point(593, 139);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(409, 22);
+            this.emailTextBox.Size = new System.Drawing.Size(308, 20);
             this.emailTextBox.TabIndex = 6;
             // 
             // nomeUsuarioTextBox
             // 
             this.nomeUsuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "NomeUsuario", true));
-            this.nomeUsuarioTextBox.Location = new System.Drawing.Point(15, 247);
-            this.nomeUsuarioTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nomeUsuarioTextBox.Location = new System.Drawing.Point(11, 201);
+            this.nomeUsuarioTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nomeUsuarioTextBox.Name = "nomeUsuarioTextBox";
-            this.nomeUsuarioTextBox.Size = new System.Drawing.Size(368, 22);
+            this.nomeUsuarioTextBox.Size = new System.Drawing.Size(277, 20);
             this.nomeUsuarioTextBox.TabIndex = 8;
             // 
             // senhaTextBox
             // 
             this.senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Senha", true));
-            this.senhaTextBox.Location = new System.Drawing.Point(389, 247);
-            this.senhaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.senhaTextBox.Location = new System.Drawing.Point(292, 201);
+            this.senhaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.senhaTextBox.Name = "senhaTextBox";
-            this.senhaTextBox.Size = new System.Drawing.Size(200, 22);
+            this.senhaTextBox.Size = new System.Drawing.Size(151, 20);
             this.senhaTextBox.TabIndex = 10;
             // 
             // ativoCheckBox
             // 
             this.ativoCheckBox.AutoSize = true;
             this.ativoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usuarioBindingSource, "Ativo", true));
-            this.ativoCheckBox.Location = new System.Drawing.Point(791, 251);
-            this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ativoCheckBox.Location = new System.Drawing.Point(593, 204);
+            this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ativoCheckBox.Name = "ativoCheckBox";
-            this.ativoCheckBox.Size = new System.Drawing.Size(59, 20);
+            this.ativoCheckBox.Size = new System.Drawing.Size(50, 17);
             this.ativoCheckBox.TabIndex = 13;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
             // 
             // textBoxConfirmarSenha
             // 
-            this.textBoxConfirmarSenha.Location = new System.Drawing.Point(596, 247);
-            this.textBoxConfirmarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxConfirmarSenha.Location = new System.Drawing.Point(447, 201);
+            this.textBoxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
-            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(188, 22);
+            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(142, 20);
             this.textBoxConfirmarSenha.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(-2, 65);
+            this.label2.Location = new System.Drawing.Point(-2, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1387, 58);
+            this.label2.Size = new System.Drawing.Size(1040, 47);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cadastro de usuários";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,10 +201,10 @@
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonCancelar.Location = new System.Drawing.Point(1045, 479);
-            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCancelar.Location = new System.Drawing.Point(784, 389);
+            this.buttonCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(156, 52);
+            this.buttonCancelar.Size = new System.Drawing.Size(117, 42);
             this.buttonCancelar.TabIndex = 17;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
@@ -209,19 +216,20 @@
             this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonSalvar.Location = new System.Drawing.Point(849, 479);
-            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSalvar.Location = new System.Drawing.Point(637, 389);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(156, 52);
+            this.buttonSalvar.Size = new System.Drawing.Size(117, 42);
             this.buttonSalvar.TabIndex = 16;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = false;
             // 
             // FormCadastroUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1387, 604);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(1040, 491);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.label2);
@@ -240,7 +248,7 @@
             this.Controls.Add(this.nomeTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroUsuario";

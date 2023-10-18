@@ -32,12 +32,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>UILGerenReservasLab.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
+    <Reference Include="CodeeloUI, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CodeeloUI.1.1.1\lib\net472\CodeeloUI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -258,6 +267,11 @@
     <EmbeddedResource Include="FormCadastroPredio.resx">
       <DependentUpon>FormCadastroPredio.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TratarErro.cs" />
     <EmbeddedResource Include="FormBuscarGrupoUsuario.resx">
       <DependentUpon>FormBuscarGrupoUsuario.cs</DependentUpon>
@@ -300,14 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Models.Aluno.datasource" />
     <None Include="Properties\DataSources\Models.Constantes.datasource" />
@@ -343,9 +352,6 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user_account.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lock_open.png" />
   </ItemGroup>
   <ItemGroup>
@@ -366,19 +372,80 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\usuarios.png" />
     <None Include="Resources\logo-senai1.png" />
     <None Include="Resources\Close.png" />
     <None Include="Resources\fechar.png" />
     <None Include="Resources\calendar %281%291.png" />
-    <Content Include="Resources\logo_welcome01.jpg" />
     <None Include="Resources\Senai_logo_01.png" />
     <None Include="Resources\senai-logo-3.png" />
     <None Include="Resources\maxi.png" />
     <None Include="Resources\res.png" />
     <None Include="Resources\minimizar.png" />
     <None Include="Resources\sair.png" />
-    <Content Include="Resources\senai-logo3.png" />
+    <None Include="Resources\saida_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\curso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saidaantecipada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disciplinas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estudante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sala.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\predio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\predio2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permissao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disciplina1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutx1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permissao2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroom2_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_permission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disciplina_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\predio01_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saida_01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

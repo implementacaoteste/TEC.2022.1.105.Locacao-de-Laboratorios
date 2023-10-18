@@ -15,7 +15,7 @@ namespace UILGerenReservasLab
     public partial class FormCadastroReservas : Form
     {
         public int Id;
-        private UsuarioBLL usuarioBLL = new UsuarioBLL();
+        private readonly UsuarioBLL usuarioBLL = new UsuarioBLL();
         Usuario usuarioLogado;
 
         // Variável de instância para armazenar a hora selecionada
@@ -53,17 +53,23 @@ namespace UILGerenReservasLab
 
             if (Id == 0)
             {
-                // Defina o nome do usuário logado no campo idUsuarioTextBox.
-                idUsuarioTextBox.Text = usuarioLogado.Nome;
-
                 // Carregue os dados para preencher os ComboBoxes.
                 CarregarComboBoxSolicitante();
                 CarregarComboBoxSala();
                 CarregarComboBoxCurso();
-                CarregarComboBoxDisciplina();
+                //CarregarComboBoxDisciplina();
+
+                reservaDataDateTimePicker.Enabled = false;
+                reservaHoraDateTimePicker.Enabled = false;
 
                 // Desabilite o groupBoxLiberarChave por padrão.
                 groupBoxLiberarChave.Enabled = false;
+
+                if (isProfessor)
+                {
+                    // Configurar comboBoxStatus com o valor "Pendente" se o usuário for um professor.
+                    comboBoxStatus.DataSource = new List<string> { "Pendente" };
+                }
             }
             else
             {
@@ -71,32 +77,14 @@ namespace UILGerenReservasLab
                 CarregarComboBoxSolicitante();
                 CarregarComboBoxSala();
                 CarregarComboBoxCurso();
-                CarregarComboBoxDisciplina();
+                //CarregarComboBoxDisciplina();
 
                 // Obtenha a reserva existente do banco de dados com base no Id.
-                Reserva reservaExistente = new ReservaBLL().BuscarPorId(Id);
+                Reserva reserva = new ReservaBLL().BuscarPorId(Id);
 
-                if (reservaExistente != null)
+                if (reserva != null)
                 {
-                    // Defina o valor selecionado nos ComboBoxes com base nos dados da reserva existente.
-                    idUsuarioTextBox.Text = reservaExistente.NomeResponsavel;
-                    comboBoxSolicitante.SelectedValue = reservaExistente.IdSolicitante;
-                    comboBoxSala.SelectedValue = reservaExistente.IdSala;
-                    comboBoxCurso.SelectedValue = reservaExistente.IdCurso;
-                    comboBoxDisciplina.SelectedValue = reservaExistente.IdDisciplina;
-                    comboBoxStatus.SelectedItem = reservaExistente.Status;
-                    comboBoxTurno.SelectedItem = reservaExistente.Turno;
-                    reservaDataDateTimePicker.Value = reservaExistente.ReservaData;
-
-                    // Crie um objeto DateTime com a data atual (ou outra data se necessário)
-                    DateTime dataAtual = DateTime.Now;
-
-                    // Adicione o TimeSpan à hora do DateTime
-                    DateTime dateTimeComHora = dataAtual.Add(reservaExistente.ReservaHora);
-
-                    // Atribua o DateTime resultante ao DateTimePicker
-                    reservaHoraDateTimePicker.Value = dateTimeComHora;
-
+                    reservaBindingSource.DataSource = reserva;
                 }
                 else
                 {
@@ -119,15 +107,45 @@ namespace UILGerenReservasLab
 
         private void CarregarComboBoxSolicitante()
         {
-            // Carregue os usuários do banco de dados.
-            List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
+            if (Id == 0)
+            {
+                if(isCoordenacao || isAdmin)
+                {
+                    // Carregue os usuários do banco de dados.
+                    List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
 
-            // Defina a fonte de dados para o ComboBox de solicitante.
-            comboBoxSolicitante.DisplayMember = "Nome";
-            comboBoxSolicitante.ValueMember = "Id";
-            comboBoxSolicitante.DataSource = usuarios;
+                    // Defina a fonte de dados para o ComboBox de solicitante.
+                    comboBoxSolicitante.DisplayMember = "Nome";
+                    comboBoxSolicitante.ValueMember = "Id";
+                    comboBoxSolicitante.DataSource = usuarios;
+                }
+                else if (isProfessor)
+                {
+                    // Usuário é professor
+                    comboBoxSolicitante.DisplayMember = "Nome";
+                    comboBoxSolicitante.ValueMember = "Id";
+                    comboBoxSolicitante.DataSource = new List<Usuario> { usuarioLogado }; // Definir a fonte dos dados
+                }
+            }
         }
-
+        private void CarregarComboBoxResponsavel()
+        {
+            if (Id == 0)
+            {
+                if(isCoordenacao || isAdmin)
+                {
+                    // Defina a fonte de dados para o ComboBox de solicitante.
+                    comboBoxResponsavel.DisplayMember = "Nome";
+                    comboBoxResponsavel.ValueMember = "Id";
+                    comboBoxResponsavel.DataSource = new List<Usuario> { usuarioLogado };
+                }
+                else if (isProfessor)
+                {
+                    comboBoxResponsavel.DataSource = null; // Limpar fonte de dados
+                    comboBoxResponsavel.Enabled = false; // Desativar o ComboBox
+                }
+            }
+        }
         private void CarregarComboBoxSala()
         {
             // Carregue as salas do banco de dados.
@@ -150,16 +168,16 @@ namespace UILGerenReservasLab
             comboBoxCurso.DataSource = cursos;
         }
 
-        private void CarregarComboBoxDisciplina()
-        {
-            // Carregue as disciplinas do banco de dados.
-            List<Disciplina> disciplinas = new DisciplinaBLL().BuscarTodos();
+        //private void CarregarComboBoxDisciplina()
+        //{
+        //    // Carregue as disciplinas do banco de dados.
+        //    List<Disciplina> disciplinas = new DisciplinaBLL().BuscarTodos();
 
-            // Defina a fonte de dados para o ComboBox de disciplina.
-            comboBoxDisciplina.DisplayMember = "Nome";
-            comboBoxDisciplina.ValueMember = "Id";
-            comboBoxDisciplina.DataSource = disciplinas;
-        }
+        //    // Defina a fonte de dados para o ComboBox de disciplina.
+        //    comboBoxDisciplina.DisplayMember = "Nome";
+        //    comboBoxDisciplina.ValueMember = "Id";
+        //    comboBoxDisciplina.DataSource = disciplinas;
+        //}
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -177,7 +195,7 @@ namespace UILGerenReservasLab
                     _reserva.IdSolicitante = (int)comboBoxSolicitante.SelectedValue;
                     _reserva.IdSala = (int)comboBoxSala.SelectedValue;
                     _reserva.IdCurso = (int)comboBoxCurso.SelectedValue;
-                    _reserva.IdDisciplina = (int)comboBoxDisciplina.SelectedValue;
+                    //_reserva.IdDisciplina = (int)comboBoxDisciplina.SelectedValue;
                     _reserva.Status = comboBoxStatus.SelectedItem.ToString();
                     _reserva.Turno = comboBoxTurno.SelectedItem.ToString();
                     _reserva.Observacoes = observacoesTextBox.Text;
