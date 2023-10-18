@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.pictureBoxUsuario = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -74,39 +74,52 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 652);
             this.panel1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(114, 424);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(150, 31);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Laboratórios";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(100, 407);
+            this.label5.Location = new System.Drawing.Point(76, 390);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(225, 31);
             this.label5.TabIndex = 5;
             this.label5.Text = "de reservas de Salas";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(71, 370);
+            this.label4.Location = new System.Drawing.Point(31, 361);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(290, 28);
+            this.label4.Size = new System.Drawing.Size(329, 29);
             this.label4.TabIndex = 4;
             this.label4.Text = "Sistema de Gerenciamento";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(184, 576);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -118,12 +131,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(233, 540);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 18);
+            this.label2.Size = new System.Drawing.Size(127, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Desenvolvido por:";
             // 
@@ -132,7 +145,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(137, 324);
+            this.label1.Location = new System.Drawing.Point(104, 330);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 31);
@@ -141,9 +154,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UILGerenReservasLab.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(52, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(39, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(319, 287);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +176,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(400, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(600, 652);
             this.panel2.TabIndex = 1;
@@ -185,11 +198,11 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::UILGerenReservasLab.Properties.Resources.logo_senai;
-            this.pictureBox2.Location = new System.Drawing.Point(72, 32);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(28, 32);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(399, 204);
+            this.pictureBox2.Size = new System.Drawing.Size(528, 265);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -198,12 +211,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
-            this.label6.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
             this.label6.Location = new System.Drawing.Point(8, 322);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(197, 33);
+            this.label6.Size = new System.Drawing.Size(213, 31);
             this.label6.TabIndex = 6;
             this.label6.Text = "Faça seu Login";
             // 
@@ -211,10 +224,10 @@
             // 
             this.buttonFechar.FlatAppearance.BorderSize = 0;
             this.buttonFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFechar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFechar.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.buttonFechar.Location = new System.Drawing.Point(543, 4);
-            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(53, 49);
             this.buttonFechar.TabIndex = 3;
@@ -226,10 +239,10 @@
             // 
             this.buttonSair.BackColor = System.Drawing.Color.Red;
             this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSair.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSair.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonSair.Location = new System.Drawing.Point(413, 540);
-            this.buttonSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSair.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(156, 52);
             this.buttonSair.TabIndex = 2;
@@ -241,10 +254,10 @@
             // 
             this.buttonAcessar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.buttonAcessar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAcessar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAcessar.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonAcessar.Location = new System.Drawing.Point(15, 540);
-            this.buttonAcessar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAcessar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAcessar.Name = "buttonAcessar";
             this.buttonAcessar.Size = new System.Drawing.Size(156, 52);
             this.buttonAcessar.TabIndex = 2;
@@ -259,7 +272,7 @@
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.pictureBoxSenha);
             this.panel4.Location = new System.Drawing.Point(8, 433);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(588, 55);
             this.panel4.TabIndex = 1;
@@ -279,7 +292,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel5.Location = new System.Drawing.Point(64, 50);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(515, 1);
             this.panel5.TabIndex = 2;
@@ -290,7 +303,7 @@
             this.pictureBoxSenha.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxSenha.Image = global::UILGerenReservasLab.Properties.Resources.lock_open;
             this.pictureBoxSenha.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxSenha.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxSenha.Name = "pictureBoxSenha";
             this.pictureBoxSenha.Size = new System.Drawing.Size(56, 55);
             this.pictureBoxSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -306,7 +319,7 @@
             this.panel3.Controls.Add(this.textBoxUsuario);
             this.panel3.Controls.Add(this.pictureBoxUsuario);
             this.panel3.Location = new System.Drawing.Point(8, 370);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(588, 55);
             this.panel3.TabIndex = 0;
@@ -315,7 +328,7 @@
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel6.Location = new System.Drawing.Point(64, 50);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(515, 1);
             this.panel6.TabIndex = 3;
@@ -336,24 +349,12 @@
             this.pictureBoxUsuario.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxUsuario.Image = global::UILGerenReservasLab.Properties.Resources.user_account;
             this.pictureBoxUsuario.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxUsuario.Name = "pictureBoxUsuario";
             this.pictureBoxUsuario.Size = new System.Drawing.Size(56, 55);
             this.pictureBoxUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxUsuario.TabIndex = 6;
             this.pictureBoxUsuario.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(137, 457);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 31);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Laboratórios";
             // 
             // FormLogin2
             // 
@@ -363,7 +364,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin2";

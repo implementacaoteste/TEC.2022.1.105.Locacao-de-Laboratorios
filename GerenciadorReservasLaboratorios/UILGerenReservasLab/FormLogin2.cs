@@ -93,5 +93,10 @@ namespace UILGerenReservasLab
             labelErrorMessage.Visible = true;
             labelErrorMessage.ForeColor = Color.Red;
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
