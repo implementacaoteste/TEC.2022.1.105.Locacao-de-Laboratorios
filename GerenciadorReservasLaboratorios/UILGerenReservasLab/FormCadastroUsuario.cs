@@ -1,6 +1,7 @@
 ﻿using BLL;
 using Models;
 using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace UILGerenReservasLab
@@ -51,6 +52,7 @@ namespace UILGerenReservasLab
             {
                 MessageBox.Show(ex.Message);
             }
+            labelMenu.Text = "Cadastro de Usuario";
         }
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
@@ -70,9 +72,21 @@ namespace UILGerenReservasLab
                 Close();
         }
 
-        private void buttonCancelar_Click_1(object sender, EventArgs e)
+        private void buttonFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void panelBarraTitulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        // METHOD TO DRAG THE FORM ---------------------------------------------------------------------
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
     }
 }

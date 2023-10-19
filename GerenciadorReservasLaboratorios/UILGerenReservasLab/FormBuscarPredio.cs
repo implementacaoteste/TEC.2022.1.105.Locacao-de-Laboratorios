@@ -16,7 +16,7 @@ namespace UILGerenReservasLab
     {
         public Predio PredioSelecionado { get; private set; }
         public int opc;
-        public int id;
+
         public FormBuscarPredio()
         {
             InitializeComponent();
@@ -96,7 +96,7 @@ namespace UILGerenReservasLab
                 {
                     frm.ShowDialog();
                 }
-                buttonBuscar_Click(null, null);
+                buttonBuscar_Click(sender, e);
             }
             catch (Exception ex)
             {

@@ -2,6 +2,8 @@
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 
 namespace BLL
@@ -61,37 +63,36 @@ namespace BLL
         {
             return new ReservaDAL().BuscarPorTurno(turno);
         }
-        public bool ExisteReservasDuplicadas(int iDSala, DateTime data, TimeSpan hora)
+        public bool ExisteReservasDuplicadas(int iDSala, DateTime data, TimeSpan horaInicial, TimeSpan horaFinal)
         {
-            // Obtém todas as reservas do banco de dados
-            var reservas = new ReservaDAL().BuscarTodos();
-
-            // Cria uma lista de reservas em duplicidade
-            var reservasDuplicadas = new List<Reserva>();
-
-            // Itera sobre as reservas
-            foreach (var reserva in reservas)
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                // Verifica se a reserva é em duplicidade
-                if (reserva.IdSala == iDSala &&
-                    reserva.ReservaData == data &&
-                    reserva.ReservaHora == hora)
+                try
                 {
-                    // Adiciona a reserva à lista de reservas em duplicidade
-                    reservasDuplicadas.Add(reserva);
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "SELECT COUNT(*) FROM Reserva WHERE IdSala = @IdSala AND ReservaDataInicial <= @Data AND ReservaDataFinal >= @Data AND ((HoraInicial <= @HoraInicial AND HoraFinal >= @HoraFinal) OR (HoraInicial >= @HoraInicial AND HoraFinal <= @HoraFinal) OR (HoraInicial <= @HoraInicial AND HoraFinal >= @HoraInicial) OR (HoraInicial <= @HoraFinal AND HoraFinal >= @HoraFinal)) AND (StatusReserva = 'Aprovada' OR StatusReserva = 'Remarcada')";
+                        cmd.Parameters.AddWithValue("@IdSala", iDSala);
+                        cmd.Parameters.AddWithValue("@Data", data);
+                        cmd.Parameters.AddWithValue("@HoraInicial", horaInicial);
+                        cmd.Parameters.AddWithValue("@HoraFinal", horaFinal);
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        return count > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Ocorreu um erro ao tentar verificar reservas duplicadas no banco de dados.", ex);
                 }
             }
-
-            // Verifica se existe alguma reserva em duplicidade
-            if (reservasDuplicadas.Any())
-            {
-                // Retorna true
-                return true;
-            }
-
-            // Retorna false
-            return false;
         }
+
         public void Alterar(Reserva reserva)
         {
             new ReservaDAL().Alterar(reserva);

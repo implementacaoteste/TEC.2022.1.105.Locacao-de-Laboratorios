@@ -12,6 +12,19 @@ FROM Permissao P
 CROSS JOIN GrupoUsuario GU
 WHERE GU.NomeGrupo = @NomeDoGrupo;
 
+-- Visualizar os grupos de um usuário
+
+SELECT
+    U.Nome AS NomeUsuario,
+    G.NomeGrupo AS NomeDoGrupo
+FROM
+    Usuario AS U
+INNER JOIN
+    UsuarioGrupoUsuario AS UGU ON U.IdUser = UGU.IdUsuario
+INNER JOIN
+    GrupoUsuario AS G ON UGU.IdGrupoUsuario = G.IdGrupo;
+
+
 -- Para reiniciar o valor de identidade de uma coluna em uma tabela!
 
 DBCC CHECKIDENT ('Aluno', RESEED, 1);

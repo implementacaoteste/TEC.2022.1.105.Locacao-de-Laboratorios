@@ -25,28 +25,35 @@ namespace UILGerenReservasLab
             comboBoxBuscarpor.SelectedIndex = 2;
         }
 
+        private bool shouldExecuteSearch = true;
+
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-                switch (comboBoxBuscarpor.SelectedIndex)
+                if (shouldExecuteSearch)
                 {
-                    case 0:
-                        if (String.IsNullOrEmpty(textBoxBuscar.Text))
-                            throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 31 } } };
+                    switch (comboBoxBuscarpor.SelectedIndex)
+                    {
+                        case 0:
+                            if (String.IsNullOrEmpty(textBoxBuscar.Text))
+                            {
+                                throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 31 } } };
+                            }
 
-                        disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
-                        break;
-                    case 1:
-                        disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarPorNome(textBoxBuscar.Text);
-                        break;
+                            disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
+                            break;
+                        case 1:
+                            disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarPorNome(textBoxBuscar.Text);
+                            break;
 
-                    case 2:
-                        disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarTodos();
-                        break;
+                        case 2:
+                            disciplinaBindingSource.DataSource = new DisciplinaBLL().BuscarTodos();
+                            break;
 
-                    default:
-                        break;
+                        default:
+                            break;
+                    }
                 }
             }
             catch (Exception ex)
@@ -69,14 +76,21 @@ namespace UILGerenReservasLab
                 using (FormCadastroDeDisciplina frm = new FormCadastroDeDisciplina(id))
                 {
                     frm.ShowDialog();
+                    // Defina shouldExecuteSearch com base na ação do formulário de edição
+                    shouldExecuteSearch = frm.DialogResult == DialogResult.OK;
                 }
-                buttonBuscar_Click(null, null);
+
+                if (shouldExecuteSearch)
+                {
+                    buttonBuscar_Click(null, null);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void buttonInserir_Click(object sender, EventArgs e)
         {
@@ -195,6 +209,28 @@ namespace UILGerenReservasLab
         private void FormBuscarDisciplina_Load_1(object sender, EventArgs e)
         {
             FormatarDataGridView(disciplinaDataGridView); // Este código formata o DataGridView
+        }
+
+        private void buttonSelecionarDisciplina_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                disciplinaBindingSource.EndEdit();
+
+                if (disciplinaBindingSource.Count > 0)
+                {
+                    DisciSelecionado = (Disciplina)disciplinaBindingSource.Current;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma disciplina selecionada");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

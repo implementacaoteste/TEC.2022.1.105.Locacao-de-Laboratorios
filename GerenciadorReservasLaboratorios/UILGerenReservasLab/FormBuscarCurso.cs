@@ -50,17 +50,24 @@ namespace UILGerenReservasLab
         }
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            if (cursoBindingSource.Count <= 0)
+            try
             {
-                MessageBox.Show("Não existe registro");
-            }
-            int id = ((Curso)cursoBindingSource.Current).Id; // Use a propriedade correta para obter o ID do curso
+                if (cursoBindingSource.Count <= 0)
+                {
+                    MessageBox.Show("Não existe registro");
+                }
+                int id = ((Curso)cursoBindingSource.Current).Id; // Use a propriedade correta para obter o ID do curso
 
-            using (FormCadastroCurso frm = new FormCadastroCurso(true, id))
-            {
-                frm.ShowDialog();
+                using (FormCadastroCurso frm = new FormCadastroCurso(true, id))
+                {
+                    frm.ShowDialog();
+                }
+                buttonBuscar_Click(sender, e);
             }
-            buttonBuscar_Click(sender, e);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void buttonExcluir_Click(object sender, EventArgs e)
         {

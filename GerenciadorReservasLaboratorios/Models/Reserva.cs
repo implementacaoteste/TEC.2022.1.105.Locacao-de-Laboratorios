@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Models
 {
@@ -14,13 +12,16 @@ namespace Models
         public int IdDisciplina { get; set; }
         public int IdCurso { get; set; }
         public int IdSolicitante { get; set; }
-        public DateTime ReservaData { get; set; }
-        public TimeSpan ReservaHora { get; set; }
-        public DateTime DataRetirada { get; set; }
-        public DateTime DataDevolucao { get; set; }
-        public string Status { get; set; }
+        public DateTime ReservaDataInicial { get; set; }
+        public DateTime ReservaDataFinal { get; set; }
+        public TimeSpan HoraInicial { get; set; }
+        public TimeSpan HoraFinal { get; set; }
+        public DateTime? DataRetirada { get; set; }
+        public DateTime? DataDevolucao { get; set; }
+        public string StatusReserva { get; set; }
         public string Observacoes { get; set; }
         public string Turno { get; set; }
+
         public string NomeResponsavel
         {
             get

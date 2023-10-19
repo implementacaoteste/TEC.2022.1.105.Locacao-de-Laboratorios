@@ -39,9 +39,6 @@
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
-    <Reference Include="CodeeloUI, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CodeeloUI.1.1.1\lib\net472\CodeeloUI.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -61,6 +58,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDashboard.Designer.cs">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +228,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDashboard.resx">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAgenda.resx">
       <DependentUpon>FormAgenda.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +331,7 @@
     <None Include="Properties\DataSources\Models.GrupoUsuario.datasource" />
     <None Include="Properties\DataSources\Models.Permissao.datasource" />
     <None Include="Properties\DataSources\Models.Predio.datasource" />
+    <None Include="Properties\DataSources\Models.Recursos.datasource" />
     <None Include="Properties\DataSources\Models.Reserva.datasource" />
     <None Include="Properties\DataSources\Models.SaidasAntecipadas.datasource" />
     <None Include="Properties\DataSources\Models.Sala.datasource" />
@@ -365,6 +372,10 @@
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{ab504d47-f9a7-4dd1-9d93-2cd75058855b}</Project>
       <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RJControls\CustomControls\CustomControls.csproj">
+      <Project>{602aa7a6-9a92-47e1-b800-2f78154ea050}</Project>
+      <Name>CustomControls</Name>
     </ProjectReference>
     <ProjectReference Include="..\System.Windows.Forms.Calendar\System.Windows.Forms.Calendar.csproj">
       <Project>{25649f08-3046-4891-adb8-7ea787b57063}</Project>
@@ -446,6 +457,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\saida_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_sisglab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

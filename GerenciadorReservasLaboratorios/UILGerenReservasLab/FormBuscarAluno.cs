@@ -68,7 +68,7 @@ namespace UILGerenReservasLab
 
                 int id = ((Aluno)alunoBindingSource.Current).Id;
 
-                using (FormCadastroAluno frm = new FormCadastroAluno(id))
+                using (FormCadastroAluno frm = new FormCadastroAluno(true, id))
                 {
                     frm.ShowDialog();
                 }

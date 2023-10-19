@@ -72,6 +72,7 @@ namespace UILGerenReservasLab
             // dataHoraSaidaLabel
             // 
             dataHoraSaidaLabel.AutoSize = true;
+            dataHoraSaidaLabel.ForeColor = System.Drawing.Color.White;
             dataHoraSaidaLabel.Location = new System.Drawing.Point(687, 232);
             dataHoraSaidaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             dataHoraSaidaLabel.Name = "dataHoraSaidaLabel";
@@ -82,6 +83,7 @@ namespace UILGerenReservasLab
             // idAlunoLabel
             // 
             idAlunoLabel.AutoSize = true;
+            idAlunoLabel.ForeColor = System.Drawing.Color.White;
             idAlunoLabel.Location = new System.Drawing.Point(10, 171);
             idAlunoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idAlunoLabel.Name = "idAlunoLabel";
@@ -92,6 +94,7 @@ namespace UILGerenReservasLab
             // idCoordenacaoLabel
             // 
             idCoordenacaoLabel.AutoSize = true;
+            idCoordenacaoLabel.ForeColor = System.Drawing.Color.White;
             idCoordenacaoLabel.Location = new System.Drawing.Point(343, 229);
             idCoordenacaoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idCoordenacaoLabel.Name = "idCoordenacaoLabel";
@@ -102,6 +105,7 @@ namespace UILGerenReservasLab
             // idProfessorLabel
             // 
             idProfessorLabel.AutoSize = true;
+            idProfessorLabel.ForeColor = System.Drawing.Color.White;
             idProfessorLabel.Location = new System.Drawing.Point(343, 174);
             idProfessorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idProfessorLabel.Name = "idProfessorLabel";
@@ -112,16 +116,18 @@ namespace UILGerenReservasLab
             // motivoLabel
             // 
             motivoLabel.AutoSize = true;
+            motivoLabel.ForeColor = System.Drawing.Color.White;
             motivoLabel.Location = new System.Drawing.Point(11, 283);
             motivoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             motivoLabel.Name = "motivoLabel";
-            motivoLabel.Size = new System.Drawing.Size(42, 13);
+            motivoLabel.Size = new System.Drawing.Size(39, 13);
             motivoLabel.TabIndex = 9;
-            motivoLabel.Text = "Motivo:";
+            motivoLabel.Text = "Motivo";
             // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
+            statusLabel.ForeColor = System.Drawing.Color.White;
             statusLabel.Location = new System.Drawing.Point(9, 226);
             statusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             statusLabel.Name = "statusLabel";

@@ -57,7 +57,7 @@
             lblNomeCurso.AutoSize = true;
             lblNomeCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblNomeCurso.ForeColor = System.Drawing.Color.White;
-            lblNomeCurso.Location = new System.Drawing.Point(53, 92);
+            lblNomeCurso.Location = new System.Drawing.Point(279, 205);
             lblNomeCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblNomeCurso.Name = "lblNomeCurso";
             lblNomeCurso.Size = new System.Drawing.Size(110, 15);
@@ -69,7 +69,7 @@
             turnoLabel.AutoSize = true;
             turnoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             turnoLabel.ForeColor = System.Drawing.Color.White;
-            turnoLabel.Location = new System.Drawing.Point(52, 161);
+            turnoLabel.Location = new System.Drawing.Point(284, 269);
             turnoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             turnoLabel.Name = "turnoLabel";
             turnoLabel.Size = new System.Drawing.Size(39, 15);
@@ -80,10 +80,10 @@
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Nome", true));
             this.nomeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTextBox.Location = new System.Drawing.Point(55, 116);
+            this.nomeTextBox.Location = new System.Drawing.Point(282, 232);
             this.nomeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(359, 21);
+            this.nomeTextBox.Size = new System.Drawing.Size(669, 21);
             this.nomeTextBox.TabIndex = 11;
             // 
             // cursoBindingSource
@@ -96,7 +96,7 @@
             this.buttonCancelarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCancelarCurso.Location = new System.Drawing.Point(631, 270);
+            this.buttonCancelarCurso.Location = new System.Drawing.Point(863, 384);
             this.buttonCancelarCurso.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancelarCurso.Name = "buttonCancelarCurso";
             this.buttonCancelarCurso.Size = new System.Drawing.Size(93, 32);
@@ -110,7 +110,7 @@
             this.buttonSalvarCurso.BackColor = System.Drawing.SystemColors.HotTrack;
             this.buttonSalvarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvarCurso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSalvarCurso.Location = new System.Drawing.Point(500, 270);
+            this.buttonSalvarCurso.Location = new System.Drawing.Point(732, 384);
             this.buttonSalvarCurso.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvarCurso.Name = "buttonSalvarCurso";
             this.buttonSalvarCurso.Size = new System.Drawing.Size(87, 32);
@@ -122,7 +122,7 @@
             // turnoTextBox
             // 
             this.turnoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Turno", true));
-            this.turnoTextBox.Location = new System.Drawing.Point(55, 181);
+            this.turnoTextBox.Location = new System.Drawing.Point(287, 295);
             this.turnoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.turnoTextBox.Name = "turnoTextBox";
             this.turnoTextBox.Size = new System.Drawing.Size(359, 20);
@@ -141,6 +141,7 @@
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(1040, 40);
             this.panelBarraTitulo.TabIndex = 24;
+            this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
             // labelMenu
             // 

@@ -153,6 +153,16 @@ namespace UILGerenReservasLab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dashboard {
+            get {
+                object obj = ResourceManager.GetObject("Dashboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Disciplina_ico {
             get {
                 object obj = ResourceManager.GetObject("Disciplina_ico", resourceCulture);
@@ -236,6 +246,16 @@ namespace UILGerenReservasLab.Properties {
         internal static System.Drawing.Bitmap logo_senai1 {
             get {
                 object obj = ResourceManager.GetObject("logo-senai1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_sisglab {
+            get {
+                object obj = ResourceManager.GetObject("logo_sisglab", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
