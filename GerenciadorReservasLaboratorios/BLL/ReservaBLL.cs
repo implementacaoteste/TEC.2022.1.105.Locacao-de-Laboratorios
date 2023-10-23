@@ -24,29 +24,29 @@ namespace BLL
         {
             return new ReservaDAL().BuscarPorId(id);
         }
-        public List<Reserva> BuscarPorSala(int idSala)
+        public List<Reserva> BuscarPorSala(string nomeSala)
         {
-            return new ReservaDAL().BuscarPorSala(idSala);
+            return new ReservaDAL().BuscarPorSala(nomeSala);
         }
 
-        public List<Reserva> BuscarPorResponsavel(int idUsuario)
+        public List<Reserva> BuscarPorResponsavel(string nomeResponsavel)
         {
-            return new ReservaDAL().BuscarPorResponsavel(idUsuario);
+            return new ReservaDAL().BuscarPorResponsavel(nomeResponsavel);
         }
 
-        public List<Reserva> BuscarPorDisciplina(int idDisciplina)
+        public List<Reserva> BuscarPorDisciplina(string nomeDisciplina)
         {
-            return new ReservaDAL().BuscarPorDisciplina(idDisciplina);
+            return new ReservaDAL().BuscarPorDisciplina(nomeDisciplina);
         }
 
-        public List<Reserva> BuscarPorCurso(int idCurso)
+        public List<Reserva> BuscarPorCurso(string nomeCurso)
         {
-            return new ReservaDAL().BuscarPorCurso(idCurso);
+            return new ReservaDAL().BuscarPorCurso(nomeCurso);
         }
 
-        public List<Reserva> BuscarPorSolicitante(int idSolicitante)
+        public List<Reserva> BuscarPorSolicitante(string nomeSolicitante)
         {
-            return new ReservaDAL().BuscarPorSolicitante(idSolicitante);
+            return new ReservaDAL().BuscarPorSolicitante(nomeSolicitante);
         }
 
         public List<Reserva> BuscarPorData(DateTime data)
@@ -63,36 +63,11 @@ namespace BLL
         {
             return new ReservaDAL().BuscarPorTurno(turno);
         }
-        public bool ExisteReservasDuplicadas(int iDSala, DateTime data, TimeSpan horaInicial, TimeSpan horaFinal)
+        public void VerConflitosDeReserva(int iDSala, DateTime dataSelecionada, TimeSpan horaInicial, TimeSpan horaFinal)
         {
-            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
-            {
-                try
-                {
-                    cn.Open();
-
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = cn;
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "SELECT COUNT(*) FROM Reserva WHERE IdSala = @IdSala AND ReservaDataInicial <= @Data AND ReservaDataFinal >= @Data AND ((HoraInicial <= @HoraInicial AND HoraFinal >= @HoraFinal) OR (HoraInicial >= @HoraInicial AND HoraFinal <= @HoraFinal) OR (HoraInicial <= @HoraInicial AND HoraFinal >= @HoraInicial) OR (HoraInicial <= @HoraFinal AND HoraFinal >= @HoraFinal)) AND (StatusReserva = 'Aprovada' OR StatusReserva = 'Remarcada')";
-                        cmd.Parameters.AddWithValue("@IdSala", iDSala);
-                        cmd.Parameters.AddWithValue("@Data", data);
-                        cmd.Parameters.AddWithValue("@HoraInicial", horaInicial);
-                        cmd.Parameters.AddWithValue("@HoraFinal", horaFinal);
-
-                        int count = (int)cmd.ExecuteScalar();
-
-                        return count > 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Ocorreu um erro ao tentar verificar reservas duplicadas no banco de dados.", ex);
-                }
-            }
+            // Verifique se já existe uma reserva conflitante usando o método ExisteReservasDuplicadas
+            bool reservaConflitante = new ReservaDAL().ExisteReservasDuplicadas(iDSala, dataSelecionada, horaInicial, horaFinal);
         }
-
         public void Alterar(Reserva reserva)
         {
             new ReservaDAL().Alterar(reserva);

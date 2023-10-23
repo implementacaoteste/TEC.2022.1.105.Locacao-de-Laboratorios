@@ -18,17 +18,17 @@ namespace BLL
         {
             return new SaidasAntecipadasDAL().BuscarPorId(id);
         }
-        public List<SaidasAntecipadas> BuscarPorIdAluno(int idAluno)
+        public List<SaidasAntecipadas> BuscarPorNomeAluno(string nomeAluno)
         {
-            return new SaidasAntecipadasDAL().BuscarPorIdAluno(idAluno);
+            return new SaidasAntecipadasDAL().BuscarPorNomeAluno(nomeAluno);
         }
-        public List<SaidasAntecipadas> BuscarPorIdProfessor(int idProfessor)
+        public List<SaidasAntecipadas> BuscarPorNomeProfessor(string nomeProfessor)
         {
-            return new SaidasAntecipadasDAL().BuscarPorIdProfessor(idProfessor);
+            return new SaidasAntecipadasDAL().BuscarPorNomeProfessor(nomeProfessor);
         }
-        public List<SaidasAntecipadas> BuscarPorIdCoordenacao(int idCoordenacao)
+        public List<SaidasAntecipadas> BuscarPorNomeCoordenacao(string nomeCoordenacao)
         {
-            return new SaidasAntecipadasDAL().BuscarPorIdCoordenacao(idCoordenacao);
+            return new SaidasAntecipadasDAL().BuscarPorNomeCoordenacao(nomeCoordenacao);
         }
         public void Alterar(SaidasAntecipadas saidasAntecipadas)
         {

@@ -14,7 +14,6 @@ namespace UILGerenReservasLab
         }
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            Usuario usuarioEncontrado = new Usuario();
             try
             {
                 switch (comboBoxBuscarReservaPor.SelectedIndex)
@@ -26,65 +25,37 @@ namespace UILGerenReservasLab
                         break;
                     case 1: // Buscar por Solicitante
                         string nomeSolicitante = textBoxBuscarReserva.Text;
-
                         if (string.IsNullOrEmpty(nomeSolicitante))
                         {
                             throw new Exception("Informe o nome do Solicitante para fazer a busca.");
                         }
 
-                        usuarioEncontrado = new UsuarioBLL().BuscarPorNomeUsuario(nomeSolicitante);
-
-                        if (usuarioEncontrado != null)
-                        {
-                            int idUsuario = usuarioEncontrado.Id; // Aqui obtemos o ID do usuário
-
-                            // Agora podemos usar o ID do usuário para buscar as reservas
-                            reservaBindingSource.DataSource = new ReservaBLL().BuscarPorSolicitante(idUsuario);
-                        }
-                        else
-                        {
-                            // Trate o caso em que o nome do solicitante não foi encontrado.
-                            MessageBox.Show("Nome do Solicitante não encontrado.");
-                        }
+                        reservaBindingSource.DataSource = new ReservaBLL().BuscarPorSolicitante(nomeSolicitante);
                         break;
                     case 2: // Buscar por Responsável (Usuário)
                         string nomeResponsavel = textBoxBuscarReserva.Text;
-
                         if (string.IsNullOrEmpty(nomeResponsavel))
                         {
                             throw new Exception("Informe o nome do Responsável para fazer a busca.");
                         }
 
-                        usuarioEncontrado = new UsuarioBLL().BuscarPorNomeUsuario(nomeResponsavel);
-
-                        if (usuarioEncontrado != null)
-                        {
-                            int idUsuario = usuarioEncontrado.Id; // Aqui obtemos o ID do usuário
-
-                            // Agora podemos usar o ID do usuário para buscar as reservas
-                            reservaBindingSource.DataSource = new ReservaBLL().BuscarPorResponsavel(idUsuario);
-                        }
-                        else
-                        {
-                            // Trate o caso em que o nome do responsável não foi encontrado.
-                            MessageBox.Show("Nome do Responsavel não encontrado.");
-                        }
+                        reservaBindingSource.DataSource = new ReservaBLL().BuscarPorResponsavel(nomeResponsavel);
                         break;
 
                     case 3: // Buscar por Sala
                         if (string.IsNullOrEmpty(textBoxBuscarReserva.Text))
                             throw new Exception("Informe o nome da Sala para fazer a busca.");
-                        reservaBindingSource.DataSource = new SalaBLL().BuscarPorNome(textBoxBuscarReserva.Text);
+                        reservaBindingSource.DataSource = new ReservaBLL().BuscarPorSala(textBoxBuscarReserva.Text);
                         break;
                     case 4: // Buscar por Disciplina
                         if (string.IsNullOrEmpty(textBoxBuscarReserva.Text))
                             throw new Exception("Informe o nome da Disciplina para fazer a busca.");
-                        reservaBindingSource.DataSource = new DisciplinaBLL().BuscarPorNome(textBoxBuscarReserva.Text);
+                        reservaBindingSource.DataSource = new ReservaBLL().BuscarPorDisciplina(textBoxBuscarReserva.Text);
                         break;
                     case 5: // Buscar por Curso
                         if (string.IsNullOrEmpty(textBoxBuscarReserva.Text))
                             throw new Exception("Informe o nome do Curso para fazer a busca.");
-                        reservaBindingSource.DataSource = new CursoBLL().BuscarPorNome(textBoxBuscarReserva.Text);
+                        reservaBindingSource.DataSource = new ReservaBLL().BuscarPorCurso(textBoxBuscarReserva.Text);
                         break;
                     case 6: // Buscar por Turno
                         if (string.IsNullOrEmpty(textBoxBuscarReserva.Text))
@@ -94,20 +65,15 @@ namespace UILGerenReservasLab
                     case 7: // Buscar por Data
                         if (string.IsNullOrEmpty(textBoxBuscarReserva.Text))
                             throw new Exception("Informe a Data para fazer a busca.");
-
-                        // Tente converter a string em um objeto DateTime
                         if (DateTime.TryParse(textBoxBuscarReserva.Text, out DateTime dataBusca))
                         {
-                            // Use o valor convertido para buscar reservas por data
                             reservaBindingSource.DataSource = new ReservaBLL().BuscarPorData(dataBusca);
                         }
                         else
                         {
-                            // Trate o caso em que a conversão da data falhou
                             MessageBox.Show("Data informada é inválida. Use o formato correto (por exemplo, '25/09/2022').");
                         }
                         break;
-
                     case 8: // Buscar por Status
                         if (string.IsNullOrEmpty(textBoxBuscarReserva.Text))
                             throw new Exception("Informe o Status para fazer a busca.");
@@ -126,6 +92,7 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void buttonAlterarReserva_Click(object sender, EventArgs e)
         {
@@ -165,7 +132,7 @@ namespace UILGerenReservasLab
                     return;
 
                 int id = ((Reserva)reservaBindingSource.Current).Id;
-                new UsuarioBLL().Excluir(id);
+                new ReservaBLL().Excluir(id);
                 reservaBindingSource.RemoveCurrent();
 
                 MessageBox.Show("Registro excluído com sucesso!");

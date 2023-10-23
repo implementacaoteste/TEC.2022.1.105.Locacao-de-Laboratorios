@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace DAL
 {
@@ -160,293 +161,68 @@ namespace DAL
             }
         }
 
-        public List<Reserva> BuscarPorSala(int idSala)
+        public List<Reserva> BuscarPorSala(string nomeSala)
         {
-            List<Reserva> reservas = new List<Reserva>();
+            // Use o método BuscarTodos para obter todas as Reservas
+            List<Reserva> _todasReservas = BuscarTodos();
 
-            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
-            {
-                try
-                {
-                    cn.Open();
+            // Use LINQ para filtrar as saídas antecipadas com base no nome do aluno
+            List<Reserva> listaReservasFiltradas = _todasReservas
+                .Where(s => s.Sala != null && s.Sala.Nome.Equals(nomeSala, StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = cn;
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "SELECT Id, IdSala, IdResponsavel, IdDisciplina, IdCurso, IdSolicitante, ReservaDataInicial, ReservaDataFinal, HoraInicial, HoraFinal, DataRetirada, DataDevolucao, StatusReserva, Observacoes, Turno FROM Reserva WHERE IdSala = @IdSala";
-                        cmd.Parameters.AddWithValue("@IdSala", idSala);
-
-                        using (SqlDataReader rd = cmd.ExecuteReader())
-                        {
-                            while (rd.Read())
-                            {
-                                Reserva reserva = new Reserva();
-                                reserva.Id = Convert.ToInt32(rd["Id"]);
-                                reserva.IdSala = Convert.ToInt32(rd["IdSala"]);
-                                reserva.IdResponsavel = Convert.ToInt32(rd["IdResponsavel"]);
-                                reserva.IdDisciplina = Convert.ToInt32(rd["IdDisciplina"]);
-                                reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
-                                reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
-                                reserva.ReservaDataInicial = Convert.ToDateTime(rd["ReservaDataInicial"]);
-                                reserva.ReservaDataFinal = Convert.ToDateTime(rd["ReservaDataFinal"]);
-                                reserva.HoraInicial = (TimeSpan)rd["HoraInicial"];
-                                reserva.HoraFinal = (TimeSpan)rd["HoraFinal"];
-                                reserva.DataRetirada = rd["DataRetirada"] as DateTime?;
-                                reserva.DataDevolucao = rd["DataDevolucao"] as DateTime?;
-                                reserva.StatusReserva = rd["StatusReserva"].ToString();
-                                reserva.Observacoes = rd["Observacoes"].ToString();
-                                reserva.Turno = rd["Turno"].ToString();
-
-                                reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
-                                reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
-                                reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
-
-                                reservas.Add(reserva);
-                            }
-                        }
-                    }
-
-                    return reservas;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Ocorreu um erro ao tentar buscar reservas por Sala no banco de dados.", ex);
-                }
-            }
+            return listaReservasFiltradas;
         }
 
-        public List<Reserva> BuscarPorResponsavel(int IdResponsavel)
+        public List<Reserva> BuscarPorResponsavel(string nomeResponsavel)
         {
-            List<Reserva> reservas = new List<Reserva>();
+            // Use o método BuscarTodos para obter todas as Reservas
+            List<Reserva> _todasReservas = BuscarTodos();
 
-            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
-            {
-                try
-                {
-                    cn.Open();
+            // Use LINQ para filtrar as saídas antecipadas com base no nome do aluno
+            List<Reserva> listaReservasFiltradas = _todasReservas
+                .Where(s => s.Responsavel != null && s.Responsavel.Nome.Equals(nomeResponsavel, StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = cn;
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "SELECT Id, IdSala, IdResponsavel, IdDisciplina, IdCurso, IdSolicitante, ReservaDataInicial, ReservaDataFinal, HoraInicial, HoraFinal, DataRetirada, DataDevolucao, StatusReserva, Observacoes, Turno FROM Reserva WHERE IdResponsavel = @IdResponsavel";
-                        cmd.Parameters.AddWithValue("@IdResponsavel", IdResponsavel);
-
-                        using (SqlDataReader rd = cmd.ExecuteReader())
-                        {
-                            while (rd.Read())
-                            {
-                                Reserva reserva = new Reserva();
-                                reserva.Id = Convert.ToInt32(rd["Id"]);
-                                reserva.IdSala = Convert.ToInt32(rd["IdSala"]);
-                                reserva.IdResponsavel = Convert.ToInt32(rd["IdResponsavel"]);
-                                reserva.IdDisciplina = Convert.ToInt32(rd["IdDisciplina"]);
-                                reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
-                                reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
-                                reserva.ReservaDataInicial = Convert.ToDateTime(rd["ReservaDataInicial"]);
-                                reserva.ReservaDataFinal = Convert.ToDateTime(rd["ReservaDataFinal"]);
-                                reserva.HoraInicial = (TimeSpan)rd["HoraInicial"];
-                                reserva.HoraFinal = (TimeSpan)rd["HoraFinal"];
-                                reserva.DataRetirada = rd["DataRetirada"] as DateTime?;
-                                reserva.DataDevolucao = rd["DataDevolucao"] as DateTime?;
-                                reserva.StatusReserva = rd["StatusReserva"].ToString();
-                                reserva.Observacoes = rd["Observacoes"].ToString();
-                                reserva.Turno = rd["Turno"].ToString();
-
-                                reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
-                                reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
-                                reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
-
-                                reservas.Add(reserva);
-                            }
-                        }
-                    }
-
-                    return reservas;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Ocorreu um erro ao tentar buscar reservas por Usuário no banco de dados.", ex);
-                }
-            }
+            return listaReservasFiltradas;
         }
 
-        public List<Reserva> BuscarPorSolicitante(int idSolicitante)
+        public List<Reserva> BuscarPorSolicitante(string nomeSolicitante)
         {
-            List<Reserva> reservas = new List<Reserva>();
+            // Use o método BuscarTodos para obter todas as Reservas
+            List<Reserva> _todasReservas = BuscarTodos();
 
-            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
-            {
-                try
-                {
-                    cn.Open();
+            // Use LINQ para filtrar as saídas antecipadas com base no nome do aluno
+            List<Reserva> listaReservasFiltradas = _todasReservas
+                .Where(s => s.Solicitante != null && s.Solicitante.Nome.Equals(nomeSolicitante, StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = cn;
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "SELECT Id, IdSala, IdResponsavel, IdDisciplina, IdCurso, IdSolicitante, ReservaDataInicial, ReservaDataFinal, HoraInicial, HoraFinal, DataRetirada, DataDevolucao, StatusReserva, Observacoes, Turno FROM Reserva WHERE IdSolicitante = @IdSolicitante";
-                        cmd.Parameters.AddWithValue("@IdSolicitante", idSolicitante);
-
-                        using (SqlDataReader rd = cmd.ExecuteReader())
-                        {
-                            while (rd.Read())
-                            {
-                                Reserva reserva = new Reserva();
-                                reserva.Id = Convert.ToInt32(rd["Id"]);
-                                reserva.IdSala = Convert.ToInt32(rd["IdSala"]);
-                                reserva.IdResponsavel = Convert.ToInt32(rd["IdResponsavel"]);
-                                reserva.IdDisciplina = Convert.ToInt32(rd["IdDisciplina"]);
-                                reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
-                                reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
-                                reserva.ReservaDataInicial = Convert.ToDateTime(rd["ReservaDataInicial"]);
-                                reserva.ReservaDataFinal = Convert.ToDateTime(rd["ReservaDataFinal"]);
-                                reserva.HoraInicial = (TimeSpan)rd["HoraInicial"];
-                                reserva.HoraFinal = (TimeSpan)rd["HoraFinal"];
-                                reserva.DataRetirada = rd["DataRetirada"] as DateTime?;
-                                reserva.DataDevolucao = rd["DataDevolucao"] as DateTime?;
-                                reserva.StatusReserva = rd["StatusReserva"].ToString();
-                                reserva.Observacoes = rd["Observacoes"].ToString();
-                                reserva.Turno = rd["Turno"].ToString();
-
-                                reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
-                                reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
-                                reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
-
-                                reservas.Add(reserva);
-                            }
-                        }
-                    }
-
-                    return reservas;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Ocorreu um erro ao tentar buscar as reservas por solicitante no banco de dados.", ex);
-                }
-            }
+            return listaReservasFiltradas;
         }
-        public List<Reserva> BuscarPorDisciplina(int idDisciplina)
+        public List<Reserva> BuscarPorDisciplina(string nomeDisciplina)
         {
-            List<Reserva> reservas = new List<Reserva>();
+            // Use o método BuscarTodos para obter todas as Reservas
+            List<Reserva> _todasReservas = BuscarTodos();
 
-            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
-            {
-                try
-                {
-                    cn.Open();
+            // Use LINQ para filtrar as saídas antecipadas com base no nome do aluno
+            List<Reserva> listaReservasFiltradas = _todasReservas
+                .Where(s => s.Disciplina != null && s.Disciplina.Nome.Equals(nomeDisciplina, StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = cn;
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "SELECT Id, IdSala, IdResponsavel, IdDisciplina, IdCurso, IdSolicitante, ReservaDataInicial, ReservaDataFinal, HoraInicial, HoraFinal, DataRetirada, DataDevolucao, StatusReserva, Observacoes, Turno FROM Reserva WHERE IdDisciplina = @IdDisciplina";
-                        cmd.Parameters.AddWithValue("@IdDisciplina", idDisciplina);
-
-                        using (SqlDataReader rd = cmd.ExecuteReader())
-                        {
-                            while (rd.Read())
-                            {
-                                Reserva reserva = new Reserva();
-                                reserva.Id = Convert.ToInt32(rd["Id"]);
-                                reserva.IdSala = Convert.ToInt32(rd["IdSala"]);
-                                reserva.IdResponsavel = Convert.ToInt32(rd["IdResponsavel"]);
-                                reserva.IdDisciplina = Convert.ToInt32(rd["IdDisciplina"]);
-                                reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
-                                reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
-                                reserva.ReservaDataInicial = Convert.ToDateTime(rd["ReservaDataInicial"]);
-                                reserva.ReservaDataFinal = Convert.ToDateTime(rd["ReservaDataFinal"]);
-                                reserva.HoraInicial = (TimeSpan)rd["HoraInicial"];
-                                reserva.HoraFinal = (TimeSpan)rd["HoraFinal"];
-                                reserva.DataRetirada = rd["DataRetirada"] as DateTime?;
-                                reserva.DataDevolucao = rd["DataDevolucao"] as DateTime?;
-                                reserva.StatusReserva = rd["StatusReserva"].ToString();
-                                reserva.Observacoes = rd["Observacoes"].ToString();
-                                reserva.Turno = rd["Turno"].ToString();
-
-                                reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
-                                reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
-                                reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
-
-                                reservas.Add(reserva);
-                            }
-                        }
-                    }
-
-                    return reservas;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Ocorreu um erro ao tentar buscar reservas por Disciplina no banco de dados.", ex);
-                }
-            }
+            return listaReservasFiltradas;
         }
 
-        public List<Reserva> BuscarPorCurso(int idCurso)
+        public List<Reserva> BuscarPorCurso(string nomeCurso)
         {
-            List<Reserva> reservas = new List<Reserva>();
+            // Use o método BuscarTodos para obter todas as Reservas
+            List<Reserva> _todasReservas = BuscarTodos();
 
-            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
-            {
-                try
-                {
-                    cn.Open();
+            // Use LINQ para filtrar as saídas antecipadas com base no nome do aluno
+            List<Reserva> listaReservasFiltradas = _todasReservas
+                .Where(s => s.Curso != null && s.Curso.Nome.Equals(nomeCurso, StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = cn;
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "SELECT Id, IdSala, IdResponsavel, IdDisciplina, IdCurso, IdSolicitante, ReservaDataInicial, ReservaDataFinal, HoraInicial, HoraFinal, DataRetirada, DataDevolucao, StatusReserva, Observacoes, Turno FROM Reserva WHERE IdCurso = @IdCurso";
-                        cmd.Parameters.AddWithValue("@IdCurso", idCurso);
-
-                        using (SqlDataReader rd = cmd.ExecuteReader())
-                        {
-                            while (rd.Read())
-                            {
-                                Reserva reserva = new Reserva();
-                                reserva.Id = Convert.ToInt32(rd["Id"]);
-                                reserva.IdSala = Convert.ToInt32(rd["IdSala"]);
-                                reserva.IdResponsavel = Convert.ToInt32(rd["IdResponsavel"]);
-                                reserva.IdDisciplina = Convert.ToInt32(rd["IdDisciplina"]);
-                                reserva.IdCurso = Convert.ToInt32(rd["IdCurso"]);
-                                reserva.IdSolicitante = Convert.ToInt32(rd["IdSolicitante"]);
-                                reserva.ReservaDataInicial = Convert.ToDateTime(rd["ReservaDataInicial"]);
-                                reserva.ReservaDataFinal = Convert.ToDateTime(rd["ReservaDataFinal"]);
-                                reserva.HoraInicial = (TimeSpan)rd["HoraInicial"];
-                                reserva.HoraFinal = (TimeSpan)rd["HoraFinal"];
-                                reserva.DataRetirada = rd["DataRetirada"] as DateTime?;
-                                reserva.DataDevolucao = rd["DataDevolucao"] as DateTime?;
-                                reserva.StatusReserva = rd["StatusReserva"].ToString();
-                                reserva.Observacoes = rd["Observacoes"].ToString();
-                                reserva.Turno = rd["Turno"].ToString();
-
-                                reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
-                                reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
-                                reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
-
-                                reservas.Add(reserva);
-                            }
-                        }
-                    }
-
-                    return reservas;
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Ocorreu um erro ao tentar buscar as reservas por curso no banco de dados.", ex);
-                }
-            }
+            return listaReservasFiltradas;
         }
 
         public List<Reserva> BuscarPorData(DateTime data)
@@ -668,7 +444,6 @@ namespace DAL
             }
         }
 
-
         public void Excluir(int id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -691,6 +466,36 @@ namespace DAL
             finally
             {
                 cn.Close();
+            }
+        }
+
+        public bool ExisteReservasDuplicadas(int iDSala, DateTime data, TimeSpan horaInicial, TimeSpan horaFinal)
+        {
+            using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
+            {
+                try
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "SELECT COUNT(*) FROM Reserva WHERE IdSala = @IdSala AND ReservaDataInicial <= @Data AND ReservaDataFinal >= @Data AND ((HoraInicial <= @HoraInicial AND HoraFinal >= @HoraFinal) OR (HoraInicial >= @HoraInicial AND HoraFinal <= @HoraFinal) OR (HoraInicial <= @HoraInicial AND HoraFinal >= @HoraInicial) OR (HoraInicial <= @HoraFinal AND HoraFinal >= @HoraFinal)) AND (StatusReserva = 'Aprovada' OR StatusReserva = 'Remarcada')";
+                        cmd.Parameters.AddWithValue("@IdSala", iDSala);
+                        cmd.Parameters.AddWithValue("@Data", data);
+                        cmd.Parameters.AddWithValue("@HoraInicial", horaInicial);
+                        cmd.Parameters.AddWithValue("@HoraFinal", horaFinal);
+
+                        int count = (int)cmd.ExecuteScalar();
+
+                        return count > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Ocorreu um erro ao tentar verificar reservas duplicadas no banco de dados.", ex);
+                }
             }
         }
     }

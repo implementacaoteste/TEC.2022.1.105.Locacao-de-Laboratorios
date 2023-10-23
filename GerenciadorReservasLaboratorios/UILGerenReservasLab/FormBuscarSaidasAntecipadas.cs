@@ -31,13 +31,13 @@ namespace UILGerenReservasLab
                         saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
                         break;
                     case 1:
-                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorIdAluno(Convert.ToInt32(textBoxBuscar.Text));
+                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorNomeAluno(textBoxBuscar.Text);
                         break;
                     case 2:
-                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorIdProfessor(Convert.ToInt32(textBoxBuscar.Text));
+                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorNomeProfessor(textBoxBuscar.Text);
                         break;
                     case 3:
-                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorIdCoordenacao(Convert.ToInt32(textBoxBuscar.Text));
+                        saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarPorNomeCoordenacao(textBoxBuscar.Text);
                         break;
                     case 4:
                         saidasAntecipadasBindingSource.DataSource = new SaidasAntecipadasBLL().BuscarTodos();

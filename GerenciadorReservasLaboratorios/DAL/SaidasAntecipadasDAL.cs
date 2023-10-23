@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace DAL
 {
@@ -149,140 +150,41 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<SaidasAntecipadas> BuscarPorIdAluno(int idAluno)
+        public List<SaidasAntecipadas> BuscarPorNomeAluno(string nomeAluno)
         {
-            List<SaidasAntecipadas> saidasAntecipadas = new List<SaidasAntecipadas>();
-            SaidasAntecipadas saidaAntecipada;
+            // Use o método BuscarTodos para obter todas as saídas antecipadas
+            List<SaidasAntecipadas> _todasSaidas = BuscarTodos();
 
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, IdAluno, IdProfessor, IdCoordenacao, Motivo, Status, DataHoraSaida FROM SaidasAntecipadas WHERE IdAluno = @IdAluno";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdAluno", idAluno);
-                cn.Open();
+            // Use LINQ para filtrar as saídas antecipadas com base no nome do aluno
+            List<SaidasAntecipadas> alunoSaidasFiltradas = _todasSaidas
+                .Where(s => s.Aluno != null && s.Aluno.Nome.Equals(nomeAluno, StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
-                using (SqlDataReader rd = cmd.ExecuteReader())
-                {
-                    while (rd.Read())
-                    {
-                        saidaAntecipada = new SaidasAntecipadas();
-                        saidaAntecipada.Id = Convert.ToInt32(rd["Id"]);
-                        saidaAntecipada.IdAluno = Convert.ToInt32(rd["IdAluno"]);
-                        saidaAntecipada.IdProfessor = Convert.ToInt32(rd["IdProfessor"]);
-                        saidaAntecipada.IdCoordenacao = Convert.ToInt32(rd["IdCoordenacao"]);
-                        saidaAntecipada.Motivo = rd["Motivo"].ToString();
-                        saidaAntecipada.Status = rd["Status"].ToString();
-                        saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
-                        saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
-                        saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
-                        saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
-
-                        saidasAntecipadas.Add(saidaAntecipada);
-                    }
-                }
-                return saidasAntecipadas;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar as saídas antecipadas pelo Id do aluno no banco de dados.", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
+            return alunoSaidasFiltradas;
         }
-        public List<SaidasAntecipadas> BuscarPorIdProfessor(int idProfessor)
+        public List<SaidasAntecipadas> BuscarPorNomeProfessor(string nomeProfessor)
         {
-            List<SaidasAntecipadas> saidasAntecipadas = new List<SaidasAntecipadas>();
-            SaidasAntecipadas saidaAntecipada;
+            // Use o método BuscarTodos para obter todas as saídas antecipadas
+            List<SaidasAntecipadas> _todasSaidas = BuscarTodos();
 
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, IdAluno, IdProfessor, IdCoordenacao, Motivo, Status, DataHoraSaida FROM SaidasAntecipadas WHERE IdProfessor = @IdProfessor";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdProfessor", idProfessor);
-                cn.Open();
+            // Use LINQ para filtrar as saídas antecipadas com base no nome do professor
+            List<SaidasAntecipadas> professorSaidasFiltradas = _todasSaidas
+                .Where(s => s.Professor != null && s.Professor.Nome.Equals(nomeProfessor, StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
-                using (SqlDataReader rd = cmd.ExecuteReader())
-                {
-                    while (rd.Read())
-                    {
-                        saidaAntecipada = new SaidasAntecipadas();
-                        saidaAntecipada.Id = Convert.ToInt32(rd["Id"]);
-                        saidaAntecipada.IdAluno = Convert.ToInt32(rd["IdAluno"]);
-                        saidaAntecipada.IdProfessor = Convert.ToInt32(rd["IdProfessor"]);
-                        saidaAntecipada.IdCoordenacao = Convert.ToInt32(rd["IdCoordenacao"]);
-                        saidaAntecipada.Motivo = rd["Motivo"].ToString();
-                        saidaAntecipada.Status = rd["Status"].ToString();
-                        saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
-                        saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
-                        saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
-                        saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
-
-                        saidasAntecipadas.Add(saidaAntecipada);
-                    }
-                }
-                return saidasAntecipadas;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar as saídas antecipadas pelo Id do professor no banco de dados.", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
+            return professorSaidasFiltradas;
         }
-        public List<SaidasAntecipadas> BuscarPorIdCoordenacao(int idCoordenacao)
+        public List<SaidasAntecipadas> BuscarPorNomeCoordenacao(string nomeCoordenador)
         {
-            List<SaidasAntecipadas> saidasAntecipadas = new List<SaidasAntecipadas>();
-            SaidasAntecipadas saidaAntecipada;
+            // Use o método BuscarTodos para obter todas as saídas antecipadas
+            List<SaidasAntecipadas> _todasSaidas = BuscarTodos();
 
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, IdAluno, IdProfessor, IdCoordenacao, Motivo, Status, DataHoraSaida FROM SaidasAntecipadas WHERE IdCoordenacao = @IdCoordenacao";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@IdCoordenacao", idCoordenacao);
-                cn.Open();
+            // Use LINQ para filtrar as saídas antecipadas com base no nome do professor
+            List<SaidasAntecipadas> coordenadorSaidasFiltradas = _todasSaidas
+                .Where(s => s.Coordenacao != null && s.Coordenacao.Nome.Equals(nomeCoordenador, StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
-                using (SqlDataReader rd = cmd.ExecuteReader())
-                {
-                    while (rd.Read())
-                    {
-                        saidaAntecipada = new SaidasAntecipadas();
-                        saidaAntecipada.Id = Convert.ToInt32(rd["Id"]);
-                        saidaAntecipada.IdAluno = Convert.ToInt32(rd["IdAluno"]);
-                        saidaAntecipada.IdProfessor = Convert.ToInt32(rd["IdProfessor"]);
-                        saidaAntecipada.IdCoordenacao = Convert.ToInt32(rd["IdCoordenacao"]);
-                        saidaAntecipada.Motivo = rd["Motivo"].ToString();
-                        saidaAntecipada.Status = rd["Status"].ToString();
-                        saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
-                        saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
-                        saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
-                        saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
-
-                        saidasAntecipadas.Add(saidaAntecipada);
-                    }
-                }
-                return saidasAntecipadas;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Ocorreu um erro ao tentar buscar as saídas antecipadas pelo Id da coordenação no banco de dados.", ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
+            return coordenadorSaidasFiltradas;
         }
         public void Alterar(SaidasAntecipadas saidaAntecipada)
         {

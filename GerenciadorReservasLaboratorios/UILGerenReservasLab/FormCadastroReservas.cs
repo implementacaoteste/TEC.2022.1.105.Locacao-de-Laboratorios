@@ -238,6 +238,38 @@ namespace UILGerenReservasLab
             VerificarConflitosDeReserva();
         }
 
+        //private void VerificarConflitosDeReserva()
+        //{
+        //    // Obtenha a sala selecionada
+        //    Sala salaSelecionada = (Sala)comboBoxSala.SelectedItem;
+
+        //    if (salaSelecionada != null)
+        //    {
+        //        int idSala = salaSelecionada.Id;
+        //        DateTime dataSelecionada = reservaDataInicialDateTimePicker.Value.Date;
+        //        TimeSpan horaInicial = reservaHoraInicialDateTimePicker.Value.TimeOfDay;
+        //        TimeSpan horaFinal = reservaHoraFinalDateTimePicker.Value.TimeOfDay;
+
+        //        // Verifique se já existe uma reserva conflitante usando o método ExisteReservasDuplicadas
+        //        bool reservaConflitante = new ReservaBLL().VerConflitosDeReserva(idSala, dataSelecionada, horaInicial, horaFinal);
+
+        //        // Atualize o estado do botão "Salvar" e exiba um aviso
+        //        if (reservaConflitante)
+        //        {
+        //            // Desabilite o botão "Salvar"
+        //            buttonSalvarReserva.Enabled = false;
+
+        //            // Exibe um aviso ao usuário na tela.
+        //            MessageBox.Show("Horário não disponível. Por favor, \nselecione outra sala, data ou hora.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+        //        }
+        //        else
+        //        {
+        //            // Habilite o botão "Salvar"
+        //            buttonSalvarReserva.Enabled = true;
+        //        }
+        //    }
+        //}
         private void VerificarConflitosDeReserva()
         {
             // Obtenha a sala selecionada
@@ -250,26 +282,11 @@ namespace UILGerenReservasLab
                 TimeSpan horaInicial = reservaHoraInicialDateTimePicker.Value.TimeOfDay;
                 TimeSpan horaFinal = reservaHoraFinalDateTimePicker.Value.TimeOfDay;
 
-                // Verifique se já existe uma reserva conflitante usando o método ExisteReservasDuplicadas
-                bool reservaConflitante = new ReservaBLL().ExisteReservasDuplicadas(idSala, dataSelecionada, horaInicial, horaFinal);
-
-                // Atualize o estado do botão "Salvar" e exiba um aviso
-                if (reservaConflitante)
-                {
-                    // Desabilite o botão "Salvar"
-                    buttonSalvarReserva.Enabled = false;
-
-                    // Exibe um aviso ao usuário na tela.
-                    MessageBox.Show("Horário não disponível. Por favor, \nselecione outra sala, data ou hora.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else
-                {
-                    // Habilite o botão "Salvar"
-                    buttonSalvarReserva.Enabled = true;
-                }
+                // Chame o método VerConflitosDeReserva da ReservaBLL
+                new ReservaBLL().VerConflitosDeReserva(idSala, dataSelecionada, horaInicial, horaFinal);
             }
         }
+
         private void panelBarraTitulo_MouseMove(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
