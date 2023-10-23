@@ -96,6 +96,9 @@ namespace DAL
                     {
                         predio.Id = Convert.ToInt32(rd["Id"]);
                         predio.Nome = rd["Nome"].ToString();
+                        predio.Andares = rd["Andares"].ToString();
+                        predio.Descricao = rd["Descricao"].ToString();
+                        predio.Estado = rd["Estado"].ToString();
                     }
                 }
                 return predio;
@@ -130,6 +133,9 @@ namespace DAL
                         predio = new Predio();
                         predio.Id = Convert.ToInt32(rd["Id"]);
                         predio.Nome = rd["Nome"].ToString();
+                        predio.Andares = rd["Andares"].ToString();
+                        predio.Descricao = rd["Descricao"].ToString();
+                        predio.Estado = rd["Estado"].ToString();
                         predios.Add(predio);
                     }
                 }

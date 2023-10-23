@@ -56,6 +56,7 @@
             // 
             lblBuscarPor.AutoSize = true;
             lblBuscarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblBuscarPor.ForeColor = System.Drawing.Color.White;
             lblBuscarPor.Location = new System.Drawing.Point(45, 66);
             lblBuscarPor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             lblBuscarPor.Name = "lblBuscarPor";

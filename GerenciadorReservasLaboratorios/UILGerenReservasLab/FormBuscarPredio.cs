@@ -66,10 +66,18 @@ namespace UILGerenReservasLab
                     opc = 0;
                     if (String.IsNullOrEmpty(textBoxBuscar.Text))
                         throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 01 } } };
+
+                    // Defina o alinhamento à direita para o TextBox
+                    textBoxBuscar.TextAlign = HorizontalAlignment.Right;
+
                     predioBindingSource.DataSource = new PredioBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
                     break;
                 case 1:
                     opc = 1;
+
+                    // Defina o alinhamento à esquerda para o TextBox
+                    textBoxBuscar.TextAlign = HorizontalAlignment.Left;
+
                     predioBindingSource.DataSource = new PredioBLL().BuscarPorNome(textBoxBuscar.Text);
                     break;
                 case 2:
@@ -80,8 +88,8 @@ namespace UILGerenReservasLab
                     MessageBox.Show("Escolha uma opção de busca");
                     break;
             }
-
         }
+
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {

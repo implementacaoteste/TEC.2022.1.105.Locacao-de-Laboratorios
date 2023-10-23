@@ -34,12 +34,64 @@ namespace UILGerenReservasLab
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void btnSalvar_Click(object sender, EventArgs e)
+
+        private void andaresTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifique se a tecla pressionada é um dígito (0-9) ou uma tecla de controle.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Se não for um dígito, bloqueie a entrada.
+                e.Handled = true;
+            }
+        }
+
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormCadastroPredio_Load(object sender, EventArgs e)
+        {
+            labelMenu.Text = "Cadastro de Predio";
+            try
+            {
+                if (Id == 0)
+                    predioBindingSource.AddNew();
+                else
+                {
+                    // Obtenha a predio existente do banco de dados com base no Id.
+                    Predio predio = new PredioBLL().BuscarPorId(Id);
+
+                    if (predio != null)
+                    {
+                        predioBindingSource.DataSource = new PredioBLL().BuscarPorId(Id);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro não encontrado.");
+                        this.Close();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void FormCadastroPredio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
+
+        private void buttonSalvarPredio_Click(object sender, EventArgs e)
         {
             try
             {
-                Predio _predio = (Predio)predioBindingSource.Current;
                 predioBindingSource.EndEdit();
+                Predio _predio = (Predio)predioBindingSource.Current;
 
                 if (Id == 0)
                 {
@@ -75,13 +127,13 @@ namespace UILGerenReservasLab
                         return; // Abortar a operação de salvar
                     }
                     new PredioBLL().Inserir(_predio);
-                    MessageBox.Show("Registro salvo com sucesso!");
+                    MessageBox.Show("Cadastro de Predio salvo com sucesso!");
 
                 }
                 else
                 {
                     new PredioBLL().Alterar(_predio);
-                    MessageBox.Show("Registro alterado com sucesso!");
+                    MessageBox.Show("Cadastro de Predio alterado com sucesso!");
                 }
                 this.Close();
             }
@@ -90,7 +142,8 @@ namespace UILGerenReservasLab
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btncancelar_Click(object sender, EventArgs e)
+
+        private void buttonCancelarPredio_Click(object sender, EventArgs e)
         {
             try
             {
@@ -100,43 +153,6 @@ namespace UILGerenReservasLab
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void andaresTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verifique se a tecla pressionada é um dígito (0-9) ou uma tecla de controle.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                // Se não for um dígito, bloqueie a entrada.
-                e.Handled = true;
-            }
-        }
-
-        private void buttonFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void FormCadastroPredio_Load(object sender, EventArgs e)
-        {
-            labelMenu.Text = "Cadastro de Predio";
-            try
-            {
-                if (Id == 0)
-                    predioBindingSource.AddNew();
-                else
-                    predioBindingSource.DataSource = new PredioBLL().BuscarPorId(Id);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void FormCadastroPredio_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-                Close();
         }
     }
 }

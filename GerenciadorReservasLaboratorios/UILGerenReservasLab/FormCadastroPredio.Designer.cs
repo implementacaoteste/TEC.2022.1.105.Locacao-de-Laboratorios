@@ -34,8 +34,6 @@
             System.Windows.Forms.Label andaresLabel;
             System.Windows.Forms.Label descricaoLabel;
             this.label1 = new System.Windows.Forms.Label();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.predioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estadoTextBox = new System.Windows.Forms.TextBox();
@@ -52,6 +50,8 @@
             this.buttonRestaurar = new System.Windows.Forms.PictureBox();
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
             this.buttonFechar = new System.Windows.Forms.PictureBox();
+            this.buttonCancelarPredio = new CustomControls.RJControls.RJButton();
+            this.buttonSalvarPredio = new CustomControls.RJControls.RJButton();
             nomeLabel1 = new System.Windows.Forms.Label();
             estadoLabel = new System.Windows.Forms.Label();
             andaresLabel = new System.Windows.Forms.Label();
@@ -117,34 +117,6 @@
             this.label1.Size = new System.Drawing.Size(1040, 26);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btncancelar
-            // 
-            this.btncancelar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btncancelar.Location = new System.Drawing.Point(742, 435);
-            this.btncancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(84, 35);
-            this.btncancelar.TabIndex = 3;
-            this.btncancelar.Text = "&Cancelar";
-            this.btncancelar.UseVisualStyleBackColor = false;
-            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalvar.Location = new System.Drawing.Point(632, 435);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(84, 35);
-            this.btnSalvar.TabIndex = 3;
-            this.btnSalvar.Text = "&Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // nomeTextBox
             // 
@@ -320,12 +292,54 @@
             this.buttonFechar.TabStop = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
+            // buttonCancelarPredio
+            // 
+            this.buttonCancelarPredio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonCancelarPredio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonCancelarPredio.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonCancelarPredio.BorderRadius = 15;
+            this.buttonCancelarPredio.BorderSize = 0;
+            this.buttonCancelarPredio.FlatAppearance.BorderSize = 0;
+            this.buttonCancelarPredio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelarPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarPredio.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelarPredio.Location = new System.Drawing.Point(769, 427);
+            this.buttonCancelarPredio.Name = "buttonCancelarPredio";
+            this.buttonCancelarPredio.Size = new System.Drawing.Size(150, 40);
+            this.buttonCancelarPredio.TabIndex = 42;
+            this.buttonCancelarPredio.Text = "&Cancelar";
+            this.buttonCancelarPredio.TextColor = System.Drawing.Color.White;
+            this.buttonCancelarPredio.UseVisualStyleBackColor = false;
+            this.buttonCancelarPredio.Click += new System.EventHandler(this.buttonCancelarPredio_Click);
+            // 
+            // buttonSalvarPredio
+            // 
+            this.buttonSalvarPredio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonSalvarPredio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.buttonSalvarPredio.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonSalvarPredio.BorderRadius = 15;
+            this.buttonSalvarPredio.BorderSize = 0;
+            this.buttonSalvarPredio.FlatAppearance.BorderSize = 0;
+            this.buttonSalvarPredio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSalvarPredio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvarPredio.ForeColor = System.Drawing.Color.White;
+            this.buttonSalvarPredio.Location = new System.Drawing.Point(591, 427);
+            this.buttonSalvarPredio.Name = "buttonSalvarPredio";
+            this.buttonSalvarPredio.Size = new System.Drawing.Size(150, 40);
+            this.buttonSalvarPredio.TabIndex = 41;
+            this.buttonSalvarPredio.Text = "&Salvar";
+            this.buttonSalvarPredio.TextColor = System.Drawing.Color.White;
+            this.buttonSalvarPredio.UseVisualStyleBackColor = false;
+            this.buttonSalvarPredio.Click += new System.EventHandler(this.buttonSalvarPredio_Click);
+            // 
             // FormCadastroPredio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1040, 521);
+            this.Controls.Add(this.buttonCancelarPredio);
+            this.Controls.Add(this.buttonSalvarPredio);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -340,8 +354,6 @@
             this.Controls.Add(this.estadoTextBox);
             this.Controls.Add(nomeLabel1);
             this.Controls.Add(this.nomeTextBox);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -368,8 +380,6 @@
 
         
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btncancelar;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.BindingSource predioBindingSource;
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.TextBox estadoTextBox;
@@ -386,5 +396,7 @@
         private System.Windows.Forms.PictureBox buttonRestaurar;
         private System.Windows.Forms.PictureBox buttonMaximizar;
         private System.Windows.Forms.PictureBox buttonFechar;
+        private CustomControls.RJControls.RJButton buttonCancelarPredio;
+        private CustomControls.RJControls.RJButton buttonSalvarPredio;
     }
 }

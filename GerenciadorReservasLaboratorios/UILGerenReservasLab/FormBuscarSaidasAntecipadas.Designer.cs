@@ -173,10 +173,10 @@
             this.comboBoxBuscarPor.FormattingEnabled = true;
             this.comboBoxBuscarPor.Items.AddRange(new object[] {
             "Id",
-            "Id do Aluno",
-            "Id do Professor",
-            "Id da Coordenação",
-            "Buscar Todos"});
+            "Aluno",
+            "Professor",
+            "Coordenação",
+            "Todos"});
             this.comboBoxBuscarPor.Location = new System.Drawing.Point(46, 89);
             this.comboBoxBuscarPor.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
