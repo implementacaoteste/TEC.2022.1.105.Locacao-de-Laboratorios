@@ -161,12 +161,22 @@ namespace UILGerenReservasLab
         }
         private void CarregarComboBoxSolicitante()
         {
-            // Carregue todos os usuários do banco de dados.
-            List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
+            if(Id == 0 && !isProfessor)
+            {
+                comboBoxSolicitante.DisplayMember = "Nome";
+                comboBoxSolicitante.ValueMember = "Id";
+                comboBoxSolicitante.DataSource = new List<Usuario> { usuarioLogado };
 
-            comboBoxSolicitante.DisplayMember = "Nome";
-            comboBoxSolicitante.ValueMember = "Id";
-            comboBoxSolicitante.DataSource = usuarios;
+            }
+            else
+            {
+                // Carregue todos os usuários do banco de dados.
+                List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
+
+                comboBoxSolicitante.DisplayMember = "Nome";
+                comboBoxSolicitante.ValueMember = "Id";
+                comboBoxSolicitante.DataSource = usuarios;
+            }
 
             if (Id > 0) // Verifica se é uma edição de reserva existente
             {
