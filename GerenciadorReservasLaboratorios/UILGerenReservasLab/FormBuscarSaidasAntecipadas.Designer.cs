@@ -40,7 +40,6 @@
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeProfessor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeCoordenacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +63,6 @@
             this.saidasAntecipadasDataGridView.ColumnHeadersHeight = 30;
             this.saidasAntecipadasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.saidasAntecipadasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.NomeAluno,
             this.NomeProfessor,
             this.NomeCoordenacao,
@@ -224,14 +222,6 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.FillWeight = 58.23987F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // NomeAluno
             // 
@@ -341,8 +331,6 @@
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button buttonFechar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProfessor;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCoordenacao;
