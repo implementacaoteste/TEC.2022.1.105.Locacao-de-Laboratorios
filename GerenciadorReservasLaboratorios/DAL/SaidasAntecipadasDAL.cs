@@ -14,8 +14,8 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO SaidasAntecipadas (IdAluno, IdProfessor, IdCoordenacao, Motivo, Status, DataHoraSaida) 
-                                    VALUES (@IdAluno, @IdProfessor, @IdCoordenacao, @Motivo, @Status, @DataHoraSaida)";
+                cmd.CommandText = @"INSERT INTO SaidasAntecipadas (IdAluno, IdProfessor, IdCoordenacao, Motivo, StatusSaida, DataSaida, HoraSaida) 
+                                    VALUES (@IdAluno, @IdProfessor, @IdCoordenacao, @Motivo, @StatusSaida, @DataSaida, @HoraSaida)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@IdAluno", saidaAntecipada.IdAluno);
@@ -37,8 +37,9 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@IdCoordenacao", saidaAntecipada.IdCoordenacao);
 
                 cmd.Parameters.AddWithValue("@Motivo", saidaAntecipada.Motivo);
-                cmd.Parameters.AddWithValue("@Status", saidaAntecipada.Status);
-                cmd.Parameters.AddWithValue("@DataHoraSaida", saidaAntecipada.DataHoraSaida);
+                cmd.Parameters.AddWithValue("@StatusSaida", saidaAntecipada.Status);
+                cmd.Parameters.AddWithValue("@DataSaida", saidaAntecipada.DataSaida);
+                cmd.Parameters.AddWithValue("@HoraSaida", saidaAntecipada.HoraSaida);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -64,7 +65,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, IdAluno, IdProfessor, IdCoordenacao, Motivo, Status, DataHoraSaida FROM SaidasAntecipadas";
+                cmd.CommandText = "SELECT Id, IdAluno, IdProfessor, IdCoordenacao, Motivo, StatusSaida, DataSaida, HoraSaida FROM SaidasAntecipadas";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -79,8 +80,10 @@ namespace DAL
                         saidaAntecipada.IdProfessor = Convert.ToInt32(rd["IdProfessor"]);
                         saidaAntecipada.IdCoordenacao = Convert.ToInt32(rd["IdCoordenacao"]);
                         saidaAntecipada.Motivo = rd["Motivo"].ToString();
-                        saidaAntecipada.Status = rd["Status"].ToString();
-                        saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
+                        saidaAntecipada.Status = rd["StatusSaida"].ToString();
+                        saidaAntecipada.DataSaida = Convert.ToDateTime(rd["DataSaida"]);
+                        saidaAntecipada.HoraSaida = (TimeSpan)rd["HoraSaida"];
+
                         saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
                         saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
                         saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
@@ -107,7 +110,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT SaidasAntecipadas.Id, SaidasAntecipadas.IdAluno, SaidasAntecipadas.IdProfessor, SaidasAntecipadas.IdCoordenacao, 
-                                  SaidasAntecipadas.Motivo, SaidasAntecipadas.Status, SaidasAntecipadas.DataHoraSaida, 
+                                  SaidasAntecipadas.Motivo, SaidasAntecipadas.StatusSaida, SaidasAntecipadas.DataSaida, SaidasAntecipadas.HoraSaida, 
                                   Aluno.Nome AS NomeAluno
                            FROM SaidasAntecipadas
                            LEFT JOIN Aluno ON SaidasAntecipadas.IdAluno = Aluno.Id
@@ -124,8 +127,10 @@ namespace DAL
                         saidaAntecipada.IdProfessor = Convert.ToInt32(rd["IdProfessor"]);
                         saidaAntecipada.IdCoordenacao = Convert.ToInt32(rd["IdCoordenacao"]);
                         saidaAntecipada.Motivo = rd["Motivo"].ToString();
-                        saidaAntecipada.Status = rd["Status"].ToString();
-                        saidaAntecipada.DataHoraSaida = Convert.ToDateTime(rd["DataHoraSaida"]);
+                        saidaAntecipada.Status = rd["StatusSaida"].ToString();
+                        saidaAntecipada.DataSaida = Convert.ToDateTime(rd["DataSaida"]);
+                        saidaAntecipada.HoraSaida = (TimeSpan)rd["HoraSaida"];
+
                         saidaAntecipada.Aluno = new AlunoDAL().BuscarPorId(Convert.ToInt32(rd["IdAluno"]));
                         saidaAntecipada.Professor = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdProfessor"]));
                         saidaAntecipada.Coordenacao = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdCoordenacao"]));
@@ -193,7 +198,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"UPDATE SaidasAntecipadas SET IdAluno = @IdAluno, IdProfessor = @IdProfessor, 
-                                    IdCoordenacao = @IdCoordenacao, Motivo = @Motivo, Status = @Status, DataHoraSaida = @DataHoraSaida
+                                    IdCoordenacao = @IdCoordenacao, Motivo = @Motivo, StatusSaida = @StatusSaida, DataSaida = @DataSaida, HoraSaida = @HoraSaida
                                     WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -201,8 +206,9 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@IdProfessor", saidaAntecipada.IdProfessor);
                 cmd.Parameters.AddWithValue("@IdCoordenacao", saidaAntecipada.IdCoordenacao);
                 cmd.Parameters.AddWithValue("@Motivo", saidaAntecipada.Motivo);
-                cmd.Parameters.AddWithValue("@Status", saidaAntecipada.Status);
-                cmd.Parameters.AddWithValue("@DataHoraSaida", saidaAntecipada.DataHoraSaida);
+                cmd.Parameters.AddWithValue("@StatusSaida", saidaAntecipada.Status);
+                cmd.Parameters.AddWithValue("@DataSaida", saidaAntecipada.DataSaida);
+                cmd.Parameters.AddWithValue("@HoraSaida", saidaAntecipada.HoraSaida);
                 cmd.Parameters.AddWithValue("@Id", saidaAntecipada.Id);
 
                 cmd.Connection = cn;

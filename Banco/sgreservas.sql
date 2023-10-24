@@ -269,8 +269,9 @@ CREATE TABLE [dbo].[SaidasAntecipadas](
 	[IdProfessor] [int] NULL,
 	[IdCoordenacao] [int] NULL,
 	[Motivo] [varchar](255) NOT NULL,
-	[Status] [varchar](20) NOT NULL,
-	[DataHoraSaida] [datetime] NOT NULL,
+	[StatusSaida] [varchar](20) NOT NULL,
+	[DataSaida] [date] NOT NULL,
+	[HoraSaida] [time] NOT NULL,
  CONSTRAINT [PK_SaidasAntecipadas] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC

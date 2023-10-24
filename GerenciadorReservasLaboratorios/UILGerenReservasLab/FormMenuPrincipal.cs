@@ -305,7 +305,7 @@ namespace UILGerenReservasLab
                 // Fechar a janela atual de logout
                 this.Hide();
 
-                FormLogin formLogin = new FormLogin();
+                FormLoginAntigo formLogin = new FormLoginAntigo();
                 formLogin.Show();
 
             }

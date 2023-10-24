@@ -31,13 +31,14 @@ namespace UILGerenReservasLab
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label dataHoraSaidaLabel;
+            System.Windows.Forms.Label dataSaidaLabel;
             System.Windows.Forms.Label idAlunoLabel;
             System.Windows.Forms.Label idCoordenacaoLabel;
             System.Windows.Forms.Label idProfessorLabel;
             System.Windows.Forms.Label motivoLabel;
             System.Windows.Forms.Label statusLabel;
-            this.dataHoraSaidaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            System.Windows.Forms.Label horaSaidaLabel;
+            this.dataSaidaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alunoTextBox = new System.Windows.Forms.TextBox();
             this.motivoTextBox = new System.Windows.Forms.TextBox();
@@ -54,12 +55,14 @@ namespace UILGerenReservasLab
             this.buttonRestaurar = new System.Windows.Forms.PictureBox();
             this.buttonMaximizar = new System.Windows.Forms.PictureBox();
             this.buttonFechar = new System.Windows.Forms.PictureBox();
-            dataHoraSaidaLabel = new System.Windows.Forms.Label();
+            this.horaSaidaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            dataSaidaLabel = new System.Windows.Forms.Label();
             idAlunoLabel = new System.Windows.Forms.Label();
             idCoordenacaoLabel = new System.Windows.Forms.Label();
             idProfessorLabel = new System.Windows.Forms.Label();
             motivoLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
+            horaSaidaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
@@ -69,16 +72,16 @@ namespace UILGerenReservasLab
             ((System.ComponentModel.ISupportInitialize)(this.buttonFechar)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataHoraSaidaLabel
+            // dataSaidaLabel
             // 
-            dataHoraSaidaLabel.AutoSize = true;
-            dataHoraSaidaLabel.ForeColor = System.Drawing.Color.White;
-            dataHoraSaidaLabel.Location = new System.Drawing.Point(687, 232);
-            dataHoraSaidaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            dataHoraSaidaLabel.Name = "dataHoraSaidaLabel";
-            dataHoraSaidaLabel.Size = new System.Drawing.Size(139, 13);
-            dataHoraSaidaLabel.TabIndex = 1;
-            dataHoraSaidaLabel.Text = "Data e Hora da Autorização";
+            dataSaidaLabel.AutoSize = true;
+            dataSaidaLabel.ForeColor = System.Drawing.Color.White;
+            dataSaidaLabel.Location = new System.Drawing.Point(687, 232);
+            dataSaidaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dataSaidaLabel.Name = "dataSaidaLabel";
+            dataSaidaLabel.Size = new System.Drawing.Size(104, 13);
+            dataSaidaLabel.TabIndex = 1;
+            dataSaidaLabel.Text = "Data da Autorização";
             // 
             // idAlunoLabel
             // 
@@ -135,14 +138,25 @@ namespace UILGerenReservasLab
             statusLabel.TabIndex = 11;
             statusLabel.Text = "Status";
             // 
-            // dataHoraSaidaDateTimePicker
+            // horaSaidaLabel
             // 
-            this.dataHoraSaidaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.saidasAntecipadasBindingSource, "DataHoraSaida", true));
-            this.dataHoraSaidaDateTimePicker.Location = new System.Drawing.Point(687, 245);
-            this.dataHoraSaidaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.dataHoraSaidaDateTimePicker.Name = "dataHoraSaidaDateTimePicker";
-            this.dataHoraSaidaDateTimePicker.Size = new System.Drawing.Size(279, 20);
-            this.dataHoraSaidaDateTimePicker.TabIndex = 2;
+            horaSaidaLabel.AutoSize = true;
+            horaSaidaLabel.ForeColor = System.Drawing.Color.White;
+            horaSaidaLabel.Location = new System.Drawing.Point(687, 280);
+            horaSaidaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            horaSaidaLabel.Name = "horaSaidaLabel";
+            horaSaidaLabel.Size = new System.Drawing.Size(104, 13);
+            horaSaidaLabel.TabIndex = 1;
+            horaSaidaLabel.Text = "Hora da Autorização";
+            // 
+            // dataSaidaDateTimePicker
+            // 
+            this.dataSaidaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.saidasAntecipadasBindingSource, "DataSaida", true));
+            this.dataSaidaDateTimePicker.Location = new System.Drawing.Point(687, 245);
+            this.dataSaidaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.dataSaidaDateTimePicker.Name = "dataSaidaDateTimePicker";
+            this.dataSaidaDateTimePicker.Size = new System.Drawing.Size(243, 20);
+            this.dataSaidaDateTimePicker.TabIndex = 2;
             // 
             // saidasAntecipadasBindingSource
             // 
@@ -168,7 +182,7 @@ namespace UILGerenReservasLab
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.buttonSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalvar.ForeColor = System.Drawing.SystemColors.Control;
@@ -183,7 +197,7 @@ namespace UILGerenReservasLab
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancelar.ForeColor = System.Drawing.SystemColors.Control;
@@ -323,6 +337,17 @@ namespace UILGerenReservasLab
             this.buttonFechar.TabStop = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
+            // horaSaidaDateTimePicker
+            // 
+            this.horaSaidaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.saidasAntecipadasBindingSource, "HoraSaida", true));
+            this.horaSaidaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaSaidaDateTimePicker.Location = new System.Drawing.Point(687, 295);
+            this.horaSaidaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.horaSaidaDateTimePicker.Name = "horaSaidaDateTimePicker";
+            this.horaSaidaDateTimePicker.ShowUpDown = true;
+            this.horaSaidaDateTimePicker.Size = new System.Drawing.Size(104, 20);
+            this.horaSaidaDateTimePicker.TabIndex = 2;
+            // 
             // FormCadastroSaidasAntecipadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -343,8 +368,10 @@ namespace UILGerenReservasLab
             this.Controls.Add(idCoordenacaoLabel);
             this.Controls.Add(idAlunoLabel);
             this.Controls.Add(this.alunoTextBox);
-            this.Controls.Add(dataHoraSaidaLabel);
-            this.Controls.Add(this.dataHoraSaidaDateTimePicker);
+            this.Controls.Add(horaSaidaLabel);
+            this.Controls.Add(dataSaidaLabel);
+            this.Controls.Add(this.horaSaidaDateTimePicker);
+            this.Controls.Add(this.dataSaidaDateTimePicker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCadastroSaidasAntecipadas";
@@ -369,7 +396,7 @@ namespace UILGerenReservasLab
         #endregion
 
         private System.Windows.Forms.BindingSource saidasAntecipadasBindingSource;
-        private System.Windows.Forms.DateTimePicker dataHoraSaidaDateTimePicker;
+        private System.Windows.Forms.DateTimePicker dataSaidaDateTimePicker;
         private System.Windows.Forms.TextBox alunoTextBox;
         private System.Windows.Forms.TextBox motivoTextBox;
         private System.Windows.Forms.Button buttonSalvar;
@@ -385,5 +412,6 @@ namespace UILGerenReservasLab
         private System.Windows.Forms.PictureBox buttonRestaurar;
         private System.Windows.Forms.PictureBox buttonMaximizar;
         private System.Windows.Forms.PictureBox buttonFechar;
+        private System.Windows.Forms.DateTimePicker horaSaidaDateTimePicker;
     }
 }

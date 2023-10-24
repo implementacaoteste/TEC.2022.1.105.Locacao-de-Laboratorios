@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.saidasAntecipadasDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeProfessor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeCoordenacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saidasAntecipadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
@@ -47,6 +40,14 @@
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonFechar = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProfessor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeCoordenacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataSaida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraSaida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saidasAntecipadasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +70,8 @@
             this.NomeCoordenacao,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.DataSaida,
+            this.HoraSaida});
             this.saidasAntecipadasDataGridView.DataSource = this.saidasAntecipadasBindingSource;
             this.saidasAntecipadasDataGridView.Location = new System.Drawing.Point(47, 114);
             this.saidasAntecipadasDataGridView.Margin = new System.Windows.Forms.Padding(2);
@@ -80,79 +82,6 @@
             this.saidasAntecipadasDataGridView.RowTemplate.Height = 24;
             this.saidasAntecipadasDataGridView.Size = new System.Drawing.Size(718, 348);
             this.saidasAntecipadasDataGridView.TabIndex = 15;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.FillWeight = 58.23987F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // NomeAluno
-            // 
-            this.NomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.NomeAluno.DataPropertyName = "NomeAluno";
-            this.NomeAluno.FillWeight = 62.50068F;
-            this.NomeAluno.HeaderText = "Aluno";
-            this.NomeAluno.MinimumWidth = 6;
-            this.NomeAluno.Name = "NomeAluno";
-            this.NomeAluno.ReadOnly = true;
-            this.NomeAluno.Width = 200;
-            // 
-            // NomeProfessor
-            // 
-            this.NomeProfessor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.NomeProfessor.DataPropertyName = "NomeProfessor";
-            this.NomeProfessor.FillWeight = 565.2405F;
-            this.NomeProfessor.HeaderText = "Professor";
-            this.NomeProfessor.MinimumWidth = 6;
-            this.NomeProfessor.Name = "NomeProfessor";
-            this.NomeProfessor.ReadOnly = true;
-            this.NomeProfessor.Width = 200;
-            // 
-            // NomeCoordenacao
-            // 
-            this.NomeCoordenacao.DataPropertyName = "NomeCoordenacao";
-            this.NomeCoordenacao.HeaderText = "Coordenação";
-            this.NomeCoordenacao.MinimumWidth = 6;
-            this.NomeCoordenacao.Name = "NomeCoordenacao";
-            this.NomeCoordenacao.ReadOnly = true;
-            this.NomeCoordenacao.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Motivo";
-            this.dataGridViewTextBoxColumn5.FillWeight = 3.504711F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Motivo";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn6.FillWeight = 3.504711F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "DataHoraSaida";
-            this.dataGridViewTextBoxColumn7.FillWeight = 3.504711F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Data & Hora";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // saidasAntecipadasBindingSource
             // 
@@ -293,6 +222,83 @@
             this.buttonFechar.UseVisualStyleBackColor = false;
             this.buttonFechar.Click += new System.EventHandler(this.buttonFechar_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.FillWeight = 58.23987F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // NomeAluno
+            // 
+            this.NomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NomeAluno.DataPropertyName = "NomeAluno";
+            this.NomeAluno.FillWeight = 62.50068F;
+            this.NomeAluno.HeaderText = "Aluno";
+            this.NomeAluno.MinimumWidth = 6;
+            this.NomeAluno.Name = "NomeAluno";
+            this.NomeAluno.ReadOnly = true;
+            this.NomeAluno.Width = 200;
+            // 
+            // NomeProfessor
+            // 
+            this.NomeProfessor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NomeProfessor.DataPropertyName = "NomeProfessor";
+            this.NomeProfessor.FillWeight = 565.2405F;
+            this.NomeProfessor.HeaderText = "Professor";
+            this.NomeProfessor.MinimumWidth = 6;
+            this.NomeProfessor.Name = "NomeProfessor";
+            this.NomeProfessor.ReadOnly = true;
+            this.NomeProfessor.Width = 200;
+            // 
+            // NomeCoordenacao
+            // 
+            this.NomeCoordenacao.DataPropertyName = "NomeCoordenacao";
+            this.NomeCoordenacao.HeaderText = "Coordenação";
+            this.NomeCoordenacao.MinimumWidth = 6;
+            this.NomeCoordenacao.Name = "NomeCoordenacao";
+            this.NomeCoordenacao.ReadOnly = true;
+            this.NomeCoordenacao.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Motivo";
+            this.dataGridViewTextBoxColumn5.FillWeight = 3.504711F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Motivo";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn6.FillWeight = 3.504711F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // DataSaida
+            // 
+            this.DataSaida.DataPropertyName = "DataSaida";
+            this.DataSaida.HeaderText = "Data da Saida";
+            this.DataSaida.Name = "DataSaida";
+            this.DataSaida.ReadOnly = true;
+            // 
+            // HoraSaida
+            // 
+            this.HoraSaida.DataPropertyName = "HoraSaida";
+            this.HoraSaida.HeaderText = "Hora da Saida";
+            this.HoraSaida.Name = "HoraSaida";
+            this.HoraSaida.ReadOnly = true;
+            // 
             // FormBuscarSaidasAntecipadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -335,12 +341,14 @@
         private System.Windows.Forms.Button buttonAlterar;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button buttonFechar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProfessor;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCoordenacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataSaida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraSaida;
     }
 }

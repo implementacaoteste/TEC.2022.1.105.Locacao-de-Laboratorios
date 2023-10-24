@@ -376,6 +376,7 @@
             this.comboBoxSala.Name = "comboBoxSala";
             this.comboBoxSala.Size = new System.Drawing.Size(290, 21);
             this.comboBoxSala.TabIndex = 30;
+            // 
             // comboBoxStatus
             // 
             this.comboBoxStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));

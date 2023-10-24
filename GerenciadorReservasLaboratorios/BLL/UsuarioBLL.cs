@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DAL;
 using Models;
 
@@ -34,6 +35,12 @@ namespace BLL
             ValidarPermissao(1);
             return usuarioDAL.BuscarTodos();
         }
+        public int ContarUsuarios()
+        {
+            List<Usuario> usuarios = new UsuarioDAL().BuscarTodos();
+            return usuarios.Count();
+        }
+
         public void Alterar(Usuario _usuario, string _confirmacaoDeSenha)
         {
             ValidarPermissao(3);

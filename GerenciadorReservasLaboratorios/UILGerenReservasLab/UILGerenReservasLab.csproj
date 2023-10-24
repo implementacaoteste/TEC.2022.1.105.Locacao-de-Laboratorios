@@ -208,17 +208,17 @@
     <Compile Include="FormConsultarGruposPermissao.designer.cs">
       <DependentUpon>FormConsultarGruposPermissao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLoginAntigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginAntigo.Designer.cs">
+      <DependentUpon>FormLoginAntigo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLogin2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLogin2.Designer.cs">
-      <DependentUpon>FormLogin2.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -309,11 +309,11 @@
     <EmbeddedResource Include="FormConsultarGruposPermissao.resx">
       <DependentUpon>FormConsultarGruposPermissao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginAntigo.resx">
+      <DependentUpon>FormLoginAntigo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin2.resx">
-      <DependentUpon>FormLogin2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>

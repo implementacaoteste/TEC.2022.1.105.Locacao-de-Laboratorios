@@ -163,19 +163,18 @@ namespace UILGerenReservasLab
         {
             if(Id == 0 && !isProfessor)
             {
-                comboBoxSolicitante.DisplayMember = "Nome";
-                comboBoxSolicitante.ValueMember = "Id";
-                comboBoxSolicitante.DataSource = new List<Usuario> { usuarioLogado };
-
-            }
-            else
-            {
                 // Carregue todos os usuários do banco de dados.
                 List<Usuario> usuarios = new UsuarioBLL().BuscarTodos();
 
                 comboBoxSolicitante.DisplayMember = "Nome";
                 comboBoxSolicitante.ValueMember = "Id";
                 comboBoxSolicitante.DataSource = usuarios;
+            }
+            else
+            {
+                comboBoxSolicitante.DisplayMember = "Nome";
+                comboBoxSolicitante.ValueMember = "Id";
+                comboBoxSolicitante.DataSource = new List<Usuario> { usuarioLogado };
             }
 
             if (Id > 0) // Verifica se é uma edição de reserva existente

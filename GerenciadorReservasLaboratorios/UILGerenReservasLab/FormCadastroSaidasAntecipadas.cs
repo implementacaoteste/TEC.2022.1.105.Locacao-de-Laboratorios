@@ -24,6 +24,8 @@ namespace UILGerenReservasLab
         private bool isCoordenacao = true;
         private bool isAdmin = true;
         Usuario usuarioLogado;
+        // Variável de instância para armazenar a hora selecionada
+        private TimeSpan horaSelecionada;
 
         public FormCadastroSaidasAntecipadas(int _id = 0)
         {
@@ -161,6 +163,8 @@ namespace UILGerenReservasLab
                 saidasAntecipadasBindingSource.EndEdit();
                 SaidasAntecipadas _saidasAntecipadas = (SaidasAntecipadas)saidasAntecipadasBindingSource.Current;
                 DeterminarTipoDeUsuario();
+                usuarioBLL.ValidarPermissao(13);
+                horaSelecionada = horaSaidaDateTimePicker.Value.TimeOfDay;
 
                 if (Id == 0)
                 {
@@ -171,8 +175,9 @@ namespace UILGerenReservasLab
                     if (isProfessor)
                     {
                         _saidasAntecipadas.IdProfessor = usuarioLogado.Id; // Define o ID do Professor como o ID do usuário logado.
-                                                                                                                    // Preencher Status com base na variável de controle isNewRequest.
+                        // Preencher Status com base na variável de controle isNewRequest.
                         _saidasAntecipadas.Status = Id == 0 ? comboBoxStatus.Text : "Em Análise";
+
                         //_saidasAntecipadas.IdCoordenacao = null; // Define o ID da Coordenação como null.
                     }
                     else if (isCoordenacao)
@@ -193,7 +198,8 @@ namespace UILGerenReservasLab
                     _saidasAntecipadas.Status = comboBoxStatus.Text;
                     _saidasAntecipadas.Motivo = motivoTextBox.Text;
 
-                    _saidasAntecipadas.DataHoraSaida = DateTime.Now;
+                    _saidasAntecipadas.DataSaida = DateTime.Now;
+                    _saidasAntecipadas.HoraSaida = horaSelecionada;
                     new SaidasAntecipadasBLL().Inserir(_saidasAntecipadas);
                     MessageBox.Show($"Solicitação de saída antecipada registrada com sucesso por {usuarioLogado.NomeUsuario}!");
                     this.Close();

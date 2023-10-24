@@ -10,7 +10,8 @@ namespace Models
         public int IdCoordenacao { get; set; }
         public string Motivo { get; set; }
         public string Status { get; set; }
-        public DateTime DataHoraSaida { get; set; }
+        public DateTime DataSaida { get; set; }
+        public TimeSpan HoraSaida { get; set; }
         public string NomeAluno
         {
             get
