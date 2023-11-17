@@ -84,7 +84,7 @@
             this.panelContainer.Controls.Add(this.panelBarraTitulo);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1500, 850);
             this.panelContainer.TabIndex = 0;
@@ -97,7 +97,7 @@
             this.panelFormularios.Controls.Add(this.pictureBoxLogo);
             this.panelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularios.Location = new System.Drawing.Point(300, 50);
-            this.panelFormularios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelFormularios.Margin = new System.Windows.Forms.Padding(4);
             this.panelFormularios.Name = "panelFormularios";
             this.panelFormularios.Size = new System.Drawing.Size(1200, 800);
             this.panelFormularios.TabIndex = 2;
@@ -136,7 +136,7 @@
             this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxLogo.Image = global::UILGerenReservasLab.Properties.Resources.logo_sisglab;
             this.pictureBoxLogo.Location = new System.Drawing.Point(232, 12);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(694, 462);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +161,7 @@
             this.panelMenu.Controls.Add(this.panelProfile);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 50);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(300, 800);
             this.panelMenu.TabIndex = 1;
@@ -373,7 +373,7 @@
             this.buttonLogout.Image = global::UILGerenReservasLab.Properties.Resources.logoutx1;
             this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLogout.Location = new System.Drawing.Point(0, 718);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(300, 50);
             this.buttonLogout.TabIndex = 15;
@@ -389,7 +389,7 @@
             this.panelProfile.Controls.Add(this.labelUserName);
             this.panelProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProfile.Location = new System.Drawing.Point(0, 0);
-            this.panelProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelProfile.Margin = new System.Windows.Forms.Padding(4);
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(300, 115);
             this.panelProfile.TabIndex = 30;
@@ -399,7 +399,7 @@
             this.ptbProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbProfile.Image = ((System.Drawing.Image)(resources.GetObject("ptbProfile.Image")));
             this.ptbProfile.Location = new System.Drawing.Point(15, 8);
-            this.ptbProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ptbProfile.Margin = new System.Windows.Forms.Padding(4);
             this.ptbProfile.Name = "ptbProfile";
             this.ptbProfile.Size = new System.Drawing.Size(76, 74);
             this.ptbProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -452,7 +452,7 @@
             this.panelBarraTitulo.Controls.Add(this.buttonFechar);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(1500, 50);
             this.panelBarraTitulo.TabIndex = 0;
@@ -476,7 +476,7 @@
             this.buttonMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMinimizar.Image = global::UILGerenReservasLab.Properties.Resources.minimizar;
             this.buttonMinimizar.Location = new System.Drawing.Point(1345, 8);
-            this.buttonMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMinimizar.Name = "buttonMinimizar";
             this.buttonMinimizar.Size = new System.Drawing.Size(44, 35);
             this.buttonMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -490,7 +490,7 @@
             this.buttonRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRestaurar.Image = global::UILGerenReservasLab.Properties.Resources.res;
             this.buttonRestaurar.Location = new System.Drawing.Point(1396, 8);
-            this.buttonRestaurar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRestaurar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRestaurar.Name = "buttonRestaurar";
             this.buttonRestaurar.Size = new System.Drawing.Size(44, 35);
             this.buttonRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -505,7 +505,7 @@
             this.buttonMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonMaximizar.Image = global::UILGerenReservasLab.Properties.Resources.maxi;
             this.buttonMaximizar.Location = new System.Drawing.Point(1396, 8);
-            this.buttonMaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMaximizar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMaximizar.Name = "buttonMaximizar";
             this.buttonMaximizar.Size = new System.Drawing.Size(44, 35);
             this.buttonMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -519,7 +519,7 @@
             this.buttonFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFechar.Image = global::UILGerenReservasLab.Properties.Resources.fechar;
             this.buttonFechar.Location = new System.Drawing.Point(1448, 8);
-            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFechar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFechar.Name = "buttonFechar";
             this.buttonFechar.Size = new System.Drawing.Size(44, 35);
             this.buttonFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -558,7 +558,7 @@
             this.ClientSize = new System.Drawing.Size(1500, 850);
             this.Controls.Add(this.panelContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
