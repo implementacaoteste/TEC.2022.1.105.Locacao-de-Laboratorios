@@ -10,13 +10,13 @@ namespace DAL
 {
     public class UsuarioDAL
     {
-        public void Inserir(Usuario _usuario)
+        public void Inserir(Professor _usuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Usuario(Nome, NomeUsuario, Email, Senha, Matricula, Ativo) 
+                cmd.CommandText = @"INSERT INTO Professor(Nome, NomeUsuario, Email, Senha, Matricula, Ativo) 
                                     VALUES(@Nome, @NomeUsuario, @Email, @Senha, @Matricula, @Ativo)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -41,16 +41,16 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Usuario> BuscarTodos()
+        public List<Professor> BuscarTodos()
         {
-            List<Usuario> usuarios = new List<Usuario>();
+            List<Professor> usuarios = new List<Professor>();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario";
+                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Professor";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -59,20 +59,20 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
-                        Usuario usuario = new Usuario();
-                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
-                        usuario.Nome = rd["Nome"].ToString();
-                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
-                        usuario.Email = rd["Email"].ToString();
-                        usuario.Senha = rd["Senha"].ToString();
-                        usuario.Matricula = rd["Matricula"].ToString();
-                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                        Professor atividade = new Professor();
+                        atividade.Id = Convert.ToInt32(rd["IdUser"]);
+                        atividade.Nome = rd["Nome"].ToString();
+                        atividade.NomeUsuario = rd["NomeUsuario"].ToString();
+                        atividade.Email = rd["Email"].ToString();
+                        atividade.Senha = rd["Senha"].ToString();
+                        atividade.Matricula = rd["Matricula"].ToString();
+                        atividade.Ativo = Convert.ToBoolean(rd["Ativo"]);
 
                         // Carregue os grupos de usuário relacionados a esse usuário
                         GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
-                        usuario.GrupoUsuarios = grupoUsuarioDAL.BuscarGrupoPorIdUsuario(usuario.Id);
+                        atividade.GrupoUsuarios = grupoUsuarioDAL.BuscarGrupoPorIdUsuario(atividade.Id);
 
-                        usuarios.Add(usuario);
+                        usuarios.Add(atividade);
                     }
                 }
                 return usuarios;
@@ -86,16 +86,16 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Usuario BuscarPorNomeUsuario(string _nomeUsuario)
+        public Professor BuscarPorNomeUsuario(string _nomeUsuario)
         {
-            Usuario usuario = new Usuario();
+            Professor atividade = new Professor();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE NomeUsuario = @NomeUsuario";
+                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Professor WHERE NomeUsuario = @NomeUsuario";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@NomeUsuario", _nomeUsuario);
                 cn.Open();
@@ -104,16 +104,16 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
-                        usuario.Nome = rd["Nome"].ToString();
-                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
-                        usuario.Email = rd["Email"].ToString();
-                        usuario.Senha = rd["Senha"].ToString();
-                        usuario.Matricula = rd["Matricula"].ToString();
-                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                        atividade.Id = Convert.ToInt32(rd["IdUser"]);
+                        atividade.Nome = rd["Nome"].ToString();
+                        atividade.NomeUsuario = rd["NomeUsuario"].ToString();
+                        atividade.Email = rd["Email"].ToString();
+                        atividade.Senha = rd["Senha"].ToString();
+                        atividade.Matricula = rd["Matricula"].ToString();
+                        atividade.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                 }
-                return usuario;
+                return atividade;
             }
             catch (Exception ex)
             {
@@ -124,17 +124,17 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Usuario BuscarPorId(int _id)
+        public Professor BuscarPorId(int _id)
         {
-            Usuario usuario;
+            Professor atividade;
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
-                usuario = new Usuario();
+                atividade = new Professor();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario 
+                cmd.CommandText = @"SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Professor 
                                 WHERE IdUser = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -144,21 +144,21 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
-                        usuario.Nome = rd["Nome"].ToString();
-                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
-                        usuario.Email = rd["Email"].ToString();
-                        usuario.Senha = rd["Senha"].ToString();
-                        usuario.Matricula = rd["Matricula"].ToString();
-                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                        atividade.Id = Convert.ToInt32(rd["IdUser"]);
+                        atividade.Nome = rd["Nome"].ToString();
+                        atividade.NomeUsuario = rd["NomeUsuario"].ToString();
+                        atividade.Email = rd["Email"].ToString();
+                        atividade.Senha = rd["Senha"].ToString();
+                        atividade.Matricula = rd["Matricula"].ToString();
+                        atividade.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                 }
 
                 // Carregue os grupos de usuário relacionados a esse usuário
                 GrupoUsuarioDAL grupoUsuarioDAL = new GrupoUsuarioDAL();
-                usuario.GrupoUsuarios = grupoUsuarioDAL.BuscarGrupoPorIdUsuario(_id);
+                atividade.GrupoUsuarios = grupoUsuarioDAL.BuscarGrupoPorIdUsuario(_id);
 
-                return usuario;
+                return atividade;
             }
             catch (Exception ex)
             {
@@ -169,17 +169,17 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Usuario BuscarPorMatricula(string _matricula)
+        public Professor BuscarPorMatricula(string _matricula)
         {
-            Usuario usuario;
-            usuario = new Usuario();
+            Professor atividade;
+            atividade = new Professor();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE Matricula = @Matricula";
+                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Professor WHERE Matricula = @Matricula";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Matricula", _matricula);
                 cn.Open();
@@ -188,16 +188,16 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
-                        usuario.Nome = rd["Nome"].ToString();
-                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
-                        usuario.Email = rd["Email"].ToString();
-                        usuario.Senha = rd["Senha"].ToString();
-                        usuario.Matricula = rd["Matricula"].ToString();
-                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                        atividade.Id = Convert.ToInt32(rd["IdUser"]);
+                        atividade.Nome = rd["Nome"].ToString();
+                        atividade.NomeUsuario = rd["NomeUsuario"].ToString();
+                        atividade.Email = rd["Email"].ToString();
+                        atividade.Senha = rd["Senha"].ToString();
+                        atividade.Matricula = rd["Matricula"].ToString();
+                        atividade.Ativo = Convert.ToBoolean(rd["Ativo"]);
                     }
                 }
-                return usuario;
+                return atividade;
             }
             catch (Exception ex)
             {
@@ -208,16 +208,16 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<Usuario> BuscarPorNome(string _nome)
+        public List<Professor> BuscarPorNome(string _nome)
         {
-            List<Usuario> usuarios = new List<Usuario>();
+            List<Professor> usuarios = new List<Professor>();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Usuario WHERE Nome LIKE @Nome";
+                cmd.CommandText = "SELECT IdUser, Nome, NomeUsuario, Email, Senha, Matricula, Ativo FROM Professor WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
@@ -226,16 +226,16 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
-                        Usuario usuario = new Usuario();
-                        usuario.Id = Convert.ToInt32(rd["IdUser"]);
-                        usuario.Nome = rd["Nome"].ToString();
-                        usuario.NomeUsuario = rd["NomeUsuario"].ToString();
-                        usuario.Email = rd["Email"].ToString();
-                        usuario.Senha = rd["Senha"].ToString();
-                        usuario.Matricula = rd["Matricula"].ToString();
-                        usuario.Ativo = Convert.ToBoolean(rd["Ativo"]);
+                        Professor atividade = new Professor();
+                        atividade.Id = Convert.ToInt32(rd["IdUser"]);
+                        atividade.Nome = rd["Nome"].ToString();
+                        atividade.NomeUsuario = rd["NomeUsuario"].ToString();
+                        atividade.Email = rd["Email"].ToString();
+                        atividade.Senha = rd["Senha"].ToString();
+                        atividade.Matricula = rd["Matricula"].ToString();
+                        atividade.Ativo = Convert.ToBoolean(rd["Ativo"]);
 
-                        usuarios.Add(usuario);
+                        usuarios.Add(atividade);
                     }
                 }
 
@@ -250,13 +250,13 @@ namespace DAL
                 cn.Close();
             }
         }
-        public void Alterar(Usuario _usuario)
+        public void Alterar(Professor _usuario)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE Usuario SET Nome = @Nome, NomeUsuario = @NomeUsuario, 
+                cmd.CommandText = @"UPDATE Professor SET Nome = @Nome, NomeUsuario = @NomeUsuario, 
                             Email = @Email, Senha = @Senha, Matricula = @Matricula, Ativo = @Ativo 
                             WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -289,7 +289,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "DELETE FROM Usuario WHERE IdUser = @Id";
+                cmd.CommandText = "DELETE FROM Professor WHERE IdUser = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
 
@@ -470,7 +470,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT NomeUsuario FROM Usuario WHERE IdUser = @Id";
+                cmd.CommandText = "SELECT NomeUsuario FROM Professor WHERE IdUser = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _idUsuario);
                 cn.Open();
@@ -496,7 +496,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Nome FROM Usuario WHERE IdUser = @Id";
+                cmd.CommandText = "SELECT Nome FROM Professor WHERE IdUser = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _idUsuario);
                 cn.Open();

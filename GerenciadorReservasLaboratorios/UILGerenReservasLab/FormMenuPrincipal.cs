@@ -15,7 +15,7 @@ namespace UILGerenReservasLab
 {
     public partial class FormMenuPrincipal : Form
     {
-        private Usuario UsuarioLogado;
+        private Professor UsuarioLogado;
         private Button botaoSelecionado = null;
 
         private bool isProfessor = true;
@@ -50,7 +50,7 @@ namespace UILGerenReservasLab
             // O login foi feito com sucesso, agora podemos obter o usuário logado.
 
             // Carregue o usuário logado.
-            UsuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
+            UsuarioLogado = new ProfessorBLL().ObterUsuarioLogado();
             GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
             List<GrupoUsuario> gruposDoUsuario = grupoUsuarioBLL.BuscarGrupoPorIdUsuario(UsuarioLogado.Id);
             UsuarioLogado.GrupoUsuarios = gruposDoUsuario;
@@ -231,7 +231,7 @@ namespace UILGerenReservasLab
 
         private void buttonDisciplina_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormBuscarDisciplina>();
+            AbrirFormulario<FormBuscarAtividade>();
             //buttonDisciplina.BackColor = Color.FromArgb(12, 61, 92);
             ConfigurarCorBotoes(sender);
         }
@@ -251,7 +251,7 @@ namespace UILGerenReservasLab
 
         private void buttonUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormBuscarUsuario>();
+            AbrirFormulario<FormBuscarProfessor>();
             //buttonUsuario.BackColor = Color.FromArgb(12, 61, 92);
             ConfigurarCorBotoes(sender);			
         }

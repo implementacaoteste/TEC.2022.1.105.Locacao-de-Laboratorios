@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2569A317-7D76-4E1F-B715-9F81BCF49A44}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UILGerenReservasLab</RootNamespace>
+    <AssemblyName>UILGerenReservasLab</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>UILGerenReservasLab.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDashboard.Designer.cs">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarAtividade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarAtividade.Designer.cs">
+      <DependentUpon>FormBuscarAtividade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarProfessor.designer.cs">
+      <DependentUpon>FormBuscarProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroDeAtividade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroDeAtividade.Designer.cs">
+      <DependentUpon>FormCadastroDeAtividade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroProfessor.Designer.cs">
+      <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginAntigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginAntigo.Designer.cs">
+      <DependentUpon>FormLoginAntigo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuPrincipal.designer.cs">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDashboard.resx">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarAtividade.resx">
+      <DependentUpon>FormBuscarAtividade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroDeAtividade.resx">
+      <DependentUpon>FormCadastroDeAtividade.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="TratarErro.cs" />
+    <EmbeddedResource Include="FormBuscarProfessor.resx">
+      <DependentUpon>FormBuscarProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroProfessor.resx">
+      <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginAntigo.resx">
+      <DependentUpon>FormLoginAntigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuPrincipal.resx">
+      <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Models.Aluno.datasource" />
+    <None Include="Properties\DataSources\Models.Constantes.datasource" />
+    <None Include="Properties\DataSources\Models.Curso.datasource" />
+    <None Include="Properties\DataSources\Models.Disciplina.datasource" />
+    <None Include="Properties\DataSources\Models.GrupoUsuario.datasource" />
+    <None Include="Properties\DataSources\Models.Permissao.datasource" />
+    <None Include="Properties\DataSources\Models.Predio.datasource" />
+    <None Include="Properties\DataSources\Models.Recursos.datasource" />
+    <None Include="Properties\DataSources\Models.Reserva.datasource" />
+    <None Include="Properties\DataSources\Models.SaidasAntecipadas.datasource" />
+    <None Include="Properties\DataSources\Models.Sala.datasource" />
+    <None Include="Properties\DataSources\Models.Usuario.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salve-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-senai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{fbfa8c90-988c-4a02-a667-1539f33ab2bf}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{ab504d47-f9a7-4dd1-9d93-2cd75058855b}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-senai1.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\fechar.png" />
+    <None Include="Resources\calendar %281%291.png" />
+    <None Include="Resources\Senai_logo_01.png" />
+    <None Include="Resources\senai-logo-3.png" />
+    <None Include="Resources\maxi.png" />
+    <None Include="Resources\res.png" />
+    <None Include="Resources\minimizar.png" />
+    <None Include="Resources\sair.png" />
+    <None Include="Resources\saida_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\curso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saidaantecipada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disciplinas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estudante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sala.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\predio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\predio2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permissao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disciplina1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutx1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permissao2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classroom2_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_permission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disciplina_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\predio01_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saida_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_sisglab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

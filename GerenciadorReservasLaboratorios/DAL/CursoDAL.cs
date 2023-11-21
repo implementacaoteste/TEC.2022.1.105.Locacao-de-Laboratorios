@@ -8,14 +8,14 @@ namespace DAL
 {
     public class CursoDAL
     {
-        public int Inserir(Curso _curso)
+        public int Inserir(Turma _curso)
         {
             int novaId = 0;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Curso (Nome, Turno)
+                cmd.CommandText = @"INSERT INTO Turma (Nome, Turno)
                                     VALUES (@Nome, @Turno); SELECT SCOPE_IDENTITY();";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -31,24 +31,24 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar inserir um curso no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar inserir um turma no banco de dados.", ex);
             }
             finally
             {
                 cn.Close();
             }
         }
-        public List<Curso> BuscarTodos()
+        public List<Turma> BuscarTodos()
         {
-            List<Curso> cursos = new List<Curso>();
-            Curso curso;
+            List<Turma> cursos = new List<Turma>();
+            Turma turma;
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, Turno FROM Curso"; // Inclui o campo Turno aqui
+                cmd.CommandText = @"SELECT Id, Nome, Turno FROM Turma"; // Inclui o campo Turno aqui
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -57,12 +57,12 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
-                        curso = new Curso();
-                        curso.Id = Convert.ToInt32(rd["Id"]);
-                        curso.Nome = rd["Nome"].ToString();
-                        curso.Turno = rd["Turno"].ToString(); // Pega o turno do banco de dados
+                        turma = new Turma();
+                        turma.Id = Convert.ToInt32(rd["Id"]);
+                        turma.Nome = rd["Nome"].ToString();
+                        turma.Turno = rd["Turno"].ToString(); // Pega o turno do banco de dados
 
-                        cursos.Add(curso);
+                        cursos.Add(turma);
                     }
                 }
                 return cursos;
@@ -76,15 +76,15 @@ namespace DAL
                 cn.Close();
             }
         }
-        public Curso BuscarPorId(int id)
+        public Turma BuscarPorId(int id)
         {
-            Curso curso = new Curso();
+            Turma turma = new Turma();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, Turno FROM Curso WHERE Id = @Id";
+                cmd.CommandText = @"SELECT Id, Nome, Turno FROM Turma WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", id);
                 cn.Open();
@@ -92,31 +92,31 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        curso.Id = Convert.ToInt32(rd["Id"]);
-                        curso.Nome = rd["Nome"].ToString();
-                        curso.Turno = rd["Turno"].ToString();
+                        turma.Id = Convert.ToInt32(rd["Id"]);
+                        turma.Nome = rd["Nome"].ToString();
+                        turma.Turno = rd["Turno"].ToString();
                     }
                 }
-                return curso;
+                return turma;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar um curso no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar um turma no banco de dados.", ex);
             }
             finally
             {
                 cn.Close();
             }
         }
-        public List<Curso> BuscarPorNome(string _nome)
+        public List<Turma> BuscarPorNome(string _nome)
         {
-            List<Curso> cursos = new List<Curso>();
+            List<Turma> cursos = new List<Turma>();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome, Turno FROM Curso WHERE Nome LIKE @Nome";
+                cmd.CommandText = "SELECT Id, Nome, Turno FROM Turma WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
@@ -124,11 +124,11 @@ namespace DAL
                 {
                     while (rd.Read()) // Use um loop para ler todos os resultados
                     {
-                        Curso curso = new Curso();
-                        curso.Id = Convert.ToInt32(rd["Id"]);
-                        curso.Nome = rd["Nome"].ToString();
-                        curso.Turno = rd["Turno"].ToString();
-                        cursos.Add(curso); // Adicione o curso à lista de cursos
+                        Turma turma = new Turma();
+                        turma.Id = Convert.ToInt32(rd["Id"]);
+                        turma.Nome = rd["Nome"].ToString();
+                        turma.Turno = rd["Turno"].ToString();
+                        cursos.Add(turma); // Adicione o turma à lista de cursos
                     }
                 }
                 return cursos; // Retorne a lista de cursos
@@ -143,13 +143,13 @@ namespace DAL
             }
         }
 
-        public void Alterar(Curso _curso)
+        public void Alterar(Turma _curso)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE Curso SET Nome = @Nome, Turno = @Turno WHERE Id = @Id"; // Inclui o campo Turno aqui
+                cmd.CommandText = @"UPDATE Turma SET Nome = @Nome, Turno = @Turno WHERE Id = @Id"; // Inclui o campo Turno aqui
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", _curso.Nome);
@@ -163,7 +163,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar alterar um curso no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar alterar um turma no banco de dados.", ex);
             }
             finally
             {
@@ -176,7 +176,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("DELETE FROM Curso WHERE Id = @Id", cn))
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Turma WHERE Id = @Id", cn))
                 {
                     try
                     {
@@ -199,7 +199,7 @@ namespace DAL
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw new Exception("Ocorreu um erro ao tentar excluir um curso no banco de dados.", ex) { Data = { { "Id", -1 } } };
+                        throw new Exception("Ocorreu um erro ao tentar excluir um turma no banco de dados.", ex) { Data = { { "Id", -1 } } };
                     }
                 }
             }

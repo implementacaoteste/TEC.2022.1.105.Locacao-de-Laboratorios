@@ -25,7 +25,7 @@ namespace UILGerenReservasLab
         {
             try
             {
-                new UsuarioBLL().Autenticar(textBoxUsuario.Text, textBoxSenha.Text);
+                new ProfessorBLL().Autenticar(textBoxUsuario.Text, textBoxSenha.Text);
                 Logou = true;
                 Close();
             }

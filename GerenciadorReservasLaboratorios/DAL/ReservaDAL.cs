@@ -87,8 +87,8 @@ namespace DAL
                                 reserva.Turno = rd["Turno"].ToString();
 
                                 reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                                reserva.Atividade = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                                reserva.Turma = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
                                 reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
                                 reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
 
@@ -144,8 +144,8 @@ namespace DAL
                                 reserva.Turno = rd["Turno"].ToString();
 
                                 reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                                reserva.Atividade = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                                reserva.Turma = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
                                 reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
                                 reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
                             }
@@ -206,7 +206,7 @@ namespace DAL
 
             // Use LINQ para filtrar as saídas antecipadas com base no nome do aluno
             List<Reserva> listaReservasFiltradas = _todasReservas
-                .Where(s => s.Disciplina != null && s.Disciplina.Nome.Equals(nomeDisciplina, StringComparison.OrdinalIgnoreCase))
+                .Where(s => s.Atividade != null && s.Atividade.Nome.Equals(nomeDisciplina, StringComparison.OrdinalIgnoreCase))
                 .ToList();
 
             return listaReservasFiltradas;
@@ -219,7 +219,7 @@ namespace DAL
 
             // Use LINQ para filtrar as saídas antecipadas com base no nome do aluno
             List<Reserva> listaReservasFiltradas = _todasReservas
-                .Where(s => s.Curso != null && s.Curso.Nome.Equals(nomeCurso, StringComparison.OrdinalIgnoreCase))
+                .Where(s => s.Turma != null && s.Turma.Nome.Equals(nomeCurso, StringComparison.OrdinalIgnoreCase))
                 .ToList();
 
             return listaReservasFiltradas;
@@ -264,8 +264,8 @@ namespace DAL
                                 reserva.Turno = rd["Turno"].ToString();
 
                                 reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                                reserva.Atividade = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                                reserva.Turma = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
                                 reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
                                 reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
 
@@ -322,8 +322,8 @@ namespace DAL
                                 reserva.Turno = rd["Turno"].ToString();
 
                                 reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                                reserva.Atividade = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                                reserva.Turma = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
                                 reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
                                 reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
 
@@ -380,8 +380,8 @@ namespace DAL
                                 reserva.Turno = rd["Turno"].ToString();
 
                                 reserva.Sala = new SalaDAL().BuscarPorId(Convert.ToInt32(rd["IdSala"]));
-                                reserva.Disciplina = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
-                                reserva.Curso = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
+                                reserva.Atividade = new DisciplinaDAL().BuscarPorId(Convert.ToInt32(rd["IdDisciplina"]));
+                                reserva.Turma = new CursoDAL().BuscarPorId(Convert.ToInt32(rd["IdCurso"]));
                                 reserva.Solicitante = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdSolicitante"]));
                                 reserva.Responsavel = new UsuarioDAL().BuscarPorId(Convert.ToInt32(rd["IdResponsavel"]));
 

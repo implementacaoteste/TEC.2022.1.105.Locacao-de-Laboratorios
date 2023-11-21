@@ -209,14 +209,14 @@
             this.buttonUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonUsuario.Image = global::UILGerenReservasLab.Properties.Resources.usuario;
+            this.buttonUsuario.Image = global::UILGerenReservasLab.Properties.Resources.atividade;
             this.buttonUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonUsuario.Location = new System.Drawing.Point(0, 515);
             this.buttonUsuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonUsuario.Name = "buttonUsuario";
             this.buttonUsuario.Size = new System.Drawing.Size(300, 50);
             this.buttonUsuario.TabIndex = 8;
-            this.buttonUsuario.Text = "Usuario";
+            this.buttonUsuario.Text = "Professor";
             this.buttonUsuario.UseVisualStyleBackColor = true;
             this.buttonUsuario.Click += new System.EventHandler(this.buttonUsuario_Click);
             // 
@@ -270,7 +270,7 @@
             this.buttonDisciplina.Name = "buttonDisciplina";
             this.buttonDisciplina.Size = new System.Drawing.Size(300, 50);
             this.buttonDisciplina.TabIndex = 5;
-            this.buttonDisciplina.Text = "Disciplina";
+            this.buttonDisciplina.Text = "Atividade";
             this.buttonDisciplina.UseVisualStyleBackColor = true;
             this.buttonDisciplina.Click += new System.EventHandler(this.buttonDisciplina_Click);
             // 
@@ -288,7 +288,7 @@
             this.buttonCurso.Name = "buttonCurso";
             this.buttonCurso.Size = new System.Drawing.Size(300, 50);
             this.buttonCurso.TabIndex = 4;
-            this.buttonCurso.Text = "Curso";
+            this.buttonCurso.Text = "Turma";
             this.buttonCurso.UseVisualStyleBackColor = true;
             this.buttonCurso.Click += new System.EventHandler(this.buttonCurso_Click);
             // 

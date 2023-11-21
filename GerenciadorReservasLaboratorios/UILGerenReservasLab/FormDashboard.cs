@@ -14,7 +14,7 @@ namespace UILGerenReservasLab
 {
     public partial class FormDashboard : Form
     {
-        private Usuario UsuarioLogado;
+        private Professor UsuarioLogado;
         private bool isProfessor = true;
         private bool isCoordenacao = true;
         private bool isAdmin = true;
@@ -27,7 +27,7 @@ namespace UILGerenReservasLab
             // O login foi feito com sucesso, agora podemos obter o usuário logado.
 
             // Carregue o usuário logado.
-            UsuarioLogado = new UsuarioBLL().ObterUsuarioLogado();
+            UsuarioLogado = new ProfessorBLL().ObterUsuarioLogado();
             GrupoUsuarioBLL grupoUsuarioBLL = new GrupoUsuarioBLL();
             List<GrupoUsuario> gruposDoUsuario = grupoUsuarioBLL.BuscarGrupoPorIdUsuario(UsuarioLogado.Id);
             UsuarioLogado.GrupoUsuarios = gruposDoUsuario;
@@ -133,7 +133,7 @@ namespace UILGerenReservasLab
                 labelReservasPendentes.Visible = true;
             }
                 // Chame o método para buscar usuários do grupo "Professor".
-                List<Usuario> professores = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Professor");
+                List<Professor> professores = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Professor");
 
                 // Obtenha o número total de professores.
                 int totalProfessores = professores.Count;
@@ -142,7 +142,7 @@ namespace UILGerenReservasLab
                 labelProfessor.Text = totalProfessores.ToString();
 
                 // Chame o método para buscar usuários do grupo "Coordenação".
-                List<Usuario> coordenacao = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Coordenação");
+                List<Professor> coordenacao = new GrupoUsuarioBLL().BuscarUsuariosPorGrupo("Coordenação");
 
                 // Obtenha o número total de coordenadores.
                 int totalCoord = coordenacao.Count;

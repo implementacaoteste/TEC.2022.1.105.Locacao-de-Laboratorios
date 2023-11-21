@@ -51,7 +51,7 @@ namespace UILGerenReservasLab
                 {
                     if (textBoxSenha.Text != "")
                     {
-                        var usuarioBLL = new UsuarioBLL();
+                        var usuarioBLL = new ProfessorBLL();
                         usuarioBLL.Autenticar(textBoxUsuario.Text, textBoxSenha.Text);
                         Logou = true;
 

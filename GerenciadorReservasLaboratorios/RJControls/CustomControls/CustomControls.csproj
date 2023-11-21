@@ -69,12 +69,6 @@
     <Compile Include="RJControls\RJComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\FormButton.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormButton.Designer.cs">
-      <DependentUpon>FormButton.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormComboBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,9 +133,6 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormButton.resx">
-      <DependentUpon>FormButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormComboBox.resx">
       <DependentUpon>FormComboBox.cs</DependentUpon>

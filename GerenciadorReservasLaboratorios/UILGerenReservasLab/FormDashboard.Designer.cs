@@ -166,7 +166,7 @@
             // 
             this.NomeCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NomeCurso.DataPropertyName = "NomeCurso";
-            this.NomeCurso.HeaderText = "Curso";
+            this.NomeCurso.HeaderText = "Turma";
             this.NomeCurso.Name = "NomeCurso";
             this.NomeCurso.ReadOnly = true;
             // 
@@ -183,7 +183,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UILGerenReservasLab.Properties.Resources.usuario;
+            this.pictureBox1.Image = global::UILGerenReservasLab.Properties.Resources.atividade;
             this.pictureBox1.Location = new System.Drawing.Point(13, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);

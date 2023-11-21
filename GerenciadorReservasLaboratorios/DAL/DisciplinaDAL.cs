@@ -7,16 +7,16 @@ namespace DAL
 {
     public class DisciplinaDAL
     {
-        public void Inserir(Disciplina disciplina)
+        public void Inserir(Atividade atividade)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Disciplina (Nome) VALUES (@Nome)";
+                cmd.CommandText = @"INSERT INTO Atividade (Nome) VALUES (@Nome)";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", disciplina.Nome);
+                cmd.Parameters.AddWithValue("@Nome", atividade.Nome);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -25,7 +25,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar inserir uma disciplina no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar inserir uma atividade no banco de dados.", ex);
             }
             finally
             {
@@ -33,17 +33,17 @@ namespace DAL
             }
         }
 
-        public List<Disciplina> BuscarTodos()
+        public List<Atividade> BuscarTodos()
         {
-            List<Disciplina> disciplinas = new List<Disciplina>();
-            Disciplina disciplina = new Disciplina();
+            List<Atividade> disciplinas = new List<Atividade>();
+            Atividade atividade = new Atividade();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Disciplina";
+                cmd.CommandText = "SELECT Id, Nome FROM Atividade";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -52,11 +52,11 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
-                        disciplina = new Disciplina();
-                        disciplina.Id = Convert.ToInt32(rd["Id"]);
-                        disciplina.Nome = rd["Nome"].ToString();
+                        atividade = new Atividade();
+                        atividade.Id = Convert.ToInt32(rd["Id"]);
+                        atividade.Nome = rd["Nome"].ToString();
 
-                        disciplinas.Add(disciplina);
+                        disciplinas.Add(atividade);
                     }
                 }
                 return disciplinas;
@@ -71,15 +71,15 @@ namespace DAL
             }
         }
 
-        public Disciplina BuscarPorId(int id)
+        public Atividade BuscarPorId(int id)
         {
-            Disciplina disciplina = new Disciplina();
+            Atividade atividade = new Atividade();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Disciplina WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Nome FROM Atividade WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", id);
                 cn.Open();
@@ -87,15 +87,15 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
-                        disciplina.Id = Convert.ToInt32(rd["Id"]);
-                        disciplina.Nome = rd["Nome"].ToString();
+                        atividade.Id = Convert.ToInt32(rd["Id"]);
+                        atividade.Nome = rd["Nome"].ToString();
                     }
                 }
-                return disciplina;
+                return atividade;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar uma disciplina no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar uma atividade no banco de dados.", ex);
             }
             finally
             {
@@ -103,15 +103,15 @@ namespace DAL
             }
         }
 
-        public List<Disciplina> BuscarPorNome(string _nome)
+        public List<Atividade> BuscarPorNome(string _nome)
         {
-            List<Disciplina> disciplinas = new List<Disciplina>();
+            List<Atividade> disciplinas = new List<Atividade>();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, Nome FROM Disciplina WHERE Nome LIKE @Nome";
+                cmd.CommandText = "SELECT Id, Nome FROM Atividade WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
                 cn.Open();
@@ -119,10 +119,10 @@ namespace DAL
                 {
                     while (rd.Read()) // Use um loop para ler todos os resultados
                     {
-                        Disciplina disciplina = new Disciplina();
-                        disciplina.Id = Convert.ToInt32(rd["Id"]);
-                        disciplina.Nome = rd["Nome"].ToString();
-                        disciplinas.Add(disciplina); // Adicione a disciplina à lista de disciplinas
+                        Atividade atividade = new Atividade();
+                        atividade.Id = Convert.ToInt32(rd["Id"]);
+                        atividade.Nome = rd["Nome"].ToString();
+                        disciplinas.Add(atividade); // Adicione a atividade à lista de disciplinas
                     }
                 }
                 return disciplinas; // Retorne a lista de disciplinas
@@ -137,17 +137,17 @@ namespace DAL
             }
         }
 
-        public void Alterar(Disciplina disciplina)
+        public void Alterar(Atividade atividade)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "UPDATE Disciplina SET Nome = @Nome WHERE Id = @Id";
+                cmd.CommandText = "UPDATE Atividade SET Nome = @Nome WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", disciplina.Nome);
-                cmd.Parameters.AddWithValue("@Id", disciplina.Id);
+                cmd.Parameters.AddWithValue("@Nome", atividade.Nome);
+                cmd.Parameters.AddWithValue("@Id", atividade.Id);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -156,7 +156,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar alterar uma disciplina no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar alterar uma atividade no banco de dados.", ex);
             }
             finally
             {
@@ -170,7 +170,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = "DELETE FROM Disciplina WHERE Id = @Id";
+                cmd.CommandText = "DELETE FROM Atividade WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", id);
 
@@ -181,7 +181,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar excluir uma disciplina do banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar excluir uma atividade do banco de dados.", ex);
             }
             finally
             {
